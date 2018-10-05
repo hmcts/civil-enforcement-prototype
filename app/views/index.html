@@ -1,0 +1,29 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">
+        Civil enforcement prototypes
+        <!--<span class="govuk-caption-xl">{{releaseVersion}}</span>-->
+      </h2>{{releaseVersion | log }}
+      <p>
+        This is a prototype that allows the civil enforcement team to test ideas and for research purposes. It is not a working software.
+      </p>
+
+      <h2 class="govuk-heading-m">Latest prototypes</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="claimant-guidance">Claimant guidance</a></li>
+        <li><a href="defendant-guidance">Defendant guidance</a></li>
+      </ul>
+    </div>
+</div>
+
+{% endblock %}

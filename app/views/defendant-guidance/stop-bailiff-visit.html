@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Defendants guidance
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Business and self-employed</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link">Business debt and bankruptcy</a>
+        </li>
+    </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<main role="main" id="content" class="guide">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                Manage your debts
+            </h1>
+
+            <aside class="part-navigation-container" role="complementary">
+                <nav role="navigation" class="gem-c-contents-list  " data-module="track-click"
+                     aria-label="Pages in this guide">
+                    <p class="govuk-body-s">Contents</p>
+
+                    <ol class="gem-c-contents-list__list" style="margin-top: -20px; margin-left: -40px">
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link " data-track-category="contentsClicked"
+                               data-track-action="content_item 0" data-track-label=""
+                               data-track-options=""
+                               href="../defendant-guidance">County court judgment</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active"
+                            aria-current="true">
+                            <span style="font-family: GDS Transport Website">Stop a bailiff visit</span>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link " data-track-category="contentsClicked"
+                               data-track-action="content_item 2"
+                               data-track-label=""
+                               data-track-options=""
+                               href="keep-up-payments">If you cannot keep up with payments</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link " data-track-category="contentsClicked"
+                               data-track-action="content_item 3"
+                               data-track-label=""
+                               data-track-options=""
+                               href="cannot-pay">What to do if you cannot pay</a>
+                        </li>
+                    </ol>
+                </nav>
+
+            </aside>
+
+            <h1 class="part-title">
+                Stop a bailiff visit
+            </h1>
+
+            <p>A bailiff will contact you 7 days before they come to your home or business. If you can, pay
+                the debt in full or try to set up a payment plan.
+            </p>
+
+            <p>If you cannot pay the money or think you do not owe the money, ask the
+                court to suspend the warrant by filling in <a target="_blank"
+                                                                               href="">form N245</a>.
+            </p>
+
+            <p><a target="_blank"
+                  href="https://www.gov.uk/your-rights-bailiffs">Find out what the bailiff can do when they visit your home</a></p>
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+            <aside class="app-related-items" role="complementary">
+                <h2 class="govuk-heading-m" id="subsection-title">
+                    Subsection
+                </h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                    <ul class="govuk-list govuk-!-font-size-16">
+                        <li>
+                            <a href="#">
+                                Related link
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Related link
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="govuk-!-font-weight-bold">
+                                More <span class="govuk-visually-hidden">in Subsection</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+        </div>
+
+    </div>
+</main>
+{% endblock %}

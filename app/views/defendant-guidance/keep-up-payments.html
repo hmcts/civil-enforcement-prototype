@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Defendants guidance
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Business and self-employed</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link">Business debt and bankruptcy</a>
+        </li>
+    </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<main role="main" id="content" class="guide">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                Manage your debts
+            </h1>
+
+            <aside class="part-navigation-container" role="complementary">
+                <nav role="navigation" class="gem-c-contents-list  " data-module="track-click"
+                     aria-label="Pages in this guide">
+                    <p class="govuk-body-s">Contents</p>
+
+                    <ol class="gem-c-contents-list__list" style="margin-top: -20px; margin-left: -40px">
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link " data-track-category="contentsClicked"
+                               data-track-action="content_item 0" data-track-label=""
+                               data-track-options=""
+                               href="../defendant-guidance">County court judgment</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link " data-track-category="contentsClicked"
+                               data-track-action="content_item 1" data-track-label=""
+                               data-track-options=""
+                               href="stop-bailiff-visit">Stop a bailiff visit</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active"
+                            aria-current="true">
+                            <span style="font-family: GDS Transport Website">If you cannot keep up with payments</span>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link " data-track-category="contentsClicked"
+                               data-track-action="content_item 3"
+                               data-track-label=""
+                               data-track-options=""
+                               href="cannot-pay">What to do if you cannot pay</a>
+                        </li>
+                    </ol>
+                </nav>
+
+            </aside>
+
+            <h1 class="part-title">
+                If you cannot keep up with payments
+            </h1>
+
+            <p>You can ask the court to change the amount you must pay every month. To do this, fill in the <a
+                    target="_blank"
+                    href="https://www.gov.uk/government/publications/form-n245-application-for-suspension-of-a-warrant-and-or-variation-of-an-order">N245
+                application form</a>.
+            </p>
+
+            <p>You’ll need to:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>pay a £50 court fee</li>
+                <li>give details of your financial situation</li>
+                <li>state how much you can afford to pay each month</li>
+            </ul>
+
+            <p>The person or business you owe money to must agree to the new amount. If they do not, the court will
+                decide on the amount you have to pay. The new amount might be higher than the amount you think is
+                affordable. If you disagree with the decision you have 14 days to ask the courts to reconsider.</p>
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+            <aside class="app-related-items" role="complementary">
+                <h2 class="govuk-heading-m" id="subsection-title">
+                    Subsection
+                </h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                    <ul class="govuk-list govuk-!-font-size-16">
+                        <li>
+                            <a href="#">
+                                Related link
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Related link
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="govuk-!-font-weight-bold">
+                                More <span class="govuk-visually-hidden">in Subsection</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+        </div>
+
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Defendants guidance
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Business and self-employed</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link">Business debt and bankruptcy</a>
+        </li>
+    </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<main role="main" id="content" class="guide">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                Manage your debts
+            </h1>
+
+            <aside class="part-navigation-container" role="complementary">
+                <nav role="navigation" class="gem-c-contents-list  " data-module="track-click"
+                     aria-label="Pages in this guide">
+                    <p class="govuk-body-s">Contents</p>
+
+                    <ol class="gem-c-contents-list__list" style="margin-top: -20px; margin-left: -40px">
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link " data-track-category="contentsClicked"
+                               data-track-action="content_item 0" data-track-label=""
+                               data-track-options=""
+                               href="../defendant-guidance">County court judgment</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link " data-track-category="contentsClicked"
+                               data-track-action="content_item 1" data-track-label=""
+                               data-track-options=""
+                               href="stop-bailiff-visit">Stop a bailiff visit</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link " data-track-category="contentsClicked"
+                               data-track-action="content_item 2"
+                               data-track-label=""
+                               data-track-options=""
+                               href="keep-up-payments">If you cannot keep up with payments</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active"
+                            aria-current="true">
+                            <span style="font-family: GDS Transport Website">What to do if you cannot pay</span>
+                        </li>
+                    </ol>
+                </nav>
+
+            </aside>
+
+            <h1 class="part-title">
+                What to do if you cannot pay
+            </h1>
+
+            <p>If you cannot pay any of your debt you can apply to get the court order changed. Download
+                and fill in application
+                <a
+                    target="_blank"
+                    href="https://www.gov.uk/government/publications/form-n245-application-for-suspension-of-a-warrant-and-or-variation-of-an-order">form N244</a>.
+            </p>
+
+            <h3 class="govuk-heading-s">Get advice about debt</h3>
+
+            <p>You can get advice specific to your situation from:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li><a target="_blank"
+                       href="https://www.nationaldebtline.org/EW/Pages/default.aspx">National Debtline</a></li>
+                <li><a target="_blank"
+                       href="https://www.moneyadviceservice.org.uk/en/categories/managing-debt">Money Advice Service</a></li>
+                <li><a target="_blank"
+                       href="https://www.citizensadvice.org.uk/debt-and-money/action-your-creditor-can-take/bailiffs/">Citizens Advice</a></li>
+                <li><a target="_blank"
+                       href="http://www.stepchange.org/">StepChange Debt Charity</a></li>
+            </ul>
+            
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+            <aside class="app-related-items" role="complementary">
+                <h2 class="govuk-heading-m" id="subsection-title">
+                    Subsection
+                </h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                    <ul class="govuk-list govuk-!-font-size-16">
+                        <li>
+                            <a href="#">
+                                Related link
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Related link
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="govuk-!-font-weight-bold">
+                                More <span class="govuk-visually-hidden">in Subsection</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+        </div>
+
+    </div>
+</main>
+{% endblock %}

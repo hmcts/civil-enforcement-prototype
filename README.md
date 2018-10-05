@@ -1,4 +1,4 @@
-# civil-enforcement-prototype
+# Civil Enforcement Prototype
 Citizen facing application prototype for Civil Enforcement
 
 This is a CET prototyping project based on the [GOV.UK prototyping kit](https://github.com/alphagov/govuk_prototype_kit).

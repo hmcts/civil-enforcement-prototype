@@ -20,8 +20,8 @@
       <file leaf-file-name="claimant-guidance.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/claimant-guidance.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="166" column="52" selection-start-line="166" selection-start-column="52" selection-end-line="166" selection-end-column="52" />
+            <state relative-caret-position="224">
+              <caret line="171" column="69" selection-start-line="171" selection-start-column="69" selection-end-line="171" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -132,12 +132,13 @@
       <updated>1539078070819</updated>
       <workItem from="1539078075990" duration="269000" />
       <workItem from="1539090758189" duration="423000" />
-      <workItem from="1539091747197" duration="33000" />
+      <workItem from="1539091747197" duration="73000" />
+      <workItem from="1539092148692" duration="13000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="725000" />
+    <option name="totallyTimeSpent" value="778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="23" width="1364" height="829" extended-state="0" />
@@ -173,6 +174,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/views/claimant-guidance.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2610">
+          <caret line="174" column="40" lean-forward="true" selection-start-line="174" selection-start-column="40" selection-end-line="174" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/claimant-guidance.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2580">
           <caret line="172" column="41" selection-start-line="172" selection-start-column="41" selection-end-line="172" selection-end-column="41" />
         </state>
@@ -180,8 +188,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/claimant-guidance.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="166" column="52" selection-start-line="166" selection-start-column="52" selection-end-line="166" selection-end-column="52" />
+        <state relative-caret-position="224">
+          <caret line="171" column="69" selection-start-line="171" selection-start-column="69" selection-end-line="171" selection-end-column="69" />
         </state>
       </provider>
     </entry>

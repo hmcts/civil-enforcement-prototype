@@ -6310,7 +6310,24 @@ $govuk-global-styles: true;
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: -15px;
-  margin-right: -15px
+  margin-right: -15px;
+  .gem-c-pagination__list {
+    margin: 0;
+    padding: 0;
+  }
+  .gem-c-pagination__link-divider {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    border: 0;
+    white-space: nowrap;
+  }
 }
 
 .gem-c-pagination__item {
@@ -9698,3 +9715,9 @@ $govuk-global-styles: true;
   }
 }
 
+.gem-c-contents-list {
+  .gem-c-contents-list__list {
+    margin-left: -40px;
+    margin-top: -20px;
+  }
+}

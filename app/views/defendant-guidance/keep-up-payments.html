@@ -33,22 +33,22 @@ Defendants guidance
                         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed "
                             aria-current="true">
                             <a class="gem-c-contents-list__link"
-                               href="/defendant-guidance/index">Overview</a>
+                               href="/defendant-guidance/{% if stepByStep === true %}step-by-step/overview{% else %}index{% endif %}{% if stepByStep === true %}?step=4.1{% endif %}">Overview</a>
                         </li>
                         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
                             <a class="gem-c-contents-list__link"
-                               href="/defendant-guidance/set-up-payment-plan">Set up a payment plan</a>
+                               href="/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}set-up-payment-plan{% if stepByStep === true %}?step=4.2{% endif %}">Set up a payment plan</a>
                         </li>
                         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
                             <a class="gem-c-contents-list__link"
-                               href="/defendant-guidance/stop-bailiff-visit">Stop a bailiff visit</a>
+                               href="/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}stop-bailiff-visit{% if stepByStep === true %}?step=5.2{% endif %}">Stop a bailiff visit</a>
                         </li>
                         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active">
                             <span class="govuk-breadcrumbs__link">If you cannot keep up with payments</span>
                         </li>
                         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active">
                             <a class="gem-c-contents-list__link "
-                               href="/defendant-guidance/cannot-pay">If you cannot pay your debt</a>
+                               href="/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}cannot-pay{% if stepByStep === true %}?step=7.1{% endif %}">If you cannot pay your debt</a>
                         </li>
                     </ol>
 
@@ -84,7 +84,7 @@ Defendants guidance
             <nav class="gem-c-pagination" role="navigation" aria-label="Pagination">
                 <ul class="gem-c-pagination__list" data-module="track-click">
                     <li class="gem-c-pagination__item gem-c-pagination__item--previous">
-                        <a href="/defendant-guidance/stop-bailiff-visit" class="gem-c-pagination__link" rel="prev">
+                        <a href="/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}stop-bailiff-visit{% if stepByStep === true %}?step=5.2{% endif %}" class="gem-c-pagination__link" rel="prev">
                             <span class="gem-c-pagination__link-title">
                                 <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13"
                                      width="17" viewBox="0 0 17 13">
@@ -100,7 +100,7 @@ Defendants guidance
                         </a>
                     </li>
                     <li class="gem-c-pagination__item gem-c-pagination__item--next">
-                        <a href="/defendant-guidance/cannot-pay" class="gem-c-pagination__link" rel="next">
+                        <a href="/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}cannot-pay{% if stepByStep === true %}?step=7.1{% endif %}" class="gem-c-pagination__link" rel="next">
                             <span class="gem-c-pagination__link-title">
                                 <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17"
                                      viewBox="0 0 17 13">

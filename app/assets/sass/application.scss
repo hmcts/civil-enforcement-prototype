@@ -16,6 +16,11 @@ $govuk-global-styles: true;
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+//for UR sessions, disabling visited styles usually helps:
+.govuk-link:visited, a:visited {
+  color: #005ea5;
+}
+
 .metadata-logo-wrapper:after, .gem-c-feedback__grid-row:after, .html-publication .publication-external:after, .app-c-figure:after, .gem-c-breadcrumbs ol:after, .gem-c-feedback__prompt:after, .gem-c-govspeak .attachment:after, .gem-c-govspeak .contact:after, .gem-c-image-card:after, .gem-c-metadata:after, .gem-c-translation-nav__list:after {
   content: "";
   display: block;

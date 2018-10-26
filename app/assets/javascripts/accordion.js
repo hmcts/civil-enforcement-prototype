@@ -11,6 +11,13 @@ function accordion () {
     })
   }
 
+  $('.gem-c-step-nav__link').click(function () {
+    if ($(this).attr('data-dead-link').length) {
+      console.log('dead link')
+      return false
+    }
+  })
+
   $('.gem-c-step-nav__step').click(function () {
     showPanel($(this))
   })

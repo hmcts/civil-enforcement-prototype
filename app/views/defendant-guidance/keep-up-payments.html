@@ -11,25 +11,8 @@ Defendants guidance
 
 {% block beforeContent %}
 
-{% if stepByStep === true %}
+    {% include 'defendant-guidance/includes/breadcrumb.html' %}
 
-{% include 'includes/contextual-breadcrumb.html' %}
-
-{% else %}
-<div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="#">Money and tax</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link">Court claims, debt and bankruptcy</a>
-        </li>
-    </ol>
-</div>
-{% endif %}
 {% endblock %}
 
 {% block content %}

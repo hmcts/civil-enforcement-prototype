@@ -164,8 +164,11 @@ Defendants guidance
 
         <div class="govuk-grid-column-one-third">
 
-            {% include 'includes/related-guidance-defendants.html' %}
-
+            {% if stepByStep === true %}
+                {% include 'includes/step-by-step-sidebar.html' %}
+            {% else %}
+                {% include 'includes/related-guidance-defendants.html' %}
+            {% endif %}
         </div>
 
     </div>

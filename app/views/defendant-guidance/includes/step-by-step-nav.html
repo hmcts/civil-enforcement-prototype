@@ -7,7 +7,7 @@
                 aria-controls="step-panel-check-youre-allowed-to-drive-1">Show all</button>
     </div>
     <ol class="gem-c-step-nav__steps">
-        <li class="gem-c-step-nav__step js-step" id="respond-to-a-court-claim-for-money"
+        <li class="gem-c-step-nav__step js-step {% if stepCat == 1 %}gem-c-step-nav__step--active step-is-shown{% endif %}" id="respond-to-a-court-claim-for-money"
             data-track-count="stepNavSection">
             <div class="gem-c-step-nav__header js-toggle-panel" data-position="1">
                 <h2 class="gem-c-step-nav__title">
@@ -27,11 +27,11 @@
                 Respond to a court claim for money
 
               </span><span class="gem-c-step-nav__toggle-link js-toggle-link" aria-hidden="true"
-                           hidden="">show</span></button></span>
+                           hidden="">{% if stepCat != 1 %}show{% else %}hide{% endif %}</span></button></span>
                 </h2>
             </div>
 
-            <div class="gem-c-step-nav__panel js-panel js-hidden"
+            <div class="gem-c-step-nav__panel js-panel {% if stepCat != 1 %}js-hidden{% endif %}"
                  id="step-panel-check-youre-allowed-to-drive-1">
 
                 <ol class="gem-c-step-nav__list " data-length="3">
@@ -55,7 +55,7 @@
             </div>
 
         </li>
-        <li class="gem-c-step-nav__step js-step" id="county-court-judgments"
+        <li class="gem-c-step-nav__step js-step {% if stepCat == 2 %}gem-c-step-nav__step--active step-is-shown{% endif %}" id="county-court-judgments"
             data-track-count="stepNavSection">
             <div class="gem-c-step-nav__header js-toggle-panel" data-position="2">
                 <h2 class="gem-c-step-nav__title">
@@ -75,11 +75,11 @@
                             class="js-step-title-text">
                 County court judgments
               </span><span class="gem-c-step-nav__toggle-link js-toggle-link" aria-hidden="true"
-                           hidden="">show</span></button></span>
+                           hidden="">{% if stepCat != 2 %}show{% else %}hide{% endif %}</span></button></span>
                 </h2>
             </div>
 
-            <div class="gem-c-step-nav__panel js-panel js-hidden"
+            <div class="gem-c-step-nav__panel js-panel {% if stepCat != 2 %}js-hidden{% endif %}"
                  id="step-panel-get-a-provisional-licence-2">
                 <ol class="gem-c-step-nav__list " data-length="1">
                     <li class="gem-c-step-nav__list-item js-list-item "><a data-position="2.1"
@@ -99,7 +99,7 @@
             </div>
 
         </li>
-        <li class="gem-c-step-nav__step js-step" id="liability-orders"
+        <li class="gem-c-step-nav__step js-step {% if stepCat == 3 %}gem-c-step-nav__step--active step-is-shown{% endif %}" id="liability-orders"
             data-track-count="stepNavSection">
             <div class="gem-c-step-nav__header js-toggle-panel" data-position="3">
                 <h2 class="gem-c-step-nav__title">
@@ -118,11 +118,11 @@
                             class="js-step-title-text">
                 Liability orders
               </span><span class="gem-c-step-nav__toggle-link js-toggle-link" aria-hidden="true"
-                           hidden="">show</span></button></span>
+                           hidden="">{% if stepCat != 3 %}show{% else %}hide{% endif %}</span></button></span>
                 </h2>
             </div>
 
-            <div class="gem-c-step-nav__panel js-panel js-hidden"
+            <div class="gem-c-step-nav__panel js-panel {% if stepCat != 3 %}js-hidden{% endif %}"
                  id="step-panel-driving-lessons-and-practice-3">
 
                 <ol class="gem-c-step-nav__list " data-length="4">
@@ -134,7 +134,7 @@
             </div>
 
         </li>
-        <li class="gem-c-step-nav__step js-step" id="options-for-paying-off-your-debt"
+        <li class="gem-c-step-nav__step js-step {% if stepCat == 4 %}gem-c-step-nav__step--active step-is-shown{% endif %}" id="options-for-paying-off-your-debt"
             data-track-count="stepNavSection">
             <div class="gem-c-step-nav__header js-toggle-panel" data-position="4">
                 <h2 class="gem-c-step-nav__title">
@@ -154,18 +154,18 @@
                             class="js-step-title-text">
                 Options for paying off your debt
               </span><span class="gem-c-step-nav__toggle-link js-toggle-link" aria-hidden="true"
-                           hidden="">show</span></button></span>
+                           hidden="">{% if stepCat != 4 %}show{% else %}hide{% endif %}</span></button></span>
                 </h2>
             </div>
 
-            <div class="gem-c-step-nav__panel js-panel js-hidden"
+            <div class="gem-c-step-nav__panel js-panel {% if stepCat != 4 %}js-hidden{% endif %}"
                  id="step-panel-book-and-manage-your-theory-test-5">
 
                 <ol class="gem-c-step-nav__list " data-length="5">
-                    <li class="gem-c-step-nav__list-item js-list-item "><a data-position="4.1"
+                    <li class="gem-c-step-nav__list-item js-list-item {% if stepCat == 4 and stepSubCat == 1 %}gem-c-step-nav__list-item--active{% endif %}"><a data-position="4.1"
                                                                            class="gem-c-step-nav__link js-link"
                                                                            href="/defendant-guidance/step-by-step/overview?step=4.1">Overview</a></li>
-                    <li class="gem-c-step-nav__list-item js-list-item "><a data-position="4.2"
+                    <li class="gem-c-step-nav__list-item js-list-item {% if stepCat == 4 and stepSubCat == 2 %}gem-c-step-nav__list-item--active{% endif %}"><a data-position="4.2"
                                                                            class="gem-c-step-nav__link js-link"
                                                                            href="/defendant-guidance/step-by-step/set-up-payment-plan?step=4.2">Set up a payment plan</a></li>
                     <li class="gem-c-step-nav__list-item js-list-item "><a data-position="4.3"
@@ -185,7 +185,7 @@
             </div>
 
         </li>
-        <li class="gem-c-step-nav__step js-step" id="court-action"
+        <li class="gem-c-step-nav__step js-step {% if stepCat == 5 %}gem-c-step-nav__step--active step-is-shown{% endif %}" id="court-action"
             data-track-count="stepNavSection">
             <div class="gem-c-step-nav__header js-toggle-panel" data-position="5">
                 <h2 class="gem-c-step-nav__title">
@@ -205,18 +205,18 @@
                             class="js-step-title-text">
                                     Court action
                                 </span>
-                                <span class="gem-c-step-nav__toggle-link js-toggle-link" aria-hidden="true" hidden="">show</span></button></span>
+                                <span class="gem-c-step-nav__toggle-link js-toggle-link" aria-hidden="true" hidden="">{% if stepCat != 5 %}show{% else %}hide{% endif %}</span></button></span>
                 </h2>
             </div>
 
-            <div class="gem-c-step-nav__panel js-panel js-hidden"
+            <div class="gem-c-step-nav__panel js-panel {% if stepCat != 5 %}js-hidden{% endif %}"
                  id="court-action-5">
 
                 <ol class="gem-c-step-nav__list " data-length="5">
                     <li class="gem-c-step-nav__list-item js-list-item "><a data-position="5.1"
                                                                            class="gem-c-step-nav__link js-link"
                                                                            href="https://www.gov.uk/debt-payments-from-your-wages">Having debt repayments taken from your wages</a></li>
-                    <li class="gem-c-step-nav__list-item js-list-item "><a data-position="5.2"
+                    <li class="gem-c-step-nav__list-item js-list-item {% if stepCat == 5 and stepSubCat == 2 %}gem-c-step-nav__list-item--active{% endif %}"><a data-position="5.2"
                                                                            class="gem-c-step-nav__link js-link"
                                                                            href="/defendant-guidance/step-by-step/stop-bailiff-visit?step=5.2">Stop a bailiff visit</a></li>
                 </ol>
@@ -224,7 +224,7 @@
             </div>
 
         </li>
-        <li class="gem-c-step-nav__step js-step" id="if-you-cannot-keep-up-with-payments"
+        <li class="gem-c-step-nav__step js-step {% if stepCat == 6 %}gem-c-step-nav__step--active step-is-shown{% endif %}" id="if-you-cannot-keep-up-with-payments"
             data-track-count="stepNavSection">
             <div class="gem-c-step-nav__header js-toggle-panel" data-position="6">
                 <h2 class="gem-c-step-nav__title">
@@ -245,15 +245,15 @@
                 If you cannot keep up with payments
 
               </span><span class="gem-c-step-nav__toggle-link js-toggle-link" aria-hidden="true"
-                           hidden="">show</span></button></span>
+                           hidden="">{% if stepCat != 6 %}show{% else %}hide{% endif %}</span></button></span>
                 </h2>
             </div>
 
-            <div class="gem-c-step-nav__panel js-panel js-hidden"
+            <div class="gem-c-step-nav__panel js-panel {% if stepCat != 6 %}js-hidden{% endif %}"
                  id="step-panel-book-and-manage-your-driving-test-6">
 
                 <ol class="gem-c-step-nav__list " data-length="5">
-                    <li class="gem-c-step-nav__list-item js-list-item "><a data-position="6.1"
+                    <li class="gem-c-step-nav__list-item js-list-item {% if stepCat == 6 and stepSubCat == 1 %}gem-c-step-nav__list-item--active{% endif %}"><a data-position="6.1"
                                                                            class="gem-c-step-nav__link js-link"
                                                                            href="/defendant-guidance/step-by-step/keep-up-payments?step=6.1">Change your payment plan</a></li>
                 </ol>
@@ -261,7 +261,7 @@
             </div>
 
         </li>
-        <li class="gem-c-step-nav__step js-step" id="if-you-cannot-pay-your-debts" data-track-count="stepNavSection">
+        <li class="gem-c-step-nav__step js-step {% if stepCat == 7 %}gem-c-step-nav__step--active step-is-shown{% endif %}" id="if-you-cannot-pay-your-debts" data-track-count="stepNavSection">
             <div class="gem-c-step-nav__header js-toggle-panel" data-position="7">
                 <h2 class="gem-c-step-nav__title">
               <span class="gem-c-step-nav__circle gem-c-step-nav__circle--number">
@@ -279,14 +279,14 @@
                             class="js-step-title-text">
                 If you cannot pay your debts
               </span><span class="gem-c-step-nav__toggle-link js-toggle-link" aria-hidden="true"
-                           hidden="">show</span></button></span>
+                           hidden="">{% if stepCat != 7 %}show{% else %}hide{% endif %}</span></button></span>
                 </h2>
             </div>
 
-            <div class="gem-c-step-nav__panel js-panel js-hidden" id="step-panel-when-you-pass-7">
+            <div class="gem-c-step-nav__panel js-panel {% if stepCat != 7 %}js-hidden{% endif %}" id="step-panel-when-you-pass-7">
 
                 <ol class="gem-c-step-nav__list " data-length="1">
-                    <li class="gem-c-step-nav__list-item js-list-item "><a data-position="7.1"
+                    <li class="gem-c-step-nav__list-item js-list-item {% if stepCat == 7 and stepSubCat == 1 %}gem-c-step-nav__list-item--active{% endif %}"><a data-position="7.1"
                                                                            class="gem-c-step-nav__link js-link"
                                                                            href="/defendant-guidance/step-by-step/cannot-pay?step=7.1">Apply to get a court order changed</a></li>
                     <li class="gem-c-step-nav__list-item js-list-item "><a data-position="7.2"

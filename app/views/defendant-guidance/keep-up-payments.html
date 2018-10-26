@@ -10,6 +10,12 @@ Defendants guidance
 {% endblock %}
 
 {% block beforeContent %}
+
+{% if stepByStep === true %}
+
+{% include 'includes/contextual-breadcrumb.html' %}
+
+{% else %}
 <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
         <li class="govuk-breadcrumbs__list-item">
@@ -23,12 +29,15 @@ Defendants guidance
         </li>
     </ol>
 </div>
+{% endif %}
 {% endblock %}
 
 {% block content %}
 <main role="main" id="content" class="guide">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
+
+            {% if stepByStep !== true %}
 
             <h1 class="govuk-heading-xl">
                 Manage your debts
@@ -64,11 +73,11 @@ Defendants guidance
 
                 </nav>
             </aside>
-
+            {% endif %}
         </div>
         <div class="govuk-grid-column-two-thirds">
 
-            <h1 class="part-title">
+            <h1 class="{% if stepByStep === true %}govuk-heading-xl{% else %}part-title{% endif %}">
                 If you cannot keep up with payments
             </h1>
 
@@ -132,8 +141,11 @@ Defendants guidance
 
         <div class="govuk-grid-column-one-third">
 
-            {% include 'includes/related-guidance-defendants.html' %}
-
+            {% if stepByStep === true %}
+                {% include 'includes/step-by-step-sidebar.html' %}
+            {% else %}
+                {% include 'includes/related-guidance-defendants.html' %}
+            {% endif %}
         </div>
 
     </div>

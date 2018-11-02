@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - select enforcement type
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="" method="post" class="form">
+            <div class="govuk-form-group">
+                {% from "radios/macro.njk" import govukRadios %}
+
+                {{ govukRadios({
+                idPrefix: "enforcement-type",
+                name: "enforcement-type",
+                fieldset: {
+                legend: {
+                text: "How do you want to enforce payment?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+                }
+                },
+                hint: {
+                text: "You'll need to choose the enforcement method best suited to you."
+                },
+                items: [
+                {
+                value: "order-to-obtain-information-on-finances",
+                text: "Order to Obtain Information on finances",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "The court fee is £55"
+                }
+                },
+                {
+                value: "writ-of-control",
+                text: "Writ of control",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "The court fee is £66"
+                }
+                },
+                {
+                value: "warrant-of-control",
+                text: "Warrant of control",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "The court fee is £110"
+                }
+                },
+                {
+                value: "attachment-of-earnings",
+                text: "Attachment of earnings order",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "The court fee is £110"
+                }
+                },
+                {
+                value: "third-party-debt-order",
+                text: "Third party debt order",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "The court fee is £110"
+                }
+                },
+                {
+                value: "charging-order",
+                text: "Charging order",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "The court fee is £110"
+                }
+                }
+                ]
+                }) }}
+            </div>
+
+            <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

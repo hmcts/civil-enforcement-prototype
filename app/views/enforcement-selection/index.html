@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - select enforcement type
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="" method="post" class="form">
+            <div class="govuk-form-group">
+                {% from "radios/macro.njk" import govukRadios %}
+
+                {{ govukRadios({
+                idPrefix: "enforcement-type",
+                name: "enforcement-type",
+                fieldset: {
+                legend: {
+                text: "How do you want to enforce payment?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+                }
+                },
+                hint: {
+                text: "You'll need to choose the enforcement method best suited to you."
+                },
+                items: [
+                {
+                value: "bailiff",
+                text: "Send bailiffs to collect payment",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "You can ask the court to send bailiffs to collect the money. You’ll need to apply for either a writ of control or a warrant of control."
+                }
+                },
+                {
+                value: "attachment-of-earnings",
+                text: "Get money deducted from wages",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "You can ask the court to send an order to their employer ordering the employer to take money from their wages. The court fee is £110"
+                }
+                },
+                {
+                value: "third-party-debt-order",
+                text: "Freeze assets or money in an account",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "You can ask the court to freeze money in their bank, building society or business account. The court fee is £110"
+                }
+                },
+                {
+                value: "charging-order",
+                text: "Charge the debtor’s land or property",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "You can ask the court to charge the debtor’s land or property. If they sell any land or property, they must first pay their debt to you before they get their money. The court fee is £110"
+                }
+                }
+                ]
+                }) }}
+            </div>
+            {% from "details/macro.njk" import govukDetails %}
+
+            {{ govukDetails({
+              summaryText: "Other ways to enforce payment",
+              text: "Ask the court to order the person or business who owes you money to attend court to give evidence of their finances, for example bills and statements.
+
+            The court fee is £55."
+            }) }}
+
+            <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

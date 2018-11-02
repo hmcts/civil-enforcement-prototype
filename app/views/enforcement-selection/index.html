@@ -14,6 +14,20 @@ Civil Enforcement - select enforcement type
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+        {% if hasErrors %}
+        {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+        {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+        {
+        text: "You need to choose how you want the court to collect your money",
+        href: "#"
+        }
+        ]
+        }) }}
+        {% endif %}
+
         <form action="" method="post" class="form">
             <div class="govuk-form-group">
                 {% from "radios/macro.njk" import govukRadios %}
@@ -23,13 +37,13 @@ Civil Enforcement - select enforcement type
                 name: "enforcement-type",
                 fieldset: {
                 legend: {
-                text: "How do you want to enforce payment?",
+                text: "How do you want the court to collect your money?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
                 }
                 },
                 hint: {
-                text: "You'll need to choose the enforcement method best suited to you."
+                text: "You'll need to provide information on the debtor. Make sure you're applying for the right method by reading its criteria."
                 },
                 items: [
                 {
@@ -69,20 +83,23 @@ Civil Enforcement - select enforcement type
                 classes: "govuk-label--s"
                 },
                 hint: {
-                text: "You can ask the court to charge the debtor’s land or property. If they sell any land or property, they must first pay their debt to you before they get their money. The court fee is £110"
+                text: "Apply for a charging order. The court fee is £110"
                 }
                 }
                 ]
                 }) }}
             </div>
-            {% from "details/macro.njk" import govukDetails %}
-
-            {{ govukDetails({
-              summaryText: "Other ways to enforce payment",
-              text: "Ask the court to order the person or business who owes you money to attend court to give evidence of their finances, for example bills and statements.
-
-            The court fee is £55."
-            }) }}
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Apply to find out their financial situation
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <p>Ask the court to order the person or business who owes you money to <a href="https://www.gov.uk/government/publications/form-n39-order-to-attend-court-for-questioning">attend court to give evidence of their finances</a>, for example bills and statements.</p>
+                    <p>The court fee is £55.</p>
+                </div>
+            </details>
 
             <button class="govuk-button">Continue</button>
         </form>

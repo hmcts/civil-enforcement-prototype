@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - select writ of control type
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% set mainClasses = "govuk-main-wrapper--l" %}
+
+        {% from "panel/macro.njk" import govukPanel %}
+
+                {{ govukPanel({
+                titleText: "Application complete",
+                html: "Your reference number<br><strong>HDJ2123F</strong>"
+                }) }}
+
+                <p class="govuk-body">We have sent you a confirmation email.</p>
+
+                <h3 class="govuk-heading-m">What happens next</h3>
+
+                <p class="govuk-body">
+                    We’ve sent your application for a writ of control to XXXX.
+                </p>
+                <p class="govuk-body">
+                    They will contact you either to confirm your application, or to ask for more information.
+                </p>
+
+                <p class="govuk-body">
+                    <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+                </p>
+            </div>
+        </div>
+
+{% endblock %}

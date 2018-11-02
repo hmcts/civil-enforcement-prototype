@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - select writ of control type
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/enforcement-selection/bailiffs"
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+        <form action="" method="post" class="form">
+
+            <div class="govuk-form-group">
+               {% from "radios/macro.njk" import govukRadios %}
+               {% from "input/macro.njk" import govukInput %}
+
+               {% set emailHtml %}
+               {{ govukInput({
+                 id: "contact-by-email",
+                 name: "contact-by-email",
+                 type: "email",
+                 classes: "govuk-!-width-one-third",
+                 label: {
+                   text: "Email address"
+                 }
+               }) }}
+               {% endset -%}
+
+               {% set phoneHtml %}
+               {{ govukInput({
+                 id: "contact-by-phone",
+                 name: "contact-by-phone",
+                 type: "tel",
+                 classes: "govuk-!-width-one-third",
+                 label: {
+                   text: "Phone number"
+                 }
+               }) }}
+               {% endset -%}
+
+               {% set textHtml %}
+               {{ govukInput({
+                 id: "contact-by-text",
+                 name: "contact-by-text",
+                 type: "tel",
+                 classes: "govuk-!-width-one-third",
+                 label: {
+                   text: "Mobile phone number"
+                 }
+               }) }}
+               {% endset -%}
+
+               {{ govukRadios({
+                 idPrefix: "how-contacted-conditional",
+                 name: "how-contacted",
+                 fieldset: {
+                   legend: {
+                     text: "How much would you like to enforce?",
+                     isPageHeading: true,
+                     classes: "govuk-fieldset__legend--xl"
+                   }
+                 },
+                 hint: {
+                   text: "You can choose to enforce the full judgement amount or anything up to this amount."
+                 },
+                 items: [
+                   {
+                     value: "full-amount",
+                     text: "Full amount: £6543.21"
+                   },
+                   {
+                     value: "partial-amount",
+                     text: "Less than this amount",
+                     conditional: {
+                       html: '<div class="govuk-form-group">
+                <label class="govuk-label" for="partial-amount-value">
+                    Amount to enforce
+                </label>
+
+
+                <input class="govuk-input govuk-!-width-one-third" id="partial-amount-value" name="partial-amount-value" type="text">
+            </div>'
+                     }
+
+                   }
+                 ]
+               }) }}
+            </div>
+
+            <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

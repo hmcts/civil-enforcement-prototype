@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - select writ of control type
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/writs/select-hceo"
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Check your answers before sending your application
+        </h1>
+
+        <!-- only add a heading for a list if there is more than one list -->
+        <h2 class="govuk-heading-m">
+            Debtor's details
+        </h2>
+
+        <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+        <!--   * `app-check-your-answers--short` for short questions -->
+        <!--   * `app-check-your-answers__questions-long` for long questions -->
+        <!--   * none for single group of q&a -->
+        <dl class="app-check-your-answers app-check-your-answers--short">
+
+            <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                    Home address
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    72 Guild Street<br>
+                    London<br>
+                    SE23 6FH
+                </dd>
+                <dd class="app-check-your-answers__change">
+                    <a href="#">
+                        Change<span class="govuk-visually-hidden"> home address</span>
+                    </a>
+                </dd>
+            </div>
+
+        </dl>
+
+
+        <h2 class="govuk-heading-m">
+            Application details
+        </h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                    Amount to enforce
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    £6543.21
+                </dd>
+                <dd class="app-check-your-answers__change">
+                    <a href="#">
+                        Change<span class="govuk-visually-hidden"> licence type</span>
+                    </a>
+                </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                    High Court Enforcement Officer
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    Assign automatically
+                </dd>
+                <dd class="app-check-your-answers__change">
+                    <a href="#">
+                        Change<span class="govuk-visually-hidden"></span>
+                    </a>
+                </dd>
+            </div>
+
+        </dl>
+
+
+        <h2 class="govuk-heading-m">Now send your application</h2>
+
+        <p>
+            By submitting this application for a writ of control, you are confirming that, to the best of your knowledge, the details you are providing are correct.
+        </p>
+
+        <a class="govuk-button" href="payment" role="button">
+            Accept and send application
+        </a>
+
+    </div>
+</div>
+{% endblock %}

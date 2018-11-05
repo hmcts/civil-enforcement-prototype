@@ -92,6 +92,7 @@ if (env === 'production' && useAuth === 'true') {
 var appViews = [
   path.join(__dirname, '/node_modules/govuk-frontend/'),
   path.join(__dirname, '/node_modules/govuk-frontend/components'),
+  path.join(__dirname, 'node_modules/@hmcts/frontend/components/'),
   path.join(__dirname, '/app/views/'),
   path.join(__dirname, '/lib/')
 ]
@@ -121,6 +122,7 @@ if (useDocumentation) {
   var documentationViews = [
     path.join(__dirname, '/node_modules/govuk-frontend/'),
     path.join(__dirname, '/node_modules/govuk-frontend/components'),
+    path.join(__dirname, 'node_modules/@hmcts/frontend/components/'),
     path.join(__dirname, '/docs/views/'),
     path.join(__dirname, '/lib/')
   ]
@@ -370,5 +372,8 @@ utils.findAvailablePort(app, function (port) {
     })
   }
 })
+
+app.use('/assets', express.static(path.join(__dirname, '/node_modules/@hmcts/frontend/assets')))
+app.use('/node_modules/hmcts-frontend', express.static(path.join(__dirname, '/node_modules/@hmcts/frontend')))
 
 module.exports = app

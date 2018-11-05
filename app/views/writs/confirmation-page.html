@@ -7,7 +7,13 @@ Civil Enforcement - select writ of control type
 {% endblock %}
 
 {% block beforeContent %}
-
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -33,6 +39,8 @@ Civil Enforcement - select writ of control type
                 <p class="govuk-body">
                     They will contact you either to confirm your application, or to ask for more information.
                 </p>
+
+        <p><a href="/dashboard/case-alt?enforcement=true" class="govuk-button">Return to account</a></p>
 
                 <p class="govuk-body">
                     <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)

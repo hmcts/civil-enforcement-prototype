@@ -5,6 +5,7 @@ const router = express.Router()
 require('./routes/step-by-step.js')(router)
 require('./routes/enforcement-selection.js')(router)
 require('./routes/writs.js')(router)
+require('./routes/dashboard.js')(router)
 require('./routes/govuk-pay.js')(router)
 
 module.exports = router

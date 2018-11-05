@@ -1,0 +1,180 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+OCMC Dashboard
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/dashboard/"
+}) }}
+    <h1 class="govuk-heading-l">
+        <span class="heading-secondary">Claim number:</span>
+
+        391MC645
+
+    </h1>
+
+    {% from "tabs/macro.njk" import govukTabs %}
+    {% from "table/macro.njk" import govukTable %}
+
+    {% set pastDayHtml %}
+    {% if enforcement !== 'true' %}
+
+    <h2 class="govuk-heading-m">A County Court Judgment (CCJ) has been issued.</h2>
+    <div class="">
+        <p>A judgement has been passed confirming that the court orders the Mary Richards pay you £6543.21.</p>
+    </div>
+
+    {% else %}
+
+    <h2 class="govuk-heading-m">An application for enforcement by High Court bailiffs has been received</h2>
+    {% from "progress-bar/macro.njk" import hmctsProgressBar %}
+
+    {{ hmctsProgressBar({
+    items: [{
+    label: {
+    text: 'You apply'
+    },
+    complete: true
+    }, {
+    label: {
+    text: 'The court decides'
+    },
+    active: true
+    }, {
+    label: {
+    text: 'You are notified'
+    }
+    }, {
+    label: {
+    text: 'You may serve writ'
+    }
+    }]
+    }) }}
+    <p>You will be notified when a decision has been made.</p>
+    {% endif %}
+
+
+    <h2 class="govuk-heading-m">Next steps</h2>
+
+    {% if enforcement !== 'true' %}
+
+    <h3 class="govuk-heading-s">If Mary Richards doesn't pay</h3>
+
+    <p>You can apply to have <a href="/enforcement-selection/">the court collect your money</a>.</p>
+
+    {% endif %}
+
+    <h3 class="govuk-heading-s">Cancel your claim</h3>
+
+    <p>
+        You can <a href="#">cancel your claim</a>. For example, if you’ve been paid or don’t want to continue your case against the defendant.
+    </p>
+
+    {% endset -%}
+
+    {% set pastWeekHtml %}
+    <div class="history-timeline last">
+        <!--todo writ application should be included -->
+
+        {% from 'timeline/macro.njk' import hmctsTimeline %}
+
+        {{hmctsTimeline({
+        events: [
+        {
+        title: 'County Court Judgment (CCJ)',
+        by: 'High Court',
+        dateUtc: '2017-12-05T09:10',
+        date: '5 Nov 2018',
+        time: '9:10am',
+        documents: [{
+        name: 'County Court Judgement',
+        href: '#1'
+        }]
+        },
+        {
+        title: 'You requested a County Court Judgment (CCJ)',
+        by: 'you',
+        dateUtc: '2018-01-25T14:04',
+        date: '25 Oct 2018',
+        time: '14:04pm'
+        },
+        {
+        title: 'Mary Richards (defendant) failed to respond',
+        by: 'system',
+        dateUtc: '2017-12-05T09:10',
+        date: '22 Oct 2018',
+        time: '9:00am'
+        },
+        {
+        title: 'Claim lodged',
+        by: 'you',
+        dateUtc: '2017-11-20T14:27',
+        date: '8 Oct 2018',
+        time: '14:27pm'
+        }
+        ]
+        }) }}
+
+    </div>
+    {% endset -%}
+
+    {{ govukTabs({
+      items: [
+        {
+          label: "Claim status",
+          id: "past-day",
+          panel: {
+            html: pastDayHtml
+          }
+        },
+        {
+          label: "Claim history",
+          id: "past-week",
+          panel: {
+            html: pastWeekHtml
+          }
+        }
+      ]
+    }) }}
+
+</div>
+    <div class="govuk-grid-column-one-third">
+        <div class="meta-data">
+            <h3 class="govuk-heading-m" style="padding-top: 50px">About claim</h3>
+            <ul role="navigation" class="govuk-list list-bullet">
+                <li><strong class="bold">Defendant name:</strong><br> <a href="#">Mary Richards</a>
+                </li>
+
+                <li><strong class="bold">Claim amount:</strong><br>£6543.21</li>
+<!--todo amount should include £66 writ fee -->
+                <li><strong class="bold">Claim details:</strong><br><a href="#">Download claim</a></li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

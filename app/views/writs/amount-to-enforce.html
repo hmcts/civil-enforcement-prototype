@@ -7,7 +7,13 @@ Civil Enforcement - select writ of control type
 {% endblock %}
 
 {% block beforeContent %}
-
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -23,6 +29,7 @@ Civil Enforcement - select writ of control type
 
 
         <form action="" method="post" class="form">
+            <!--todo amount should include £66 writ fee -->
 
             <div class="govuk-form-group">
                {% from "radios/macro.njk" import govukRadios %}

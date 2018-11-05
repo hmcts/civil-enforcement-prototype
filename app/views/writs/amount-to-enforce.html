@@ -69,26 +69,26 @@ Civil Enforcement - select writ of control type
                  name: "how-contacted",
                  fieldset: {
                    legend: {
-                     text: "How much would you like to enforce?",
+                     text: "Do you want the bailiff to collect the full debt of £6543.21?",
                      isPageHeading: true,
                      classes: "govuk-fieldset__legend--xl"
                    }
                  },
                  hint: {
-                   text: "You can choose to enforce the full judgement amount or anything up to this amount."
+                   stext: "This is the hint section."
                  },
                  items: [
                    {
                      value: "full-amount",
-                     text: "Full amount: £6543.21"
+                     text: "Yes"
                    },
                    {
                      value: "partial-amount",
-                     text: "Less than this amount",
+                     text: "No",
                      conditional: {
                        html: '<div class="govuk-form-group">
                 <label class="govuk-label" for="partial-amount-value">
-                    Amount to enforce
+                    How much do you want the bailiff to collect?
                 </label>
 
 

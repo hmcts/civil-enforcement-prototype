@@ -1,0 +1,28 @@
+{% if writApproved === 'true' %}
+
+<h3 class="govuk-heading-s">Serve bailiffs</h3>
+<p>In 7 days, you can serve ABC Bailiffs Ltd and they will attempt to retrieve £6543.21 from Mary Richards.</p>
+
+<!--<a href="#" class="govuk-button">Instruct bailiffs</a>-->
+
+{% endif %}
+
+{% if enforcement !== 'true' and writApproved !== 'true'%}
+
+    <h3 class="govuk-heading-s">If Mary Richards doesn't pay</h3>
+
+    <p>You can apply to have <a href="/enforcement-selection/">the court collect your money</a>.</p>
+
+
+    <p>There is no guarantee that the court will be able get your money back. If the court cannot collect payment you will
+        be responsible for all enforcement fees.</p>
+    <!--todo this is no guarantee of payment-->
+
+{% endif %}
+
+<h3 class="govuk-heading-s">Cancel your claim</h3>
+
+<p>
+    You can <a href="#">cancel your claim</a>. For example, if you’ve been paid or don’t want to continue your case
+    against the defendant.
+</p>

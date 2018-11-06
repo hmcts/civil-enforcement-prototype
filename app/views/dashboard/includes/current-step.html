@@ -1,0 +1,61 @@
+{% if enforcement !== 'true' %}
+
+<h2 class="govuk-heading-m">A County Court Judgment (CCJ) has been issued.</h2>
+{% from "progress-bar/macro.njk" import hmctsProgressBar %}
+
+{{ hmctsProgressBar({
+items: [{
+label: {
+text: 'You apply'
+},
+complete: true
+}, {
+label: {
+text: 'Debtor is notified'
+},
+complete: true
+}, {
+label: {
+text: 'The court decides'
+},
+complete: true
+}, {
+label: {
+text: 'CCJ is issued'
+},
+active: true
+}]
+}) }}
+<div class="">
+    <p>A judgement has been passed confirming that the court orders the Mary Richards pay you £6543.21.</p>
+
+</div>
+
+{% else %}
+
+<h2 class="govuk-heading-m">An application for enforcement by High Court bailiffs has been received</h2>
+{% from "progress-bar/macro.njk" import hmctsProgressBar %}
+
+{{ hmctsProgressBar({
+items: [{
+label: {
+text: 'You apply'
+},
+complete: true
+}, {
+label: {
+text: 'The court decides'
+},
+active: true
+}, {
+label: {
+text: 'You are notified'
+}
+}, {
+label: {
+text: 'You may serve writ'
+}
+}]
+}) }}
+<p>You will be notified when a decision has been made.</p>
+{% endif %}

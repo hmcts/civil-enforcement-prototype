@@ -1,0 +1,28 @@
+<h2 class="govuk-heading-m">A writ of control has been issued</h2>
+
+{% from "progress-bar/macro.njk" import hmctsProgressBar %}
+
+{{ hmctsProgressBar({
+items: [{
+label: {
+text: 'You apply'
+},
+complete: true
+}, {
+label: {
+text: 'The court decides'
+},
+complete: true
+}, {
+label: {
+text: 'You are notified'
+},
+active: true
+}, {
+label: {
+text: 'You may serve writ'
+}
+}]
+}) }}
+
+<p>Mary Richards has been notified and high court bailiffs may be instructed after 7 days of notice.</p>

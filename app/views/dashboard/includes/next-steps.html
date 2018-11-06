@@ -1,10 +1,15 @@
 {% if writApproved === 'true' %}
 
-<h3 class="govuk-heading-s">Serve bailiffs</h3>
-<p>In 7 days, you can serve ABC Bailiffs Ltd and they will attempt to retrieve £6543.21 from Mary Richards.</p>
+    <h3 class="govuk-heading-s">Serve bailiffs</h3>
+    {% if writReady !== 'true' %}
 
-<!--<a href="#" class="govuk-button">Instruct bailiffs</a>-->
+    <p>In 7 days, you can serve ABC Bailiffs Ltd and they will attempt to retrieve £6543.21 from Mary Richards.</p>
 
+    {% else %}
+
+<p>If you serve the writ of control, the bailiff will go to Mary Richards' address to see if they can get the debt paid in full. If that’s not possible the bailiff will see if they have any possessions that the bailiff can sell at auction.</p>
+    <a href="#" class="govuk-button">Serve bailiffs</a>
+    {% endif %}
 {% endif %}
 
 {% if enforcement !== 'true' and writApproved !== 'true'%}

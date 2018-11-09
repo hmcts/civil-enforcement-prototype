@@ -1,10 +1,14 @@
 {% if writServed === 'true' %}
 
-<h3 class="govuk-heading-s">Writ served</h3>
+<h3 class="govuk-heading-s" {% if simulateTimePassing === 'true' %}id="showEmailFromHCEO"{% endif %}>Writ served</h3>
 
 <p>ABC Bailiffs Ltd have been instructed to retrieve £6543.21 from {{defendant}}.</p>
 
-<p>Cancel action?</p>
+<!--<p>Cancel action?</p>-->
+    {% if simulateTimePassing === 'true' %}
+        {% include 'includes/days-passing.html' %}
+    {% endif %}
+
 
 {% elseif writReady !== 'true' %}
 

@@ -14,6 +14,7 @@ module.exports = function (router) {
 
   router.get(['/dashboard/case'], function (req, res) {
     var defendant = req.query.defendant || 'Andrew Smith'
+    var simulateTimePassing = req.query.simulateTimePassing || false
     var CCJrequested = req.query.CCJrequested || false
     var CCJapproved = req.query.CCJapproved || false
     var writApproved = req.query.writApproved || false
@@ -21,6 +22,7 @@ module.exports = function (router) {
     var writServed = req.query.writServed || false
     res.render('dashboard/case.html', {
       defendant: defendant,
+      simulateTimePassing: simulateTimePassing,
       CCJrequested: CCJrequested,
       CCJapproved: CCJapproved,
       writApproved: writApproved,

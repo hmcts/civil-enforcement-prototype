@@ -21,74 +21,30 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 {% endblock %}
 
 {% block content %}
+
 <div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds">
+        {% from "back-link/macro.njk" import govukBackLink %}
+
+        {{ govukBackLink({
+        text: "Back",
+        href: "/dashboard/"
+        }) }}
+        <span class="govuk-caption-xl">Claim number:</span>
         <h1 class="govuk-heading-l">
-            <span class="heading-secondary">Claim number:</span>
-
             391MC645
-
         </h1>
 
-        <div id="tabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
-            <div class="nav-tabs">
-                <ul class="tabs-nav ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header"
-                    role="tablist">
-                    <li role="tab" tabindex="0"
-                        class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active"
-                        aria-controls="tabs-1" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true"><a
-                            href="#tabs-1" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-1">Claim
-                        status <span class="alert-icon stat"></span></a></li>
-                    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab"
-                        aria-controls="tabs-2" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false"><a
-                            href="#tabs-2" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-2">Claim
-                        history</a></li>
+        <h2 class="govuk-heading-m">Claim status</h2>
+        {% if writApproved === 'true' %}
 
+        {% else %}
 
-                </ul>
-            </div>
+        {% endif %}
 
-            <style> .alert-icon.stat {
-                display: none
-            }</style>
+        {% include 'dashboard/includes/next-steps.html' %}
 
-
-            <div class="tab-content">
-                <h2 class="heading-medium">Claim status</h2>
-                <div id="tabs-1" class="tab-pane ui-tabs-panel ui-corner-bottom ui-widget-content"
-                     aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false">
-
-                    <div class="status-block single">
-                        <h2 class="heading-small">You've requested a County Court Judgment (CCJ)</h2>
-
-                        <p>We'll contact you within 5 days to tell you whether the judgment has been entered.</p>
-
-                        <p>Andrew Smith can no longer respond to the claim using this service - they may have responded
-                            by
-                            post.</p>
-
-                    </div>
-
-
-                </div>
-
-
-                <hr>
-
-                <!-- with discontinuance -->
-                <!--
-                <h2 class="heading-small">End the claim</h2>
-                <p>If you've already been paid, have settled out of court, or don't want to take the claim any further, you can <a href="discontinue">end the claim</a>.</p>
-                -->
-
-                <!-- without discontinuance -->
-                <h2 class="heading-small">Settling the claim</h2>
-                <p>If the defendant has paid you, <a href="paid-in-full/claimant?endClaim=yes">you need to tell us</a>.
-
-
-                </p></div>
-        </div>
-    </header>
-</div>
+    </div>
+    {% include 'dashboard/includes/sidebar.html' %}
 </div>
 {% endblock %}

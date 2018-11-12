@@ -21,7 +21,7 @@ module.exports = function (router) {
         redirect = '/claimant-guidance/send-bailiffs-to-collect-payment#warrant'
         break
       case 'writ-of-control' :
-        redirect = '/writs/'
+        redirect = '/writs/cmc/1'
         break
       default :
         redirect = '/enforcement-selection/bailiffs'

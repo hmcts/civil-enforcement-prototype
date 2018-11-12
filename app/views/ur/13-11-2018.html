@@ -39,30 +39,33 @@ Claimants - 13/11/2018
 
         <!--<h3 class="govuk-heading-s">HCEOs</h3>-->
 
+        <a href="/notifications/claimant/email1" class="govuk-button govuk-button--start">Start</a>
 
         <ul class="govuk-list govuk-list--number">
+
+            <li>Flow diagrams
+                <ol class="list list-number">
+                    <li><a href="/public/pdf/13-11-2018%20Claimant%20Flow.pdf" target="_blank">Flow diagram for testing</a></li>
+                </ol>
+            </li>
+
+            <li>Dashboard pages
+                <ol class="list list-number">
+                    <li><a href="/dashboard/case" target="_blank">Dashboard - start point - must request CCJ</a></li>
+                    <li><a href="/dashboard/case?CCJrequested=true&simulateTimePassing=true" target="_blank">Dashboard - CCJ requested</a></li>
+                    <li><a href="/dashboard/case?CCJapproved=true" target="_blank">Dashboard - CCJ approved</a></li>
+                    <!--<li><a href="/dashboard/case?writApproved=true" target="_blank">Dashboard - Writ approved but not ready (necessary?)</a></li>-->
+                    <li><a href="/dashboard/case?writApproved=true&writReady=true" target="_blank">Dashboard - Writ approved and ready to serve</a></li>
+                    <li><a href="/dashboard/case?writServed=true" target="_blank">Dashboard - Writ served</a></li>
+                </ol>
+            </li>
+
             <li>Notifications (emails)
                 <ol class="list list-number">
                     <li><a href="/notifications/claimant/email1" target="_blank">Email - No response from defendant. Next steps</a></li>
                     <li><a href="/notifications/claimant/email2" target="_blank">Email - Judgment registered - take court action to get your money back. Next steps</a></li>
                     <li><a href="/notifications/claimant/email3" target="_blank">Email - Writ of control issued. Next steps</a></li>
-                    <li><a href="/notifications/claimant/email4" target="_blank">Email - From HCEO - must change this!!!</a></li>
-                </ol>
-            </li>
-            <li>Dashboard pages
-                <ol class="list list-number">
-                    <li><a href="/dashboard/case" target="_blank">Dashboard - start point - must request CCJ</a></li>
-                    <li><a href="/dashboard/case?CCJrequested=true" target="_blank">Dashboard - CCJ requested</a></li>
-                    <li><a href="/dashboard/case?CCJapproved=true" target="_blank">Dashboard - CCJ approved</a></li>
-                    <!--<li><a href="/dashboard/case?writApproved=true" target="_blank">Dashboard - Writ approved but not ready (necessary?)</a></li>-->
-                    <li><a href="/dashboard/case?writApproved=true&writReady=true" target="_blank">Dashboard - Writ approved and ready to serve (necessary?)</a></li>
-                    <li><a href="/dashboard/case?writServed=true" target="_blank">Dashboard - Writ served</a></li>
-                </ol>
-            </li>
-
-            <li>Flow diagrams
-                <ol class="list list-number">
-                    <li><a href="/public/pdf/13-11-2018%20Claimant%20Flow.pdf" target="_blank">Flow diagram for testing</a></li>
+                    <li><a href="/notifications/claimant/email4" target="_blank">Email - From HCEO</a></li>
                 </ol>
             </li>
 

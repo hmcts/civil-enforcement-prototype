@@ -7,12 +7,16 @@ if (window.console && window.console.info) {
 
 function waitAndRedirect (page, waitTime) {
   var theWaitTime = waitTime || 3000
-  $('#daysPassing').addClass('active')
-  setTimeout(function () { document.location.href = page }, theWaitTime)
+  $('#triggerDaysPassing').addClass('active')
+  $('#triggerDaysPassing').on('click', function () {
+    $('#daysPassing').addClass('active')
+    $('#triggerDaysPassing').removeClass('active')
+    setTimeout(function () { document.location.href = page }, theWaitTime)
+    return false
+  })
 }
 
 function daysPass (page, waitTime, days) {
-  console.log('daysPass')
   var theDays = days || 5
   var theWaitTime = 200 * theDays || 5000
   setTimeout(function () { waitAndRedirect(page, waitTime) }, theWaitTime)

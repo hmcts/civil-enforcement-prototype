@@ -27,6 +27,22 @@ $bg-color: #fff;
   }
 }
 
+#triggerDaysPassing {
+  position: absolute;
+  right:-100%;
+  top: 50%;
+  background: #eaeaea;
+  box-shadow: 1px 1px 10px 3px #ccc;
+  border: 2px solid #fff;
+  transition: right 1s;
+  &:hover {
+    cursor: pointer;
+  }
+  &.active {
+    right: 0;
+  }
+}
+
 .spinner {
   position: relative;
   width: $basic-spinner-dimensions;

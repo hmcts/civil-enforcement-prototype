@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - writ of control
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+text: "Back",
+href: "/enforcement-selection/bailiffs"
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Recover judgment debt</h1>
+
+        {% from "inset-text/macro.njk" import govukInsetText %}
+
+        {{ govukInsetText({
+          text: "The balance outstanding on the judgment is £6543.21. The defendant was ordered to pay instalments of £120 every week.
+        "
+        }) }}
+
+        <form action="6" method="post" class="form">
+
+{% from "radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "how-much-to-recover",
+  name: "how-much-to-recover",
+  fieldset: {
+    legend: {
+      text: "How much do you want to try to recover?
+            ",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "full",
+      text: "Full amount - £6543.21"
+    },
+    {
+      value: "minimum",
+      text: "Minimum amount - £480"
+    },
+    {
+      value: "other",
+      text: "Another amount",
+            conditional: {
+            html: '
+            <label class="govuk-label">How much?</label>
+            <input class="govuk-input govuk-input--width-5" name="amoutPaid" id="amountPaid"/>
+            '
+            }
+    }
+  ]
+}) }}
+            <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - writ of control
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+text: "Back",
+href: "/enforcement-selection/bailiffs"
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="9" method="post" class="form">
+{% from "radios/macro.njk" import govukRadios %}
+{% from "input/macro.njk" import govukInput %}
+
+{{ govukRadios({
+  idPrefix: "how-contacted-conditional",
+  name: "how-contacted",
+  fieldset: {
+    legend: {
+      text: "Is this the right phone number to contact the defendant?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+            html: '
+            <div class="panel panel-border-wide">
+                <h3 class="heading-small">07824999612</h3>
+            </div>
+            <p>The court will try to phone Mary Richards to ask for payment.</p>
+            ',
+    stext: "Select one option."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No, use a different phone number",
+      conditional: {
+            html: '
+            <label class="govuk-label">Enter their mobile or home number</label>
+            <input class="govuk-input govuk-input--width-20" name="amoutPaid" id="amountPaid"/>
+            <!-- todo put address finder here -->
+            '
+            }
+      }
+
+  ]
+}) }}
+            <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

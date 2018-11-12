@@ -26,23 +26,32 @@ href: "/enforcement-selection/bailiffs"
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Before you decide how to continue</h1>
+        <h1 class="govuk-heading-l">Before you apply</h1>
 
-        <p>You should consider whether you are likely to get your money.</p>
+        <p class="govuk-body-lead">You are about to apply for a High Court bailiff to collect money from Andrew Smith
+            using a Writ of Control.</p>
 
-        <p>Consider whether Mary Richards:</p>
+        <p>Before making an application you should consider if Andrew Smith will be able to pay the debt right now. You
+            may not be able to get your money back if Andrew Smith:</p>
 
         <ul class="govuk-list govuk-list--bullet">
-            <li>owns any goods or assets that could be taken and sold at auction</li>
-            <li>owes other people money or has other court judgments
+            <li>is a vulnerable person - has a physical disability or mental illness made worse by a bailiff visit</li>
+            <li>does not have an income
             </li>
-            <li>is owed money by anyone else
+            <li>does not have any luxury items, such as a TV or games console
             </li>
         </ul>
 
-        <p>The court can't guarantee you'll get your money back.</p>
+        {% from "warning-text/macro.njk" import govukWarningText %}
 
-        <a href="2" class="govuk-button">I confirm I've read this</a>
+        {{ govukWarningText({
+        html: 'If a High Court bailiff cannot collect money from Andrew Smith, you will need to pay all the fees for their service',
+          iconFallbackText: "Warning"
+        }) }}
+
+        <p>You will also need to pay for another application at a later date, if you want to try again.</p>
+
+        <a href="3" class="govuk-button">Continue</a>
 
     </div>
 </div>

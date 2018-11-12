@@ -21,12 +21,12 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 {{ govukBackLink({
 text: "Back",
-href: "/enforcement-selection/bailiffs"
+href: "7"
 }) }}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form action="9" method="post" class="form">
+        <form action="select-hceo" method="post" class="form">
 {% from "radios/macro.njk" import govukRadios %}
 {% from "input/macro.njk" import govukInput %}
 
@@ -45,7 +45,7 @@ href: "/enforcement-selection/bailiffs"
             <div class="panel panel-border-wide">
                 <h3 class="heading-small">07824999612</h3>
             </div>
-            <p>The court will try to phone Mary Richards to ask for payment.</p>
+            <p>The High Court Enforcement Officers will try to phone Andrew Smith to ask for payment.</p>
             ',
     stext: "Select one option."
   },
@@ -68,6 +68,11 @@ href: "/enforcement-selection/bailiffs"
 
   ]
 }) }}
+
+            <button type="button" class="govuk-button hmcts-button--secondary  hmcts-add-another__add-button  govuk-!-margin-bottom-4">
+                Add more contact details
+            </button>
+            <br>
             <button class="govuk-button">Continue</button>
         </form>
 

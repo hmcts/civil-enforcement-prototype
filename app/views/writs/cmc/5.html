@@ -21,56 +21,54 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 {{ govukBackLink({
 text: "Back",
-href: "/enforcement-selection/bailiffs"
+href: "4"
 }) }}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Recover judgment debt</h1>
+        <form action="7" method="post" class="form">
+            <div class="govuk-form-group">
+                {% from "radios/macro.njk" import govukRadios %}
+                {% from "input/macro.njk" import govukInput %}
 
-        {% from "inset-text/macro.njk" import govukInsetText %}
+                {{ govukRadios({
+                idPrefix: "how-contacted-conditional",
+                name: "how-contacted",
+                fieldset: {
+                legend: {
+                text: "Do you want the bailiff to collect the full debt of £6609.21?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+                }
+                },
+                hint: {
+                    text: "This includes the £66 court fee to apply for a Writ of Control."
+                },
+                items: [
+                {
+                value: "full-amount",
+                text: "Yes"
+                },
+                {
+                value: "partial-amount",
+                text: "No",
+                conditional: {
+                html: '<div class="govuk-form-group">
+                <label class="govuk-label" for="partial-amount-value">
+                    How much do you want the bailiff to collect?
+                </label>
 
-        {{ govukInsetText({
-          text: "The balance outstanding on the judgment is £6543.21. The defendant was ordered to pay instalments of £120 every week.
-        "
-        }) }}
 
-        <form action="6" method="post" class="form">
+                <input class="govuk-input govuk-!-width-one-third" id="partial-amount-value" name="partial-amount-value" type="text">
+            </div>'
+                }
 
-{% from "radios/macro.njk" import govukRadios %}
+                }
+                ]
+                }) }}
+            </div>
 
-{{ govukRadios({
-  idPrefix: "how-much-to-recover",
-  name: "how-much-to-recover",
-  fieldset: {
-    legend: {
-      text: "How much do you want to try to recover?
-            ",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "full",
-      text: "Full amount - £6543.21"
-    },
-    {
-      value: "minimum",
-      text: "Minimum amount - £480"
-    },
-    {
-      value: "other",
-      text: "Another amount",
-            conditional: {
-            html: '
-            <label class="govuk-label">How much?</label>
-            <input class="govuk-input govuk-input--width-5" name="amoutPaid" id="amountPaid"/>
-            '
-            }
-    }
-  ]
-}) }}
+
             <button class="govuk-button">Continue</button>
         </form>
 

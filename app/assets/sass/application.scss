@@ -9731,3 +9731,13 @@ $govuk-global-styles: true;
     margin-top: -20px;
   }
 }
+
+.hmcts-button--secondary {
+  background-color: #dee0e2;
+  box-shadow: 0 2px 0 rgba(111, 119, 123, 0.7);
+  color: #0b0c0c;
+  &:hover, &:focus {
+    background-color: rgba(191, 193, 195, 0.7);
+    color: #0b0c0c;
+  }
+}

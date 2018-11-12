@@ -11,6 +11,13 @@ function waitAndRedirect (page, waitTime) {
   $('#triggerDaysPassing').on('click', function () {
     $('#daysPassing').addClass('active')
     $('#triggerDaysPassing').removeClass('active')
+    for (var i = 0; i <= days; ++i) {
+      setTimeout((function (x) {
+        return function () {
+          $('#days').html(x)
+        }
+      })(i), i * 1000)
+    }
     setTimeout(function () { document.location.href = page }, theWaitTime)
     return false
   })
@@ -18,8 +25,22 @@ function waitAndRedirect (page, waitTime) {
 
 function daysPass (page, waitTime, days) {
   var theDays = days || 5
-  var theWaitTime = 200 * theDays || 5000
-  setTimeout(function () { waitAndRedirect(page, waitTime) }, theWaitTime)
+  var theWaitTime = waitTime || 3000
+  setTimeout(function () {
+    $('#triggerDaysPassing').addClass('active')
+  }, theWaitTime)
+  $('#triggerDaysPassing').on('click', function () {
+    $('#daysPassing').addClass('active')
+    $('#triggerDaysPassing').removeClass('active')
+    for (var i = 0; i <= days; ++i) {
+      setTimeout((function (x) {
+        return function () {
+          $('#days').html(x)
+        }
+      })(i), i * 1000)
+    }
+    setTimeout(function () { document.location.href = page }, theWaitTime)
+  })
 }
 
 if ($('#CCJrequested').length === 1) {

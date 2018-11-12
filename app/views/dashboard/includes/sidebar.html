@@ -5,7 +5,7 @@
             <li><strong class="bold">Defendant name:</strong><br> <a href="#">{{defendant}}</a>
             </li>
 
-            <li><strong class="bold">Claim amount:</strong><br>£6543.21</li>
+            <li><strong class="bold">Claim amount:</strong><br>{% if writReady === 'true' or writApproved === 'true' or writServed === 'true' %}£6609.21{% else %}£6543.21{% endif %}</li>
             <!--todo amount should include £66 writ fee -->
             <li><strong class="bold">Claim details:</strong><br><a href="#">Download claim</a></li>
 

@@ -44,7 +44,7 @@ function daysPass (page, waitTime, days) {
 }
 
 if ($('#CCJrequested').length === 1) {
-  daysPass('/notifications/claimant/email2', 5000, 5)
+  daysPass('/notifications/claimant/email2?phoneAlert=true', 5000, 5)
 }
 
 if ($('#showEmailFromHCEO').length === 1) {

@@ -10,7 +10,7 @@
 
 <p>You can now apply to the court to collect the money for you. Depending on what information you have on Andrew Smith you can apply to:</p>
 
-<ul class="list list-bullet">
+<ul class="govuk-list govuk-list--bullet">
     <li>send a bailiff to their home or business</li>
     <li>take money from their wages</li>
     <li>freeze money in their bank account</li>
@@ -22,5 +22,9 @@
 <!--<p><a href="/dashboard/case?CCJapproved=true" class="govuk-button">https://www.gov.uk/resolve-unpaid-claim</a></p>-->
 
 <p>Regards, RUMC (Resolve an unpaid money claim)</p>
+
+{% if phoneAlert === 'true' %}
+{% include 'includes/phone-alert.html' %}
+{% endif %}
 
 {% endblock %}

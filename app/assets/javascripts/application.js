@@ -51,6 +51,13 @@ if ($('#showEmailFromHCEO').length === 1) {
   daysPass('/notifications/claimant/email4', 5000, 5)
 }
 
+if ($('#phone-mockup').length === 1) {
+  $('#phone-mockup').on('click', function () {
+    $('#phoneBackground').toggleClass('active');
+    $(this).toggleClass('active');
+  })
+}
+
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })

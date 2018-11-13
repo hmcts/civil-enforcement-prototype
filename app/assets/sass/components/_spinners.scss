@@ -10,8 +10,8 @@ $bg-color: #fff;
   height: 100%;
   width: 100%;
   left: 0;
-  top: -100%;
   background: rgba(255,255,255, 0.9);
+  top: -100%;
   transition: top 1s;
   &.active {
     top: 0;

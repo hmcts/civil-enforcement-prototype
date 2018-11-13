@@ -1,3 +1,6 @@
+$phoneWidth : 250px;
+$phoneHeight: 510px;
+
 .visuallyhidden {
   display: none;
 }
@@ -5,4 +8,39 @@
 .js-enabled .js-hidden {
   display: none;
   visibility: hidden;
+}
+
+#phoneBackground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background: rgba(255,255,255, 1);
+  top: -100%;
+  opacity: 0;
+  transition-timing-function: ease-in-out;
+  //transition: opacity 1s;
+  transition: all 3s;
+  &.active {
+    top: 0;
+    opacity: 1;
+  }
+  #phone-mockup {
+    width: $phoneWidth;
+    top: -50%;
+    margin-top: - ($phoneHeight / 2);
+    right: 50%;
+    margin-right: -($phoneWidth / 2);
+    background: url('/public/images/phone-alert.png') no-repeat;
+    background-size: cover;
+    height: $phoneHeight;
+    position: absolute;
+    transition: all 1.5s;
+    &:hover {
+      cursor: pointer;
+    }
+    &.active {
+      top: 50%;
+    }
+  }
 }

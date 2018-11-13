@@ -16,4 +16,8 @@
 
     <p>Regards, RUMC (Resolve an unpaid money claim)</p>
 
+{% if phoneAlert === 'true' %}
+    {% include 'includes/phone-alert.html' %}
+{% endif %}
+
 {% endblock %}

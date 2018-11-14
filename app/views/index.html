@@ -1,37 +1,61 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+    Civil Enforcement prototypes
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-l">
-        Civil enforcement prototypes
-        <!--<span class="govuk-caption-xl">{{releaseVersion}}</span>-->
-      </h2>{{releaseVersion | log }}
-      <p>
-        This is a prototype that allows the civil enforcement team to test ideas and for research purposes. It is not a working software.
-      </p>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">
+                Civil enforcement prototypes
+                <!--<span class="govuk-caption-xl">{{ releaseVersion }}</span>-->
+            </h2>{{ releaseVersion | log }}
+            <p class="">
+                This is a prototype that allows the civil enforcement team to test ideas and for research purposes. It
+                is not a working software.
+            </p>
 
-      <h2 class="govuk-heading-m">Latest prototypes</h2>
+            <h2 class="govuk-heading-m">Alpha prototypes</h2>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="/claimant-guidance/">Claimant guidance</a></li>
-        <li><a href="/defendant-guidance/">Defendant guidance</a></li>
-        <li><a href="/dashboard/">First pass of claimant writ enforcement</a></li>
-        <li><a href="/dashboard/case-alt?enforcement=true">Writ applied state</a></li>
-        <li><a href="/dashboard/case-alt?writApproved=true">Writ approved state</a></li>
-        <li><a href="/dashboard/case-alt?writApproved=true&writReady=true">Writ ready to serve state</a></li>
-        <li><a href="/public/pdf/BasicStoryBoard.pdf">Story board (Claimant)</a></li>
-        <li><a href="/public/pdf/Basic story - defendants POV.pdf">Story board (Defendant)</a></li>
-        <li><a href="/public/pdf/HMCTS Court Staff version.pdf">MVP service blueprint (claimant centric) </a></li>
-        <li><a href="/public/pdf/Complete storyboard (beginning).pdf">Fuller storyboard</a></li>
-      </ul>
+            {% from "includes/index-item.njk" import indexItem %}
+
+            {{ indexItem({
+                sprint: 4,
+                dateRange: '8/11/18 - 21/11/18',
+                summary: 'First iteration of prototype added',
+                href: '/notifications/claimant/email1?phoneAlert=true',
+                scenarioList: [
+                    '<a href="/dashboard/">First pass of claimant writ enforcement</a>',
+                    '<a href="/dashboard/case-alt?enforcement=true">Writ applied state</a>',
+                    '<a href="/dashboard/case-alt?writApproved=true">Writ approved state</a>',
+                    '<a href="/dashboard/case-alt?writApproved=true&writReady=true">Writ ready to serve state</a>'
+                ],
+                supportingDocs: [
+                    '<a href="/public/pdf/BasicStoryBoard.pdf">Story board (Claimant)</a>',
+                    '<a href="/public/pdf/Basic story - defendants POV.pdf">Story board (Defendant)</a>',
+                    '<a href="/public/pdf/HMCTS Court Staff version.pdf">MVP service blueprint (claimant centric) </a>',
+                    '<a href="/public/pdf/Complete storyboard (beginning).pdf">Fuller storyboard</a>'
+                ]
+            }) }}
+
+            {{ indexItem({
+                sprint: 3,
+                dateRange: '25/10/18 - 7/11/18',
+                summary: 'Guidance added for claimants and defendants',
+                href: '/claimant-guidance/',
+                changeLog: [
+                    'Claimant guidance added',
+                    'Defendant guidance added'
+                ],
+                scenarioList: [
+                    '<a href="/claimant-guidance/">Claimant guidance</a>',
+                    '<a href="/defendant-guidance/">Defendant guidance</a>'
+                ]
+            }) }}
+
+        </div>
     </div>
-</div>
 
 {% endblock %}

@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - select enforcement type
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% from "back-link/macro.njk" import govukBackLink %}
+
+        {{ govukBackLink({
+        text: "Back",
+        href: "javascript: window.history.back(-1)"
+        }) }}
+
+        {% if hasErrors %}
+        {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+        {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+        {
+        text: "You need to choose how you want the court to collect your money",
+        href: "#"
+        }
+        ]
+        }) }}
+        {% endif %}
+
+        <form action="" method="post" class="form">
+            <div class="govuk-form-group">
+                {% from "radios/macro.njk" import govukRadios %}
+
+                {{ govukRadios({
+                idPrefix: "enforcement-type",
+                name: "enforcement-type",
+                fieldset: {
+                legend: {
+                text: "How do you want the court to collect your money?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+                }
+                },
+                hint: {
+                text: "You'll need to provide information on the debtor. Make sure you're applying for the right method by reading its criteria."
+                },
+                items: [
+                {
+                value: "bailiff",
+                text: "Send bailiffs to collect payment",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "Apply for a warrant or writ of control. The fees vary depending on how much you are owed or what type of bailiff you use."
+                }
+                },
+                {
+                value: "attachment-of-earnings",
+                text: "Get money deducted from wages",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "Apply for an attachment of earnings order. The court fee is £110."
+                }
+                },
+                {
+                value: "third-party-debt-order",
+                text: "Freeze assets or money in an account",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "Apply for a third party debt order. The court fee is £110."
+                }
+                },
+                {
+                value: "charging-order",
+                text: "Charge the debtor’s land or property",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "Apply for a charging order. The court fee is £110"
+                }
+                }
+                ]
+                }) }}
+            </div>
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Apply to find out their financial situation
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <p>Ask the court to order the person or business who owes you money to <a href="https://www.gov.uk/government/publications/form-n39-order-to-attend-court-for-questioning">attend court to give evidence of their finances</a>, for example bills and statements.</p>
+                    <p>The court fee is £55.</p>
+                </div>
+            </details>
+
+            <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

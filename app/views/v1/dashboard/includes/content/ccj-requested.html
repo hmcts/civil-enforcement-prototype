@@ -1,0 +1,13 @@
+<h2 class="govuk-heading-s" {% if simulateTimePassing === 'true' %}id="CCJrequested"{% endif %}>County Court Judgment (CCJ) requested</h2>
+
+<p>The court is reviewing your request for a CCJ and will respond in 5 days. We'll send you an email letting you know the result of your request.</p>
+
+<p>{{defendant}} can no longer respond to the claim using this service - they may contact you by post.</p>
+
+{% if simulateTimePassing === 'true' %}
+    {% from "includes/days-passing.njk" import daysPassing %}
+    {{ daysPassing({
+        url: '/v1/notifications/claimant/email2?phoneAlert=true',
+        timeToPrompt: 5000,
+        days: 5
+    }) }}{% endif %}

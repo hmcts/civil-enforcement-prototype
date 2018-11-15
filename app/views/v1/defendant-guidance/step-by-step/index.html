@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Defendants guidance - step by step
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% include 'defendant-guidance/includes/breadcrumb.html' %}
+
+{% endblock %}
+
+{% block content %}
+<main role="main" id="content" class="guide">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-l">
+                Manage your debts: step by step
+            </h1>
+
+            {% include 'defendant-guidance/includes/step-by-step-nav.html' %}
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+
+        </div>
+
+    </div>
+</main>
+{% endblock %}

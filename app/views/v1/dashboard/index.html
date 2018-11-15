@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+OCMC Dashboard
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-column-full">
+    <h1 class="govuk-heading-l heading-large">
+        Your money claims account
+    </h1>
+
+    <p><a class="newclaim" href="#">Make a new money claim</a></p>
+
+
+    <h2 class="govuk-heading-m heading-medium type-heading claims">
+        Claims you've made
+    </h2>
+    <table class="claim-dashboard claims govuk-table">
+        <thead>
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Claim number</th>
+            <th scope="col" class="govuk-table__header">Defendant name</th>
+            <th scope="col" class="govuk-table__header">Claim amount</th>
+            <th scope="col" class="govuk-table__header mobile-hide">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+        <tr class="mobile-table govuk-table__row">
+            <td class="govuk-table__cell"><a href="/v1/dashboard/case-alt">352MC733</a></td>
+            <td class="govuk-table__cell">Andrew Smith</td>
+            <td class="govuk-table__cell">£6543.21</td>
+            <td  class="govuk-table__cell mobile-hide">A County Court Judgment (CCJ) has been issued</td>
+        </tr>
+        <!--<tr>-->
+            <!--<td class="mobile-table-status" colspan="3">Status: You requested a County Court Judgment on 19 October.-->
+                <!--We'll contact you within 5 days.-->
+            <!--</td>-->
+        <!--</tr>-->
+
+
+        </tbody>
+    </table>
+
+
+
+</div>
+
+{% endblock %}

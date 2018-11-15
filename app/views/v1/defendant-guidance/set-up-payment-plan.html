@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Defendants guidance
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'defendant-guidance/includes/breadcrumb.html' %}
+{% endblock %}
+
+{% block content %}
+<main role="main" id="content" class="guide">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                Manage your debts
+            </h1>
+
+            <aside class="part-navigation-container" role="complementary">
+                <nav role="navigation" class="gem-c-contents-list"
+                     aria-label="Pages in this guide">
+                    <p class="govuk-body-s">Contents</p>
+
+                    <ol class="gem-c-contents-list__list">
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed "
+                            aria-current="true">
+                            <a class="gem-c-contents-list__link"
+                               href="/v1/defendant-guidance/{% if stepByStep === true %}step-by-step/overview{% else %}index{% endif %}{% if stepByStep === true %}?step=4.1{% endif %}">Overview</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active">
+                            <span class="govuk-breadcrumbs__link">Set up a payment plan</span>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link"
+                               href="/v1/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}stop-bailiff-visit{% if stepByStep === true %}?step=5.2{% endif %}">Stop a bailiff visit</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link "
+                               href="/v1/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}keep-up-payments{% if stepByStep === true %}?step=6.1{% endif %}">If you cannot keep up with payments</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active">
+                            <a class="gem-c-contents-list__link "
+                               href="/v1/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}cannot-pay{% if stepByStep === true %}?step=7.1{% endif %}">If you cannot pay your debt</a>
+                        </li>
+                    </ol>
+
+                </nav>
+            </aside>
+
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="part-title">
+                <h2 class="govuk-heading-l">
+                Set up a payment plan
+                </h2>
+            </div>
+
+            <p>If you cannot pay your debt in full you can pay in instalments, known as a payment plan.</p>
+
+            <p>Before you try to set up a payment plan you should first plan your budget. You need to make a repayment
+                offer that you can afford otherwise you may miss payments. If you miss a payment more serious action may
+                be taken against you, such as bailiffs coming to your home.
+            </p>
+
+            <p>There are many online budget planners you can use for free, such as:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li><a href="https://www.moneyadviceservice.org.uk/en/tools/budget-planner">Money Advice Service budget
+                    planner</a></li>
+                <li><a href="https://www.stepchange.org/debt-info/your-financial-situation/making-a-budget.aspx">StepChange
+                    guidance on how to make a budget </a></li>
+                <li><a href="https://tools.nationaldebtline.org/yourbudget/">National Debtline budget planner</a></li>
+                <li>
+                    <a href="https://www.citizensadvice.org.uk/debt-and-money/budgeting/budgeting/work-out-your-budget/">Citizen’s
+                        Advice budget planner</a></li>
+            </ul>
+
+            <p>When you know what you can afford you should contact the person or business you owe money to and make an
+                offer. Write a letter or email and include:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>your budget</li>
+                <li>a list of your other debts</li>
+                <li>any illnesses or disabilities you have</li>
+            </ul>
+
+            <p>StepChange have a free <a
+                    href="https://www.stepchange.org/Portals/0/DI%26A%20images/Payment-arrangement-example-letter.pdf">template
+                letter</a> on their website that you can download and use.</p>
+
+            <nav class="gem-c-pagination" role="navigation" aria-label="Pagination">
+                <ul class="gem-c-pagination__list" data-module="track-click">
+                    <li class="gem-c-pagination__item gem-c-pagination__item--previous">
+                        <a href="/v1/defendant-guidance/{% if stepByStep === true %}step-by-step/overview{% else %}index{% endif %}{% if stepByStep === true %}?step=4.1{% endif %}" class="gem-c-pagination__link" rel="prev">
+                            <span class="gem-c-pagination__link-title">
+                                <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                                  <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                                </svg>
+                                <span class="gem-c-pagination__link-text">
+                                  Previous
+                                </span>
+                            </span>
+                            <span class="gem-c-pagination__link-divider visually-hidden">:</span>
+                            <span class="gem-c-pagination__link-label">Overview</span>
+                        </a>
+                    </li>
+                    <li class="gem-c-pagination__item gem-c-pagination__item--next">
+                        <a href="/v1/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}stop-bailiff-visit{% if stepByStep === true %}?step=5.2{% endif %}" class="gem-c-pagination__link" rel="next">
+                            <span class="gem-c-pagination__link-title">
+                                <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17"
+                                     viewBox="0 0 17 13">
+                                  <path fill="currentColor"
+                                        d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                                </svg>
+                                <span class="gem-c-pagination__link-text">
+                                  Next
+                                </span>
+                            </span>
+                            <span class="gem-c-pagination__link-divider visually-hidden">:</span>
+                            <span class="gem-c-pagination__link-label">Stop a bailiff visit</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+            {% if stepByStep === true %}
+                {% include 'defendant-guidance/includes/step-by-step-sidebar.html' %}
+            {% else %}
+                {% include 'defendant-guidance/includes/related-guidance-defendants.html' %}
+            {% endif %}
+
+        </div>
+
+    </div>
+</main>
+{% endblock %}

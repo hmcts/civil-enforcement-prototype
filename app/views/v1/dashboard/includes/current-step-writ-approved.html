@@ -1,0 +1,63 @@
+{% if writReady !== 'true' %}
+
+<h2 class="govuk-heading-m">A writ of control has been issued</h2>
+
+{% from "progress-bar/macro.njk" import hmctsProgressBar %}
+
+{{ hmctsProgressBar({
+items: [{
+label: {
+text: 'You apply'
+},
+complete: true
+}, {
+label: {
+text: 'The court decides'
+},
+complete: true
+}, {
+label: {
+text: 'You are notified'
+},
+active: true
+}, {
+label: {
+text: 'You may serve writ'
+}
+}]
+}) }}
+
+<p>Andrew Smith has been notified and high court bailiffs may be instructed after 7 days of notice.</p>
+
+{% else %}
+<h2 class="govuk-heading-m">A writ of control has been issued</h2>
+
+{% from "progress-bar/macro.njk" import hmctsProgressBar %}
+
+{{ hmctsProgressBar({
+items: [{
+label: {
+text: 'You apply'
+},
+complete: true
+}, {
+label: {
+text: 'The court decides'
+},
+complete: true
+}, {
+label: {
+text: 'You are notified'
+},
+complete: true
+}, {
+label: {
+text: 'You may serve writ'
+},
+active: true
+}]
+}) }}
+
+<p>You may now <a href="#">serve ABC Bailiffs Ltd to collect £6543.21 from Andrew Smith</a>.</p>
+
+{% endif %}

@@ -1,0 +1,150 @@
+<div class="history-timeline last">
+    <!--todo writ application should be included when completed -->
+
+    {% from 'timeline/macro.njk' import hmctsTimeline %}
+
+    {% if writApproved === 'true' %}
+
+    {{hmctsTimeline({
+    events: [
+    {
+    title: 'Application for writ of control approved',
+    by: 'High Court',
+    dateUtc: '2017-12-05T09:10',
+    date: '6 Nov 2018',
+    time: '12:28am',
+    documents: [{
+    name: 'Writ of control',
+    href: '#1'
+    }]
+    },
+    {
+    title: 'Application for writ of control',
+    by: 'you',
+    dateUtc: '2017-12-05T09:10',
+    date: '6 Nov 2018',
+    time: '11:12am'
+    },
+    {
+    title: 'County Court Judgment (CCJ)',
+    by: 'High Court',
+    dateUtc: '2017-12-05T09:10',
+    date: '5 Nov 2018',
+    time: '9:10am',
+    documents: [{
+    name: 'County Court judgment',
+    href: '#1'
+    }]
+    },
+    {
+    title: 'You requested a County Court Judgment (CCJ)',
+    by: 'you',
+    dateUtc: '2018-01-25T14:04',
+    date: '25 Oct 2018',
+    time: '14:04pm'
+    },
+    {
+    title: 'Andrew Smith (defendant) failed to respond',
+    by: 'system',
+    dateUtc: '2017-12-05T09:10',
+    date: '22 Oct 2018',
+    time: '9:00am'
+    },
+    {
+    title: 'Claim lodged',
+    by: 'you',
+    dateUtc: '2017-11-20T14:27',
+    date: '8 Oct 2018',
+    time: '14:27pm'
+    }
+    ]
+    }) }}
+
+    {% elseif enforcement === 'true' %}
+
+    {{hmctsTimeline({
+    events: [
+    {
+    title: 'Application for writ of control',
+    by: 'you',
+    dateUtc: '2017-12-05T09:10',
+    date: '6 Nov 2018',
+    time: '11:12am'
+    },
+    {
+    title: 'County Court Judgment (CCJ)',
+    by: 'High Court',
+    dateUtc: '2017-12-05T09:10',
+    date: '5 Nov 2018',
+    time: '9:10am',
+    documents: [{
+    name: 'County Court judgment',
+    href: '#1'
+    }]
+    },
+    {
+    title: 'You requested a County Court Judgment (CCJ)',
+    by: 'you',
+    dateUtc: '2018-01-25T14:04',
+    date: '25 Oct 2018',
+    time: '14:04pm'
+    },
+    {
+    title: 'Andrew Smith (defendant) failed to respond',
+    by: 'system',
+    dateUtc: '2017-12-05T09:10',
+    date: '22 Oct 2018',
+    time: '9:00am'
+    },
+    {
+    title: 'Claim lodged',
+    by: 'you',
+    dateUtc: '2017-11-20T14:27',
+    date: '8 Oct 2018',
+    time: '14:27pm'
+    }
+    ]
+    }) }}
+
+    {% else %}
+
+    {{hmctsTimeline({
+    events: [
+    {
+    title: 'County Court Judgment (CCJ)',
+    by: 'High Court',
+    dateUtc: '2017-12-05T09:10',
+    date: '5 Nov 2018',
+    time: '9:10am',
+    documents: [{
+    name: 'County Court judgment',
+    href: '#1'
+    }]
+    },
+    {
+    title: 'You requested a County Court Judgment (CCJ)',
+    by: 'you',
+    dateUtc: '2018-01-25T14:04',
+    date: '25 Oct 2018',
+    time: '14:04pm'
+    },
+    {
+    title: 'Andrew Smith (defendant) failed to respond',
+    by: 'system',
+    dateUtc: '2017-12-05T09:10',
+    date: '22 Oct 2018',
+    time: '9:00am'
+    },
+    {
+    title: 'Claim lodged',
+    by: 'you',
+    dateUtc: '2017-11-20T14:27',
+    date: '8 Oct 2018',
+    time: '14:27pm'
+    }
+    ]
+    }) }}
+
+    {% endif %}
+
+</div>

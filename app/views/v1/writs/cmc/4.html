@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - writ of control
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+text: "Back",
+href: "3"
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="5" method="post" class="form">
+
+            <div class="govuk-form-group">
+                {% from "radios/macro.njk" import govukRadios %}
+                {% from "input/macro.njk" import govukInput %}
+
+                {% set emailHtml %}
+                {{ govukInput({
+                  id: "contact-by-email",
+                  name: "contact-by-email",
+                  type: "email",
+                  classes: "govuk-!-width-one-third",
+                  label: {
+                    text: "Email address"
+                  }
+                }) }}
+                {% endset -%}
+
+                {% set phoneHtml %}
+                {{ govukInput({
+                  id: "contact-by-phone",
+                  name: "contact-by-phone",
+                  type: "tel",
+                  classes: "govuk-!-width-one-third",
+                  label: {
+                    text: "Phone number"
+                  }
+                }) }}
+                {% endset -%}
+
+                {% set textHtml %}
+                {{ govukInput({
+                  id: "contact-by-text",
+                  name: "contact-by-text",
+                  type: "tel",
+                  classes: "govuk-!-width-one-third",
+                  label: {
+                    text: "Mobile phone number"
+                  }
+                }) }}
+                {% endset -%}
+
+                {{ govukRadios({
+                  idPrefix: "how-contacted-conditional",
+                  name: "how-contacted",
+                  fieldset: {
+                    legend: {
+                      text: "Has Andrew Smith paid any of the amount on the County Court Judgment?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--l"
+                    }
+                  },
+                  hint: {
+                    stext: "Select one option."
+                  },
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes",
+                      conditional: {
+                        html: '<p>The amount on the judgment was £6543.21</p>
+                        <label class="govuk-label">Amount already paid</label>
+                        <input class="govuk-input govuk-input--width-5" name="amoutPaid" id="amountPaid"/>
+                '
+                      }
+                    },
+                    {
+                      value: "no",
+                      text: "No"
+                    }
+                  ]
+                }) }}
+            </div>
+
+            <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

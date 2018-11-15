@@ -43,12 +43,15 @@ function daysPass (page, waitTime, days) {
   })
 }
 
-if ($('#CCJrequested').length === 1) {
-  daysPass('/notifications/claimant/email2?phoneAlert=true', 5000, 5)
+if ($('#daysPassing').length === 1) {
+  var url = ($('#daysPassing').attr('data-dayspassurl'))
+  var timeToPrompt = ($('#daysPassing').attr('data-dayspasstimetoprompt')) || 5000
+  var days = ($('#daysPassing').attr('data-dayspassdays')) || 5
+  daysPass(url, timeToPrompt, days)
 }
 
-if ($('#showEmailFromHCEO').length === 1) {
-  daysPass('/notifications/claimant/email4', 5000, 5)
+if ($('#CCJrequested').length === 1) {
+  daysPass('/notifications/claimant/email2?phoneAlert=true', 5000, 5)
 }
 
 if ($('#phone-mockup').length === 1) {

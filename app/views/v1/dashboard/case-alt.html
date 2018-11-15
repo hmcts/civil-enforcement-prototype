@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+OCMC Dashboard
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/dashboard/"
+}) }}
+    <h1 class="govuk-heading-l">
+        <span class="heading-secondary">Claim number:</span>
+        391MC645
+    </h1>
+    {% if writApproved === 'true' %}
+        {% include 'v1/dashboard/includes/current-step-writ-approved.html' %}
+    {% else %}
+        {% include 'v1/dashboard/includes/current-step.html' %}
+    {% endif %}
+
+    {% from "tabs/macro.njk" import govukTabs %}
+    {% from "table/macro.njk" import govukTable %}
+
+    {% set nextStepsHtml %}
+        {% include 'v1/dashboard/includes/next-steps.html' %}
+    {% endset -%}
+
+    {% set historyHtml %}
+        {% include 'v1/dashboard/includes/history.html' %}
+    {% endset -%}
+
+    {{ govukTabs({
+      items: [
+        {
+          label: "Next steps",
+          id: "next-steps",
+          panel: {
+            html: nextStepsHtml
+          }
+        },
+        {
+          label: "Claim history",
+          id: "history",
+          panel: {
+            html: historyHtml
+          }
+        }
+      ]
+    }) }}
+
+</div>
+    {% include 'v1/dashboard/includes/sidebar.html' %}
+</div>
+{% endblock %}

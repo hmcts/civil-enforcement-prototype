@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Claimants - 13/11/2018
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+        {{ govukBreadcrumbs({
+        items: [
+        {
+        text: "Home",
+        href: "/"
+        },
+        {
+        text: "User research",
+        href: "/ur/"
+        },
+        {
+        text: "Laura's page"
+        }
+        ]
+        }) }}
+
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-xl">Sprint 4</span>
+            15th November 2018
+        </h2>
+
+        <p>
+            This is a prototype that allows the civil enforcement team to test ideas and for research purposes. It is
+            not a working software.
+        </p>
+
+        <h3 class="govuk-heading-s">Linear happy flow through Writ of Control application and beyond:</h3>
+
+        <p></p>
+        <a href="/notifications/claimant/email1?phoneAlert=true" class="govuk-button govuk-button--start">Start</a>
+
+
+        <ul class="govuk-list govuk-list--number">
+
+            <li>Flow diagrams and storyboards
+                <ol class="list list-number">
+                    <li><a href="/public/pdf/13-11-2018%20Claimant%20Flow.pdf" target="_blank">Flow diagram of journey</a></li>
+                </ol>
+            </li>
+
+            <li>Guidance
+                <ol class="list list-number">
+                    <li><a href="/defendant-guidance/" target="_blank">Defendant guidance</a></li>
+                    <li><a href="/claimant-guidance/" target="_blank">Claimant guidance</a></li>
+                </ol>
+            </li>
+
+            <li>Digital documents
+                <ol class="list list-number">
+                    <li><a href="/public/pdf/NoE%20letter.pdf" target="_blank">Covering letter</a></li>
+                    <li><a href="/public/pdf/Writ%20of%20control%20UR.pdf" target="_blank">Digital writ</a></li>
+                </ol>
+            </li>
+        </ul>
+
+        {% from "details/macro.njk" import govukDetails %}
+
+        {{ govukDetails({
+          summaryText: "Storyboards",
+          html: '
+                <ol class="list list-number">
+                    <li><a href="/public/pdf/Complete storyboard (beginning).pdf"> target="_blank"Fuller storyboard</a></li>
+                    <li><a href="/public/pdf/BasicStoryBoard.pdf" target="_blank">Story board (Claimant)</a></li>
+                    <li><a href="/public/pdf/Basic story - defendants POV.pdf" target="_blank">Story board (Defendant)</a></li>
+                    <li><a href="/public/pdf/HMCTS Court Staff version.pdf" target="_blank">MVP service blueprint (claimant centric) </a></li>
+                </ol>'
+        }) }}
+
+    </div>
+</div>
+
+{% endblock %}

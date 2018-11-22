@@ -1,0 +1,179 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Defendants guidance
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'defendant-guidance/includes/breadcrumb.html' %}
+{% endblock %}
+
+{% block content %}
+<main role="main" id="content" class="guide">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                Manage your debts
+            </h1>
+
+            <aside class="part-navigation-container" role="complementary">
+                <nav role="navigation" class="gem-c-contents-list"
+                     aria-label="Pages in this guide">
+                    <p class="govuk-body-s">Contents</p>
+
+                    <ol class="gem-c-contents-list__list">
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed"
+                            aria-current="true">
+                            <a class="gem-c-contents-list__link"
+                               href="/v2/defendant-guidance/{% if stepByStep === true %}step-by-step/overview{% else %}index{% endif %}{% if stepByStep === true %}?step=4.1{% endif %}">Overview</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+                            <a class="gem-c-contents-list__link"
+                               href="/v2/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}set-up-payment-plan{% if stepByStep === true %}?step=4.2{% endif %}">Set up a payment plan</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active">
+                            <span class="govuk-breadcrumbs__link">Stop a bailiff visit</span>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+                            <a class="gem-c-contents-list__link "
+                               href="/v2/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}keep-up-payments{% if stepByStep === true %}?step=6.1{% endif %}">If you cannot keep up with payments</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active">
+                            <a class="gem-c-contents-list__link "
+                               href="/v2/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}cannot-pay{% if stepByStep === true %}?step=7.1{% endif %}">If you cannot pay your debt</a>
+                        </li>
+                    </ol>
+
+                </nav>
+            </aside>
+
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="part-title">
+                <h2 class="govuk-heading-l">
+                Stop a bailiff visit
+                </h2>
+            </div>
+
+            <p>A bailiff will contact you 7 days before they come to your home or business. If you can, pay
+                the debt in full or try to set up a payment plan with the bailiff in those 7 days. If you owe council
+                tax, contact the council to set up a payment plan.
+            </p>
+
+            <p>If you cannot pay the money or think you do not owe the money, you can ask the court to:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>suspend a warrant of control</li>
+                <li>stay a writ of control</li>
+                <li>set aside a judgment</li>
+            </ul>
+
+            <p>You will have to pay a court fee to make your application unless you’re eligible for <a
+                    href="https://www.gov.uk/get-help-with-court-fees">help with court fees</a>.
+            </p>
+
+            <p>If you want to dispute a council tax liability order you must <a
+                    href="https://www.gov.uk/find-local-council">contact your local council</a>. If you do not agree
+                with the council’s decision you can <a
+                        href="https://www.valuationtribunal.gov.uk/your-appeal-type/council-tax/council-tax-liability-2/">make
+                    an appeal to the Valuation Tribunal</a>.</p>
+
+            <p><a href="https://www.gov.uk/your-rights-bailiffs">Find out what a bailiff can and cannot do when they
+                visit your home</a>.
+            </p>
+
+
+            <h3 class="govuk-heading-m">Apply to suspend a warrant of control</h3>
+
+            <p>You can ask the county court to suspend a warrant of control by filling in <a
+                    href="https://www.gov.uk/government/publications/form-n245-application-for-suspension-of-a-warrant-and-or-variation-of-an-order">form
+                n245</a>. The application costs £55.</p>
+
+            <p>The court will send a letter to the claimant giving them 14 days to reply to your request. There are 3
+                possible outcomes:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>the claimant agrees to suspend the warrant of control</li>
+                <li>the claimant does not reply and the court rules in your favour</li>
+                <li>the claimant does not agree</li>
+            </ul>
+
+            <p>If the claimant does not agree to suspend the warrant you will have to go to a hearing. At the hearing a
+                district judge will listen to the case on both sides and make a decision.
+            </p>
+
+            <h3 class="govuk-heading-m">Apply to stay a writ of control</h3>
+
+            <p>You can ask the court to stay a writ of control by filling in <a
+                    href="https://www.gov.uk/government/publications/form-n244-application-notice">form n244</a>. The
+                application costs £50. You must make your application at either a district registry or the High Court.
+            </p>
+
+            <p>The court will create an urgent hearing for your case meaning you will have to go to court at short
+                notice. If you apply in person you can get your hearing date on the same day, otherwise it will be sent
+                by post.
+            </p>
+
+            <nav class="gem-c-pagination" role="navigation" aria-label="Pagination">
+                <ul class="gem-c-pagination__list" data-module="track-click">
+                    <li class="gem-c-pagination__item gem-c-pagination__item--previous">
+                        <a href="/v2/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}set-up-payment-plan{% if stepByStep === true %}?step=4.2{% endif %}" class="gem-c-pagination__link" rel="prev">
+                            <span class="gem-c-pagination__link-title">
+                                <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13"
+                                     width="17" viewBox="0 0 17 13">
+                                  <path fill="currentColor"
+                                        d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                                </svg>
+                                <span class="gem-c-pagination__link-text">
+                                  Previous
+                                </span>
+                            </span>
+                            <span class="gem-c-pagination__link-divider visually-hidden">:</span>
+                            <span class="gem-c-pagination__link-label">Set up a payment plan</span>
+                        </a>
+                    </li>
+                    <li class="gem-c-pagination__item gem-c-pagination__item--next">
+                        <a href="/v2/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}keep-up-payments{% if stepByStep === true %}?step=6.1{% endif %}" class="gem-c-pagination__link" rel="next">
+                            <span class="gem-c-pagination__link-title">
+                                <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13"
+                                     width="17"
+                                     viewBox="0 0 17 13">
+                                  <path fill="currentColor"
+                                        d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                                </svg>
+                                <span class="gem-c-pagination__link-text">
+                                  Next
+                                </span>
+                            </span>
+                            <span class="gem-c-pagination__link-divider visually-hidden">:</span>
+                            <span class="gem-c-pagination__link-label">If you cannot keep up with payments</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+            {% if stepByStep === true %}
+                {% include 'defendant-guidance/includes/step-by-step-sidebar.html' %}
+            {% else %}
+              {% include 'defendant-guidance/includes/related-guidance-defendants.html' %}
+            {% endif %}
+
+        </div>
+
+    </div>
+</main>
+{% endblock %}

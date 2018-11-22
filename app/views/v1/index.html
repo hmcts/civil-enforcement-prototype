@@ -10,35 +10,20 @@
         <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-l">
                 Civil enforcement prototypes
-                <!--<span class="govuk-caption-xl">{{ releaseVersion }}</span>-->
+                <span class="govuk-caption-xl">Version 1</span>
             </h2>{{ releaseVersion | log }}
             <p class="">
                 This is a prototype that allows the civil enforcement team to test ideas and for research purposes. It
                 is not a working software.
             </p>
 
-            <h2 class="govuk-heading-m">Alpha prototypes</h2>
-
             {% from "includes/index-item.njk" import indexItem %}
-
-            {{ indexItem({
-                sprint: 5,
-                dateRange: '22/11/18 - 05/12/18',
-                summary: 'First iteration of defendant journey added',
-                href: 'v2/',
-                scenarioList: [
-                    '<a href="/dashboard/">First pass of claimant writ enforcement</a>'
-                ],
-                supportingDocs: [
-                    '<a href="/public/pdf/BasicStoryBoard.pdf">Story board (Claimant)</a>'
-                ]
-            }) }}
 
             {{ indexItem({
                 sprint: 4,
                 dateRange: '8/11/18 - 21/11/18',
                 summary: 'First iteration of prototype added',
-                href: 'v1/',
+                href: '/v1/notifications/claimant/email1?phoneAlert=true',
                 scenarioList: [
                     '<a href="/dashboard/">First pass of claimant writ enforcement</a>',
                     '<a href="/dashboard/case-alt?enforcement=true">Writ applied state</a>',
@@ -50,21 +35,6 @@
                     '<a href="/public/pdf/Basic story - defendants POV.pdf">Story board (Defendant)</a>',
                     '<a href="/public/pdf/HMCTS Court Staff version.pdf">MVP service blueprint (claimant centric) </a>',
                     '<a href="/public/pdf/Complete storyboard (beginning).pdf">Fuller storyboard</a>'
-                ]
-            }) }}
-
-            {{ indexItem({
-                sprint: 3,
-                dateRange: '25/10/18 - 7/11/18',
-                summary: 'Guidance added for claimants and defendants',
-                href: '/claimant-guidance/',
-                changeLog: [
-                    'Claimant guidance added',
-                    'Defendant guidance added'
-                ],
-                scenarioList: [
-                    '<a href="/claimant-guidance/">Claimant guidance</a>',
-                    '<a href="/defendant-guidance/">Defendant guidance</a>'
                 ]
             }) }}
 

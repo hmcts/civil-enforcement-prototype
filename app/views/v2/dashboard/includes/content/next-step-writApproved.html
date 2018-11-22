@@ -1,0 +1,35 @@
+{% if writReady !== 'true' %}
+<h3 class="govuk-heading-s">The High Court has approved your application for a Writ of Control.</h3>
+
+<p>In 7 days, you can serve ABC Bailiffs Ltd and they will attempt to retrieve £6543.21 from {{defendant}}.</p>
+
+{% else %}
+
+<h3 class="govuk-heading-s">The High Court has approved your application for a Writ of Control.</h3>
+
+<p>You can now send the Writ of Control to the High Court bailiff named on your application.</p>
+
+<p>The High Court bailiff will go to Andrew Smith's address to try and collect payment for you.</p>
+
+<details class="govuk-details">
+    <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What the bailiff will do
+    </span>
+    </summary>
+    <div class="govuk-details__text">
+
+        <p>The bailiff will contact the person or business who owes you money and give them 7 days to pay the debt.</p>
+
+        <p>After 7 days the bailiff will go to their address to see if they can get the debt paid in full. If that’s not possible the bailiff will see if they have any possessions that the bailiff can sell at auction.</p>
+
+        <p>The bailiff will take control of their goods under a Controlled Goods Agreement. The money raised at the auction will go towards paying the debt and bailiff fees.</p>
+
+        <p>The bailiff might suggest a payment plan instead of selling their goods. A payment plan can only be set up if you accept the offer.</p>
+
+    </div>
+</details>
+
+<a href="/v2/dashboard/case?writServed=true&simulateTimePassing=true" class="govuk-button">Send Writ of Control to bailiff</a>
+
+{% endif %}

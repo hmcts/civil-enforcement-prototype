@@ -1,0 +1,41 @@
+{% if CCJrequested === 'true' %}
+
+    {% include 'v2/dashboard/includes/content/ccj-requested.html' %}
+
+{% elseif CCJapproved === 'true' %}
+
+    {% include 'v2/dashboard/includes/content/next-step-enforcement.html' %}
+
+{% elseif writApproved === 'true' %}
+
+    {% include 'v2/dashboard/includes/content/next-step-writApproved.html' %}
+
+{% elseif writApproved !== 'true' and CCJapproved === 'true' %}
+
+    {% include 'v2/dashboard/includes/content/next-step-enforcement.html' %}
+
+{% elseif writServed === 'true' %}
+
+    {% include 'v2/dashboard/includes/content/next-step-writServed.html' %}
+
+{% else %}
+
+    {% include 'v2/dashboard/includes/content/next-step-ccj.html' %}
+
+{% endif %}
+
+<div class="status-block govuk-footer__heading"></div>
+
+{% if writServed === 'true' %}
+    <h3 class="govuk-heading-s">Cancel the Writ of Control</h3>
+    <p><a href="#">Cancel the Writ of Control</a> if {{defendant}} has paid their debt or set up a payment plan.</p>
+{% endif %}
+
+<h3 class="govuk-heading-s">Close your claim</h3>
+
+<p><a href="#">Close your claim</a> if {{defendant}} has paid their debt.</p>
+
+<!--<p>-->
+    <!--You can <a href="#">cancel your claim</a>. For example, if you’ve been paid or don’t want to continue your case-->
+    <!--against the defendant.-->
+<!--</p>-->

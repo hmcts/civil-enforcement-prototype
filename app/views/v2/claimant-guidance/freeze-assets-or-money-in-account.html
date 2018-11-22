@@ -10,7 +10,7 @@ Claimants guidance
 {% endblock %}
 
 {% block beforeContent %}
-{% include './includes/breadcrumb.html' %}
+    {% include './includes/breadcrumb.html' %}
 {% endblock %}
 
 {% block content %}
@@ -29,29 +29,30 @@ Claimants guidance
 
                     <ol class="gem-c-contents-list__list">
                         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
-                            <a class="gem-c-contents-list__link " href="/v1/claimant-guidance/index">Overview</a>
+                            <a class="gem-c-contents-list__link " href="/v2/claimant-guidance/index">Overview</a>
                         </li>
                         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
                             <a class="gem-c-contents-list__link "
-                               href="/v1/claimant-guidance/order-to-obtain-information-on-finances">
+                               href="/v2/claimant-guidance/order-to-obtain-information-on-finances">
                                 Get an Order to Obtain Information on finances
                             </a>
                         </li>
                         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
                             <a class="gem-c-contents-list__link "
-                               href="/v1/claimant-guidance/send-bailiffs-to-collect-payment">Send bailiffs to collect
+                               href="/v2/claimant-guidance/send-bailiffs-to-collect-payment">Send bailiffs to collect
                                 payment</a>
                         </li>
                         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
-                            <a class="gem-c-contents-list__link " href="/v1/claimant-guidance/get-money-deducted-from-wages">Get money deducted from wages</a>
+                            <a class="gem-c-contents-list__link "
+                               href="/v2/claimant-guidance/get-money-deducted-from-wages">Get money deducted from wages</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <span class="govuk-breadcrumbs__link">Freeze assets or money in an account
+                            </span>
                         </li>
                         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
                             <a class="gem-c-contents-list__link "
-                               href="/v1/claimant-guidance/freeze-assets-or-money-in-account">Freeze assets or money in an account
-                            </a>
-                        </li>
-                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
-                            <span class="govuk-breadcrumbs__link">Charge the debtor’s land or property</span>
+                               href="/v2/claimant-guidance/charge-debtors-land-or-property">Charge the debtor’s land or property</a>
                         </li>
                     </ol>
                 </nav>
@@ -62,33 +63,25 @@ Claimants guidance
 
             <div class="part-title">
                 <h2 class="govuk-heading-l">
-                Charge the debtor’s land or property
+                Freeze assets or money in an account
                 </h2>
             </div>
 
-            <p>You can ask the court to charge the debtor’s land or property. If they sell any land or property, they
-                must first pay their debt to you before they get their money.
-            </p>
+            <p>You can ask the court to freeze money in their bank, building society or business account. </p>
 
-            <p>The court will not put a charging order on property:</p>
-            <ul class="govuk-list govuk-list--bullet">
-                <li>without a copy of the deed from the Land Registry</li>
-                <li>that is jointly owned</li>
-            </ul>
+            <p>The court will put an interim debt order on their account. After 4 weeks there will be a hearing where a judge will decide if the money can be used to pay the debt.
 
-            <p>The court will first place an interim charging order on the property. After 3 weeks it becomes final unless the debtor disagrees with the order.
-                If they disagree, a hearing will take place where a judge will look at the evidence before making a decision.
             </p>
 
             <p>The court fee is £110.</p>
 
-            <p>Download and fill in a request for a <a href="http://hmctsformfinder.justice.gov.uk/HMCTS/GetForm.do?court_forms_id=576">charging order form N379</a>.
+            <p>Download and fill in a request for a <a href="http://hmctsformfinder.justice.gov.uk/HMCTS/GetForm.do?court_forms_id=573">third party debt order form N349</a>.
             </p>
 
             <nav class="gem-c-pagination" role="navigation" aria-label="Pagination">
                 <ul class="gem-c-pagination__list" data-module="track-click">
                     <li class="gem-c-pagination__item gem-c-pagination__item--previous">
-                        <a href="/v1/claimant-guidance/freeze-assets-or-money-in-account" class="gem-c-pagination__link" rel="prev">
+                        <a href="/v2/claimant-guidance/get-money-deducted-from-wages" class="gem-c-pagination__link" rel="prev">
                             <span class="gem-c-pagination__link-title">
                                 <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
                                   <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
@@ -98,7 +91,23 @@ Claimants guidance
                                 </span>
                             </span>
                             <span class="gem-c-pagination__link-divider visually-hidden">:</span>
-                            <span class="gem-c-pagination__link-label">Freeze assets or money in an account</span>
+                            <span class="gem-c-pagination__link-label">Get money deducted from wages</span>
+                        </a>
+                    </li>
+                    <li class="gem-c-pagination__item gem-c-pagination__item--next">
+                        <a href="/v2/claimant-guidance/charge-debtors-land-or-property" class="gem-c-pagination__link" rel="next">
+                            <span class="gem-c-pagination__link-title">
+                                <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17"
+                                     viewBox="0 0 17 13">
+                                  <path fill="currentColor"
+                                        d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                                </svg>
+                                <span class="gem-c-pagination__link-text">
+                                  Next
+                                </span>
+                            </span>
+                            <span class="gem-c-pagination__link-divider visually-hidden">:</span>
+                            <span class="gem-c-pagination__link-label">Charge the debtor’s land or property</span>
                         </a>
                     </li>
                 </ul>

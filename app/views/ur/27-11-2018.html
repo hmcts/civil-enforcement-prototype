@@ -1,49 +1,66 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Defendants - 27/11/2018
+    Defendants - 27/11/2018
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-        {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+            {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
-        {{ govukBreadcrumbs({
-        items: [
-        {
-        text: "Home",
-        href: "/"
-        },
-        {
-        text: "User research",
-        href: "/ur/"
-        },
-        {
-        text: "27-11-2018"
-        }
-        ]
-        }) }}
+            {{ govukBreadcrumbs({
+                items: [
+                    {
+                        text: "Home",
+                        href: "/"
+                    },
+                    {
+                        text: "User research",
+                        href: "/ur/"
+                    },
+                    {
+                        text: "27-11-2018"
+                    }
+                ]
+            }) }}
 
-        <h2 class="govuk-heading-l">
-            <span class="govuk-caption-xl">Sprint 5</span>
-            27th November 2018
-        </h2>
+            <h2 class="govuk-heading-l">
+                <span class="govuk-caption-xl">Sprint 5</span>
+                27th November 2018
+            </h2>
 
-        <p>
-            This is a prototype that allows the civil enforcement team to test ideas and for research purposes. It is
-            not a working software.
-        </p>
+            <p>
+                This is a prototype that allows the civil enforcement team to test ideas and for research purposes. It
+                is
+                not a working software.
+            </p>
 
-        <h3 class="govuk-heading-s">Defendants</h3>
+            <h3 class="govuk-heading-s">Defendants</h3>
 
-        <ul class="govuk-list govuk-list--number">
-            <li><a href="/public/pdf/Storyboard%20Writ.pdf" target="_blank">Storyboard slide deck</a></li>
-        </ul>
+            <ul class="govuk-list govuk-list--number">
+                <li>Defendant notifications
+                    <ol class="govuk-list govuk-list--bullet">
+                        {#<li><a href="/v2/dashboard/defendant/case">Early engagement</a></li>#}
+                    </ol>
+                </li>
+                <li>Defendant dashboard views
+                    <ol class="govuk-list govuk-list--bullet">
+                        <li><a href="/v2/dashboard/defendant/case">Early engagement</a></li>
+                        <li><a href="/v2/dashboard/defendant/case?CCJapproved=true">CCJ issued</a></li>
+                        <li><a href="/v2/dashboard/defendant/case?writApproved=true">Writ issued</a></li>
+                    </ol>
+                </li>
+                <li>Writ authenticity checker
+                    <ol class="govuk-list govuk-list--bullet">
+                        {#<li><a href="/v2/dashboard/defendant/case">Early engagement</a></li>#}
+                    </ol>
+                </li>
+            </ul>
 
+        </div>
     </div>
-</div>
 
 {% endblock %}

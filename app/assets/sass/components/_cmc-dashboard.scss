@@ -1,0 +1,25 @@
+.cmc-dashboard {
+  .govuk-panel--cmc-dashboard {
+    background: #ccc;
+    text-align: left;
+    dl {
+      overflow: hidden;
+      overflow: hidden;
+      dt {
+        clear: left;
+        float: left;
+        width: 150px;
+        &:after {
+          content: ': ';
+        }
+      }
+      dd {
+        float: left;
+        display: inline-block;
+        margin-left: 10px;
+      }
+
+    }
+  }
+
+}

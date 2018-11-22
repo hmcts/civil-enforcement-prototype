@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+    Check the authenticity of a writ of control
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% set mainClasses = "govuk-main-wrapper--l" %}
+
+        {% from "panel/macro.njk" import govukPanel %}
+
+        {{ govukPanel({
+        titleText: "Writ of Control found"
+        }) }}
+
+        <p class="govuk-body">We can confirm the details that you have supplied match records that we hold.</p>
+
+        <p><a href="/public/pdf/Writ%20of%20control%20UR.pdf" class="govuk-button">Download a copy</a></p>
+
+        <!--<p class="govuk-body">-->
+            <!--<a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)-->
+        <!--</p>-->
+    </div>
+</div>
+
+{% endblock %}

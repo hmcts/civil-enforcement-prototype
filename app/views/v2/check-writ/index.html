@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+    Check the authenticity of a writ of control
+{% endblock %}
+{% block header %}
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "alpha"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            {% if hasErrors %}
+                {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+                {{ govukErrorSummary({
+                    titleText: "There is a problem",
+                    errorList: [
+                        {
+                            text: "You need to choose how you want the court to collect your money",
+                            href: "#"
+                        }
+                    ]
+                }) }}
+            {% endif %}
+            <h1 class="govuk-heading-xl">Check the authenticity of a writ of control</h1>
+            <p>Do we need to give context here? Or would a service start page work better?</p>
+            <form action="" method="post" class="form">
+                <div class="govuk-form-group">
+                    {% from "input/macro.njk" import govukInput %}
+
+                    {{ govukInput({
+                        label: {
+                            text: "What is the claim number?"
+                        },
+                        hint: {
+                            text: "For example, D5FJ0001"
+                        },
+                        id: "name",
+                        name: "name",
+                        classes: "govuk-input--width-20"
+                    }) }}
+
+                    {{ govukInput({
+                        label: {
+                            text: "What is the postcode of the applicant?"
+                        },
+                        hint: {
+                            text: "This can be found at the bottom of the writ of control document"
+                        },
+                        id: "name",
+                        name: "name",
+                        classes: "govuk-input--width-10"
+                    }) }}
+
+                    {% from "date-input/macro.njk" import govukDateInput %}
+
+                    {{ govukDateInput({
+                        id: "dob",
+                        namePrefix: "dob",
+                        fieldset: {
+                            legend: {
+                                text: "What is the date of the order?"
+                            }
+                        },
+                        hint: {
+                            text: "For example, 31 3 1980"
+                        }
+                    }) }}
+
+                </div>
+
+                <button class="govuk-button">Continue</button>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

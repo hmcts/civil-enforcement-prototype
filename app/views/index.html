@@ -23,9 +23,13 @@
 
             {{ indexItem({
                 sprint: 5,
+                phase: 'alpha',
                 dateRange: '22/11/18 - 05/12/18',
-                summary: 'First iteration of defendant journey added',
+                summary: 'First iteration of defendant journey',
                 href: 'v2/',
+                changeLog: [
+                    'Defendant dashboard / claim status pages added'
+                ],
                 scenarioList: [
                     '<a href="/dashboard/">First pass of claimant writ enforcement</a>'
                 ],
@@ -36,9 +40,15 @@
 
             {{ indexItem({
                 sprint: 4,
+                phase: 'alpha',
                 dateRange: '8/11/18 - 21/11/18',
-                summary: 'First iteration of prototype added',
+                summary: 'First iteration of claimant journey',
                 href: 'v1/',
+                changeLog: [
+                    'Claimant dashboard / claim status pages added',
+                    'First iteration of Civil Enforcement selection added',
+                    'First iteration of writ of control application added'
+                ],
                 scenarioList: [
                     '<a href="/dashboard/">First pass of claimant writ enforcement</a>',
                     '<a href="/dashboard/case-alt?enforcement=true">Writ applied state</a>',
@@ -55,9 +65,10 @@
 
             {{ indexItem({
                 sprint: 3,
+                phase: 'alpha',
                 dateRange: '25/10/18 - 7/11/18',
                 summary: 'Guidance added for claimants and defendants',
-                href: '/claimant-guidance/',
+                href: '/sprint3',
                 changeLog: [
                     'Claimant guidance added',
                     'Defendant guidance added'

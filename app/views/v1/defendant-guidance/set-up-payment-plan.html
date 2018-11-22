@@ -10,7 +10,7 @@ Defendants guidance
 {% endblock %}
 
 {% block beforeContent %}
-    {% include 'defendant-guidance/includes/breadcrumb.html' %}
+    {% include './includes/breadcrumb.html' %}
 {% endblock %}
 
 {% block content %}
@@ -138,9 +138,9 @@ Defendants guidance
         <div class="govuk-grid-column-one-third">
 
             {% if stepByStep === true %}
-                {% include 'defendant-guidance/includes/step-by-step-sidebar.html' %}
+                {% include './includes/step-by-step-sidebar.html' %}
             {% else %}
-                {% include 'defendant-guidance/includes/related-guidance-defendants.html' %}
+                {% include './includes/related-guidance-defendants.html' %}
             {% endif %}
 
         </div>

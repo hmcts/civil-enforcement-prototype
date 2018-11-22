@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Civil Enforcement prototypes
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">
+                Civil enforcement prototypes
+                <span class="govuk-caption-xl">Guidance</span>
+            </h2>{{ releaseVersion | log }}
+            <p class="">
+                This is a prototype that allows the civil enforcement team to test ideas and for research purposes. It
+                is not a working software.
+            </p>
+
+            {% from "includes/index-item.njk" import indexItem %}
+
+            {{ indexItem({
+                sprint: 3,
+                dateRange: '25/10/18 - 07/11/18',
+                summary: 'Defendant and claimant guidance',
+                href: '/v1/claimant-guidance/',
+                scenarioList: [
+                    '<a href="/dashboard/">First pass of claimant writ enforcement</a>',
+                    '<a href="/dashboard/case-alt?enforcement=true">Writ applied state</a>',
+                    '<a href="/dashboard/case-alt?writApproved=true">Writ approved state</a>'
+                ],
+                supportingDocs: []
+            }) }}
+
+            <p><a href="/v1/defendant-guidance/">Defendant guidance</a></p>
+            <p><a href="/v1/claimant-guidance/">Claimant guidance</a></p>
+
+        </div>
+    </div>
+
+{% endblock %}

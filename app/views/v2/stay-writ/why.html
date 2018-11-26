@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+    Verify a court order
+{% endblock %}
+{% block header %}
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "alpha"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            {% from "back-link/macro.njk" import govukBackLink %}
+
+            {{ govukBackLink({
+              text: "Back",
+              href: "javascript: history.back()"
+            }) }}
+
+            {% if hasErrors %}
+                {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+                {{ govukErrorSummary({
+                    titleText: "There is a problem",
+                    errorList: [
+                        {
+                            text: "You need to choose how you want the court to collect your money",
+                            href: "#"
+                        }
+                    ]
+                }) }}
+            {% endif %}
+            {#<h1 class="govuk-heading-xl">Stay a writ</h1>#}
+
+            <form action="2" method="post" class="form">
+                <div class="govuk-form-group">
+                {% from "input/macro.njk" import govukInput %}
+
+                {{ govukInput({
+                  label: {
+                    text: "Full name"
+                  },
+                  id: "name",
+                  name: "name"
+                }) }}
+                </div>
+
+                <button class="govuk-button">Continue</button>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

@@ -30,4 +30,9 @@ module.exports = function (router) {
     // })
     res.redirect('/' + version + '/check-writ/confirmation-page')
   })
+
+  router.get(['/' + version + '/stay-writ/2'], function (req, res) {
+    res.render(version + '/stay-writ/why.html')
+  })
+
 }

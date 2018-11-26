@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-    Check the authenticity of a writ of control
+    Verify a court order
 {% endblock %}
 {% block header %}
     {{ govukHeader() }}
@@ -34,7 +34,7 @@
                 }) }}
             {% endif %}
             <h1 class="govuk-heading-xl">Verify a Writ of Control</h1>
-            <p>Fill in the form to check if a Writ of Control is valid</p>
+            <p>Fill in the form to check if a Writ of Control is valid.</p>
             <form action="" method="post" class="form">
                 <div class="govuk-form-group">
                     {% from "input/macro.njk" import govukInput %}

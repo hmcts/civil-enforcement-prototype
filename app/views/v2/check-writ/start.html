@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-    Check the authenticity of a writ of control
+    Verify a court order
 {% endblock %}
 {% block header %}
     {{ govukHeader() }}
@@ -20,17 +20,15 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-            <h1 class="govuk-heading-xl">Service name goes here</h1>
+            <h1 class="govuk-heading-xl">Verify a court order</h1>
 
             <p class="govuk-body">Use this service to:</p>
 
             <ul class="govuk-list govuk-list--bullet">
-                <li>do something</li>
-                <li>update your name, address or other details</li>
-                <li>do something else</li>
+                <li>check if a court order is valid</li>
+                <li>download a copy of the court order
+                </li>
             </ul>
-
-            <p class="govuk-body">Registering takes around 5 minutes.</p>
 
             {{ govukButton({
                 text: "Start now",
@@ -40,11 +38,8 @@
 
             <h2 class="govuk-heading-m">Before you start</h2>
 
-            <p class="govuk-body">You can also <a class="govuk-link" href="#">register by post</a>.</p>
+            <p class="govuk-body">You will need to give information on the court order to verify it.</p>
 
-            <p class="govuk-body">The online service is also available in <a class="govuk-link" href="#">Welsh (Cymraeg)</a>.</p>
-
-            <p class="govuk-body">You can’t register for this service if you’re in the UK illegally.</p>
         </div>
 
         </div>

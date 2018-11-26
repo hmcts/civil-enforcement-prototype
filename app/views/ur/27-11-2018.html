@@ -38,7 +38,7 @@
                 not a working software.
             </p>
 
-            <a href="/v2/notifications/defendant/email2?phoneAlert=true" class="govuk-button govuk-button--start">Start</a>
+            <a href="/v2/notifications/defendant/email2?phoneAlert=true" target="_blank" class="govuk-button govuk-button--start">Start</a>
 
             <h3 class="govuk-heading-s">Defendants</h3>
 
@@ -48,16 +48,28 @@
                         <li><a href="/v2/notifications/defendant/email1" target="_blank">'CMC' email</a></li>
                         <li><a href="/v2/notifications/defendant/email2" target="_blank">'Writ of control' email</a></li>
                         <li><a href="/public/pdf/CCJ%20letter.pdf" target="_blank">'CCJ' Letter</a></li>
+                        <li><a href="/public/pdf/sprint5/Writ%20of%20control.pdf" target="_blank">'Digital' Writ of Control</a></li>
+                        <li><a href="/public/pdf/sprint5/NoE%20letter.pdf" target="_blank">Covering letter</a></li>
                     </ol>
                 </li>
                 <li>Defendant dashboard views
                     <ol class="govuk-list govuk-list--bullet">
                         {#<li><a href="/v2/dashboard/defendant/case" target="_blank">Early engagement</a></li>#}
+                        <li><a href="/v2/dashboard/security/defendant" target="_blank">Security layer</a></li>
                         <li><a href="/v2/dashboard/defendant/case?CCJapproved=true" target="_blank">CCJ issued</a></li>
                         <li><a href="/v2/dashboard/defendant/case?writApproved=true" target="_blank">Writ issued</a></li>
                     </ol>
                 </li>
-                <li>Writ authenticity checker
+                <li>'Stay' Writ of Control
+                    <ol class="govuk-list govuk-list--bullet">
+                        <li><a href="/v2/stay-writ/" target="_blank">Select type</a></li>
+                        <li><a href="/v2/stay-writ/2" target="_blank">Hearing type</a></li>
+                        <li><a href="/v2/stay-writ/3" target="_blank">Give evidence</a></li>
+                        <li><a href="/v2/stay-writ/check-answers" target="_blank">Check answers</a></li>
+                        <li><a href="/v2/stay-writ/confirmation-page" target="_blank">Confirmation page</a></li>
+                    </ol>
+                </li>
+                <li>Court Order validation
                     <ol class="govuk-list govuk-list--bullet">
                         <li><a href="/v2/check-writ" target="_blank">Start</a></li>
                         <li><a href="/v2/check-writ/questions" target="_blank">Questions</a></li>

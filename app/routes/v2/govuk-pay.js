@@ -14,6 +14,7 @@ module.exports = function (router) {
     let sess = req.session
     console.log(sess)
     res.render(version + '/GOVUK-pay/confirm-card-payment.html', {
+      defendant: settings.defendant,
       name: settings.defendantName,
       amount: '255'
     })

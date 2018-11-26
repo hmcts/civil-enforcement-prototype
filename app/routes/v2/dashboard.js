@@ -4,8 +4,8 @@ module.exports = function (router) {
   const version = 'v2'
 
   router.get(['/' + version + '/dashboard/case', '/' + version + '/dashboard/:dashboardType/case'], function (req, res) {
-    let defendant = req.query.defendant || settings.defendantName
-    let claimant = req.query.claimant || settings.claimantName
+    let defendant = req.query.defendant || settings.defendant.name
+    let claimant = req.query.claimant || settings.claimant.name
     let claimAmount = req.query.claimAmount || settings.claimAmount
     let simulateTimePassing = req.query.simulateTimePassing || false
     let CCJrequested = req.query.CCJrequested || false
@@ -17,6 +17,8 @@ module.exports = function (router) {
     res.render(version + '/dashboard/case.html', {
       defendant: defendant,
       claimant: claimant,
+      defendantData: settings.defendant,
+      claimantData: settings.claimant,
       claimAmount: claimAmount,
       simulateTimePassing: simulateTimePassing,
       CCJrequested: CCJrequested,

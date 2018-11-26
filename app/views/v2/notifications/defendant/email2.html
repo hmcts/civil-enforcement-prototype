@@ -3,7 +3,9 @@
 {% block content %}
 
     <h1 class="govuk-heading-l">Court action taken against you - Writ of Control issued</h1>
-    <p style="margin:0 0 30px;font-size:19px">Dear Andrew Lions,</p>
+    <p class="govuk-heading-s">Claim number: {{ claimNumber }}</p>
+
+    <p style="margin:0 0 30px;font-size:19px">Dear {{ defendant }},</p>
     <p style="margin:0 0 30px;font-size:19px">The High Court has issued a Writ of Control against you.</p>
 
     <p style="margin:0 0 30px;font-size:19px">A Writ of Control is an order from the court to a High Court bailiff, known as a High Court Enforcement Officer (HCEO). It gives an HCEO the right to take goods from your property to pay off your debt.</p>
@@ -27,6 +29,7 @@
 
     <p style="margin:30px 0 30px;font-size:19px">You will need to give evidence to support your application.</p>
 
+    <p><a href="/v2/dashboard/security/defendant" class="govuk-button govuk-button--start">CALL TO ACTION TEXT TO VIEW CLAIM DETAILS</a></p>
 
     <p><a href="#">Apply to set aside or vary a judgment and stop the Writ of Control</a></p>
 

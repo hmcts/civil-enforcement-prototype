@@ -2,20 +2,21 @@
 
 {% block content %}
 
+    <p class="govuk-heading-s">Claim number: {{ claimNumber }}</p>
 
-    <p style="margin:0 0 30px;font-size:19px">Dear Andrew Lions,</p>
-    <p style="margin:0 0 30px;font-size:19px">We're contacting you because Jan Clark has made a money claim against you
+    <p style="margin:0 0 30px;font-size:19px">Dear {{ defendant }},</p>
+    <p style="margin:0 0 30px;font-size:19px">We're contacting you because {{ claimant }} has made a money claim against you
         for £1,500, including interest and claim fee, on <span class="dates2"> 22 November 2018</span>.</p>
 
     <p style="margin:0 0 30px;font-size:19px">We've also sent this claim to your address, as provided by the claimant
-        Jan Clark.</p>
+        {{ claimant }}.</p>
 
     <p class="dynamic-content default-content" style="font-size:19px; font-weight: 700">Respond to this claim:</p>
 
 
     <ol class="govuk-list--bullet govuk-list">
         <li>Go to www.gov.uk/respond-to-money-claim</li>
-        <li>Enter this claim number: 352MC733</li>
+        <li>Enter this claim number: {{ claimNumber }}</li>
         <li>Enter this security code: 847395</li>
     </ol>
 

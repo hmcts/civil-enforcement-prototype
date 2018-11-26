@@ -1,11 +1,11 @@
+const settings = require('./config')
+
 module.exports = function (router) {
   const version = 'v2'
-  const defendantName = 'Andrew Smith'
-  const claimantName = 'Sam Jones'
 
   router.get(['/' + version + '/dashboard/case', '/' + version + '/dashboard/:dashboardType/case'], function (req, res) {
-    let defendant = req.query.defendant || defendantName
-    let claimant = req.query.claimant || claimantName
+    let defendant = req.query.defendant || settings.defendantName
+    let claimant = req.query.claimant || settings.claimantName
     let simulateTimePassing = req.query.simulateTimePassing || false
     let CCJrequested = req.query.CCJrequested || false
     let CCJapproved = req.query.CCJapproved || false
@@ -31,7 +31,7 @@ module.exports = function (router) {
   })
 
   router.get(['/' + version + '/dashboard/case-alt'], function (req, res) {
-    let defendant = req.query.defendant || defendantName
+    let defendant = req.query.defendant || settings.defendantName
     let enforcement = req.query.enforcement || false
     let writApproved = req.query.writApproved || false
     let writReady = req.query.writReady || false
@@ -44,6 +44,6 @@ module.exports = function (router) {
   })
 
   router.post(['/' + version + '/dashboard/security/defendant'], function (req, res) {
-    res.redirect('/' + version + '/dashboard/defendant/case')
+    res.redirect('/' + version + '/dashboard/defendant/case?writApproved=true')
   })
 }

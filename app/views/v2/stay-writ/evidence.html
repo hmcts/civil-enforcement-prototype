@@ -40,25 +40,23 @@
                     ]
                 }) }}
             {% endif %}
-            <h1 class="govuk-heading-xl">Why?</h1>
+            <h1 class="govuk-heading-xl">Give evidence?</h1>
 
 
             <form action="3" method="post" class="form">
                 <div class="govuk-form-group">
-                    {% from "input/macro.njk" import govukInput %}
+                    {% from "file-upload/macro.njk" import govukFileUpload %}
 
-                    {% from "textarea/macro.njk" import govukTextarea %}
-
-                    {{ govukTextarea({
-                        name: "more-detail",
-                        id: "more-detail",
+                    {{ govukFileUpload({
+                        id: "file-upload-1",
+                        name: "file-upload-1",
                         label: {
-                            text: "Can you provide more detail?"
-                        },
-                        hint: {
-                            text: "Don’t include personal or financial information, eg your National Insurance number or credit card details."
+                            text: "Upload a file"
                         }
                     }) }}
+
+                    hmcts
+
                 </div>
 
                 <button class="govuk-button">Continue</button>

@@ -1,6 +1,6 @@
 module.exports = function (router) {
   const version = 'v2'
-  const defendantName = 'Andrew Lions'
+  const defendantName = 'Andrew Smith'
   const claimantName = 'Sam Jones'
 
   router.get(['/' + version + '/dashboard/case', '/' + version + '/dashboard/:dashboardType/case'], function (req, res) {

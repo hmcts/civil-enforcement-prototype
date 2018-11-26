@@ -27,8 +27,7 @@ module.exports = function (router) {
   })
 
   router.get(['/' + version + '/dashboard/', '/' + version + '/dashboard/:dashboardType'], function (req, res) {
-    res.render(version + '/dashboard/index.html', {
-    })
+    res.render(version + '/dashboard/index.html', {})
   })
 
   router.get(['/' + version + '/dashboard/case-alt'], function (req, res) {
@@ -44,4 +43,7 @@ module.exports = function (router) {
     })
   })
 
+  router.post(['/' + version + '/dashboard/security/defendant'], function (req, res) {
+    res.redirect('/' + version + '/dashboard/defendant/case')
+  })
 }

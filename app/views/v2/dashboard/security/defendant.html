@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+OCMC {{ dashboardType }} Dashboard
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-column-full">
+    <h1 class="govuk-heading-l heading-large">
+        Enter your details
+    </h1>
+
+    <form action="" method="post" class="form">
+    <div class="govuk-form-group">
+        {% from "input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+            label: {
+                text: "What is the claim number?"
+            },
+            hint: {
+                text: "For example, D5FJ0001"
+            },
+            id: "claimNo",
+            name: "claimNo",
+            classes: "govuk-input--width-20"
+        }) }}
+
+        {{ govukInput({
+            label: {
+                text: "What is the surname of the individual making the claim?"
+            },
+            hint: {
+                stext: "For example, D5FJ0001"
+            },
+            id: "name",
+            name: "name",
+            classes: "govuk-input--width-20"
+        }) }}
+
+    </div>
+        <button class="govuk-button">Continue</button>
+    </form>
+
+
+</div>
+
+{% endblock %}

@@ -40,7 +40,7 @@
                     ]
                 }) }}
             {% endif %}
-            <h1 class="govuk-heading-xl">Why?</h1>
+            <h1 class="govuk-heading-xl">Why are you applying to cancel (set aside) your CCJ?</h1>
 
 
             <form action="check-answers" method="post" class="form">
@@ -53,16 +53,17 @@
                         name: "more-detail",
                         id: "more-detail",
                         label: {
-                            text: "Can you provide more detail?"
+                            text: "Explain the reasons for applying to set aside your CCJ."
                         },
                         hint: {
-                            text: "Don’t include personal or financial information, eg your National Insurance number or credit card details."
+                            stext: "Don’t include personal or financial information, eg your National Insurance number or credit card details."
                         }
                     }) }}
                 </div>
 
 
-                <h2 class="govuk-heading-s">Provide supporting evidence (optional)</h2>
+                <h2 class="govuk-heading-s">Add evidence to support your application (optional)</h2>
+                {# <p class="govuk-hint">Files must either be word documents or pdfs.</p> #}
                 {% from "file-upload/macro.njk" import govukFileUpload %}
 
                 {{ govukFileUpload({

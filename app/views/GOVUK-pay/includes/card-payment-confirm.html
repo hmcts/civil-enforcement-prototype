@@ -13,7 +13,7 @@
         </tr>
         <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="row">Name on card:</th>
-            <td class="govuk-table__cell">{{ data['full-name'] or 'Sam Green' }}</td>
+            <td class="govuk-table__cell">{{ data['full-name'] or name }}</td>
         </tr>
         <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="row">Billing address:</th>
@@ -21,11 +21,11 @@
         </tr>
         <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="row">Email address:</th>
-            <td class="govuk-table__cell">sam_green@gmail.com</td>
+            <td class="govuk-table__cell">ilovelions123@gmail.com</td>
         </tr>
         <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="row">Amount to pay:</th>
-            <td class="govuk-table__cell">£{% if type == 'certificate' %}15{% else %}66{% endif %}</td>
+            <td class="govuk-table__cell">£{{ amount }}</td>
         </tr>
         </tbody>
     </table>

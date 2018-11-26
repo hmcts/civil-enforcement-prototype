@@ -9,7 +9,6 @@ GOV.UK Pay - confirm payment
 {% endblock %}
 {% block content %}
 
-{% import "GOVUK-pay/includes/card-payment-confirm.html" as confirm %}
 
     <div class="govuk-grid-row review-details">
 {% from "back-link/macro.njk" import govukBackLink %}
@@ -22,7 +21,7 @@ GOV.UK Pay - confirm payment
             Confirm your payment
         </h1>
 
-        {{ confirm.form('issue') }}
+        {% include './includes/card-payment-confirm.html' %}
 
     </div>
 

@@ -1,6 +1,7 @@
 module.exports = {
   defendantName: 'Andrew Smith',
-  claimantName: 'Sam Jones',
+  claimantName: 'Kate Beckinsale',
   claimNumber: '391MC645',
-  claimAmount: '65432.21'
+  claimAmount: '£2,456',
+  feeStayOfWrit: '255.00'
 }

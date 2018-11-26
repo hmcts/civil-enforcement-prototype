@@ -34,11 +34,19 @@ module.exports = function (router) {
   })
 
   router.get(['/' + version + '/stay-writ/2'], function (req, res) {
-    res.render(version + '/stay-writ/why.html')
+    res.render(version + '/stay-writ/hearing.html')
   })
 
   router.get(['/' + version + '/stay-writ/3'], function (req, res) {
+    res.render(version + '/stay-writ/why.html')
+  })
+
+  router.get(['/' + version + '/stay-writ/4'], function (req, res) {
     res.render(version + '/stay-writ/evidence.html')
+  })
+
+  router.get(['/' + version + '/stay-writ/payment'], function (req, res) {
+    res.redirect('/' + version + '/GOVUK-pay/enter-card?continueUrl=/' + version + '/stay-writ/confirmation-page&amount=' + settings.feeStayOfWrit)
   })
 
 }

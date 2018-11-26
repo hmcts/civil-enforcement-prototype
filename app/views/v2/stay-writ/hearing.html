@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-    Verify a court order
+    Stay a writ of control - hearing type
 {% endblock %}
 {% block header %}
     {{ govukHeader() }}
@@ -40,38 +40,41 @@
                     ]
                 }) }}
             {% endif %}
-            <h1 class="govuk-heading-xl">Why?</h1>
 
-
-            <form action="check-answers" method="post" class="form">
+            <form action="3" method="post" class="form">
                 <div class="govuk-form-group">
-                    {% from "input/macro.njk" import govukInput %}
+                    {% from "radios/macro.njk" import govukRadios %}
 
-                    {% from "textarea/macro.njk" import govukTextarea %}
-
-                    {{ govukTextarea({
-                        name: "more-detail",
-                        id: "more-detail",
-                        label: {
-                            text: "Can you provide more detail?"
+                    {{ govukRadios({
+                        idPrefix: "where-do-you-live",
+                        name: "where-do-you-live",
+                        fieldset: {
+                            legend: {
+                                text: "What type of hearing do you want?",
+                                isPageHeading: true,
+                                classes: "govuk-fieldset__legend--xl"
+                            }
                         },
                         hint: {
-                            text: "Don’t include personal or financial information, eg your National Insurance number or credit card details."
-                        }
+                            text: "You may have to attend a hearing with a judge."
+                        },
+                        items: [
+                            {
+                                value: "courtroom",
+                                text: "Hearing in a courtroom"
+                            },
+                            {
+                                value: "remote",
+                                text: "Telephone/video hearing"
+                            },
+                            {
+                                value: "none",
+                                text: " I do not want a hearing"
+                            }
+                        ]
                     }) }}
+
                 </div>
-
-
-                <h2 class="govuk-heading-s">Provide supporting evidence (optional)</h2>
-                {% from "file-upload/macro.njk" import govukFileUpload %}
-
-                {{ govukFileUpload({
-                  id: "file-upload-1",
-                  name: "file-upload-1",
-                  label: {
-                    text: "Upload a file"
-                  }
-                }) }}
 
                 <button class="govuk-button">Continue</button>
             </form>

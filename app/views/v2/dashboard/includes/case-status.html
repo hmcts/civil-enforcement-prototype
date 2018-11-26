@@ -1,0 +1,26 @@
+{% if dashboardType === 'claimant' %}
+    {% if CCJrequested === 'true' %}
+
+    {% endif %}
+{% else %}
+
+    {% if CCJapproved === 'true' %}
+
+
+        {% from "warning-text/macro.njk" import govukWarningText %}
+
+        {{ govukWarningText({
+          text: "A County Court Judgment (CCJ) has been registered against you",
+          iconFallbackText: "Warning"
+        }) }}
+
+
+    {% elseif writApproved === 'true' %}
+
+        {% include './defendant/content/next-step-writApproved.html' %}
+
+    {% else %}
+
+    {% endif %}
+
+{% endif %}

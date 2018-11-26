@@ -33,18 +33,18 @@
                     ]
                 }) }}
             {% endif %}
-            <h1 class="govuk-heading-xl">Check the authenticity of a writ of control</h1>
-            <p>Do we need to give context here? Or would a service start page work better?</p>
+            <h1 class="govuk-heading-xl">Verify a Writ of Control</h1>
+            <p>Fill in the form to check if a Writ of Control is valid</p>
             <form action="" method="post" class="form">
                 <div class="govuk-form-group">
                     {% from "input/macro.njk" import govukInput %}
 
                     {{ govukInput({
                         label: {
-                            text: "What is the claim number?"
+                            text: "Claim number"
                         },
                         hint: {
-                            text: "For example, D5FJ0001"
+                            text: "You can find this in the details section"
                         },
                         id: "name",
                         name: "name",
@@ -53,10 +53,10 @@
 
                     {{ govukInput({
                         label: {
-                            text: "What is the postcode of the applicant?"
+                            text: "Claimant’s postcode"
                         },
                         hint: {
-                            text: "This can be found at the bottom of the writ of control document"
+                            text: "You can find this above your address details"
                         },
                         id: "name",
                         name: "name",
@@ -70,7 +70,7 @@
                         namePrefix: "dob",
                         fieldset: {
                             legend: {
-                                text: "What is the date of the order?"
+                                text: "Date of the order"
                             }
                         },
                         hint: {
@@ -80,7 +80,7 @@
 
                 </div>
 
-                <button class="govuk-button">Continue</button>
+                <button class="govuk-button">Verify</button>
             </form>
 
         </div>

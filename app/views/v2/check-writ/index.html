@@ -44,7 +44,7 @@
                             text: "Claim number"
                         },
                         hint: {
-                            text: "You can find this in the details section"
+                            stext: "You can find this in the details section"
                         },
                         id: "name",
                         name: "name",
@@ -53,29 +53,14 @@
 
                     {{ govukInput({
                         label: {
-                            text: "Claimant’s postcode"
+                            text: "Your postcode"
                         },
                         hint: {
-                            text: "You can find this above your address details"
+                            stext: "You can find this above your address details"
                         },
                         id: "name",
                         name: "name",
                         classes: "govuk-input--width-10"
-                    }) }}
-
-                    {% from "date-input/macro.njk" import govukDateInput %}
-
-                    {{ govukDateInput({
-                        id: "dob",
-                        namePrefix: "dob",
-                        fieldset: {
-                            legend: {
-                                text: "Date of the order"
-                            }
-                        },
-                        hint: {
-                            text: "For example, 31 3 1980"
-                        }
                     }) }}
 
                 </div>

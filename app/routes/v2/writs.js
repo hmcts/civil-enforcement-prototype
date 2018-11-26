@@ -16,7 +16,15 @@ module.exports = function (router) {
     res.redirect('/' + version + '/writs/check-answers')
   })
 
-  router.post(['/' + version + '/check-writ/'], function (req, res) {
+  router.get(['/' + version + '/check-writ/', '/' + version + '/check-writ'], function (req, res) {
+    res.render(version + '/check-writ/start.html')
+  })
+
+  router.get(['/' + version + '/check-writ/questions'], function (req, res) {
+    res.render(version + '/check-writ/index.html')
+  })
+
+  router.post(['/' + version + '/check-writ/questions'], function (req, res) {
     // res.render(version + 'check-writ/index.html', {
     //   d: 'asd'
     // })

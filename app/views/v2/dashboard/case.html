@@ -14,7 +14,7 @@
     {% from "phase-banner/macro.njk" import govukPhaseBanner %}
     {{ govukPhaseBanner({
         tag: {
-            text: "beta"
+            text: "Alpha"
         },
         html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
     }) }}
@@ -27,10 +27,7 @@
             {% from "back-link/macro.njk" import govukBackLink %}
 
             {% if dashboardType === 'defendant' %}
-                {{ govukBackLink({
-                    text: "Back",
-                    href: "../defendant"
-                }) }}
+
             {% else %}
                 {{ govukBackLink({
                     text: "Back",

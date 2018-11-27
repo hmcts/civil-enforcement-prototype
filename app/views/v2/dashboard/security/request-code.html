@@ -14,7 +14,7 @@
     {% from "phase-banner/macro.njk" import govukPhaseBanner %}
     {{ govukPhaseBanner({
         tag: {
-            text: "beta"
+            text: "Alpha"
         },
         html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
     }) }}
@@ -22,7 +22,7 @@
 
 {% block content %}
     <div class="govuk-column-full">
-        <span class="govuk-caption-m">Access claim details</span>
+        <span class="govuk-caption-m">Security questions</span>
         <h1 class="govuk-heading-l heading-large">
             Enter your phone number
         </h1>
@@ -34,11 +34,11 @@
 
                 {{ govukInput({
                     label: {
-                        text: "Phone number",
+                        text: "Mobile phone number",
                         classes: 'govuk-visually-hidden'
                     },
                     hint: {
-                        text: "This will be used to verify you"
+                        text: "This should be the phone number listed on the claim"
                     },
                     id: "claimNo",
                     name: "claimNo",

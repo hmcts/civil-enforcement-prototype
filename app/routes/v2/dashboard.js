@@ -48,6 +48,23 @@ module.exports = function (router) {
   })
 
   router.post(['/' + version + '/dashboard/security/defendant'], function (req, res) {
+    res.redirect('/' + version + '/dashboard/security/defendant/2')
+  })
+
+  router.get(['/' + version + '/dashboard/security/defendant/2'], function (req, res) {
+    res.render(version + '/dashboard/security/request-code.html')
+  })
+
+  router.post(['/' + version + '/dashboard/security/defendant/2'], function (req, res) {
+    res.redirect('/' + version + '/dashboard/security/defendant/3')
+  })
+
+  router.get(['/' + version + '/dashboard/security/defendant/3'], function (req, res) {
+    res.render(version + '/dashboard/security/enter-code.html')
+  })
+
+  router.post(['/' + version + '/dashboard/security/defendant/3'], function (req, res) {
     res.redirect('/' + version + '/dashboard/defendant/case?writApproved=true')
   })
+
 }

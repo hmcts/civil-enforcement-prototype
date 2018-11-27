@@ -10,8 +10,8 @@ module.exports = function (router) {
   })
   router.get(['/' + version + '/notifications/defendant/:email'], function (req, res) {
     let phoneAlert = req.query.phoneAlert || false
-    let defendant = req.query.defendant || settings.defendantName
-    let claimant = req.query.claimant || settings.claimantName
+    let defendant = req.query.defendant || settings.defendant.name
+    let claimant = req.query.claimant || settings.claimant.name
     let claimNumber = req.query.claimNumber || settings.claimNumber
     res.render(version + '/notifications/defendant/' + req.params.email + '.html', {
       phoneAlert: phoneAlert,

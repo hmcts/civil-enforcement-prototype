@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Security layer - access to claim details
+{% endblock %}
+
+{% block header %}
+    <!-- Blank header with no service name for the start page -->
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "beta"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-column-full">
+        <span class="govuk-caption-m">Access claim details</span>
+        <h1 class="govuk-heading-l heading-large">
+            Enter your phone number
+        </h1>
+
+        <form action="" method="post" class="form">
+            <div class="govuk-form-group">
+
+                {% from "input/macro.njk" import govukInput %}
+
+                {{ govukInput({
+                    label: {
+                        text: "Phone number",
+                        classes: 'govuk-visually-hidden'
+                    },
+                    hint: {
+                        text: "This will be used to verify you"
+                    },
+                    id: "claimNo",
+                    name: "claimNo",
+                    classes: "govuk-input--width-20"
+                }) }}
+
+            </div>
+            <button class="govuk-button">Continue</button>
+        </form>
+
+
+    </div>
+
+{% endblock %}

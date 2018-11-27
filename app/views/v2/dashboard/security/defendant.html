@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-OCMC {{ dashboardType }} Dashboard
+    Security layer - access to claim details
 {% endblock %}
 
 {% block header %}
@@ -22,35 +22,26 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 {% block content %}
 <div class="govuk-column-full">
+    <span class="govuk-caption-m">Access claim details</span>
     <h1 class="govuk-heading-l heading-large">
-        Enter security details
+        Enter claim number
     </h1>
 
     <form action="" method="post" class="form">
     <div class="govuk-form-group">
+
         {% from "input/macro.njk" import govukInput %}
 
         {{ govukInput({
             label: {
-                text: "What is the claim number?"
+                text: "Claim number",
+                classes: 'govuk-visually-hidden'
             },
             hint: {
                 text: "For example, D5FJ0001"
             },
             id: "claimNo",
             name: "claimNo",
-            classes: "govuk-input--width-20"
-        }) }}
-
-        {{ govukInput({
-            label: {
-                text: "What is the surname of the individual making the claim?"
-            },
-            hint: {
-                stext: "For example, D5FJ0001"
-            },
-            id: "name",
-            name: "name",
             classes: "govuk-input--width-20"
         }) }}
 

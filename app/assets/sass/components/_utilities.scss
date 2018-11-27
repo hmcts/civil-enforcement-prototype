@@ -10,6 +10,19 @@ $phoneHeight: 510px;
   visibility: hidden;
 }
 
+#phone-mockup {
+  width: $phoneWidth;
+  background: url('/public/images/phone-alert.png') no-repeat;
+  background-size: cover;
+  height: $phoneHeight;
+  transition: all 1.5s;
+  animation: shake 5s cubic-bezier(.36,.07,.19,.97) both infinite;
+  transform: translate3d(0, 0, 0);
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 #phoneBackground {
   position: fixed;
   height: 100%;
@@ -27,23 +40,26 @@ $phoneHeight: 510px;
     opacity: 1;
   }
   #phone-mockup {
-    width: $phoneWidth;
     top: -100%;
     margin-top: - ($phoneHeight / 2);
     right: 50%;
     margin-right: -($phoneWidth / 2);
-    background: url('/public/images/phone-alert.png') no-repeat;
-    background-size: cover;
-    height: $phoneHeight;
     position: absolute;
-    transition: all 1.5s;
-    animation: shake 5s cubic-bezier(.36,.07,.19,.97) both infinite;
-    transform: translate3d(0, 0, 0);
-    &:hover {
-      cursor: pointer;
-    }
     &.active {
       top: 50%;
+    }
+  }
+}
+#phoneAccessCode {
+  #phone-mockup {
+    background: url('/public/images/phone-alert-access-code.png') no-repeat;
+    background-size: cover;
+    right: -50%;
+    top: 50%;
+    margin-top: - ($phoneHeight / 2);
+    position: absolute;
+    &.active {
+      right: 50px;
     }
   }
 }

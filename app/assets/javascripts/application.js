@@ -31,11 +31,17 @@ if ($('#daysPassing').length === 1) {
   daysPass(url, timeToPrompt, days)
 }
 
-if ($('#phone-mockup').length === 1) {
+if ($('#phoneBackground #phone-mockup').length === 1) {
   $('#phone-mockup').on('click', function () {
-    $('#phoneBackground').toggleClass('active');
-    $(this).toggleClass('active');
+    $('#phoneBackground').toggleClass('active')
+    $(this).toggleClass('active')
   })
+}
+
+if ($('#phoneAccessCode #phone-mockup').length === 1) {
+  setTimeout(function () {
+    $('#phone-mockup').toggleClass('active')
+  }, (3000))
 }
 
 $(document).ready(function () {

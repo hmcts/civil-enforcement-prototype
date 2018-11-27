@@ -49,4 +49,10 @@ module.exports = function (router) {
     res.redirect('/' + version + '/GOVUK-pay/enter-card?continueUrl=/' + version + '/stay-writ/confirmation-page&amount=' + settings.feeStayOfWrit)
   })
 
+  router.get(['/' + version + '/stay-writ/confirmation-page'], function (req, res) {
+    let simulateTimePassing = req.query.simulateTimePassing || false
+    res.render(version + '/stay-writ/confirmation-page.html', {
+      simulateTimePassing: simulateTimePassing
+    })
+  })
 }

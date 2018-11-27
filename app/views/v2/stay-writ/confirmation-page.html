@@ -53,4 +53,13 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     </div>
 </div>
 
+    {% if simulateTimePassing === 'true' %}
+        {% from "includes/days-passing.njk" import daysPassing %}
+        {{ daysPassing({
+            url: '/public/pdf/sprint5/NoE%20letter.pdf',
+            timeToPrompt: 5000,
+            days: 7
+        }) }}
+    {% endif %}
+
 {% endblock %}

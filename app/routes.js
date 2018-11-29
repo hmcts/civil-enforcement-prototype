@@ -16,5 +16,6 @@ require('./routes/v2/enforcement-selection.js')(router)
 require('./routes/v2/writs.js')(router)
 require('./routes/v2/dashboard.js')(router)
 require('./routes/v2/govuk-pay.js')(router)
+require('./routes/v2/page-flow.js')(router)
 
 module.exports = router

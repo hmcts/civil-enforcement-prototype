@@ -1,0 +1,66 @@
+{
+  "stages": [
+    {
+      "name": "security-layer",
+      "ID": "sec",
+      "description": "Small barrier to entering private claim details. Known facts are used to verify that user should proceed.",
+      "versions": [
+        {
+          "version": 1,
+          "sprint": 5,
+          "sprintDirectory": "v2",
+          "location": "/dashboard/security/",
+          "users": [
+            "defendant"
+          ],
+          "design-notes": "A crude representation of a thin security layer that negates the need for a potentially sceptical user to enter too many details. An intentionally low barrier to allow defendants to view claim details whilst being mindful of security requirements.",
+          "pages": [
+            {
+              "title": "Enter claim details",
+              "description": "User enters the claim number to proceed to next step",
+              "type": "question-page-text-input",
+              "location": "defendant"
+            },
+            {
+              "title": "Request access code",
+              "description": "User enters their phone number, this is checked against the claim details. If there is a match, a 6 digit PIN is sent to the device",
+              "type": "question-page-text-input",
+              "location": "request-code"
+            },
+            {
+              "title": "Enter access code",
+              "description": "User enters the access code that was sent to their phone",
+              "type": "question-page-text-input",
+              "location": "enter-code"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "defendant-dashboard",
+      "ID": "defdash",
+      "description": "Dashboard for defendant's claim details",
+      "versions": [
+        {
+          "version": 1,
+          "sprint": 5,
+          "sprintDirectory": "v2",
+          "location": "/dashboard/defendant/",
+          "users": [
+            "defendant"
+          ],
+          "design-notes": "First pass at the 'dashboard' layout for a defendant with access to all claim history, party information, current stage and next steps.",
+          "pages": [
+            {
+              "title": "Defendant dashboard - Writ of Control approved",
+              "description": "The status of the page when a Writ of Control has been approved",
+              "type": "dashboard",
+              "location": "case?writApproved=true"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

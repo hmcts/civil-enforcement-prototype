@@ -1,0 +1,20 @@
+{% macro stageItem(params) %}
+    <li>
+
+        {{ params.name }}
+
+
+        {%- if params.stage.versions[0] %}
+            <ol>
+            {% for page in params.stage.versions[0].pages %}
+                {% from "includes/page-item.njk" import pageItem %}
+                {{ pageItem({
+                    page: page
+                }) }}
+            {% endfor %}
+            </ol>
+        {% endif -%}
+
+
+    </li>
+{% endmacro %}

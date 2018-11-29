@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Civil Enforcement prototypes
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">
+                Sprint {{ sprint }}
+                <!--<span class="govuk-caption-xl">{{ releaseVersion }}</span>-->
+            </h2>{{ releaseVersion | log }}
+
+            <ol>
+
+                {% for stage in pageFlow.stages %}
+
+                    {% from "includes/stage-item.njk" import stageItem %}
+                    {{ stageItem({
+                        stage: stage,
+                        sprint: stage.sprint,
+                        name: stage.name,
+                        description: stage.description,
+                        pages: stage.pages
+                    }) }}
+
+                {% endfor %}
+
+            </ol>
+
+        </div>
+    </div>
+
+{% endblock %}

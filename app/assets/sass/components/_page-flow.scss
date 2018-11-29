@@ -1,0 +1,28 @@
+$icons: '../images/page-flow/page-types';
+
+.page-flow--stages {
+
+}
+
+.page-flow--pages {
+  @extend .govuk-body;
+  .page-flow-item--page {
+    display: inline-block;
+    .page-flow-item-screen-icon {
+      width: 100px;
+      height: 200px;
+      display: block;
+      background-repeat: no-repeat;
+     &--text-input {
+       background-image: url($icons + '/text-input.svg');
+       -webkit-background-size: contain;
+       background-size: contain;
+     }
+      &--dashboard, &--content-page {
+        background-image: url($icons + '/content-page.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+    }
+  }
+}

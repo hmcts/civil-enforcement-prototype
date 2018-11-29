@@ -18,19 +18,19 @@
             {
               "title": "Enter claim details",
               "description": "User enters the claim number to proceed to next step",
-              "type": "question-page-text-input",
+              "type": "text-input",
               "location": "defendant"
             },
             {
               "title": "Request access code",
               "description": "User enters their phone number, this is checked against the claim details. If there is a match, a 6 digit PIN is sent to the device",
-              "type": "question-page-text-input",
+              "type": "text-input",
               "location": "request-code"
             },
             {
               "title": "Enter access code",
               "description": "User enters the access code that was sent to their phone",
-              "type": "question-page-text-input",
+              "type": "text-input",
               "location": "enter-code"
             }
           ]

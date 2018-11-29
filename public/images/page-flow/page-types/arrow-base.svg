@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Dot</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Connection/Single" fill="#FFFFFF" stroke="#005EA5" stroke-width="4">
+            <g id="Single-connection">
+                <circle id="Dot" cx="16" cy="16" r="14"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -8,7 +8,9 @@
                 {% for page in params.stage.versions[0].pages %}
                     {% from "includes/page-item.njk" import pageItem %}
                     {{ pageItem({
-                        page: page
+                        page: page,
+                        location: params.stage.versions[0].location,
+                        version: params.stage.versions[0].sprintDirectory
                     }) }}
                 {% endfor %}
             </ol>

@@ -11,7 +11,7 @@
             <h2 class="govuk-heading-l">
                 Sprint {{ sprint }}
                 <!--<span class="govuk-caption-xl">{{ releaseVersion }}</span>-->
-            </h2>{{ releaseVersion | log }}
+            </h2>
 
             <ol class="page-flow--stages">
 
@@ -23,7 +23,8 @@
                         sprint: stage.sprint,
                         name: stage.name,
                         description: stage.description,
-                        pages: stage.pages
+                        pages: stage.pages,
+                        csvData: csvData
                     }) }}
 
                 {% endfor %}

@@ -42,6 +42,7 @@
     },
     {
       "name": "defendant-dashboard",
+      "location": "dashboard",
       "ID": "defdash",
       "description": "Dashboard for defendant's claim details",
       "versions": [

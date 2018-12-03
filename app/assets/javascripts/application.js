@@ -44,6 +44,14 @@ if ($('#phoneAccessCode #phone-mockup').length === 1) {
   }, (3000))
 }
 
+if ($('#page-flow').length === 1) {
+  console.log('In business')
+  $('.page-flow-item--page a').on('click', (e) => {
+    console.log(e)
+    // return false
+  })
+}
+
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })

@@ -2,6 +2,7 @@
   "stages": [
     {
       "name": "security-layer",
+      "location": "dashboard/security",
       "id": "sec",
       "description": "Small barrier to entering private claim details. Known facts are used to verify that user should proceed.",
       "versions": [
@@ -42,7 +43,7 @@
     },
     {
       "name": "defendant-dashboard",
-      "location": "dashboard",
+      "location": "dashboard/defendant",
       "ID": "defdash",
       "description": "Dashboard for defendant's claim details",
       "versions": [

@@ -10,7 +10,9 @@
         <div class="govuk-grid-column-two-thirds">
             <span class="govuk-header">Sprint {{ sprint }}</span>
             <h2 class="govuk-heading-l">
-            {{ thisPage }}
+                <p>{{ thisPage.title }}</p>
+                <p>{{ thisPage.description }}</p>
+                <iframe src="/{{ location }}" frameborder="0"></iframe>
             </h2>
 
 

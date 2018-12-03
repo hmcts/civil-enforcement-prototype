@@ -24,13 +24,18 @@ module.exports = function (router) {
   router.get(['/' + version + '/page-flow/:stage/:page', '/' + version + '/page-flow/:stage/:subStage/:page'], function (req, res) {
     // console.log(csvData)
     //  thisPage = pageFlow['stages']
-    let thisPage = common.findKey(req.params.stage, 'location', pageFlow.stages)
+    let theStageKey = req.params.subStage ? req.params.stage + '/' + req.params.subStage : req.params.stage
+    console.log(theStageKey)
+    let thisStage = common.findKey(theStageKey, 'location', pageFlow.stages)
+    // if substage - prep the 'key'
+    let thisPage = common.findKey(req.params.page, 'location', thisStage.versions[0]['pages'])
     console.log(thisPage)
     res.render(version + '/page-flow-individual.html',
       {
         isPage: true,
         pageFlow: pageFlow,
-        thisPage: thisPage.versions[0],
+        location: version + '/' + thisStage.location + '/' + thisPage.location,
+        thisPage: thisPage,
         sprint: sprint,
         csvData: csvData
       }

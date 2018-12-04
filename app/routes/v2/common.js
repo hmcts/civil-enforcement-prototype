@@ -74,17 +74,30 @@ common.sortArray = function (a, b) {
   return compareStrings(a, b)
 }
 
+common.csvtojson = function (theFile) {
+  return csvtojson().fromFile(theFile).then((jsonObj) => {
+    return jsonObj
+  })
+}
+
+common.findCSVKey = function (theFile, key, theParameter) {
+  csvtojson().fromFile(theFile).then((jsonObj) => {
+    let stages = []
+    for (var theKey in jsonObj) {
+      if (jsonObj[theKey][theParameter] === key) {
+        stages.push(jsonObj[theKey])
+      }
+    }
+    return stages
+  })
+  return false
+}
+
 common.findKey = function (key, theParameter, theArray) {
   for (var theKey in theArray) {
     if (theArray[theKey][theParameter] === key) return theArray[theKey]
   }
   return false
-}
-
-common.csvtojson = function (theFile) {
-  return csvtojson().fromFile(theFile).then((jsonObj) => {
-    return jsonObj
-  })
 }
 
 module.exports = common

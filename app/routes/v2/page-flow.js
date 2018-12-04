@@ -25,17 +25,22 @@ module.exports = function (router) {
     // console.log(csvData)
     //  thisPage = pageFlow['stages']
     let theStageKey = req.params.subStage ? req.params.stage + '/' + req.params.subStage : req.params.stage
-    console.log(theStageKey)
+    // console.log(theStageKey)
     let thisStage = common.findKey(theStageKey, 'location', pageFlow.stages)
     // if substage - prep the 'key'
     let thisPage = common.findKey(req.params.page, 'location', thisStage.versions[0]['pages'])
-    console.log(thisPage)
+    // Get array from csvData using location and stage info
+    let theStageUR = common.findCSVKey(csvFile, thisStage.name, 'Stage')
+    // can't use csvData async
+    console.log(theStageUR)
+    // console.log(thisPage)
     res.render(version + '/page-flow-individual.html',
       {
         isPage: true,
         pageFlow: pageFlow,
         location: version + '/' + thisStage.location + '/' + thisPage.location,
         thisPage: thisPage,
+        theStageUR: theStageUR,
         sprint: sprint,
         csvData: csvData
       }

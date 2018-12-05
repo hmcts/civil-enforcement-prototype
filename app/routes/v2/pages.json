@@ -18,21 +18,21 @@
           "pages": [
             {
               "title": "Enter claim details",
-              "id": 1,
+              "id": "1",
               "description": "User enters the claim number to proceed to next step",
               "type": "text-input",
               "location": "defendant"
             },
             {
               "title": "Request access code",
-              "id": 2,
+              "id": "2",
               "description": "User enters their phone number, this is checked against the claim details. If there is a match, a 6 digit PIN is sent to the device",
               "type": "text-input",
               "location": "request-code"
             },
             {
               "title": "Enter access code",
-              "id": 3,
+              "id": "3",
               "description": "User enters the access code that was sent to their phone",
               "type": "text-input",
               "location": "enter-code"
@@ -59,7 +59,7 @@
           "pages": [
             {
               "title": "Defendant dashboard - Writ of Control approved",
-              "id": 1,
+              "id": "1",
               "description": "The status of the page when a Writ of Control has been approved",
               "type": "dashboard",
               "location": "case?writApproved=true"

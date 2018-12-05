@@ -15,7 +15,11 @@
                 <iframe src="/{{ location }}" frameborder="0"></iframe>
             </h2>
 
-{{ theStageUR }}
+
+
+            {% for feedback in theStageUR %}
+                <p>{{feedback}}</p>
+            {% endfor %}
 
         </div>
     </div>

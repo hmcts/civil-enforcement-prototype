@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - debtor details
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+text: "Back",
+href: "/writs/select-hceo"
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <form action="" method="post" class="form">
+
+            <div class="form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <legend class="govuk-fieldset__heading">Is this the debtor’s address that the bailiff should visit?</legend>
+
+                    </legend>
+
+                    <!--<span id="how-contacted-conditional-hint" class="govuk-hint">-->
+                        <!--It can be their last known address, but you’ll have more chance of success if you can give their current address.  -->
+                    <!--</span>-->
+
+                    <div class="address">
+                        <div class="adr org fn"><p>
+
+                            72 Guild Street<br>
+                            London<br>
+                            SE23 6FH
+                        </p></div>
+                    </div>
+
+
+                    {% from "radios/macro.njk" import govukRadios %}
+
+                    {{ govukRadios({
+                    classes: "govuk-radios--inline",
+                    idPrefix: "changed-name",
+                    name: "changed-name",
+                    fieldset: {
+                    legend: {
+                    stext: "Is this the most current address that you know of?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--m"
+                    }
+                    },
+
+                    items: [
+                    {
+                    value: "yes",
+                    text: "Yes"
+                    },
+                    {
+                    value: "no",
+                    text: "No"
+                    }
+                    ]
+                    }) }}
+                </fieldset>
+            </div>
+
+            <button class="govuk-button">Continue</button>
+
+        </form>
+
+    </div>
+</div>
+{% endblock %}

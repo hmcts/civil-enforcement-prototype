@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Defendants guidance
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include './includes/breadcrumb.html' %}
+{% endblock %}
+
+{% block content %}
+<main role="main" id="content" class="guide">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                Manage your debts
+            </h1>
+
+            <aside class="part-navigation-container" role="complementary">
+                <nav role="navigation" class="gem-c-contents-list"
+                     aria-label="Pages in this guide">
+                    <p class="govuk-body-s">Contents</p>
+
+                    <ol class="gem-c-contents-list__list">
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed "
+                            aria-current="true">
+                            <a class="gem-c-contents-list__link"
+                               href="/v2/defendant-guidance/{% if stepByStep === true %}step-by-step/overview{% else %}index{% endif %}{% if stepByStep === true %}?step=4.1{% endif %}">Overview</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link"
+                               href="/v2/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}set-up-payment-plan{% if stepByStep === true %}?step=4.2{% endif %}">Set up a payment plan</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link"
+                               href="/v2/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}stop-bailiff-visit{% if stepByStep === true %}?step=5.2{% endif %}">Stop a bailiff visit</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <a class="gem-c-contents-list__link"
+                               href="/v2/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}keep-up-payments{% if stepByStep === true %}?step=6.1{% endif %}">If you cannot keep up with payments</a>
+                        </li>
+                        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active">
+                            <span class="govuk-breadcrumbs__link">If you cannot pay your debt</span>
+                        </li>
+                    </ol>
+
+                </nav>
+            </aside>
+
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="part-title">
+                <h2 class="govuk-heading-l">
+                If you cannot pay your debt</h2>
+            </div>
+
+            <p>If you cannot pay any of your debt you can apply to get the court order changed. To do this, fill in the
+                <a href="https://www.gov.uk/government/publications/form-n244-application-notice">N244 application
+                    form</a></p>
+
+            <p>You’ll need to:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>pay a £50 court fee unless you’re eligible for <a
+                        href="https://www.gov.uk/get-help-with-court-fees">help with court fees</a></li>
+                <li>give details of your financial situation, including a statement of means</li>
+            </ul>
+
+            <p>The court will schedule a hearing and send the time and date of your hearing in the post. At the hearing
+                a judge will listen to your case and make a decision on your application.
+            </p>
+
+            <nav class="gem-c-pagination" role="navigation" aria-label="Pagination">
+                <ul class="gem-c-pagination__list" data-module="track-click">
+                    <li class="gem-c-pagination__item gem-c-pagination__item--previous">
+                        <a href="/v2/defendant-guidance/{% if stepByStep === true %}step-by-step/{% endif %}keep-up-payments{% if stepByStep === true %}?step=6.1{% endif %}" class="gem-c-pagination__link" rel="prev">
+                            <span class="gem-c-pagination__link-title">
+                                <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13"
+                                     width="17" viewBox="0 0 17 13">
+                                  <path fill="currentColor"
+                                        d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                                </svg>
+                                <span class="gem-c-pagination__link-text">
+                                  Previous
+                                </span>
+                            </span>
+                            <span class="gem-c-pagination__link-divider visually-hidden">:</span>
+                            <span class="gem-c-pagination__link-label">If you cannot keep up with payments</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+            {% if stepByStep === true %}
+                {% include './includes/step-by-step-sidebar.html' %}
+            {% else %}
+                {% include './includes/related-guidance-defendants.html' %}
+            {% endif %}
+
+        </div>
+
+    </div>
+</main>
+{% endblock %}

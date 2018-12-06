@@ -1,0 +1,40 @@
+{% if dashboardType === 'claimant' %}
+    {% if CCJrequested === 'true' %}
+
+    {% endif %}
+{% else %}
+
+    {% if CCJapproved === 'true' %}
+
+
+        {% from "warning-text/macro.njk" import govukWarningText %}
+
+        {{ govukWarningText({
+            text: "A County Court Judgment (CCJ) has been registered against you",
+            iconFallbackText: "Warning"
+        }) }}
+
+
+    {% elseif writApproved === 'true' %}
+
+        {% from "warning-text/macro.njk" import govukWarningText %}
+
+        {{ govukWarningText({
+            text: "The High Court has issued a Writ of Control against you.",
+            iconFallbackText: "Warning"
+        }) }}
+
+        {% from "details/macro.njk" import govukDetails %}
+
+        {{ govukDetails({
+            summaryText: "What is a Writ of Control?",
+            html: "<p>A Writ of Control is an order from the court to a High Court bailiff, known as a High Court Enforcement Officer (HCEO). It gives an HCEO the right to take goods from your property to pay off your debt.</p>
+
+<p>HCEOs charge fees for their services, which they add to the total debt. This means you are responsible for paying the HCEO fees.</p>"
+        }) }}
+
+    {% else %}
+
+    {% endif %}
+
+{% endif %}

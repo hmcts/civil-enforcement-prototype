@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - writ of control
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+text: "Back",
+href: "2"
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="4" method="post" class="form">
+
+            <div class="govuk-form-group">
+                {% from "radios/macro.njk" import govukRadios %}
+
+                {{ govukRadios({
+                  classes: "govuk-radios--inline",
+                  idPrefix: "can-pay",
+                  name: "can-pay",
+                  fieldset: {
+                    legend: {
+                      text: "Do you believe Andrew Smith can pay you back?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--l"
+                    }
+                  },
+                  hint: {
+                    stext: "Our records show that Andrew Smith has three existing unpaid County Court Judgments."
+                  },
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes"
+                    },
+                    {
+                      value: "no",
+                      text: "No"
+                    }
+                  ]
+                }) }}
+            </div>
+
+            <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

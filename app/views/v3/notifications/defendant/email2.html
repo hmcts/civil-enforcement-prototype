@@ -1,0 +1,48 @@
+{% extends "email-layout.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">Court action taken against you - Writ of Control issued</h1>
+    <p class="govuk-heading-s">Claim number: {{ claimNumber }}</p>
+
+    <p style="margin:0 0 30px;font-size:19px">Dear {{ defendant }},</p>
+    <p style="margin:0 0 30px;font-size:19px">The High Court has issued a Writ of Control against you.</p>
+
+    <p style="margin:0 0 30px;font-size:19px">A Writ of Control is an order from the court to a High Court bailiff, known as a High Court Enforcement Officer (HCEO). It gives an HCEO the right to take goods from your property to pay off your debt.</p>
+
+    <p>HCEOs charge fees for their services, which they add to the total debt. This means you are responsible for paying the HCEO fees.</p>
+
+    <h2 class="govuk-heading-s">Next steps</h2>
+
+    <p>The HCEO will contact you before coming to your property. It's likely that they will give you the opportunity to set up a payment plan before their visit. If you can afford to, set up a payment plan when they first contact you.</p>
+
+    <h2 class="govuk-heading-s">Stop a Writ of Control</h2>
+
+    <p>You can apply to stop a Writ of Control, which will stop the HCEO from visiting you.</p>
+
+    <p>You can apply to stop a Writ of Control if:</p>
+
+    <ol class="govuk-list--bullet govuk-list">
+        <li>you do not owe the money and want to cancel the county court judgment (CCJ) against you</li>
+        <li>your financial situation has changed and you want to vary the CCJ</li>
+    </ol>
+
+    <p style="margin:30px 0 30px;font-size:19px">You will need to give evidence to support your application.</p>
+
+    <p><a href="/v2/dashboard/security/defendant" class="govuk-button govuk-button--start">View your claim details and apply to stop a Writ of Control on GOV.UK</a></p>
+
+    <p style="margin:30px 0 30px;font-size:19px">Regards, RUMC (Resolve an unpaid money claim)</p>
+
+    </p><p style="margin:0 0 30px;font-size:19px"><strong>HM Courts &amp; Tribunals Service</strong><br>
+
+</p>
+
+
+    <br>
+
+
+    {% if phoneAlert === 'true' %}
+        {% include 'includes/phone-alert.html' %}
+    {% endif %}
+
+{% endblock %}

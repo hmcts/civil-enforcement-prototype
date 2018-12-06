@@ -1,0 +1,43 @@
+
+<div class="check-details">
+    <table class="govuk-table">
+        <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Card number:</th>
+            <td class="govuk-table__cell">************7470</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Expiry date:</th>
+            <td class="govuk-table__cell">11/20</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Name on card:</th>
+            <td class="govuk-table__cell">{{ data['full-name'] or defendant.name }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Billing address:</th>
+            <td class="govuk-table__cell">{{ defendant.address }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Email address:</th>
+            <td class="govuk-table__cell">{{ defendant.email }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Amount to pay:</th>
+            <td class="govuk-table__cell">£{{ amount }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="grid-row">
+    <div class="column-two-thirds">
+        <div class="form-group">
+            <a href="redirect-handler">
+                <button class="govuk-button">Confirm payment</button>
+            </a>
+        </div>
+        <div class="back">
+            <a href="check-and-send">Cancel payment</a>
+        </div>
+    </div>
+</div>

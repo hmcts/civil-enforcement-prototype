@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Claimants guidance
+{% endblock %}
+
+{% block header %}
+    <!-- Blank header with no service name for the start page -->
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include './includes/breadcrumb.html' %}
+{% endblock %}
+
+{% block content %}
+    <main role="main" id="content" class="guide">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-xl">
+                    If you do not get your money back
+                </h1>
+
+                <aside class="part-navigation-container" role="complementary">
+                    <nav role="navigation" class="gem-c-contents-list  " data-module="track-click"
+                         aria-label="Pages in this guide">
+                        <p class="govuk-body-s">Contents</p>
+
+                        <ol class="gem-c-contents-list__list">
+                            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                                <span class="govuk-breadcrumbs__link">Overview</span>
+                            </li>
+                            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                                <a class="gem-c-contents-list__link "
+                                   href="/v2/claimant-guidance/order-to-obtain-information-on-finances">Get an Order to
+                                    Obtain Information on finances
+                                </a>
+                            </li>
+                            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                                <a class="gem-c-contents-list__link "
+                                   href="/v2/claimant-guidance/send-bailiffs-to-collect-payment">Send bailiffs to
+                                    collect payment</a>
+                            </li>
+                            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                                <a class="gem-c-contents-list__link "
+                                   href="/v2/claimant-guidance/get-money-deducted-from-wages">Get money deducted from
+                                    wages</a>
+                            </li>
+                            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                                <a class="gem-c-contents-list__link "
+                                   href="/v2/claimant-guidance/freeze-assets-or-money-in-account">Freeze assets or money
+                                    in an account
+                                </a>
+                            </li>
+                            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                                <a class="gem-c-contents-list__link "
+                                   href="/v2/claimant-guidance/charge-debtors-land-or-property">Charge the debtor’s land
+                                    or property</a>
+                            </li>
+                        </ol>
+                    </nav>
+
+                </aside>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+
+                <div class="part-title">
+                    <h2 class="govuk-heading-l">
+                        Overview
+                    </h2>
+                </div>
+
+                <p>If the debt goes unpaid you can ask the court to collect payment for you, known as enforcing a
+                    judgment.
+                </p>
+
+                <p>Types of enforcement include asking the court to:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>send a bailiff to their home or business</li>
+                    <li>take money from their wages</li>
+                    <li>freeze money in their bank account</li>
+                    <li>put a charging order on property they own</li>
+                </ul>
+
+                <h3 class="govuk-heading-m">Court fees</h3>
+
+                <p>You will need to pay a court fee each time you ask the court to use enforcement. For example, if the
+                    court cannot get money from their wages, you will need to pay another fee to send a bailiff.</p>
+
+                <p>The court fee you pay is then added to the total debt owed to you. If the court can get your money
+                    back the money repaid to you will also include the court fees you have paid.</p>
+
+                <p>There is no guarantee that the court will be able get your money back. If the court cannot collect
+                    payment you will be responsible for all enforcement fees.</p>
+
+                <p>Depending on your situation you might not have to pay some or all court fees. Find out if you’re
+                    eligible for <a href="https://www.gov.uk/get-help-with-court-fees">help with court fees</a>.</p>
+
+                <nav class="gem-c-pagination" role="navigation" aria-label="Pagination">
+                    <ul class="gem-c-pagination__list" data-module="track-click">
+                        <li class="gem-c-pagination__item gem-c-pagination__item--next">
+                            <a href="/v2/claimant-guidance/order-to-obtain-information-on-finances"
+                               class="gem-c-pagination__link" rel="next">
+                            <span class="gem-c-pagination__link-title">
+                                <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13"
+                                     width="17"
+                                     viewBox="0 0 17 13">
+                                  <path fill="currentColor"
+                                        d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                                </svg>
+                                <span class="gem-c-pagination__link-text">
+                                  Next
+                                </span>
+                            </span>
+                                <span class="gem-c-pagination__link-divider visually-hidden">:</span>
+                                <span class="gem-c-pagination__link-label">Get an Order to Obtain Information on finances</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+                {% include 'includes/related-guidance.html' %}
+            </div>
+
+        </div>
+    </main>
+{% endblock %}

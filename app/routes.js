@@ -16,5 +16,12 @@ require('./routes/v2/enforcement-selection.js')(router)
 require('./routes/v2/writs.js')(router)
 require('./routes/v2/dashboard.js')(router)
 require('./routes/v2/govuk-pay.js')(router)
+// V3 work (Alpha S6)
+require('./routes/v3/step-by-step.js')(router)
+require('./routes/v3/notifications.js')(router)
+require('./routes/v3/enforcement-selection.js')(router)
+require('./routes/v3/writs.js')(router)
+require('./routes/v3/dashboard.js')(router)
+require('./routes/v3/govuk-pay.js')(router)
 
 module.exports = router

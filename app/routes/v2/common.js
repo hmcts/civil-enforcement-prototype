@@ -129,23 +129,34 @@ common.getLastPageInStage = function (pageFlow, theIndex) {
   return theLastPage
 }
 
-common.getPageBefore = function (pageFlow, index, theArray, thisStageIndex) {
+common.getPageBefore = function (pageFlow, index, theArray, thisStageIndex, version) {
   index = parseInt(index)
+  thisStageIndex = parseInt(thisStageIndex)
   if (theArray[(index - 1)]) {
     return theArray[(index - 1)].location
   } else if (thisStageIndex > 0) {
-    return common.getLastPageInStage(pageFlow, thisStageIndex - 1)
+    // return common.getLastPageInStage(pageFlow, thisStageIndex - 1)
+    // get the previous stage's location
+    let thePreviousStage = pageFlow['stages'][(thisStageIndex - 1)]
+    // get the last page in the selected stage
+    let theLastPageOfPreviousStage = null
+    if (thePreviousStage.versions[0]['pages']) {
+      theLastPageOfPreviousStage = thePreviousStage.versions[0]['pages'].slice(-1)[0]
+    }
+    return '/' + version + '/page-flow/' + thePreviousStage.location + '/' + theLastPageOfPreviousStage.location
   } else {
     return false
   }
 }
 
-common.getPageAfter = function (pageFlow, index, theArray, thisStageIndex) {
+common.getPageAfter = function (pageFlow, index, theArray, thisStageIndex, version) {
   index = parseInt(index)
+  thisStageIndex = parseInt(thisStageIndex)
   if (theArray[(index + 1)]) {
     return theArray[(index + 1)].location
   } else if (pageFlow['stages'][(thisStageIndex + 1)]) {
-    return pageFlow['stages'][(thisStageIndex + 1)]['versions'][0]['pages'][0].location
+    let theNextStage = pageFlow['stages'][(thisStageIndex + 1)]
+    return '/' + version + '/page-flow/' + theNextStage.location + '/' + theNextStage['versions'][0]['pages'][0].location
   } else {
     return false
   }

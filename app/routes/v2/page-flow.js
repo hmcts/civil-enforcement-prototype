@@ -32,11 +32,12 @@ module.exports = function (router) {
     let thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
     let thisStage = pageFlow.stages[thisStageIndex]
     let theStagePages = thisStage.versions[0]['pages']
+    // @todo allow query strings in page location lookup!
     let thisPageIndex = common.findIndex(req.params.page, 'location', theStagePages)
     let thisPage = theStagePages[thisPageIndex]
     let theStageUR = await common.findCSVKey(csvFile, thisStage.name, 'Stage')
     theStageUR = common.findKey(thisPage.id, 'Type - Email/ dashboard/ application', theStageUR)
-    let navigation = {'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex), 'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex)}
+    let navigation = {'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version), 'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)}
     console.log(navigation)
     res.render(version + '/page-flow-individual.html',
       {

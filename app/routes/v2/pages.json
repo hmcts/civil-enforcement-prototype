@@ -67,6 +67,61 @@
           ]
         }
       ]
+    },
+    {
+      "name": "stay-writ",
+      "location": "stay-writ",
+      "ID": "stay-writ",
+      "description": "Application to set aside or vary County Court Judgment and implicitly submit High Court application to stay a Writ of Control",
+      "versions": [
+        {
+          "version": 1,
+          "sprint": 5,
+          "sprintDirectory": "v2",
+          "location": "/stay-writ/",
+          "users": [
+            "defendant"
+          ],
+          "design-notes": "First pass at the process, focus on unifying the process of 'steming' the original CCJ and applying to the High Court to stay the Writ of Control. All questions driven by those asked on existing paper n244 form that require user input ie not present in judgment data",
+          "pages": [
+            {
+              "title": "What do you want to do?",
+              "id": "1",
+              "description": "User indicates whether they wish to vary or set aside County Court Judgment",
+              "type": "text-input",
+              "location": "index"
+            },
+            {
+              "title": "What type of hearing do you want?",
+              "id": "2",
+              "description": "User indicates the type of hearing they would like",
+              "type": "radio-input",
+              "location": "2"
+            },
+            {
+              "title": "Why are you applying to cancel (set aside) your CCJ?",
+              "id": "3",
+              "description": "User gives evidence to support claim to set aside CCJ. First iteration follows the n244 form which has a free-form textarea.",
+              "type": "text-input",
+              "location": "3"
+            },
+            {
+              "title": "Check your answers",
+              "id": "4",
+              "description": "User verifies answers, is reminded of court fee and proceeds to GOV.UK Pay pages",
+              "type": "check-answers",
+              "location": "check-answers"
+            },
+            {
+              "title": "Application to set aside CCJ complete",
+              "id": "5",
+              "description": "User is informed that the application has been successful and next steps are presented.",
+              "type": "confirmation",
+              "location": "confirmation-page"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

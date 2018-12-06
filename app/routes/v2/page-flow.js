@@ -28,13 +28,10 @@ module.exports = function (router) {
 
   router.get(['/' + version + '/page-flow/:stage/:page', '/' + version + '/page-flow/:stage/:subStage/:page'], asyncMiddleware(async (req, res, next) => {
     let theStageKey = req.params.subStage ? req.params.stage + '/' + req.params.subStage : req.params.stage
-    // let thisStage = common.findKey(theStageKey, 'location', pageFlow.stages)
     let thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
     let thisStage = pageFlow.stages[thisStageIndex]
     let theStagePages = thisStage.versions[0]['pages']
-    // @todo allow query strings in page location lookup!
     let theQueryString = ''
-    let thing = req.query
     if (Object.keys(req.query).length) {
       theQueryString = '?'
       for (let i in req.query) {

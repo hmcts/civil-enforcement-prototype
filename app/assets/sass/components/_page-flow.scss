@@ -38,6 +38,36 @@ $icons: '../images/page-flow/page-types';
         -webkit-background-size: contain;
         background-size: contain;
       }
+      &--radio-input {
+        background-image: url($icons + '/radio-input.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--check-answers {
+        background-image: url($icons + '/check-answers.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--confirmation {
+        background-image: url($icons + '/confirmation.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--task-list {
+        background-image: url($icons + '/task-list.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--start-page {
+        background-image: url($icons + '/start-page.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--checkbox-page {
+        background-image: url($icons + '/checkbox-page.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
     }
   }
 }

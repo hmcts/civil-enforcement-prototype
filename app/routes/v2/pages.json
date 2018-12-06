@@ -122,6 +122,47 @@
           ]
         }
       ]
+    },
+    {
+      "name": "check-writ",
+      "location": "check-writ",
+      "ID": "check-writ",
+      "description": "Stand-alone mechanism to check validity of a court order including a Writ of Control and Warrant of Control",
+      "versions": [
+        {
+          "version": 1,
+          "sprint": 5,
+          "sprintDirectory": "v2",
+          "location": "/check-writ/",
+          "users": [
+            "defendant"
+          ],
+          "design-notes": "First pass at a simple, non-authenticated, fact-checking service to quickly determine the validity of a court document using GOV.UK",
+          "pages": [
+            {
+              "title": "Verify a court order",
+              "id": "1",
+              "description": "Service start page that introduces the function of the service",
+              "type": "start-page",
+              "location": "index"
+            },
+            {
+              "title": "Verify a court order",
+              "id": "2",
+              "description": "Known facts that are available on the Court Order document are requested to conduct a lookup",
+              "type": "radio-input",
+              "location": "questions"
+            },
+            {
+              "title": "Valid",
+              "id": "3",
+              "description": "The status of the document is played back to the user",
+              "type": "confirmation",
+              "location": "confirmation-page"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

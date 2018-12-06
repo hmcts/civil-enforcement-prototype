@@ -51,6 +51,7 @@ module.exports = function (router) {
         pageFlow: pageFlow,
         location: version + '/' + thisStage.location + '/' + thisPage.location,
         thisPage: thisPage,
+        thisStage: thisStage,
         theStageUR: Object.values(theStageUR),
         sprint: sprint,
         csvData: csvData,

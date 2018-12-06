@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="160px" viewBox="0 0 200 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Screen/Confirmation</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect x="2" y="4" width="8.99672131" height="8" id="rect-1"></rect>
+    </defs>
+    <g id="Screen/Confirmation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="_Canvas/Browser">
+            <rect id="BG" fill="#FFFFFF" x="1" y="1" width="196" height="156"></rect>
+            <rect id="Top-Bar" fill="#F2F2F2" x="1" y="1" width="196" height="11"></rect>
+            <rect id="Divider" fill="#DEE0E2" x="1" y="11" width="196" height="1"></rect>
+            <path d="M7.96153846,8 C6.87821068,8 6,7.1045695 6,6 C6,4.8954305 6.87821068,4 7.96153846,4 C9.04486624,4 9.92307692,4.8954305 9.92307692,6 C9.92307692,7.1045695 9.04486624,8 7.96153846,8 Z M14.5,8 C13.4166722,8 12.5384615,7.1045695 12.5384615,6 C12.5384615,4.8954305 13.4166722,4 14.5,4 C15.5833278,4 16.4615385,4.8954305 16.4615385,6 C16.4615385,7.1045695 15.5833278,8 14.5,8 Z M21.0384615,8 C19.9551338,8 19.0769231,7.1045695 19.0769231,6 C19.0769231,4.8954305 19.9551338,4 21.0384615,4 C22.1217893,4 23,4.8954305 23,6 C23,7.1045695 22.1217893,8 21.0384615,8 Z" id="Combined-Shape" fill="#DEE0E2"></path>
+            <polygon id="BG_Border_Top_2B99C93C-C2D2-47D8-92D7-E97EC61A7761" fill="#0B0C0C" points="0 0 200 0 197 1 1 1"></polygon>
+            <polygon id="BG_Border_Right_2B99C93C-C2D2-47D8-92D7-E97EC61A7761" fill="#0B0C0C" points="200 0 200 160 197 157 197 1"></polygon>
+            <polygon id="BG_Border_Bottom_2B99C93C-C2D2-47D8-92D7-E97EC61A7761" fill="#0B0C0C" points="200 160 0 160 1 157 197 157"></polygon>
+            <polygon id="BG_Border_Left_2B99C93C-C2D2-47D8-92D7-E97EC61A7761" fill="#0B0C0C" points="0 160 0 0 1 1 1 157"></polygon>
+        </g>
+        <g id="Text/Link" transform="translate(5.000000, 132.000000)" fill="#005EA5">
+            <g id="Fill/$link-colour">
+                <rect id="Rectangle" x="0" y="0" width="16" height="4"></rect>
+            </g>
+        </g>
+        <g id="Text/Body/Paragraph" transform="translate(5.000000, 80.000000)" fill="#0B0C0C">
+            <g id="Fill/$text-colour" transform="translate(0.000000, 40.000000)">
+                <rect id="Rectangle" x="0" y="0" width="64" height="4"></rect>
+            </g>
+            <g id="Fill/$text-colour" transform="translate(0.000000, 32.000000)">
+                <rect id="Rectangle" x="0" y="0" width="96" height="4"></rect>
+            </g>
+            <g id="Fill/$text-colour" transform="translate(0.000000, 24.000000)">
+                <rect id="Rectangle" x="0" y="0" width="96" height="4"></rect>
+            </g>
+            <g id="Fill/$text-colour" transform="translate(0.000000, 16.000000)">
+                <rect id="Rectangle" x="0" y="0" width="96" height="4"></rect>
+            </g>
+            <g id="Fill/$text-colour" transform="translate(0.000000, 8.000000)">
+                <rect id="Rectangle" x="0" y="0" width="96" height="4"></rect>
+            </g>
+            <g id="Fill/$text-colour">
+                <rect id="Rectangle" x="0" y="0" width="64" height="4"></rect>
+            </g>
+        </g>
+        <g id="Object/Confirmation-box" transform="translate(5.000000, 32.000000)">
+            <g id="Fill/$turquoise" fill="#28A197">
+                <rect id="Rectangle" x="0" y="0" width="120" height="40"></rect>
+            </g>
+            <g id="Text/Body/Line" transform="translate(28.000000, 26.000000)" fill="#FFFFFF">
+                <g id="Fill/$page-colour">
+                    <rect id="Rectangle" x="0" y="0" width="64" height="4"></rect>
+                </g>
+            </g>
+            <g id="Text/Heading/Large" transform="translate(12.000000, 10.000000)" fill="#FFFFFF">
+                <g id="Fill/$page-colour">
+                    <rect id="Rectangle" x="0" y="0" width="96" height="12"></rect>
+                </g>
+            </g>
+        </g>
+        <g id="Object/Header" transform="translate(3.000000, 12.000000)">
+            <g id="👑Crown">
+                <image x="2" y="4" width="8.99672131" height="8" xlink:href="data:image/png;base64,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"></image>
+                <use fill="#0B0C0C" fill-rule="evenodd" xlink:href="#rect-1"></use>
+            </g>
+            <text id="🖊️Global_Header_Text" font-family="Helvetica" font-size="8" font-weight="normal" fill="#0B0C0C">
+                <tspan x="13" y="11">GOV.UK</tspan>
+            </text>
+            <g id="Fill/$link-colour" transform="translate(2.000000, 15.000000)" fill="#005EA5" fill-rule="evenodd">
+                <rect id="Rectangle" x="0" y="0" width="188" height="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

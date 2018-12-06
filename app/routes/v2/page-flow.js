@@ -27,34 +27,17 @@ module.exports = function (router) {
   })
 
   router.get(['/' + version + '/page-flow/:stage/:page', '/' + version + '/page-flow/:stage/:subStage/:page'], asyncMiddleware(async (req, res, next) => {
-    // console.log(csvData)
-    // function waitForCSV (theFile) {
-    //   // return 'hello'
-    //   let stuff = csvtojson().fromFile(theFile).subscribe((jsonObj) => {
-    //     return new Promise((resolve, reject) => {
-    //       console.log(jsonObj)
-    //       return jsonObj
-    //     })
-    //   })
-    //   return stuff
-    // }
-
-    //  thisPage = pageFlow['stages']
     let theStageKey = req.params.subStage ? req.params.stage + '/' + req.params.subStage : req.params.stage
-    // console.log(theStageKey)
-    let thisStage = common.findKey(theStageKey, 'location', pageFlow.stages)
-    // if substage - prep the 'key'
-    let thisPage = common.findKey(req.params.page, 'location', thisStage.versions[0]['pages'])
-    // let theCSVtoJson = await waitForCSV(csvFile)
-    // console.log(theCSVtoJson)
-    // Get array from csvData using location and stage info
-    // let theStageUR = common.findCSVKey(theCSVtoJson, thisStage.name, 'Stage')
+    // let thisStage = common.findKey(theStageKey, 'location', pageFlow.stages)
+    let thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
+    let thisStage = pageFlow.stages[thisStageIndex]
+    let theStagePages = thisStage.versions[0]['pages']
+    let thisPageIndex = common.findIndex(req.params.page, 'location', theStagePages)
+    let thisPage = theStagePages[thisPageIndex]
     let theStageUR = await common.findCSVKey(csvFile, thisStage.name, 'Stage')
-    // key = pages.json 'filename'
-    theStageUR = common.findKey(thisPage.id,'Type - Email/ dashboard/ application', theStageUR)
-    // can't use csvData async
-    console.log(theStageUR)
-    // console.log(thisPage)
+    theStageUR = common.findKey(thisPage.id, 'Type - Email/ dashboard/ application', theStageUR)
+    let navigation = {'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex), 'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex)}
+    console.log(navigation)
     res.render(version + '/page-flow-individual.html',
       {
         isPage: true,
@@ -63,7 +46,8 @@ module.exports = function (router) {
         thisPage: thisPage,
         theStageUR: Object.values(theStageUR),
         sprint: sprint,
-        csvData: csvData
+        csvData: csvData,
+        navigation: navigation
       }
     )
   }))

@@ -117,4 +117,38 @@ common.findKey = function (key, theParameter, theArray) {
   return false
 }
 
+common.findIndex = function (key, theParameter, theArray) {
+  for (var theKey in theArray) {
+    if (theArray[theKey][theParameter] === key) return theKey
+  }
+  return false
+}
+
+common.getLastPageInStage = function (pageFlow, theIndex) {
+  let theLastPage = '3'
+  return theLastPage
+}
+
+common.getPageBefore = function (pageFlow, index, theArray, thisStageIndex) {
+  index = parseInt(index)
+  if (theArray[(index - 1)]) {
+    return theArray[(index - 1)].location
+  } else if (thisStageIndex > 0) {
+    return common.getLastPageInStage(pageFlow, thisStageIndex - 1)
+  } else {
+    return false
+  }
+}
+
+common.getPageAfter = function (pageFlow, index, theArray, thisStageIndex) {
+  index = parseInt(index)
+  if (theArray[(index + 1)]) {
+    return theArray[(index + 1)].location
+  } else if (pageFlow['stages'][(thisStageIndex + 1)]) {
+    return pageFlow['stages'][(thisStageIndex + 1)]['versions'][0]['pages'][0].location
+  } else {
+    return false
+  }
+}
+
 module.exports = common

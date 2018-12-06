@@ -14,11 +14,15 @@
                 <p>{{ thisPage.description }}</p>
                 <iframe src="/{{ location }}" frameborder="0"></iframe>
             </h2>
-
-
+            {% if navigation.prev !== false %}
+                <p><a href="{{ navigation.prev }}">Previous</a></p>
+            {% endif %}
+            {% if navigation.next !== false %}
+                <p><a href="{{ navigation.next }}">Next</a></p>
+            {% endif %}
 
             {% for feedback in theStageUR %}
-                <p>{{feedback}}</p>
+                <p>{{ feedback }}</p>
             {% endfor %}
 
         </div>

@@ -1,5 +1,18 @@
 $icons: '../images/page-flow/page-types';
 
+.screenPreviewContainer {
+  height: 400px;
+  overflow: hidden;
+  .screenPreview {
+    width: 200%;
+    height: 800px;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    background: none;
+    border: 0;
+  }
+}
+
 .page-flow--stages {
   @extend .govuk-body;
 

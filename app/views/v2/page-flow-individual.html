@@ -12,8 +12,12 @@
             <h2 class="govuk-heading-l">
                 <p>{{ thisPage.title }}</p>
                 <p>{{ thisPage.description }}</p>
-                <iframe src="/{{ location }}" frameborder="0"></iframe>
             </h2>
+
+            <div class="screenPreviewContainer">
+                <iframe src="/{{ location }}" class="screenPreview" frameborder="0"></iframe>
+            </div>
+
             {% if navigation.prev !== false %}
                 <p><a href="{{ navigation.prev }}">Previous</a></p>
             {% endif %}

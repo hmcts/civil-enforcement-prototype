@@ -124,7 +124,7 @@
       ]
     },
     {
-      "name": "check-writ",
+      "name": "Check validity of writ",
       "location": "check-writ",
       "ID": "check-writ",
       "description": "Stand-alone mechanism to check validity of a court order including a Writ of Control and Warrant of Control",

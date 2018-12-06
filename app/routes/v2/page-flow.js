@@ -34,7 +34,8 @@ module.exports = function (router) {
     let theStagePages = thisStage.versions[0]['pages']
     // @todo allow query strings in page location lookup!
     let theQueryString = ''
-    if (req.query) {
+    let thing = req.query
+    if (Object.keys(req.query).length) {
       theQueryString = '?'
       for (let i in req.query) {
         theQueryString += i
@@ -47,7 +48,6 @@ module.exports = function (router) {
     let theStageUR = await common.findCSVKey(csvFile, thisStage.name, 'Stage')
     theStageUR = common.findKey(thisPage.id, 'Type - Email/ dashboard/ application', theStageUR)
     let navigation = {'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version), 'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)}
-    console.log(navigation)
     res.render(version + '/page-flow-individual.html',
       {
         isPage: true,

@@ -124,11 +124,6 @@ common.findIndex = function (key, theParameter, theArray) {
   return false
 }
 
-common.getLastPageInStage = function (pageFlow, theIndex) {
-  let theLastPage = '3'
-  return theLastPage
-}
-
 common.getPageBefore = function (pageFlow, index, theArray, thisStageIndex, version) {
   index = parseInt(index)
   thisStageIndex = parseInt(thisStageIndex)

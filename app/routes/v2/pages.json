@@ -62,7 +62,7 @@
               "id": "1",
               "description": "The status of the page when a Writ of Control has been approved",
               "type": "dashboard",
-              "location": "case"
+              "location": "case?writApproved=true"
             }
           ]
         }

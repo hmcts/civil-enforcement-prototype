@@ -33,7 +33,16 @@ module.exports = function (router) {
     let thisStage = pageFlow.stages[thisStageIndex]
     let theStagePages = thisStage.versions[0]['pages']
     // @todo allow query strings in page location lookup!
-    let thisPageIndex = common.findIndex(req.params.page, 'location', theStagePages)
+    let theQueryString = ''
+    if (req.query) {
+      theQueryString = '?'
+      for (let i in req.query) {
+        theQueryString += i
+        theQueryString += '=' + req.query[i]
+      }
+    }
+    let thePageName = req.params.page + theQueryString
+    let thisPageIndex = common.findIndex(thePageName, 'location', theStagePages)
     let thisPage = theStagePages[thisPageIndex]
     let theStageUR = await common.findCSVKey(csvFile, thisStage.name, 'Stage')
     theStageUR = common.findKey(thisPage.id, 'Type - Email/ dashboard/ application', theStageUR)

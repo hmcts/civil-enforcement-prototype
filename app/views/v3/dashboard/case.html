@@ -43,19 +43,19 @@
             {% from "table/macro.njk" import govukTable %}
 
             {% set nextStepsHtml %}
-                {% include 'v2/dashboard/includes/next-steps.html' %}
+                {% include 'v3/dashboard/includes/next-steps.html' %}
             {% endset -%}
 
             {% set partiesHtml %}
-                {% include 'v2/dashboard/includes/parties.html' %}
+                {% include 'v3/dashboard/includes/parties.html' %}
             {% endset -%}
 
             {% set documentsHtml %}
-                {% include 'v2/dashboard/includes/documents.html' %}
+                {% include 'v3/dashboard/includes/documents.html' %}
             {% endset -%}
 
             {% set historyHtml %}
-                {% include 'v2/dashboard/includes/history.html' %}
+                {% include 'v3/dashboard/includes/history.html' %}
             {% endset -%}
 
             {{ govukTabs({
@@ -91,7 +91,7 @@
                 ]
             }) }}
 
-            {#{% include 'v2/dashboard/includes/next-steps.html' %}#}
+            {#{% include 'v3/dashboard/includes/next-steps.html' %}#}
 
         </div>
     </div>

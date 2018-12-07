@@ -65,7 +65,7 @@ module.exports = function (router) {
     } else if (answer === 'no') {
       res.redirect('/' + version + '/enforcement-selection/')
     } else {
-      res.redirect('/' + version + '/enforcement-selection/wizard/1')
+      res.redirect('/' + version + '/enforcement-selection/apply-to-find-out-about-financial-situation')
     }
   })
 

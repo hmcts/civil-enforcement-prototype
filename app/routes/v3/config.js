@@ -13,5 +13,5 @@ module.exports = {
   },
   claimNumber: '391MC645',
   claimAmount: '2,456',
-  feeStayOfWrit: '255.00'
+  feeStayOfWrit: '50.00'
 }

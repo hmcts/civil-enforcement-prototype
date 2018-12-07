@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+    Civil Enforcement - select enforcement type
+{% endblock %}
+{% block header %}
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "alpha"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            {% from "back-link/macro.njk" import govukBackLink %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript: window.history.back(-1)"
+            }) }}
+
+            {% if hasErrors %}
+                {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+                {{ govukErrorSummary({
+                    titleText: "There is a problem",
+                    errorList: [
+                        {
+                            text: "You need to choose how you want the court to collect your money",
+                            href: "#"
+                        }
+                    ]
+                }) }}
+            {% endif %}
+
+            <form action="answers" method="post" class="form">
+                <div class="govuk-form-group">
+                    {% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+                    {{ govukCheckboxes({
+                        idPrefix: "known-facts",
+                        name: "known-facts",
+                        fieldset: {
+                            legend: {
+                                text: "What do you know about " + defendant + "?",
+                                isPageHeading: true,
+                                classes: "govuk-fieldset__legend--xl"
+                            }
+                        },
+                        hint: {
+                            text: "Select all that apply."
+                        },
+                        items: [
+                            {
+                                value: "address",
+                                text: "Their address",
+                                hint: {
+                                text: "It can be their last known address, but knowing their current address is better."
+                            }
+                            },
+                            {
+                                value: "employer",
+                                text: "Name of their employer"
+                            },
+                            {
+                                value: "bank",
+                                text: "Name of their bank"
+                            },
+                            {
+                                value: "home",
+                                text: "Home ownership details",
+                                hint: {
+                                text: "They must be the sole owner of a property. You’ll need to get a physical copy of the deed from the Land Registry."
+                            }
+                            },
+                            {
+                                value: "nothing",
+                                text: "I do not have any information"
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+                <button class="govuk-button">Continue</button>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+    Civil Enforcement - select enforcement type
+{% endblock %}
+{% block header %}
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "alpha"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            {% from "back-link/macro.njk" import govukBackLink %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript: window.history.back(-1)"
+            }) }}
+
+            {% if hasErrors %}
+                {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+                {{ govukErrorSummary({
+                    titleText: "There is a problem",
+                    errorList: [
+                        {
+                            text: "You need to choose how you want the court to collect your money",
+                            href: "#"
+                        }
+                    ]
+                }) }}
+            {% endif %}
+
+            <form action="" method="post" class="form">
+                <div class="govuk-form-group">
+                    {% from "radios/macro.njk" import govukRadios %}
+
+                    {{ govukRadios({
+                        classes: "govuk-radios--inline",
+                        idPrefix: "know-enforcement",
+                        name: "know-enforcement",
+                        fieldset: {
+                            legend: {
+                                text: "Do you already know how you want to enforce judgment?",
+                                isPageHeading: true,
+                                classes: "govuk-fieldset__legend--l"
+                            }
+                        },
+                        hint: {
+                            stext: "This includes changing your last name or spelling your name differently."
+                        },
+                        items: [
+                            {
+                                value: "yes",
+                                text: "Yes"
+                            },
+                            {
+                                value: "no",
+                                text: "No, I need help making a selection"
+                            }
+                        ]
+                    }) }}
+                </div>
+
+                <button class="govuk-button">Continue</button>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

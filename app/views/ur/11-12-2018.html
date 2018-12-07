@@ -38,12 +38,20 @@
                 not a working software.
             </p>
 
-            <a href="#" target="_blank" class="govuk-button govuk-button--start">Start</a>
+            <p><a href="#" target="_blank" class="govuk-button govuk-button--start">Start claimant journey</a></p>
+            <p><a href="/v3/notifications/defendant/email2?phoneAlert=true" target="_blank" class="govuk-button govuk-button--start">Start defendant journey</a></p>
 
             <h3 class="govuk-heading-s">Defendants and Claimants</h3>
 
             <ul class="govuk-list govuk-list--number">
-
+                <li>Claimants
+                <ol class="govuk-list--number">
+                    <li><a href="/v3/enforcement-selection/wizard/">Enforcement selection</a></li>
+                </ol></li>
+                <li>Defendants
+                    <ol class="govuk-list--number">
+                        {#<li>a</li>#}
+                    </ol></li>
             </ul>
 
         </div>

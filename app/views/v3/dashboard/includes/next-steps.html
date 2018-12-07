@@ -1,19 +1,19 @@
 {% if dashboardType === 'claimant' %}
     {% if CCJrequested === 'true' %}
 
-        {% include './includes/claimant/content/ccj-requested.html' %}
+        {% include './claimant/content/ccj-requested.html' %}
 
     {% elseif CCJapproved === 'true' %}
 
-        {% include './includes/claimant/content/next-step-enforcement.html' %}
+        {% include './claimant/content/next-step-enforcement.html' %}
 
     {% elseif writApproved === 'true' %}
 
-        {% include './includes/claimant/content/next-step-writApproved.html' %}
+        {% include './claimant/content/next-step-writApproved.html' %}
 
     {% elseif writApproved !== 'true' and CCJapproved === 'true' %}
 
-        {% include './includes/claimant/content/next-step-enforcement.html' %}
+        {% include './claimant/content/next-step-enforcement.html' %}
 
     {% elseif writServed === 'true' %}
 

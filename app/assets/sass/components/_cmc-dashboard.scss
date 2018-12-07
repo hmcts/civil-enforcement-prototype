@@ -1,25 +1,27 @@
 .cmc-dashboard {
-  .govuk-panel--cmc-dashboard {
+  .govuk-panel--cmc-dashboard.govuk-panel {
     background: #eee;
     text-align: left;
-    dl {
-      overflow: hidden;
-      overflow: hidden;
-      dt {
-        clear: left;
-        float: left;
-        width: 150px;
-        &:after {
-          content: ': ';
-        }
-      }
-      dd {
-        float: left;
-        display: inline-block;
-        margin-left: 10px;
-      }
-
-    }
   }
+}
 
+.govuk-panel--cmc-dashboard {
+  dl {
+    @extend .govuk-\!-font-size-16;
+    overflow: hidden;
+    dt {
+      clear: left;
+      float: left;
+      width: 150px;
+      &:after {
+        content: ': ';
+      }
+    }
+    dd {
+      float: left;
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+  }
 }

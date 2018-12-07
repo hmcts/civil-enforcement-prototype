@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Defendants - 27/11/2018
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+            {{ govukBreadcrumbs({
+                items: [
+                    {
+                        text: "Home",
+                        href: "/"
+                    },
+                    {
+                        text: "User research",
+                        href: "/ur/"
+                    },
+                    {
+                        text: "23-11-2018"
+                    }
+                ]
+            }) }}
+
+            <h2 class="govuk-heading-l">
+                <span class="govuk-caption-xl">Sprint 5</span>
+                23rd November 2018
+            </h2>
+
+            <p>
+                This is a prototype that allows the civil enforcement team to test ideas and for research purposes. It
+                is
+                not a working software.
+            </p>
+
+            <a href="https://sketch.cloud/s/dkpQL/R1M1052/play" target="_blank" class="govuk-button govuk-button--start">Start</a>
+
+            <h3 class="govuk-heading-s">Defendants</h3>
+
+            <p>Guerrilla testing with public in Cambridge to gain insight into various methods of notification. Objective is to discover how we can best engage defendants.</p>
+
+            <ol class="govuk-list govuk-list--bullet">
+                <li><a href="https://sketch.cloud/s/dkpQL/R1M1052/play" target="_blank">Sketch demo of how SMS might look on iOS</a></li>
+                <li><a href="/v2/notifications/defendant/email1" target="_blank">'CMC' email</a></li>
+                <li><a href="/v2/notifications/defendant/email2" target="_blank">'Writ of control' email</a></li>
+                <li><a href="/public/pdf/CCJ%20letter.pdf" target="_blank">'CCJ' Letter</a></li>
+                <li><a href="/public/pdf/sprint5/Writ%20of%20control.pdf" target="_blank">'Digital' Writ of Control</a></li>
+                <li><a href="/public/pdf/sprint5/NoE%20letter.pdf" target="_blank">Covering letter</a></li>
+            </ol>
+
+        </div>
+    </div>
+
+{% endblock %}

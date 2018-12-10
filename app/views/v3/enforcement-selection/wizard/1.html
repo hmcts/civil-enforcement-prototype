@@ -45,6 +45,20 @@
                 <div class="govuk-form-group">
                     {% from "radios/macro.njk" import govukRadios %}
 
+
+                    {% set changeAmountHtml -%}
+                        {% from "input/macro.njk" import govukInput %}
+
+                        {{ govukInput({
+                            label: {
+                                text: "How much do you want to enforce?"
+                            },
+                            id: "amount",
+                            name: "amount",
+                            classes: "govuk-input--10"
+                        }) }}
+                    {% endset -%}
+
                     {{ govukRadios({
                         classes: "govuk-radios",
                         idPrefix: "can-pay",
@@ -66,7 +80,10 @@
                             },
                             {
                                 value: "no",
-                                text: "No"
+                                text: "No",
+                                conditional: {
+                                html: changeAmountHtml
+                            }
                             },
                             {
                                 value: "unsure",
@@ -74,6 +91,7 @@
                             }
                         ]
                     }) }}
+
                 </div>
 
                 <button class="govuk-button">Continue</button>

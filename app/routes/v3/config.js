@@ -12,6 +12,6 @@ module.exports = {
     phone: '07709876543'
   },
   claimNumber: '391MC645',
-  claimAmount: '2,456',
+  claimAmount: '6,543.21',
   feeStayOfWrit: '50.00'
 }

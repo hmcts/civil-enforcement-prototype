@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+    Civil Enforcement - select enforcement type
+{% endblock %}
+{% block header %}
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "alpha"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            {% from "back-link/macro.njk" import govukBackLink %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript: window.history.back(-1)"
+            }) }}
+
+            {% if hasErrors %}
+                {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+                {{ govukErrorSummary({
+                    titleText: "There is a problem",
+                    errorList: [
+                        {
+                            text: "You need to choose how you want the court to collect your money",
+                            href: "#"
+                        }
+                    ]
+                }) }}
+            {% endif %}
+
+            <form action="" method="post" class="form">
+                <div class="govuk-form-group">
+
+                     <h1 class="govuk-heading-l">
+                                You have said you know {{ defendant }}'s:
+                            </h1>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        {% if not knownFacts|length or ('address' in knownFacts) %}
+                        <li>address details</li>
+                        {% endif %}
+                        {% if not knownFacts|length or ('employer' in knownFacts) %}
+                        <li>employer details</li>
+                        {% endif %}
+                        {% if not knownFacts|length or ('bank' in knownFacts) %}
+                        <li>bank details</li>
+                        {% endif %}
+                        {% if not knownFacts|length or ('home' in knownFacts) %}
+                        <li>property details</li>
+                        {% endif %}
+                    </ul>
+
+                    <p>Based on your answers you can apply for the courts to:</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        {% if dontKnow === true %}
+                            <li>ask the court to order them to attend court to give evidence of their finances</li>
+                        {% endif %}
+                        {% if not knownFacts|length or ('address' in knownFacts) %}
+                            <li>send bailiffs to collect payment using a warrant or writ of control
+                            </li>
+                        {% endif %}
+                        {% if not knownFacts|length or ('employer' in knownFacts) %}
+                            <li>get money deducted from wages</li>
+                        {% endif %}
+                        {% if not knownFacts|length or ('bank' in knownFacts) %}
+                            <li>freeze money or assets in their bank account with a third party debt order</li>
+                        {% endif %}
+                        {% if not knownFacts|length or ('home' in knownFacts) %}
+                            <li>charge the debtor’s land or property</li>
+                        {% endif %}
+                    </ul>
+
+                </div>
+
+                {#<details class="govuk-details">#}
+                    {#<summary class="govuk-details__summary">#}
+                    {#<span class="govuk-details__summary-text">#}
+                      {#Apply to find out their financial situation#}
+                    {#</span>#}
+                    {#</summary>#}
+                    {#<div class="govuk-details__text">#}
+                        {#<p>Ask the court to order the person or business who owes you money to <a#}
+                                    {#href="https://www.gov.uk/government/publications/form-n39-order-to-attend-court-for-questioning">attend#}
+                                {#court to give evidence of their finances</a>, for example bills and statements.</p>#}
+                        {#<p>The court fee is £55.</p>#}
+                    {#</div>#}
+                {#</details>#}
+
+                <a href="choose-method" class="govuk-button">Continue</a>
+
+        </div>
+    </div>
+{% endblock %}

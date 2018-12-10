@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+    Civil Enforcement - select enforcement type
+{% endblock %}
+{% block header %}
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "alpha"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            {% from "back-link/macro.njk" import govukBackLink %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript: window.history.back(-1)"
+            }) }}
+
+            {% if hasErrors %}
+                {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+                {{ govukErrorSummary({
+                    titleText: "There is a problem",
+                    errorList: [
+                        {
+                            text: "You need to choose how you want the court to collect your money",
+                            href: "#"
+                        }
+                    ]
+                }) }}
+            {% endif %}
+
+            <form action="" method="post" class="form">
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="enforcement-type-hint">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                What do you want to do?
+                            </h1>
+                        </legend>
+
+
+                        <span id="enforcement-type-hint" class="govuk-hint">
+                            {#You'll need to provide information on the debtor. Make sure you're applying for the right method by reading its criteria.#}
+                        </span>
+
+                        <div class="govuk-radios">
+                            {% if dontKnow === true %}
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="enforcement-type-5" name="enforcement-type"
+                                           type="radio" value="orderToObtainInformation"
+                                           aria-describedby="enforcement-type-5-item-hint">
+                                    <label class="govuk-label govuk-radios__label govuk-label--s"
+                                           for="enforcement-type-5">
+                                        Ask the court to order {{ defendant }} to attend court to give evidence of their finances
+                                    </label>
+                                    <span id="enforcement-type-5-item-hint" class="govuk-hint govuk-radios__hint">
+                                    Apply to find out their financial situation. The court fee is £55
+                                </span>
+                                </div>
+
+                            {% endif %}
+
+                            {% if not knownFacts|length or ('address' in knownFacts) %}
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="enforcement-type-1" name="enforcement-type"
+                                           type="radio" value="bailiff" aria-describedby="enforcement-type-1-item-hint">
+                                    <label class="govuk-label govuk-radios__label govuk-label--s"
+                                           for="enforcement-type-1">
+                                        Send bailiffs to collect payment
+                                    </label>
+                                    <span id="enforcement-type-1-item-hint" class="govuk-hint govuk-radios__hint">
+                                    Apply for a warrant or writ of control. The fees vary depending on how much you are owed or what type of bailiff you use.
+                                </span>
+                                </div>
+                            {% endif %}
+
+                            {% if not knownFacts|length or ('employer' in knownFacts) %}
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="enforcement-type-2" name="enforcement-type"
+                                           type="radio" value="attachment-of-earnings"
+                                           aria-describedby="enforcement-type-2-item-hint">
+                                    <label class="govuk-label govuk-radios__label govuk-label--s"
+                                           for="enforcement-type-2">
+                                        Get money deducted from wages
+                                    </label>
+                                    <span id="enforcement-type-2-item-hint" class="govuk-hint govuk-radios__hint">
+                                    Apply for an attachment of earnings order. The court fee is £110.
+                                </span>
+                                </div>
+
+                            {% endif %}
+
+                            {% if not knownFacts|length or ('bank' in knownFacts) %}
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="enforcement-type-3" name="enforcement-type"
+                                           type="radio" value="third-party-debt-order"
+                                           aria-describedby="enforcement-type-3-item-hint">
+                                    <label class="govuk-label govuk-radios__label govuk-label--s"
+                                           for="enforcement-type-3">
+                                        Freeze assets or money in an account
+                                    </label>
+                                    <span id="enforcement-type-3-item-hint" class="govuk-hint govuk-radios__hint">
+                                    Apply for a third party debt order. The court fee is £110.
+                                </span>
+                                </div>
+
+                            {% endif %}
+
+                            {% if not knownFacts|length or ('home' in knownFacts) %}
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="enforcement-type-4" name="enforcement-type"
+                                           type="radio" value="charging-order"
+                                           aria-describedby="enforcement-type-4-item-hint">
+                                    <label class="govuk-label govuk-radios__label govuk-label--s"
+                                           for="enforcement-type-4">
+                                        Charge the debtor’s land or property
+                                    </label>
+                                    <span id="enforcement-type-4-item-hint" class="govuk-hint govuk-radios__hint">
+                                    Apply for a charging order. The court fee is £110
+                                </span>
+                                </div>
+
+                            {% endif %}
+
+                        </div>
+                    </fieldset>
+
+                </div>
+
+                {#{% if dontKnow === true %}#}
+                {#<details class="govuk-details">#}
+                    {#<summary class="govuk-details__summary">#}
+                    {#<span class="govuk-details__summary-text">#}
+                      {#Apply to find out their financial situation#}
+                    {#</span>#}
+                    {#</summary>#}
+                    {#<div class="govuk-details__text">#}
+                        {#<p>Ask the court to order the person or business who owes you money to <a#}
+                                    {#href="https://www.gov.uk/government/publications/form-n39-order-to-attend-court-for-questioning">attend#}
+                                {#court to give evidence of their finances</a>, for example bills and statements.</p>#}
+                        {#<p>The court fee is £55.</p>#}
+                    {#</div>#}
+                {#</details>#}
+                {#{% endif %}#}
+
+                <button class="govuk-button">Continue</button>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

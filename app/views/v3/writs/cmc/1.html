@@ -1,58 +1,48 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Civil Enforcement - writ of control application
+    Civil Enforcement - writ of control application
 {% endblock %}
 {% block header %}
-{{ govukHeader() }}
+    {{ govukHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
-{% from "phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-tag: {
-text: "alpha"
-},
-html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "alpha"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
 {% endblock %}
 
 {% block content %}
-{% from "back-link/macro.njk" import govukBackLink %}
+    {% from "back-link/macro.njk" import govukBackLink %}
 
-{{ govukBackLink({
-text: "Back",
-href: "/enforcement-selection/bailiffs"
-}) }}
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    {{ govukBackLink({
+        text: "Back",
+        href: "/enforcement-selection/bailiffs"
+    }) }}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Before you apply</h1>
+            <h1 class="govuk-heading-l">Before you apply</h1>
 
-        <p class="govuk-body-lead">You are about to apply for a High Court bailiff to collect money from Andrew Smith
-            using a Writ of Control.</p>
+            <p class="govuk-body-lead">You are about to apply for a High Court bailiff to collect money from Andrew
+                Smith
+                using a Writ of Control.</p>
 
-        <ol class="govuk-list govuk-list--number">
-            <li>In the application form you will need to name the High Court bailiff or company you want to use.</li>
-            <li>Before applying you should consider if Andrew Smith will be able to pay the debt right now. You may not be able to get your money back if Andrew Smith:
-                <ul class="govuk-list govuk-list--bullet">
-                    <li>is a vulnerable person - has a physical disability or mental illness made worse by a bailiff visit</li>
-                    <li>does not have an income</li>
-                    <li>does not have any luxury items, such as a car</li>
-                </ul>
-            </li>
-        </ol>
+            <p>Before applying you should consider if Andrew Smith will be able to pay the debt right now. You may not
+                be able to get your money back if Andrew Smith:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>is a vulnerable person - has a physical disability or mental illness made worse by a bailiff visit
+                </li>
+                <li>does not have an income</li>
+                <li>does not have any luxury items, such as a car</li>
+            </ul>
 
-        {% from "warning-text/macro.njk" import govukWarningText %}
+            <a href="2" class="govuk-button">Continue</a>
 
-        {{ govukWarningText({
-        html: 'If a High Court bailiff cannot collect money from Andrew Smith, you will need to pay all the fees for their service',
-          iconFallbackText: "Warning"
-        }) }}
-
-        <p>You will also need to pay for another application at a later date, if you want to try again.</p>
-
-        <a href="select-hceo" class="govuk-button">Continue</a>
-
+        </div>
     </div>
-</div>
 {% endblock %}

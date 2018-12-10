@@ -64,10 +64,33 @@ module.exports = function (router) {
 
   router.post(['/' + version + '/enforcement-selection/wizard/', '/' + version + '/enforcement-selection/wizard', '/' + version + '/enforcement-selection/wizard/index'], function (req, res) {
     let answer = req.body['know-enforcement']
-    if (answer === 'yes') {
-      res.redirect('/' + version + '/enforcement-selection/')
+    if (answer === 'no') {
+      res.render(version + '/enforcement-selection/wizard/ccj-paid', {
+        defendant: settings.defendant.name,
+        amount: settings.claimAmount
+      })
     } else {
+      res.render(version + '/enforcement-selection/wizard/1', {
+        defendant: settings.defendant.name,
+        amount: settings.claimAmount
+      })
+    }
+  })
+
+  router.post(['/' + version + '/enforcement-selection/wizard/ccj-paid'], function (req, res) {
+    let answer = req.body['ccjPaid']
+    let sess = req.session
+    if (answer === 'no') {
       res.redirect('/' + version + '/enforcement-selection/wizard/1')
+    } else {
+      console.log(parseInt(settings.claimAmount))
+      console.log(req.body.amountPaid)
+      sess.amount = parseFloat(settings.claimAmount) - req.body.amountPaid
+      console.log(sess.amount)
+      res.render(version + '/enforcement-selection/wizard/1', {
+        defendant: settings.defendant.name,
+        amount: sess.amount
+      })
     }
   })
 

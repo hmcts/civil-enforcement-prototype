@@ -26,6 +26,14 @@ module.exports = function (router) {
     res.render(version + '/check-writ/index.html')
   })
 
+  router.get(['/' + version + '/writs/cmc/5'], function (req, res) {
+    let sess = req.session
+    let amount = sess.amount ? sess.amount : settings.claimAmount
+    res.render(version + '/writs/cmc/5.html', {
+      amount: parseFloat(amount) + 66
+    })
+  })
+
   router.post(['/' + version + '/check-writ/questions'], function (req, res) {
     // res.render(version + 'check-writ/index.html', {
     //   d: 'asd'

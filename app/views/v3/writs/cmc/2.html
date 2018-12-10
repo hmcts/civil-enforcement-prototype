@@ -26,40 +26,21 @@ href: "1"
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Apply for a writ of control</h1>
+        <h1 class="govuk-heading-l">Before you apply</h1>
 
-        <p>You should only apply for a writ of control if you believe Andrew Smith has either:</p>
+        <p>In the application form you will need to name the High Court bailiff or company you want to use.
+        </p>
 
-        <ul class="govuk-list govuk-list--bullet">
-            <li>the amount you're trying to recover</li>
-            <li>items that could be taken by a bailiff and sold at auction to raise that amount</li>
-        </ul>
+        {% from "warning-text/macro.njk" import govukWarningText %}
 
-        {% from "details/macro.njk" import govukDetails %}
+        {{ govukWarningText({
+            html: 'If a High Court bailiff cannot collect money from Andrew Smith, you will need to pay all the fees for their service',
+            iconFallbackText: "Warning"
+        }) }}
 
-        {{ govukDetails({
-        summaryText: "What bailiffs can and can't take",
-        html: "<p>Bailiffs can take luxury items, for example a TV or games console.</p>
-        <p>They cannot take:</p>
-        <ul class='govuk-list govuk-list--bullet'>
-            <li>things Andrew Smith needs to live, such as clothes, a cooker or a bed</li>
-            <li>pets or guide dogs</li>
-            <li>a phone or mobile phone</li>
-            <li>work tools and equipment worth a total of less than £1,350</li>
-            <li>medicine or medical equipment</li>
-            <li>anything bought on finance, such as a car bought using hire purchase</li>
-            <li>someone else's belongings, such as their partner's computer</li>
-        </ul>
-        "
-        })
-        }}
+        <p>You will also need to pay for another application at a later date, if you want to try again.</p>
 
-        <p>When the warrant has been issued, the court will phone Andrew Smith asking for payment.</p>
-
-        <p>If Andrew Smith doesn't pay within 7 days, a bailiff will visit the address you gave within 15 days of the
-            issue of the warrant. The bailiff usually visits up to 3 times.</p>
-
-        <a href="3" class="govuk-button">Continue</a>
+        <a href="select-hceo" class="govuk-button">Continue</a>
 
     </div>
 </div>

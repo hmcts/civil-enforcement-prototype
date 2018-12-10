@@ -41,7 +41,7 @@
                 }) }}
             {% endif %}
 
-            <form action="" method="post" class="form">
+            <form action="1" method="post" class="form">
                 <div class="govuk-form-group">
                     {% from "radios/macro.njk" import govukRadios %}
 
@@ -65,7 +65,7 @@
                         name: "can-pay",
                         fieldset: {
                             legend: {
-                                text: "Do you think " + defendant + " can pay back the full debt of £" + debt + "?",
+                                text: "Do you think " + defendant + " can pay back the full debt of £" + amount + "?",
                                 isPageHeading: true,
                                 classes: "govuk-fieldset__legend--l"
                             }
@@ -81,7 +81,7 @@
                             {
                                 value: "no",
                                 text: "No",
-                                conditional: {
+                                sconditional: {
                                 html: changeAmountHtml
                             }
                             },

@@ -70,22 +70,20 @@ module.exports = function (router) {
         amount: settings.claimAmount
       })
     } else {
-      res.render(version + '/enforcement-selection/wizard/1', {
-        defendant: settings.defendant.name,
-        amount: settings.claimAmount
-      })
+      res.redirect('/' + version + '/enforcement-selection/')
     }
   })
 
   router.post(['/' + version + '/enforcement-selection/wizard/ccj-paid'], function (req, res) {
     let answer = req.body['ccjPaid']
     let sess = req.session
+    sess.amount = parseFloat(settings.claimAmount)
     if (answer === 'no') {
       res.redirect('/' + version + '/enforcement-selection/wizard/1')
     } else {
       console.log(parseInt(settings.claimAmount))
       console.log(req.body.amountPaid)
-      sess.amount = parseFloat(settings.claimAmount) - req.body.amountPaid
+      sess.amount -= req.body.amountPaid
       console.log(sess.amount)
       res.render(version + '/enforcement-selection/wizard/1', {
         defendant: settings.defendant.name,
@@ -97,7 +95,7 @@ module.exports = function (router) {
   router.get(['/' + version + '/enforcement-selection/wizard/1'], (req, res) => {
     res.render(version + '/enforcement-selection/wizard/1.html', {
       defendant: settings.defendant.name,
-      debt: settings.claimAmount
+      amount: req.session.amount
     })
   })
 

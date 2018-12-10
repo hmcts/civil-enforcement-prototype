@@ -12,15 +12,15 @@
         </tr>
         <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="row">Name on card:</th>
-            <td class="govuk-table__cell">{{ data['full-name'] or defendant.name }}</td>
+            <td class="govuk-table__cell">{{ data['full-name'] or payee.name }}</td>
         </tr>
         <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="row">Billing address:</th>
-            <td class="govuk-table__cell">{{ defendant.address }}</td>
+            <td class="govuk-table__cell">{{ payee.address }}</td>
         </tr>
         <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="row">Email address:</th>
-            <td class="govuk-table__cell">{{ defendant.email }}</td>
+            <td class="govuk-table__cell">{{ payee.email }}</td>
         </tr>
         <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="row">Amount to pay:</th>

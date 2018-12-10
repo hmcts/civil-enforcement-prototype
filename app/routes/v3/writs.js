@@ -6,7 +6,7 @@ module.exports = function (router) {
     res.render('writs/amount-to-enforce.html')
   })
   router.get(['/' + version + '/writs/payment'], function (req, res) {
-    res.redirect('/' + version + '/GOVUK-pay/enter-card?continueUrl=/' + version + '/writs/confirmation-page')
+    res.redirect('/' + version + '/GOVUK-pay/enter-card?continueUrl=/' + version + '/writs/confirmation-page&payee=claimant')
   })
   router.post(['/' + version + '/writs/'], function (req, res) {
     res.redirect('/' + version + '/writs/select-hceo')
@@ -54,7 +54,7 @@ module.exports = function (router) {
   })
 
   router.get(['/' + version + '/stay-writ/payment'], function (req, res) {
-    res.redirect('/' + version + '/GOVUK-pay/enter-card?continueUrl=/' + version + '/stay-writ/confirmation-page&amount=' + settings.feeStayOfWrit)
+    res.redirect('/' + version + '/GOVUK-pay/enter-card?continueUrl=/' + version + '/stay-writ/confirmation-page&amount=' + settings.feeStayOfWrit + '&payee=defendant')
   })
 
   router.get(['/' + version + '/stay-writ/confirmation-page'], function (req, res) {

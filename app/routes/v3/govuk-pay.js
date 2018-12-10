@@ -5,18 +5,24 @@ module.exports = function (router) {
   router.get(['/' + version + '/GOVUK-pay/enter-card'], function (req, res) {
     let sess = req.session
     sess.continueUrl = req.query.continueUrl || false
-    sess.amount = req.query.amount || '66.00'
+    sess.paymentAmount = req.query.amount || '66.00'
+    sess.payee = req.query.payee || 'claimant'
     res.render(version + '/GOVUK-pay/enter-card.html', {
-      amount: sess.amount
+      amount: sess.paymentAmount
     })
   })
   router.get(['/' + version + '/GOVUK-pay/confirm-card-payment'], function (req, res) {
     let sess = req.session
-    console.log(sess)
+    let payee = sess.payee
+    console.log(sess.payee)
+    if (sess.payee === 'defendant') {
+      payee = settings.defendant
+    } else {
+      payee = settings.claimant
+    }
     res.render(version + '/GOVUK-pay/confirm-card-payment.html', {
-      defendant: settings.defendant,
-      name: settings.defendantName,
-      amount: '255'
+      payee: payee,
+      amount: sess.paymentAmount
     })
   })
   router.get(['/' + version + '/GOVUK-pay/redirect-handler/'], function (req, res) {

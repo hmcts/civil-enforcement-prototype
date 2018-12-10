@@ -3,39 +3,63 @@
     Verify a court order
 {% endblock %}
 {% block header %}
-{{ govukHeader() }}
+    {{ govukHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
-{% from "phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-tag: {
-text: "alpha"
-},
-html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "alpha"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-        {% set mainClasses = "govuk-main-wrapper--l" %}
+            {% set mainClasses = "govuk-main-wrapper--l" %}
 
-        {% from "panel/macro.njk" import govukPanel %}
+            {% from "panel/macro.njk" import govukPanel %}
 
-        {{ govukPanel({
-        titleText: "Valid"
-        }) }}
+            {{ govukPanel({
+                titleText: "The Writ of Control is a valid court order."
+            }) }}
 
-        <p class="govuk-body">We can confirm that the Writ of Control is a valid court order.</p>
+            <p><a href="/public/pdf/sprint5/Writ%20of%20control.pdf" class="govuk-button">Download a copy</a></p>
 
-        <p><a href="/public/pdf/sprint5/Writ%20of%20control.pdf" class="govuk-button">Download a copy</a></p>
+            <h2 class="govuk-heading-m">Apply to cancel the debt</h2>
 
-        <!--<p class="govuk-body">-->
+            <p>If you do not owe the money and believe the Writ of Control is an error, you can apply to stop it.
+            </p>
+
+            <p>You'll need to apply to stop the Writ of Control and cancel (set aside) a County Court Judgment (CCJ).
+            </p>
+
+            <p>You should only apply for this if you do not owe the money.</p>
+
+            <p><a href="#" class="govuk-button">Apply to stop the Writ of Control and cancel your CCJ</a></p>
+
+            <h2 class="govuk-heading-m">Apply to change the amount you owe</h2>
+
+            <p>If you do owe money but disagree with the amount, you should apply to stop a Writ of Control and vary a
+                CCJ.
+            </p>
+
+            <p><a href="#" class="govuk-button">Apply to stop the Writ of Control and change your CCJ</a></p>
+
+            <h3 class="govuk-heading-s">Your rights when a bailiff visits </h3>
+
+            <p> There are rules on what a bailiff can take and how they can enter your home or business.
+                <a href="https://www.gov.uk/your-rights-bailiffs">Find out what your rights are when a bailiff
+                    visits</a>.</p>
+
+            <!--<p class="govuk-body">-->
             <!--<a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)-->
-        <!--</p>-->
+            <!--</p>-->
+        </div>
     </div>
-</div>
 
 {% endblock %}

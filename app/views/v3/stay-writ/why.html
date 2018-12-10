@@ -40,8 +40,11 @@
                     ]
                 }) }}
             {% endif %}
-            <h1 class="govuk-heading-xl">Why are you applying to cancel (set aside) your CCJ?</h1>
+            <h1 class="govuk-heading-xl">Why do you not owe the money?</h1>
 
+            <p>To stop a Writ of Control and cancel a CCJ you will need to prove that you do not owe the money.</p>
+
+            <h2>Explain your side of events</h2>
 
             <form action="check-answers" method="post" class="form">
                 <div class="govuk-form-group">
@@ -62,7 +65,7 @@
                 </div>
 
 
-                <h2 class="govuk-heading-s">Add evidence to support your application (optional)</h2>
+                <h2 class="govuk-heading-s">Add supporting documents, such as tenancy agreements and witness statements.</h2>
                 {# <p class="govuk-hint">Files must either be word documents or pdfs.</p> #}
                 {% from "file-upload/macro.njk" import govukFileUpload %}
 
@@ -74,6 +77,7 @@
                   }
                 }) }}
 
+                <p class="govuk-hint">You can upload pdfs, Word docs, and jpgs.</p>
                 <button class="govuk-button">Continue</button>
             </form>
 

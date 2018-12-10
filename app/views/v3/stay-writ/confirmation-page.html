@@ -25,11 +25,13 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         {% from "panel/macro.njk" import govukPanel %}
 
         {{ govukPanel({
-        titleText: "Application to set aside CCJ complete",
-        html: "Your reference number<br><strong>STYWOCJ2123F</strong>"
+        titleText: "Application submitted",
+        html: "You have submitted an application to stop a Writ of Control and cancel a County Court Judgment (CCJ)."
         }) }}
 
-        {#<p class="govuk-body">We have sent you a confirmation email.</p>#}
+        <p>It will take 5 days to decide on the Writ of Control application. It may take up to 6 months to decide on your CCJ as there needs to be a hearing.</p>
+
+        <p>The High Court may approve a temporary stop on the Writ of Control until the hearing on your CCJ.</p>
 
         <h3 class="govuk-heading-m">Next steps</h3>
 

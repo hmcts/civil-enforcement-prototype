@@ -23,5 +23,6 @@ require('./routes/v3/enforcement-selection.js')(router)
 require('./routes/v3/writs.js')(router)
 require('./routes/v3/dashboard.js')(router)
 require('./routes/v3/govuk-pay.js')(router)
+require('./routes/v3/cmc.js')(router)
 
 module.exports = router

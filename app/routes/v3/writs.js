@@ -26,6 +26,13 @@ module.exports = function (router) {
     res.render(version + '/check-writ/index.html')
   })
 
+  router.get(['/' + version + '/writs/cmc/8'], function (req, res) {
+    req.session.contactDetails = [{'type': 'phone', 'value': settings.defendant.phone}]
+    res.render(version + '/writs/cmc/8.html', {
+      phone: settings.defendant.phone
+    })
+  })
+
   router.get(['/' + version + '/writs/cmc/5'], function (req, res) {
     let sess = req.session
     let amount = sess.amount ? sess.amount : settings.claimAmount
@@ -75,6 +82,38 @@ module.exports = function (router) {
     res.render(version + '/stay-writ/confirmation-page.html', {
       type: req.session.stayType,
       simulateTimePassing: simulateTimePassing
+    })
+  })
+
+  router.post(['/' + version + '/writs/cmc/add-contact-info'], function (req, res) {
+    let contactDetails = [{'type': 'phone', 'value': settings.defendant.phone}]
+    let newContact
+    let contactType = req.body['how-contacted']
+    switch (contactType) {
+      case 'email' :
+        newContact = req.body['contact-by-email']
+        break
+      case 'phone' :
+        newContact = req.body['contact-by-phone']
+        break
+      case 'address' :
+        newContact = req.body['correspondenceAddress']
+        break
+    }
+    contactDetails.push({'type': contactType, 'value': newContact})
+    req.session.contactDetails = contactDetails
+    if (req.body.another) {
+      res.render(version + '/writs/cmc/add-contact-info', {
+        contacts: contactDetails
+      })
+    } else {
+      res.redirect('/' + version + '/writs/cmc/check-answers')
+    }
+  })
+
+  router.get(['/' + version + '/writs/cmc/check-answers'], function (req, res) {
+    res.render(version + '/writs/cmc/check-answers.html', {
+      contactDetails: req.session.contactDetails
     })
   })
 }

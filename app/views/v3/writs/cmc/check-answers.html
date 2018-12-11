@@ -99,10 +99,12 @@ href: "select-hceo"
                     Contact details for defendant
                 </dt>
                 <dd class="app-check-your-answers__answer">
-                    Telephone: 07824999612
+                    {% for detail in contactDetails %}
+                    {{ detail.type }}: {{detail.value}} </br>
+                    {% endfor %}
                 </dd>
                 <dd class="app-check-your-answers__change">
-                    <a href="#">
+                    <a href="8">
                         Change<span class="govuk-visually-hidden"> home address</span>
                     </a>
                 </dd>
@@ -122,6 +124,7 @@ href: "select-hceo"
                     </a>
                 </dd>
             </div>
+
 
         </dl>
 

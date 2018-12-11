@@ -29,7 +29,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         shtml: ""
         }) }}
 
-        <p class="govuk-body-lead">You have submitted an application to stop a Writ of Control and cancel a County Court Judgment (CCJ).</p>
+        <p class="govuk-body-lead">You have submitted an application to stop a Writ of Control and {% if type === 'vary' %}vary{% else %}cancel{% endif %} a County Court Judgment (CCJ).</p>
 
         <p>It will take 5 days to decide on the Writ of Control application. <strong>In these 5 days a bailiff still has the legal right to visit you to collect the debt</strong>. It may take up to 6 months to decide on your CCJ as there needs to be a hearing.</p>
 

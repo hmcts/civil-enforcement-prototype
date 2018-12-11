@@ -42,7 +42,7 @@
             {% endif %}
             <h1 class="govuk-heading-xl">Why do you not owe the money?</h1>
 
-            <p>To stop a Writ of Control and cancel a CCJ you will need to prove that you do not owe the money.</p>
+            <p>To stop a Writ of Control and {% if type === 'vary' %}vary the payments on a CCJ{% else %}cancel a CCJ{% endif %} you will need to prove that you do not owe the money.</p>
 
             <h2 class="govuk-heading-m">Explain your side of events</h2>
 
@@ -56,7 +56,7 @@
                         name: "more-detail",
                         id: "more-detail",
                         label: {
-                            text: "Explain the reasons for applying to set aside your CCJ."
+                            stext: ""
                         },
                         hint: {
                             stext: "Don’t include personal or financial information, eg your National Insurance number or credit card details."

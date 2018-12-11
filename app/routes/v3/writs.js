@@ -42,11 +42,24 @@ module.exports = function (router) {
   })
 
   router.get(['/' + version + '/stay-writ/2'], function (req, res) {
-    res.render(version + '/stay-writ/hearing.html')
+    let type = req.query.type || 'setAside'
+    req.session.stayType = type
+    console.log(type)
+    res.render(version + '/stay-writ/hearing.html', {
+      type: req.session.stayType
+    })
   })
 
   router.get(['/' + version + '/stay-writ/3'], function (req, res) {
-    res.render(version + '/stay-writ/why.html')
+    res.render(version + '/stay-writ/why.html', {
+      type: req.session.stayType
+    })
+  })
+
+  router.get(['/' + version + '/stay-writ/check-answers'], function (req, res) {
+    res.render(version + '/stay-writ/check-answers.html', {
+      type: req.session.stayType
+    })
   })
 
   router.get(['/' + version + '/stay-writ/4'], function (req, res) {
@@ -60,6 +73,7 @@ module.exports = function (router) {
   router.get(['/' + version + '/stay-writ/confirmation-page'], function (req, res) {
     let simulateTimePassing = req.query.simulateTimePassing || false
     res.render(version + '/stay-writ/confirmation-page.html', {
+      type: req.session.stayType,
       simulateTimePassing: simulateTimePassing
     })
   })

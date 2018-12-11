@@ -1,0 +1,27 @@
+{% if writApplicationToStayApproved !== 'true' %}
+
+    <h3 class="govuk-heading-s">Application to stay Writ of Control sent to High Court</h3>
+
+    {#<p>If your financial situation has changed you can <a href="#">apply to lower your CCJ payments</a>.</p>#}
+
+
+{% else %}
+
+    <h3 class="govuk-heading-s">Stop a Writ of Control</h3>
+
+    <p>You can apply to stop a Writ of Control if:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+        <li>you do not owe the money and want to cancel the county court judgment (CCJ) against you</li>
+        <li>your financial situation has changed and you want to vary the amount on the CCJ</li>
+    </ul>
+
+    <p>You will need to give evidence to support your application. The court fee is £255. If you’re on a low income you
+        might not have to pay the fee. <a href="https://www.gov.uk/get-help-with-court-fees">Apply for help with
+            fees</a>.
+    </p>
+
+    <p><a href="#">Apply to stop the Writ of Control</a></p>
+
+{% endif %}

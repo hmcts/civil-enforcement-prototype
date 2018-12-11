@@ -47,6 +47,10 @@
 
         {% include './defendant/content/next-step-writApproved.html' %}
 
+    {% elseif writApplicationToStay === 'true' %}
+
+        {% include './defendant/content/next-step-writApplicationToStay.html' %}
+
     {% else %}
         <p>Standard CMC instructions</p>
     {% endif %}

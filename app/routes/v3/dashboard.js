@@ -13,6 +13,7 @@ module.exports = function (router) {
     let writApproved = req.query.writApproved || false
     let writReady = req.query.writReady || false
     let writServed = req.query.writServed || false
+    let writApplicationToStay = req.query.writApplicationToStay || false
     let dashboardType = req.params.dashboardType || 'claimant'
     res.render(version + '/dashboard/case.html', {
       defendant: defendant,
@@ -24,6 +25,7 @@ module.exports = function (router) {
       CCJrequested: CCJrequested,
       CCJapproved: CCJapproved,
       writApproved: writApproved,
+      writApplicationToStay: writApplicationToStay,
       writReady: writReady,
       writServed: writServed,
       dashboardType: dashboardType

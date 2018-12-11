@@ -14,6 +14,7 @@ module.exports = function (router) {
     let writReady = req.query.writReady || false
     let writServed = req.query.writServed || false
     let writApplicationToStay = req.query.writApplicationToStay || false
+    let enforcementInPlay = req.query.enforcementInPlay || false
     let dashboardType = req.params.dashboardType || 'claimant'
     res.render(version + '/dashboard/case.html', {
       defendant: defendant,
@@ -28,7 +29,8 @@ module.exports = function (router) {
       writApplicationToStay: writApplicationToStay,
       writReady: writReady,
       writServed: writServed,
-      dashboardType: dashboardType
+      dashboardType: dashboardType,
+      enforcement: enforcementInPlay
     })
   })
 

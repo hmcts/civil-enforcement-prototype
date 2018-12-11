@@ -1,0 +1,1016 @@
+// JUI
+// ==========================================================================
+
+
+.jui-casefile {
+  display: grid;
+  grid-template-columns: 282px auto;
+}
+
+.jui-casefile-files {
+  box-sizing: border-box;
+  padding-bottom: 30px;
+}
+
+.jui-casefile-document-wrapper {
+  overflow-x: scroll;
+}
+
+.jui-casefile-document-iframe {
+  border: 0;
+}
+
+.jui-casefile-page {
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 938px;
+}
+
+.jui-casefile-page-head {
+  height: 74px;
+  margin-bottom: 40px;
+}
+
+.jui-casefile-page-content {
+  background: #ffffff;
+  box-shadow: 0 4px 6px 0 rgba(11, 12, 12, 0.1);
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 50px;
+  position: relative;
+  min-height: 1100px;
+}
+
+.jui-casefile-page-content:first-child {
+  margin-top: 0;
+}
+
+.jui-casefile-page-content[data-page]::after {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14286;
+  color: #6f777b;
+  content: attr(data-page);
+  line-height: 1;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+@media print {
+  .jui-casefile-page-content[data-page]::after {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .jui-casefile-page-content[data-page]::after {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media print {
+  .jui-casefile-page-content[data-page]::after {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+.jui-casefile-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 20px;
+}
+
+.jui-casefile-list__item {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14286;
+  margin-bottom: 5px;
+}
+
+@media print {
+  .jui-casefile-list__item {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .jui-casefile-list__item {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media print {
+  .jui-casefile-list__item {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+.jui-casefile-list__link {
+  background-image: url(/public/images/icon-document.svg);
+  background-repeat: no-repeat;
+  background-size: 15px 20px;
+  background-position: 0 10px;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 26px;
+}
+
+.jui-casefile-list__link[aria-current] {
+  color: #0b0c0c;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.jui-heading:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.jui-heading__title {
+  float: left;
+}
+
+.jui-heading__actions {
+  float: right;
+}
+
+.jui-casefile-actions {
+  font-size: .1px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.jui-casefile-actions__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jui-casefile-actions__list-item {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14286;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+@media print {
+  .jui-casefile-actions__list-item {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .jui-casefile-actions__list-item {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media print {
+  .jui-casefile-actions__list-item {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+.jui-casefile-actions__list-item:last-child {
+  margin-right: 0;
+}
+
+.jui-casefile-2 {
+  display: grid;
+  grid-template-columns: 260px auto 260px;
+}
+
+.jui-casefile-2-files {
+  box-sizing: border-box;
+  padding-bottom: 30px;
+}
+
+.jui-casefile-2-document-comments {
+  background-color: #f8f8f8;
+}
+
+.boom {
+  position: absolute;
+  width: 200px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.jui-casefile-2-document-wrapper {
+  overflow-x: scroll;
+}
+
+.jui-casefile-2-page {
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 30px;
+  width: 860px;
+}
+
+.jui-casefile-2-page-head {
+  height: 74px;
+  margin-bottom: 40px;
+}
+
+.jui-casefile-2-page-content {
+  background: #ffffff;
+  box-shadow: 0 4px 6px 0 rgba(11, 12, 12, 0.1);
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 50px;
+  position: relative;
+  width: 800px;
+  min-height: 1100px;
+}
+
+.jui-casefile-2-page-content:first-child {
+  margin-top: 0;
+}
+
+.jui-casefile-2-page-content[data-page]::after {
+  color: #6f777b;
+  content: attr(data-page);
+  line-height: 1;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.jui-casefile-2-list {
+  list-style: none;
+  margin: 0;
+  position: sticky;
+  top: 20px;
+}
+
+.jui-casefile-2-list li {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.jui-casefile-2-list a[aria-current] {
+  color: #0b0c0c;
+}
+
+.jui-casefile-2-list ul {
+  margin: 20px 0 20px 20px;
+  padding: 0;
+}
+
+.jui-casefile-2-list ul li {
+  font-weight: normal;
+}
+
+@media (min-width: 48.0625em) {
+  .jui-cf--show-comments .jui-cf__document-pages {
+    margin-right: 417px;
+    margin-left: auto;
+  }
+}
+
+.jui-cf__toolbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+  height: 50px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: -1px;
+  width: 100%;
+  z-index: 1;
+}
+
+.jui-cf__toolbar:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.jui-cf__toolbar::after {
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  margin-top: 0;
+  margin-left: -50%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  -webkit-box-shadow: 0px 0px 3px 2px #BEBEBE;
+  -moz-box-shadow: 0px 0px 3px 2px #BEBEBE;
+  box-shadow: 0px 0px 3px 2px #BEBEBE;
+}
+
+.jui-cf__toolbar::before {
+  content: "";
+  background-color: #ffffff;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+.jui-cf__toolbar-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1220px;
+  margin: 0 15px;
+  border-left: 1px solid #dee0e2;
+  border-right: 1px solid #dee0e2;
+  height: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+@media (min-width: 40.0625em) {
+  .jui-cf__toolbar-container {
+    margin: 0 30px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .jui-cf__toolbar-container {
+    margin: 0 auto;
+  }
+}
+
+.jui-cf__toolbar-button {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  background-color: #ffffff;
+  border: 0 none;
+  color: #0b0c0c;
+  cursor: pointer;
+  float: left;
+  height: 50px;
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+
+@media print {
+  .jui-cf__toolbar-button {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .jui-cf__toolbar-button {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+}
+
+@media print {
+  .jui-cf__toolbar-button {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+.jui-cf__toolbar-button::after {
+  background-color: #DEE0E2;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+}
+
+.jui-cf__toolbar-button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+.jui-cf__toolbar-button:focus {
+  outline: 3px solid #ffbf47;
+  outline-offset: -1px;
+  position: relative;
+  z-index: 2;
+}
+
+.jui-cf__toolbar-button:focus::after {
+  content: none;
+}
+
+.jui-cf__toolbar-button:hover {
+  background-color: #f8f8f8;
+}
+
+.jui-cf__toolbar-button[aria-pressed=true] {
+  background-color: #f8f8f8;
+  cursor: default;
+}
+
+.jui-cf__toolbar-button--items {
+  background-image: url(/public/images/icon-casefile-items.svg);
+  background-repeat: no-repeat;
+  background-size: 18px 14px;
+  background-position: 15px 50%;
+  padding-left: 45px;
+}
+
+.jui-cf__toolbar-button--comments {
+  background-image: url(/public/images/icon-casefile-comments.svg);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 15px 50%;
+  padding-left: 45px;
+}
+
+.jui-cf__toolbar-icon {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.jui-cf__window {
+  background-color: #ffffff;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  position: relative;
+}
+
+.jui-cf__window-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1220px;
+  margin: 0 15px;
+  position: relative;
+}
+
+@media (min-width: 40.0625em) {
+  .jui-cf__window-container {
+    margin: 0 30px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .jui-cf__window-container {
+    margin: 0 auto;
+  }
+}
+
+.jui-cf__window-container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.jui-cf__files {
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.jui-cf__document-pages {
+  max-width: 803px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 48.0625em) {
+  .jui-cf__document-pages {
+    margin-left: 290px;
+  }
+}
+
+.jui-cf__document {
+  position: relative;
+}
+
+.jui-cf__document-page {
+  background: #ffffff;
+  box-sizing: border-box;
+  box-shadow: 0 0 1px 0 #D1D1D1, 0 0 3px 0 #CCCCCC;
+  margin-top: 20px;
+}
+
+.jui-cf__document-page:before {
+  content: '';
+  float: left;
+  padding-bottom: 141.4%;
+}
+
+.jui-cf__document-page:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.jui-cf__document-page:first-child {
+  margin-top: 0;
+}
+
+.jui-cf__document-page[data-page]::after {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14286;
+  color: #6f777b;
+  content: attr(data-page);
+  line-height: 1;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+@media print {
+  .jui-cf__document-page[data-page]::after {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .jui-cf__document-page[data-page]::after {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media print {
+  .jui-cf__document-page[data-page]::after {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+.jui-cf__document-page img {
+  max-width: 100%;
+}
+
+.jui-cf__document-comments {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 48.0625em) {
+  .jui-cf__document-comments {
+    float: right;
+    padding-left: 30px;
+    width: 386px;
+  }
+}
+
+@media (min-width: 48.0625em) {
+  .jui-cf__files {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 25px;
+    left: 0;
+    float: left;
+    margin-right: -417px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    max-width: 417px;
+    z-index: 2;
+  }
+}
+
+.jui-comment {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), inset 0 -1px 0 0 #DDDDDD;
+  padding: 20px 20px 0;
+}
+
+@media (min-width: 48.0625em) {
+  .jui-comment {
+    position: relative;
+    top: 578px;
+  }
+}
+
+.jui-comment__header {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+}
+
+.jui-comment__author {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  display: block;
+  font-weight: bold;
+}
+
+@media print {
+  .jui-comment__author {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .jui-comment__author {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+}
+
+@media print {
+  .jui-comment__author {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+.jui-comment__meta {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14286;
+  color: #6f777b;
+}
+
+@media print {
+  .jui-comment__meta {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .jui-comment__meta {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media print {
+  .jui-comment__meta {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+.jui-comment__footer {
+  font-size: .1px;
+}
+
+.jui-comment__footer .govuk-button {
+  margin-right: 10px;
+}
+
+/* ==========================================================================
+   #EDITOR
+   ========================================================================== */
+.jui-editor__toolbar {
+  margin-bottom: 10px;
+}
+
+.jui-editor__toolbar:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.jui-editor__toolbar-button {
+  background-color: #ffffff;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  border: 2px solid #0b0c0c;
+  color: #0b0c0c;
+  cursor: pointer;
+  float: left;
+  text-decoration: none;
+  height: 40px;
+  margin-left: -2px;
+  outline: 0;
+  vertical-align: top;
+  width: 40px;
+}
+
+.jui-editor__toolbar-button:first-child {
+  margin-left: 0;
+}
+
+.jui-editor__toolbar-button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+.jui-editor__toolbar-button:focus {
+  outline: 3px solid #ffbf47;
+  position: relative;
+  z-index: 2;
+}
+
+.jui-editor__toolbar-button--bold {
+  background-image: url(/public/images/icon-wysiwyg-bold.svg);
+}
+
+.jui-editor__toolbar-button--italic {
+  background-image: url(/public/images/icon-wysiwyg-italic.svg);
+}
+
+.jui-editor__toolbar-button--underline {
+  background-image: url(/public/images/icon-wysiwyg-underline.svg);
+  margin-right: 10px;
+}
+
+.jui-editor__toolbar-button--unordered-list {
+  background-image: url(/public/images/icon-wysiwyg-unordered-list.svg);
+}
+
+.jui-editor__toolbar-button--ordered-list {
+  background-image: url(/public/images/icon-wysiwyg-ordered-list.svg);
+}
+
+.jui-editor__content {
+  min-height: 130px;
+  outline: none;
+  overflow: auto;
+  resize: vertical;
+}
+
+/* ==========================================================================
+   #DOCUMENT TREE
+   ========================================================================== */
+.jui-tree {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14286;
+  list-style: none;
+  margin: 0;
+  padding-left: 0px;
+  width: 70%;
+}
+
+@media print {
+  .jui-tree {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .jui-tree {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media print {
+  .jui-tree {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+.jui-tree__item {
+  border-top: 1px solid #dee0e2;
+  outline: 0;
+}
+
+.jui-tree__item:first-child {
+  border-top: 0;
+}
+
+.jui-tree__item--open .jui-tree__folder {
+  background-image: url(/public/images/icon-documents-folder-open.svg);
+  color: #0b0c0c;
+}
+
+.jui-tree__folder {
+  background-image: url(/public/images/icon-documents-folder.svg);
+  background-repeat: no-repeat;
+  background-size: 20px 16px;
+  background-position: 15px;
+  display: block;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 45px;
+}
+
+.jui-tree__folder-group {
+  list-style: none;
+  padding-left: 0;
+}
+
+.jui-tree__doc {
+  margin-bottom: 5px;
+}
+
+.jui-tree__doc-link {
+  background-image: url(/public/images/icon-documents-doc.svg);
+  background-repeat: no-repeat;
+  background-size: 16px 20px;
+  background-position: 45px 5px;
+  display: block;
+  padding-top: 15px;
+  padding-left: 70px;
+  padding-bottom: 15px;
+  text-decoration: none;
+  padding-right: 10px;
+  padding: 5px;
+  padding-left: 70px;
+}
+
+.jui-tree__doc-link:focus {
+  color: #0b0c0c;
+}
+
+.jui-tree__doc-name {
+  display: block;
+}
+
+.jui-tree__doc-meta {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #6f777b;
+  display: block;
+  margin-top: 5px;
+}
+
+@media print {
+  .jui-tree__doc-meta {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .jui-tree__doc-meta {
+    font-size: 14px;
+    line-height: 1.42857;
+  }
+}
+
+@media print {
+  .jui-tree__doc-meta {
+    font-size: 12pt;
+    line-height: 1.2;
+  }
+}
+
+/* Javascript enabled
+   ========================================================================== */
+.js-enabled .jui-tree__item:focus .jui-tree__folder {
+  background-color: #ffbf47;
+  color: #0b0c0c;
+  outline: 3px solid #ffbf47;
+}
+
+.js-enabled .jui-tree__folder {
+  color: #005ea5;
+  cursor: pointer;
+}
+
+.js-enabled .jui-tree__folder:hover {
+  color: #2b8cc4;
+}
+
+.js-enabled .jui-tree__item .jui-tree__folder-group {
+  display: none;
+}
+
+.js-enabled .jui-tree__item--open {
+  padding-bottom: 10px;
+}
+
+.js-enabled .jui-tree__item--open .jui-tree__folder {
+  color: #0b0c0c;
+}
+
+.js-enabled .jui-tree__item--open .jui-tree__folder-group {
+  display: block;
+}
+
+.js-enabled .jui-tree__doc-link[aria-current=true] {
+  background-color: rgba(222, 224, 226, 0.5);
+  color: black;
+  cursor: default;
+}
+
+html {
+  background-color: #dee0e2;
+}
+
+.js-enabled .js-hidden {
+  display: none !important;
+}
+
+.jui-measure {
+  max-width: 833px;
+}
+
+.jui-case-action-alert {
+  background-color: #005ea5;
+  color: #ffffff;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.jui-case-action-alert__heading {
+  color: inherit;
+}
+
+.jui-case-action-alert__content {
+  color: inherit;
+}
+
+.jui-case-action-alert__content p:last-child {
+  margin-bottom: 0;
+}
+
+.jui-case-action-alert__link:link,
+.jui-case-action-alert__link:visited {
+  color: #ffffff;
+}
+
+.jui-case-action-alert {
+  background-color: #005ea5;
+  color: #ffffff;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.jui-case-action-alert__heading {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.11111;
+  color: inherit;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+@media print {
+  .jui-case-action-alert__heading {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .jui-case-action-alert__heading {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+}
+
+@media print {
+  .jui-case-action-alert__heading {
+    font-size: 18pt;
+    line-height: 1.15;
+  }
+}
+
+.jui-case-action-alert__content {
+  color: inherit;
+}
+
+.jui-case-action-alert__content p:last-child {
+  margin-bottom: 0;
+}
+
+.jui-case-action-alert__link:link {
+  color: #ffffff;
+}
+
+.jui-case-action-alert__link:focus {
+  color: #0b0c0c;
+}

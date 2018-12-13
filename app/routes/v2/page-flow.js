@@ -1,9 +1,9 @@
+const version = 'v2'
+const sprint = 5
 const settings = require('./config')
 const common = require('./common')
-const csvtojson = require('csvtojson')
 const pageFlow = require('./pages.json')
-const fs = require('fs')
-const csvFile = './app/views/v2/lab-notes.csv'
+const csvFile = './app/views/' + version + '/page-flow/lab-notes.csv'
 const csvData = common.csvtojson(csvFile)
 const asyncMiddleware = fn =>
   (req, res, next) => {
@@ -12,9 +12,6 @@ const asyncMiddleware = fn =>
   }
 
 module.exports = function (router) {
-  const version = 'v2'
-  const sprint = 5
-
   router.get(['/' + version + '/page-flow/'], function (req, res) {
     // console.log(csvData)
     res.render(version + '/page-flow.html',
@@ -44,7 +41,10 @@ module.exports = function (router) {
     let thisPage = theStagePages[thisPageIndex]
     let theStageUR = await common.findCSVKey(csvFile, thisStage.name, 'Stage')
     theStageUR = common.findKey(thisPage.id, 'Type - Email/ dashboard/ application', theStageUR)
-    let navigation = {'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version), 'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)}
+    let navigation = {
+      'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version),
+      'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
+    }
     res.render(version + '/page-flow-individual.html',
       {
         isPage: true,

@@ -45,6 +45,7 @@ module.exports = function (router) {
       'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version),
       'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
     }
+    let hasHistory = common.getPageHistory(thisPage, thisStage)
     res.render('./includes/page-flow-individual.html',
       {
         isPage: true,
@@ -55,7 +56,8 @@ module.exports = function (router) {
         theStageUR: Object.values(theStageUR),
         sprint: sprint,
         csvData: csvData,
-        navigation: navigation
+        navigation: navigation,
+        hasHistory: hasHistory
       }
     )
   }))

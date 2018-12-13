@@ -16,6 +16,23 @@
                 <p>{{ thisPage.description }}</p>
             </h2>
 
+            {% if hasHistory %}
+                {% from "details/macro.njk" import govukDetails %}
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Iterations: {{ hasHistory.length }}
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        {% for version in hasHistory %}
+                            <p><a href="{{ version.location }}" target="_blank">Version {{ version.version }} from Sprint {{ version.sprint }}</a></p>
+                        {% endfor %}
+                    </div>
+                </details>
+
+            {% endif %}
+
             <div class="screenPreviewContainer">
                 <iframe src="/{{ location }}" class="screenPreview" frameborder="0"></iframe>
             </div>

@@ -157,4 +157,19 @@ common.getPageAfter = function (pageFlow, index, theArray, thisStageIndex, versi
   }
 }
 
+common.getPageHistory = function (thisPage, thisStage) {
+  let versions = []
+  for (var theVersion in thisStage.versions) {
+    for (var thePage in thisStage.versions[theVersion]['pages']) {}
+    if (thisStage.versions[theVersion]['pages'][thePage]['title'] === thisPage.title) {
+      versions.push({
+        'version': thisStage.versions[theVersion]['version'],
+        'sprint': thisStage.versions[theVersion]['sprint'],
+        'location': '/' + thisStage.versions[theVersion]['sprintDirectory'] + thisStage.versions[theVersion]['location'] + thisStage.versions[theVersion]['pages'][thePage]['location']
+      })
+    }
+  }
+  return versions
+}
+
 module.exports = common

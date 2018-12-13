@@ -104,14 +104,14 @@
           "design-notes": "Second iteration of 'stay the Writ of Control flow.",
           "pages": [
             {
-              "title": "What type of hearing do you want?",
+              "title": "Hearing type",
               "id": "1",
               "description": "User indicates the type of hearing they would like",
               "type": "radio-input",
               "location": "2"
             },
             {
-              "title": "Why are you applying to cancel (set aside) your CCJ?",
+              "title": "Supporting evidence",
               "id": "2",
               "description": "User gives evidence to support claim to set aside CCJ. First iteration follows the n244 form which has a free-form textarea.",
               "type": "text-input",
@@ -125,7 +125,7 @@
               "location": "check-answers"
             },
             {
-              "title": "Application to set aside CCJ complete",
+              "title": "Application submitted",
               "id": "4",
               "description": "User is informed that the application has been successful and next steps are presented.",
               "type": "confirmation",

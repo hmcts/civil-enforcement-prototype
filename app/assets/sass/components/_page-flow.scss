@@ -18,11 +18,35 @@ $icons: '../images/page-flow/page-types';
 
 }
 
+.page-flow-item--stage {
+  &:last-of-type {
+    .page-flow-item--page{
+      &:last-of-type {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 .page-flow--pages {
   @extend .govuk-body;
   .page-flow-item--page {
     display: inline-block;
     font-size: 14px;
+    width: 20%;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      background: url('../images/page-flow/arrow.svg') no-repeat;
+      background-size: contain;
+      width: 78px;
+      left: 92px;
+      height: 20px;
+      top: 35px;
+    }
     .page-flow-item-screen-icon {
       width: 100px;
       height: 120px;

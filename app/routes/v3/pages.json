@@ -94,9 +94,49 @@
       "description": "Application to set aside or vary County Court Judgment and implicitly submit High Court application to stay a Writ of Control",
       "versions": [
         {
+          "version": 2,
+          "sprint": 6,
+          "sprintDirectory": "v3",
+          "location": "/stay-writ/",
+          "users": [
+            "defendant"
+          ],
+          "design-notes": "Second iteration of 'stay the Writ of Control flow.",
+          "pages": [
+            {
+              "title": "What type of hearing do you want?",
+              "id": "1",
+              "description": "User indicates the type of hearing they would like",
+              "type": "radio-input",
+              "location": "2"
+            },
+            {
+              "title": "Why are you applying to cancel (set aside) your CCJ?",
+              "id": "2",
+              "description": "User gives evidence to support claim to set aside CCJ. First iteration follows the n244 form which has a free-form textarea.",
+              "type": "text-input",
+              "location": "3"
+            },
+            {
+              "title": "Check your answers",
+              "id": "3",
+              "description": "User verifies answers, is reminded of court fee and proceeds to GOV.UK Pay pages",
+              "type": "check-answers",
+              "location": "check-answers"
+            },
+            {
+              "title": "Application to set aside CCJ complete",
+              "id": "4",
+              "description": "User is informed that the application has been successful and next steps are presented.",
+              "type": "confirmation",
+              "location": "confirmation-page"
+            }
+          ]
+        },
+        {
           "version": 1,
           "sprint": 5,
-          "sprintDirectory": "v3",
+          "sprintDirectory": "v2",
           "location": "/stay-writ/",
           "users": [
             "defendant"
@@ -149,9 +189,42 @@
       "description": "Stand-alone mechanism to check validity of a court order including a Writ of Control and Warrant of Control",
       "versions": [
         {
+          "version": 2,
+          "sprint": 6,
+          "sprintDirectory": "v3",
+          "location": "/check-writ/",
+          "users": [
+            "defendant"
+          ],
+          "design-notes": "Second iteration of the 'Court Order validator' with updates to content on confirmation page",
+          "pages": [
+            {
+              "title": "Verify a court order",
+              "id": "1",
+              "description": "Service start page that introduces the function of the service",
+              "type": "start-page",
+              "location": "index"
+            },
+            {
+              "title": "Verify a court order",
+              "id": "2",
+              "description": "Known facts that are available on the Court Order document are requested to conduct a lookup",
+              "type": "radio-input",
+              "location": "questions"
+            },
+            {
+              "title": "Valid",
+              "id": "3",
+              "description": "The status of the document is played back to the user",
+              "type": "confirmation",
+              "location": "confirmation-page"
+            }
+          ]
+        },
+        {
           "version": 1,
           "sprint": 5,
-          "sprintDirectory": "v3",
+          "sprintDirectory": "v2",
           "location": "/check-writ/",
           "users": [
             "defendant"

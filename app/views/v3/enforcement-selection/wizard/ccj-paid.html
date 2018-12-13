@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - writ of control
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript: history.back(-1)"
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="ccj-paid" method="post" class="form">
+
+            <div class="govuk-form-group">
+                {% from "radios/macro.njk" import govukRadios %}
+                {% from "input/macro.njk" import govukInput %}
+
+                {{ govukRadios({
+                  idPrefix: "how-contacted-conditional",
+                  name: "ccjPaid",
+                  fieldset: {
+                    legend: {
+                      text: "Has " + defendant +" paid any of the amount on the County Court Judgment?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--l"
+                    }
+                  },
+                  hint: {
+                    stext: "Select one option."
+                  },
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes",
+                      conditional: {
+                        html: '<p>The amount on the judgment was £' + amount + '</p>
+                        <label class="govuk-label">Amount already paid</label>
+                        <input class="govuk-input govuk-input--width-5" name="amountPaid" id="amountPaid"/>
+                '
+                      }
+                    },
+                    {
+                      value: "no",
+                      text: "No"
+                    }
+                  ]
+                }) }}
+            </div>
+
+            <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

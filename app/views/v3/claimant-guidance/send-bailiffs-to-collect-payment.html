@@ -1,0 +1,253 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Claimants guidance
+{% endblock %}
+
+{% block header %}
+    <!-- Blank header with no service name for the start page -->
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include './includes/breadcrumb.html' %}
+{% endblock %}
+
+{% block content %}
+    <main role="main" id="content" class="guide">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-xl">
+                    If you do not get your money back
+                </h1>
+
+                <aside class="part-navigation-container" role="complementary">
+                    <nav role="navigation" class="gem-c-contents-list  " data-module="track-click"
+                         aria-label="Pages in this guide">
+                        <p class="govuk-body-s">Contents</p>
+
+                        <ol class="gem-c-contents-list__list">
+                            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                                <a class="gem-c-contents-list__link " href="/v3/claimant-guidance/index">Overview</a>
+                            </li>
+                            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                                <a class="gem-c-contents-list__link "
+                                   href="/v3/claimant-guidance/order-to-obtain-information-on-finances">Get an Order to
+                                    Obtain Information on finances
+                                </a>
+                            </li>
+                            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                            <span class="govuk-breadcrumbs__link">
+                                Send bailiffs to collect payment</span>
+                            </li>
+                            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                                <a class="gem-c-contents-list__link "
+                                   href="/v3/claimant-guidance/get-money-deducted-from-wages">Get money deducted from
+                                    wages</a>
+                            </li>
+                            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                                <a class="gem-c-contents-list__link "
+                                   href="/v3/claimant-guidance/freeze-assets-or-money-in-account">Freeze assets or money
+                                    in an account
+                                </a>
+                            </li>
+                            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                                <a class="gem-c-contents-list__link "
+                                   href="/v3/claimant-guidance/charge-debtors-land-or-property">Charge the debtor’s land
+                                    or property</a>
+                            </li>
+                        </ol>
+                    </nav>
+
+                </aside>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <div class="part-title">
+                    <h2 class="govuk-heading-l">
+                        Send bailiffs to collect payment</h2>
+                </div>
+                <p>You can ask the court to send bailiffs to collect the money. You’ll need to apply for either a writ
+                    of control or a warrant of control depending on: </p>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>how much you are owed</li>
+                    <li>if it’s an agreement regulated under the Consumer Credit Act 1974</li>
+                </ul>
+
+                <p>County court bailiffs enforce warrants, work for the courts, and charge no extra fees.</p>
+
+                <p>High court bailiffs are also known as High Court Enforcement Officers (HCEO). High court bailiffs
+                    enforce writs, work for private companies, and <a href="#highCourtFees">charge extra fees</a>.</p>
+                <!-- todo put correct link in place -->
+
+                <h3 class="govuk-heading-m">What a bailiff will do
+                </h3>
+
+                <p>Bailiffs will contact the person or business who owes you money and give them 7 days to pay the
+                    debt.</p>
+
+                <p>After 7 days the bailiff will go to their address to see if they can get the debt paid in full. If
+                    that’s not possible the bailiff will see if they have any possessions that the bailiff can sell at
+                    auction.</p>
+
+                <p>The bailiff will take control of their goods under a Controlled Goods Agreement. The money raised at
+                    the auction will go towards paying the debt and bailiff fees.</p>
+
+                <p>The bailiff might suggest a payment plan instead of selling their goods. A payment plan can only be
+                    set up if you accept the offer.</p>
+
+                <p>You may need legal advice if you apply at the High Court.</p>
+
+                <p>Find out <a href="https://www.gov.uk/your-rights-bailiffs">what a bailiff can and cannot take</a></p>
+
+                <h3 class="govuk-heading-m" id="warrant">Warrant of control</h3>
+
+                <p>The court can issue a warrant of control if the debt is less than £5,000, which includes:</p>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>your original claim fee</li>
+                    <li>the fee to issue the warrant</li>
+                </ul>
+
+                <p>You can also get a warrant for a debt of more than £5000 if it’s an agreement regulated under the
+                    Consumer Credit Act 1974.
+                </p>
+
+                <p>You can apply for a warrant of control:</p>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>online if you made your claim on <a href="https://www.moneyclaim.gov.uk/web/mcol/welcome">Money
+                            Claim Online</a> (£77)
+                    </li>
+                    <li>by filling in request for warrant of control N323 and sending the form to the court where you
+                        made the claim (£110)
+                    </li>
+                </ul>
+
+                <h3 class="govuk-heading-m" id="writ">Writ of control</h3>
+
+                <p>You can only apply for a writ of control if you are owed more than £600.</p>
+
+                <p>The court fee is £66.</p>
+
+                <p>A writ of control must be approved first by the county court that issued your judgment and then by
+                    the High Court.</p>
+
+                <p>If you name a bailiff in your application it’s up to you to give the writ to the high court bailiff.
+                    Otherwise a high court bailiff in your area will enforce the writ. High court bailiffs charge for
+                    their services with the costs being added to the overall debt.</p>
+
+                <div id="highCourtFees">
+                    {% from "table/macro.njk" import govukTable %}
+
+                    {{ govukTable({
+                        caption: "High court bailiff fees",
+                        firstCellIsHeader: true,
+                        head: [
+                            {
+                                text: "Action"
+                            },
+                            {
+                                text: "Flat fee",
+                                format: "numeric"
+                            },
+                            {
+                                text: "Plus",
+                                format: "numeric"
+                            }
+                        ],
+                        rows: [
+                            [
+                                {
+                                    text: "Issuing a notice of enforcement"
+                                },
+                                {
+                                    text: "£75",
+                                    format: "numeric"
+                                },
+                                {
+                                    text: "-",
+                                    format: "numeric"
+                                }
+                            ],
+                            [
+                                {
+                                    text: "Take control of goods"
+                                },
+                                {
+                                    text: "£235",
+                                    format: "numeric"
+                                },
+                                {
+                                    text: "7.5% of the proportion of the main debt over £1,500",
+                                    format: "numeric"
+                                }
+                            ],
+                            [
+                                {
+                                    text: "Goods taken and sold at auction"
+                                },
+                                {
+                                    text: "£110",
+                                    format: "numeric"
+                                },
+                                {
+                                    text: "7.5% of the proportion of the main debt over £1,500",
+                                    format: "numeric"
+                                }
+                            ]
+                        ]
+                    }) }}
+
+                </div>
+
+                <nav class="gem-c-pagination" role="navigation" aria-label="Pagination">
+                    <ul class="gem-c-pagination__list" data-module="track-click">
+                        <li class="gem-c-pagination__item gem-c-pagination__item--previous">
+                            <a href="/v3/claimant-guidance/order-to-obtain-information-on-finances"
+                               class="gem-c-pagination__link" rel="prev">
+                            <span class="gem-c-pagination__link-title">
+                                <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13"
+                                     width="17" viewBox="0 0 17 13">
+                                  <path fill="currentColor"
+                                        d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                                </svg>
+                                <span class="gem-c-pagination__link-text">
+                                  Previous
+                                </span>
+                            </span>
+                                <span class="gem-c-pagination__link-divider visually-hidden">:</span>
+                                <span class="gem-c-pagination__link-label">Get an Order to Obtain Information on finances</span>
+                            </a>
+                        </li>
+                        <li class="gem-c-pagination__item gem-c-pagination__item--next">
+                            <a href="/v3/claimant-guidance/get-money-deducted-from-wages" class="gem-c-pagination__link"
+                               rel="next">
+                            <span class="gem-c-pagination__link-title">
+                                <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13"
+                                     width="17"
+                                     viewBox="0 0 17 13">
+                                  <path fill="currentColor"
+                                        d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                                </svg>
+                                <span class="gem-c-pagination__link-text">
+                                  Next
+                                </span>
+                            </span>
+                                <span class="gem-c-pagination__link-divider visually-hidden">:</span>
+                                <span class="gem-c-pagination__link-label">Get money deducted from wages</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+                {% include 'includes/related-guidance.html' %}
+            </div>
+
+        </div>
+    </main>
+{% endblock %}

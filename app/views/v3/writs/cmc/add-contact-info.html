@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - select writ of control type
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+text: "Back",
+href: "8"
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-m">Question 4 of 4</span>
+
+        {{ contactDetails }}
+        <form action="" method="post" class="form">
+
+            <div class="govuk-form-group">
+                {% from "radios/macro.njk" import govukRadios %}
+                {% from "input/macro.njk" import govukInput %}
+
+                {% set emailHtml %}
+                    {{ govukInput({
+                        id: "contact-by-email",
+                        name: "contact-by-email",
+                        type: "email",
+                        classes: "govuk-!-width-one-third",
+                        label: {
+                            text: "Email address"
+                        }
+                    }) }}
+                {% endset -%}
+
+                {% set phoneHtml %}
+                    {{ govukInput({
+                        id: "contact-by-phone",
+                        name: "contact-by-phone",
+                        type: "tel",
+                        classes: "govuk-!-width-one-third",
+                        label: {
+                            text: "Phone number"
+                        }
+                    }) }}
+                {% endset -%}
+
+                {% set correspondenceAddress %}
+                    {{ govukInput({
+                        id: "correspondenceAddress",
+                        name: "correspondenceAddress",
+                        type: "tel",
+                        classes: "govuk-!-width-two-thirds",
+                        label: {
+                            text: "Address"
+                        }
+                    }) }}
+                {% endset -%}
+
+                {{ govukRadios({
+                    idPrefix: "how-contacted-conditional",
+                    name: "how-contacted",
+                    fieldset: {
+                        legend: {
+                            text: "Which additional contact information do you have?",
+                            isPageHeading: true,
+                            classes: "govuk-fieldset__legend--xl"
+                        }
+                    },
+                    hint: {
+                        text: "Select one option."
+                    },
+                    items: [
+                        {
+                            value: "email",
+                            text: "Email",
+                            conditional: {
+                            html: emailHtml
+                        }
+                        },
+                        {
+                            value: "phone",
+                            text: "Phone",
+                            conditional: {
+                            html: phoneHtml
+                        }
+                        },
+                        {
+                            value: "address",
+                            text: "Corresponance address",
+                            conditional: {
+                            html: correspondenceAddress
+                        }
+                        }
+                    ]
+                }) }}
+            </div>
+
+            <div class="hmcts-button-action">
+
+                <button type="submit" class="govuk-button hmcts-button--secondary  hmcts-add-another__add-button  govuk-!-margin-bottom-4" value="true" name="another">
+                    Add another
+                </button>
+
+            </div>
+
+            <div class="hmcts-button-action">
+
+                <button type="submit" class="govuk-button">
+                    Continue
+                </button>
+
+            </div>        </form>
+
+    </div>
+</div>
+{% endblock %}

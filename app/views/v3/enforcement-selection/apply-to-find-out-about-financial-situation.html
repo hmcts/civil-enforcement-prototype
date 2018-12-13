@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+    Civil Enforcement - select enforcement type
+{% endblock %}
+{% block header %}
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "alpha"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            {% from "back-link/macro.njk" import govukBackLink %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript: window.history.back(-1)"
+            }) }}
+
+            <h1 class="govuk-heading-xl">Find out about {{ defendant }}'s financial situation</h1>
+
+            <p>You can ask the court to order Andrew Smith to give information on their finances. They will have to go
+                to court and declare their financial information. It may help you decide:</p>
+
+            <ul class="govuk-list--bullet govuk-list">
+                <li>if you can get your money back</li>
+                <li>how you can get your money back</li>
+
+            </ul>
+            <p>The court fee is £55.</p>
+
+            <p><a href="https://www.gov.uk/government/publications/form-n39-order-to-attend-court-for-questioning">Apply
+                    to the court to make {{ defendant }} declare financial information.</a></p>
+
+        </div>
+    </div>
+{% endblock %}

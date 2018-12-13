@@ -1,0 +1,30 @@
+{% extends "email-layout.html" %}
+
+{% block content %}
+
+<h1 style="margin: 0 0 30px ; font-size: 36px">Judgment registered - take court action to get your money back</h1>
+
+<p>Dear {{ claimant }},</p>
+
+<p>You have successfully registered a county court judgment against {{ defendant }}.</p>
+
+<p>You can now apply to the court to collect the money for you. Depending on what information you have on {{ defendant }} you can apply to:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+    <li>send a bailiff to their home or business</li>
+    <li>take money from their wages</li>
+    <li>freeze money in their bank account</li>
+    <li>put a charging order on property they own</li>
+</ul>
+
+<p>Find out more at <a href="/v3/dashboard/case?CCJapproved=true" class="button">https://www.gov.uk/resolve-unpaid-claim</a>.</p>
+
+<!--<p><a href="/v3/dashboard/case?CCJapproved=true" class="govuk-button">https://www.gov.uk/resolve-unpaid-claim</a></p>-->
+
+<p>Regards, RUMC (Resolve an unpaid money claim)</p>
+
+{% if phoneAlert === 'true' %}
+{% include 'includes/phone-alert.html' %}
+{% endif %}
+
+{% endblock %}

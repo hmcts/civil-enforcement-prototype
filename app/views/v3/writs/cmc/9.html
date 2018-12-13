@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - writ of control
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+text: "Back",
+href: "8"
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l">Additional information (optional)</h1>
+
+        <p>Enter any additional information that could help the bailiff recover your money
+        </p>
+        <form action="check-answers" method="post" class="form">
+            <textarea class="form-control-large" id="additional-information" rows="3" name="additional-information" type="text" style="width: 100%" value=""></textarea>
+            <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

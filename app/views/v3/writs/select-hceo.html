@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - select writ of control type
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+text: "Back",
+href: "/writs/"
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <form action="" method="post" class="form">
+
+            <div class="govuk-form-group">
+                {% from "radios/macro.njk" import govukRadios %}
+                {% from "input/macro.njk" import govukInput %}
+
+                {% set emailHtml %}
+                {{ govukInput({
+                id: "contact-by-email",
+                name: "contact-by-email",
+                type: "email",
+                classes: "govuk-!-width-one-third",
+                label: {
+                text: "Email address"
+                }
+                }) }}
+                {% endset -%}
+
+                {% set phoneHtml %}
+                {{ govukInput({
+                id: "contact-by-phone",
+                name: "contact-by-phone",
+                type: "tel",
+                classes: "govuk-!-width-one-third",
+                label: {
+                text: "Phone number"
+                }
+                }) }}
+                {% endset -%}
+
+                {% set textHtml %}
+                {{ govukInput({
+                id: "contact-by-text",
+                name: "contact-by-text",
+                type: "tel",
+                classes: "govuk-!-width-one-third",
+                label: {
+                text: "Mobile phone number"
+                }
+                }) }}
+                {% endset -%}
+
+                {{ govukRadios({
+                idPrefix: "how-contacted-conditional",
+                name: "how-contacted",
+                fieldset: {
+                legend: {
+                text: "Do you know which high court bailiff you want to use?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+                }
+                },
+                hint: {
+                stext: "You must appoint a High Court Enforcement Officer because..."
+                },
+                items: [
+                {
+                value: "known-hceo",
+                text: "Yes",
+                conditional: {
+                value: 'hceo',
+                text: 'Enter their name',
+                html: '
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="hceo">
+                        Enter their name
+                    </label>
+
+
+                    <input class="govuk-input govuk-!-width-one-third" id="hceo" name="hceo" type="text">
+                </div>
+                '
+                }
+                },
+                {
+                value: "regional-hceo",
+                text: "No - select a bailiff for me"
+                }
+                ]
+                }) }}
+            </div>
+
+            <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - writ of control
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+text: "Back",
+href: "4"
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">Question 2 of 4</span>
+
+        <form action="7" method="post" class="form">
+            <div class="govuk-form-group">
+                {% from "radios/macro.njk" import govukRadios %}
+                {% from "input/macro.njk" import govukInput %}
+
+                {{ govukRadios({
+                idPrefix: "how-contacted-conditional",
+                name: "how-contacted",
+                fieldset: {
+                legend: {
+                text: "Do you want the bailiff to collect the full debt of £" + amount + "?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+                }
+                },
+                hint: {
+                    text: "This includes the £66 court fee to apply for a Writ of Control."
+                },
+                items: [
+                {
+                value: "full-amount",
+                text: "Yes"
+                },
+                {
+                value: "partial-amount",
+                text: "No",
+                conditional: {
+                html: '<div class="govuk-form-group">
+                <label class="govuk-label" for="partial-amount-value">
+                    How much do you want the bailiff to collect?
+                </label>
+
+
+                <input class="govuk-input govuk-!-width-one-third" id="partial-amount-value" name="partial-amount-value" type="text">
+            </div>'
+                }
+
+                }
+                ]
+                }) }}
+            </div>
+
+
+            <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

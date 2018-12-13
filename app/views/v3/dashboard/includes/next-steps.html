@@ -1,0 +1,58 @@
+{% if dashboardType === 'claimant' %}
+    {% if CCJrequested === 'true' %}
+
+        {% include './claimant/content/ccj-requested.html' %}
+
+    {% elseif CCJapproved === 'true' %}
+
+        {% include './claimant/content/next-step-enforcement.html' %}
+
+    {% elseif writApproved === 'true' %}
+
+        {% include './claimant/content/next-step-writApproved.html' %}
+
+    {% elseif writApproved !== 'true' and CCJapproved === 'true' %}
+
+        {% include './claimant/content/next-step-enforcement.html' %}
+
+    {% elseif writServed === 'true' %}
+
+        {% include './claimant/content/next-step-writServed.html' %}
+
+    {% else %}
+
+        {% include './claimant/content/next-step-ccj.html' %}
+
+    {% endif %}
+
+    <div class="status-block govuk-footer__heading"></div>
+
+    {% if writServed === 'true' %}
+        <h3 class="govuk-heading-s">Cancel the Writ of Control</h3>
+        <p><a href="#">Cancel the Writ of Control</a> if {{ defendant }} has paid their debt or set up a payment plan.
+        </p>
+    {% endif %}
+
+    <h3 class="govuk-heading-s">Close your claim</h3>
+
+    <p><a href="#">Close your claim</a> if {{ defendant }} has paid their debt.</p>
+
+{% else %}
+
+    {% if CCJapproved === 'true' %}
+
+        {% include './defendant/content/next-step-enforcement.html' %}
+
+    {% elseif writApproved === 'true' %}
+
+        {% include './defendant/content/next-step-writApproved.html' %}
+
+    {% elseif writApplicationToStay === 'true' %}
+
+        {% include './defendant/content/next-step-writApplicationToStay.html' %}
+
+    {% else %}
+        <p>Standard CMC instructions</p>
+    {% endif %}
+
+{% endif %}

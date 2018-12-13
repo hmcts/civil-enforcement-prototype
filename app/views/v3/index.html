@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Civil Enforcement prototypes
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">
+                Civil enforcement prototypes
+                <span class="govuk-caption-xl">Version 3</span>
+            </h2>{{ releaseVersion | log }}
+            <p class="">
+                This is a prototype that allows the civil enforcement team to test ideas and for research purposes. It
+                is not a working software.
+            </p>
+
+            {% from "includes/index-item.njk" import indexItem %}
+
+            {{ indexItem({
+                sprint: 6,
+                dateRange: '06/12/18 - 19/12/18',
+                summary: 'Second iterations of defendant and claimant journeys',
+                href: '/v3/notifications/defendant/email2?phoneAlert=true',
+                scenarioList: [
+                    '<a href="/dashboard/">First pass of claimant writ enforcement</a>'
+                ],
+                supportingDocs: [
+                    '<a href="/public/pdf/sprint5/27-11-2018%20Defendant%20Flow.pdf">Flow diagram of pages</a>',
+                    '<a href="/public/pdf/sprint5/Complete%20storyboard%20(Sprint%205).pdf">Complete storyboard (sprint 5)</a>'
+                ]
+            }) }}
+
+        </div>
+    </div>
+
+{% endblock %}

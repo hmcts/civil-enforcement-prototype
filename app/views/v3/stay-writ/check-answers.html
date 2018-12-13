@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+    Stay a writ of control - check answers
+{% endblock %}
+{% block header %}
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "alpha"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+{% endblock %}
+
+{% block content %}
+    {% from "back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "/stay-writ/3"
+    }) }}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                Check your answers
+            </h1>
+
+            <!-- only add a heading for a list if there is more than one list -->
+            <!--<h2 class="govuk-heading-m">-->
+            <!--Debtor's details-->
+            <!--</h2>-->
+
+            <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+            <!--   * `app-check-your-answers--short` for short questions -->
+            <!--   * `app-check-your-answers__questions-long` for long questions -->
+            <!--   * none for single group of q&a -->
+            <!--<dl class="app-check-your-answers app-check-your-answers&#45;&#45;short">-->
+
+
+            <!--</dl>-->
+
+
+            <h2 class="govuk-heading-m">
+                Application details
+            </h2>
+
+            <dl class="app-check-your-answers app-check-your-answers--short">
+
+
+                <div class="app-check-your-answers__contents">
+                    <dt class="app-check-your-answers__question">
+                        Type of application
+                    </dt>
+                    <dd class="app-check-your-answers__answer">
+                        {% if type === 'vary' %}Change payment on my CCJ (vary a CCJ){% else %}Cancel my CCJ (set aside a CCJ){% endif %}
+                    </dd>
+                    <dd class="app-check-your-answers__change">
+                        <a href="#">
+                            Change<span class="govuk-visually-hidden"> home address</span>
+                        </a>
+                    </dd>
+                </div>
+
+                <div class="app-check-your-answers__contents">
+                    <dt class="app-check-your-answers__question">
+                        Type of hearing
+                    </dt>
+                    <dd class="app-check-your-answers__answer">
+                        Hearing in a courtroom
+                    </dd>
+                    <dd class="app-check-your-answers__change">
+                        <a href="#">
+                            Change<span class="govuk-visually-hidden"> licence type</span>
+                        </a>
+                    </dd>
+                </div>
+
+
+            </dl>
+
+
+            <h2 class="govuk-heading-m">Submit your application</h2>
+
+            <p>
+                By submitting this application to stop a Writ of Control and {% if type === 'vary' %}vary{% else %}set aside{% endif %} a CCJ, you’re confirming that, to the best of your knowledge, the details you’re providing are correct.
+            </p>
+
+            <a class="govuk-button" href="payment" role="button">
+                Submit and continue to payment (£55)
+            </a>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    OCMC {{ dashboardType }} dashboard
+{% endblock %}
+
+{% block header %}
+    <!-- Blank header with no service name for the start page -->
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "Alpha"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full cmc-dashboard">
+            {% from "back-link/macro.njk" import govukBackLink %}
+
+            {% if dashboardType === 'defendant' %}
+
+            {% else %}
+                {{ govukBackLink({
+                    text: "Back",
+                    href: "../dashboard"
+                }) }}
+            {% endif %}
+
+            {% include './includes/case-details.html' %}
+
+            {% include './includes/case-status.html' %}
+
+            {% from "tabs/macro.njk" import govukTabs %}
+            {% from "table/macro.njk" import govukTable %}
+
+            {% set nextStepsHtml %}
+                {% include 'v3/dashboard/includes/next-steps.html' %}
+            {% endset -%}
+
+            {% set partiesHtml %}
+                {% include 'v3/dashboard/includes/parties.html' %}
+            {% endset -%}
+
+            {% set documentsHtml %}
+                {% include 'v3/dashboard/includes/documents.html' %}
+            {% endset -%}
+
+            {% set historyHtml %}
+                {% include 'v3/dashboard/includes/history.html' %}
+            {% endset -%}
+
+            {% set enforcementsHtml %}
+                {% include 'v3/dashboard/includes/enforcements.html' %}
+            {% endset -%}
+
+
+
+            {% if enforcement !== 'true' %}
+
+                {{ govukTabs({
+                    items: [
+                        {
+                            label: "Actions you can take",
+                            id: "next-steps",
+                            panel: {
+                            html: nextStepsHtml
+                        }
+                        },
+                        {
+                            label: "Claim history",
+                            id: "history",
+                            panel: {
+                            html: historyHtml
+                        }
+                        },
+                        {
+                            label: "Parties",
+                            id: "parties",
+                            panel: {
+                            html: partiesHtml
+                        }
+                        },
+                        {
+                            label: "Documents",
+                            id: "documents",
+                            panel: {
+                            html: documentsHtml
+                        }
+                        }
+                    ]
+                }) }}
+
+            {% else %}
+                {{ govukTabs({
+                    items: [
+                        {
+                            label: "Actions you can take",
+                            id: "next-steps",
+                            panel: {
+                            html: nextStepsHtml
+                        }
+                        },
+                        {
+                            label: "Claim history",
+                            id: "history",
+                            panel: {
+                            html: historyHtml
+                        }
+                        },
+                        {
+                            label: "Parties",
+                            id: "parties",
+                            panel: {
+                            html: partiesHtml
+                        }
+                        },
+                        {
+                            label: "Documents",
+                            id: "documents",
+                            panel: {
+                            html: documentsHtml
+                        }
+                        },
+                        {
+                            label: "Enforcements",
+                            id: "enforcements",
+                            panel: {
+                            html: enforcementsHtml
+                        }
+                        }
+                    ]
+                }) }}
+            {% endif %}
+
+            {#{% include 'v3/dashboard/includes/next-steps.html' %}#}
+
+        </div>
+    </div>
+{% endblock %}

@@ -22,6 +22,23 @@
             {% from "includes/index-item.njk" import indexItem %}
 
             {{ indexItem({
+                sprint: 6,
+                phase: 'alpha',
+                dateRange: '06/12/18 - 19/12/18',
+                summary: 'Second iterations of defendant and claimant journeys',
+                href: 'v3/',
+                changeLog: [
+                    'Defendant dashboard / claim status pages added'
+                ],
+                scenarioList: [
+                    '<a href="/dashboard/">First pass of claimant writ enforcement</a>'
+                ],
+                supportingDocs: [
+                    '<a href="/public/pdf/BasicStoryBoard.pdf">Story board (Claimant)</a>'
+                ]
+            }) }}
+
+            {{ indexItem({
                 sprint: 5,
                 phase: 'alpha',
                 dateRange: '22/11/18 - 05/12/18',

@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Defendants and Claimants - 11/12/2018
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+            {{ govukBreadcrumbs({
+                items: [
+                    {
+                        text: "Home",
+                        href: "/"
+                    },
+                    {
+                        text: "User research",
+                        href: "/ur/"
+                    },
+                    {
+                        text: "11-12-2018"
+                    }
+                ]
+            }) }}
+
+            <h2 class="govuk-heading-l">
+                <span class="govuk-caption-xl">Sprint 6</span>
+                11th December 2018
+            </h2>
+
+            <p>
+                This is a prototype that allows the civil enforcement team to test ideas and for research purposes. It
+                is
+                not a working software.
+            </p>
+
+            <p><a href="/v3/notifications/claimant/email1?phoneAlert=true" target="_blank" class="govuk-button govuk-button--start">Start claimant journey</a></p>
+            <p><a href="/v3/notifications/defendant/email2?phoneAlert=true" target="_blank" class="govuk-button govuk-button--start">Start defendant journey</a></p>
+
+            <h3 class="govuk-heading-s">Defendants and Claimants</h3>
+
+            <ul class="govuk-list govuk-list--number">
+                <li>Claimants
+                <ol class="govuk-list--number">
+                    <li><a href="/v3/enforcement-selection/wizard/" target="_blank">Enforcement selection wizard</a></li>
+                    <li><a href="/v3/dashboard/case?writApproved=true&writReady=true&enforcementInPlay=true#next-steps" target="_blank">Dashboard - with enforcement tab</a></li>
+                </ol></li>
+                <li>Defendants
+                    <ol class="govuk-list--number">
+                        <li><a href="/v3/dashboard/defendant/case?writApproved=true" target="_blank">Dashboard - with stay of writ as next step</a></li>
+                    </ol></li>
+            </ul>
+
+        </div>
+    </div>
+
+{% endblock %}

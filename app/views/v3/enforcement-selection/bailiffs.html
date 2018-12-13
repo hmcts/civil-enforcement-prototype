@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Civil Enforcement - select enforcement type
+{% endblock %}
+{% block header %}
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+text: "Back",
+href: "/enforcement-selection/"
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% if hasErrors %}
+        {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "You need to select which type of bailiff you want to use",
+              href: "#"
+            }
+          ]
+        }) }}
+        {% endif %}
+
+        <form action="" method="post" class="form">
+            <div class="govuk-form-group">
+                {% from "radios/macro.njk" import govukRadios %}
+
+                {{ govukRadios({
+                idPrefix: "enforcement-type",
+                name: "enforcement-type",
+                fieldset: {
+                legend: {
+                text: "What type of bailiffs do you want to use?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+                }
+                },
+                hint: {
+                },
+                items: [
+                {
+                value: "warrant-of-control",
+                text: "County court bailiffs",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "Apply for a Warrant of Control if the debt is less than £5000 including the court fee. The court fee is £77."
+                }
+                },
+                {
+                value: "writ-of-control",
+                text: "High court bailiffs",
+                label: {
+                classes: "govuk-label--s"
+                },
+                hint: {
+                text: "Apply for a Writ of Control if the debt is at least £600. The court fee is £66. High court bailiffs charge fees for their services.
+                "
+                }
+                }
+                ]
+                }) }}
+            </div>
+
+            <div class="form-group">
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      What's the difference and what are the fees?
+                    </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <p>County court bailiffs enforce warrants, work for the courts, and charge no extra fees.</p>
+                        <p>High court bailiffs are also known as High Court Enforcement Officers (HCEO). High court bailiffs enforce writs, work for private companies, and <a href="/v3/claimant-guidance/send-bailiffs-to-collect-payment#highCourtFees">charge extra fees</a>. These fees are added to the debt, but if they cannot get your money back you will have to pay the fees.
+                        </p>
+                        <p>For example, a High Court bailiff will charge £75 to send a letter to the person who owes you money. A visit to their address costs over £200</p>
+                    </div>
+                </details>
+            </div>
+
+            <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

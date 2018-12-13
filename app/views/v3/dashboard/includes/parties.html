@@ -1,0 +1,68 @@
+<h2 class="govuk-heading-m">Claimant details{% if dashboardType !== 'defendant' %} (You){% endif %}</h2>
+
+<dl class="app-check-your-answers app-check-your-answers--short">
+
+
+    <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+            Name:
+        </dt>
+        <dd class="app-check-your-answers__answer">
+            {{ claimant }}
+        </dd>
+    </div>
+
+    <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+            Email:
+        </dt>
+        <dd class="app-check-your-answers__answer">
+            {{ claimantData.email }}
+        </dd>
+    </div>
+
+    <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+            Address:
+        </dt>
+        <dd class="app-check-your-answers__answer">
+            {{ claimantData.address }}
+        </dd>
+    </div>
+
+
+</dl>
+
+<h2 class="govuk-heading-m">Defendant details{% if dashboardType === 'defendant' %} (You){% endif %}</h2>
+
+<dl class="app-check-your-answers app-check-your-answers--short">
+
+
+    <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+            Name:
+        </dt>
+        <dd class="app-check-your-answers__answer">
+            {{ defendant }}
+        </dd>
+    </div>
+
+    <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+            Email:
+        </dt>
+        <dd class="app-check-your-answers__answer">
+            {{ defendantData.email }}
+        </dd>
+    </div>
+
+    <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+            Address:
+        </dt>
+        <dd class="app-check-your-answers__answer">
+            {{ defendantData.address }}
+        </dd>
+    </div>
+
+</dl>

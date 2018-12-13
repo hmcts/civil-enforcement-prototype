@@ -40,7 +40,7 @@ module.exports = function (router) {
     let thisPageIndex = common.findIndex(thePageName, 'location', theStagePages)
     let thisPage = theStagePages[thisPageIndex]
     let theStageUR = await common.findCSVKey(csvFile, thisStage.name, 'Stage')
-    theStageUR = common.findKey(thisPage.id, 'Type - Email/ dashboard/ application', theStageUR)
+    theStageUR = common.findKey(thisPage.location, 'Location', theStageUR)
     let navigation = {
       'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version),
       'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
@@ -53,7 +53,8 @@ module.exports = function (router) {
         location: version + '/' + thisStage.location + '/' + thisPage.location,
         thisPage: thisPage,
         thisStage: thisStage,
-        theStageUR: Object.values(theStageUR),
+        // theStageUR: Object.values(theStageUR),
+        theStageUR: theStageUR,
         sprint: sprint,
         csvData: csvData,
         navigation: navigation,

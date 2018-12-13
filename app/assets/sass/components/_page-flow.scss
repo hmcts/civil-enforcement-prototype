@@ -13,6 +13,15 @@ $icons: '../images/page-flow/page-types';
   }
 }
 
+.page-flow-feedback {
+  &--positive {
+    color: #00a33b;
+  }
+  &--negative {
+    color: #a33038;
+  }
+}
+
 .page-flow--stages {
   @extend .govuk-body;
 

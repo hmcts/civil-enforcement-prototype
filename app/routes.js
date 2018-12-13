@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 
 // Add your routes here - above the module.exports line
-require('./routes/v2/page-flow.js')(router)
 // V1 work (Alpha S4)
 require('./routes/v1/step-by-step.js')(router)
 require('./routes/v1/notifications.js')(router)
@@ -17,6 +16,7 @@ require('./routes/v2/enforcement-selection.js')(router)
 require('./routes/v2/writs.js')(router)
 require('./routes/v2/dashboard.js')(router)
 require('./routes/v2/govuk-pay.js')(router)
+require('./routes/v2/page-flow.js')(router)
 // V3 work (Alpha S6)
 require('./routes/v3/step-by-step.js')(router)
 require('./routes/v3/notifications.js')(router)
@@ -25,5 +25,6 @@ require('./routes/v3/writs.js')(router)
 require('./routes/v3/dashboard.js')(router)
 require('./routes/v3/govuk-pay.js')(router)
 require('./routes/v3/cmc.js')(router)
+require('./routes/v3/page-flow.js')(router)
 
 module.exports = router

@@ -1,7 +1,6 @@
 let fs = require('fs')
 let rp = require('request-promise')
 const csvtojson = require('csvtojson')
-
 var common = {}
 
 /**
@@ -190,6 +189,43 @@ common.getUrData = async function (theSheetsURL, theBackupCSVFile) {
       return common.getCSVFile(theBackupCSVFile)
     })
   return theData
+}
+
+common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
+  let userJourneys = [] // main array
+  // let userJourneys = mockJson
+  for (let theJourney in theUserFlow['journeys']) {
+    console.log(theJourney)
+    let stagesInJourney = []
+    let stageInJourney = {}
+    let pagesInStage = []
+    let previousStage
+    for (let thePage in theUserFlow['journeys'][theJourney]['flow']) {
+      // @todo - build structure similar to pageFlow
+      let theStage = theUserFlow['journeys'][theJourney]['flow'][thePage]['stage']
+      if (theStage === previousStage) {
+        let page = {'id': theUserFlow['journeys'][theJourney]['flow'][thePage]['pageId']}
+        pagesInStage.push(page)
+        stageInJourney = {'stage': theStage, 'pages': pagesInStage}
+      } else {
+        if (previousStage !== undefined) {
+          stagesInJourney.push(stageInJourney)
+        }
+        pagesInStage = []
+        let page = {'id': theUserFlow['journeys'][theJourney]['flow'][thePage]['pageId']}
+        pagesInStage.push(page)
+        stageInJourney = {'stage': theStage, 'pages': pagesInStage}
+      }
+      previousStage = theStage
+    }
+    stagesInJourney.push(stageInJourney)
+    userJourneys.push({
+      'userType': theUserFlow['journeys'][theJourney]['name'],
+      'flow': stagesInJourney
+    })
+  }
+  console.log(userJourneys)
+  return userJourneys
 }
 
 module.exports = common

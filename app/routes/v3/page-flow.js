@@ -2,7 +2,8 @@ const version = 'v3'
 const sprint = 6
 const settings = require('./config')
 const common = require('./common')
-const pageFlow = require('./pages.json')
+let pageFlow = require('./pages.json')
+const userFlow = require('./user-flows.json')
 const csvFile = './app/views/' + version + '/page-flow/lab-notes.csv'
 // const csvData = common.csvtojson(csvFile)
 const asyncMiddleware = fn =>
@@ -13,10 +14,20 @@ const asyncMiddleware = fn =>
 
 module.exports = function (router) {
   router.get(['/' + version + '/page-flow/'], function (req, res) {
-    // console.log(csvData)
+    // @todo - read from user-flow and convert to 'Page Flow' format?
     res.render('./includes/page-flow.html',
       {
         pageFlow: pageFlow,
+        sprint: sprint
+      }
+    )
+  })
+  router.get(['/' + version + '/user-flow/'], function (req, res) {
+    // @todo - read from user-flow and convert to 'Page Flow' format?
+    let theUserFlow = common.pageFlowFromUserFlow(userFlow, pageFlow)
+    res.render('./includes/user-flow.html',
+      {
+        userFlow: theUserFlow,
         sprint: sprint
       }
     )
@@ -56,6 +67,7 @@ module.exports = function (router) {
     req.session.theURData = theURData
     let theStageUR = await common.findCSVKey(theURData, thisStage.id, 'Stage')
     theStageUR = common.findKey(thisPage.location, 'Location', theStageUR)
+    // @todo navigate based upon the user-flow NOT pages.json
     let navigation = {
       'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version),
       'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)

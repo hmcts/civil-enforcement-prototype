@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Civil Enforcement prototypes
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row" id="page-flow">
+        <div class="govuk-grid-column-full">
+            <h2 class="govuk-heading-l">
+                Sprint {{ sprint }}
+                <!--<span class="govuk-caption-xl">{{ releaseVersion }}</span>-->
+            </h2>
+
+            {% for userJourney in userFlow %}
+
+                <h3 class="govuk-heading-m">userJourney: {{ userJourney.userType }}</h3>
+
+                <ol>
+                    {% for stage in userJourney.flow %}
+                        <li class="page-flow-item--stage">{{ stage['stage'] }}
+                        <ol class="page-flow--pages">
+                        {% for page in stage.pages %}
+                            <li class="page-flow-item--page">{{ page.id }}</li>
+                        {% endfor %}
+                        </ol>
+                        </li>
+                    {% endfor %}
+                </ol>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}

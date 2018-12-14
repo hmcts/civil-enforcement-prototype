@@ -1,0 +1,58 @@
+{
+  "journeys": [
+    {
+      "name": "Defendant",
+      "userType": "defendant",
+      "description": "User receives notification of Writ of Control and engages with the service for the first time. They proceed to apply to stay the Writ of Control.",
+      "flow": [
+        {
+          "stage": "notifications",
+          "version": 1,
+          "pageId": "1"
+        },
+        {
+          "stage": "security-layer",
+          "version": 1,
+          "pageId": "1"
+        },
+        {
+          "stage": "security-layer",
+          "version": 1,
+          "pageId": "2"
+        },
+        {
+          "stage": "security-layer",
+          "version": 1,
+          "pageId": "3"
+        }
+      ]
+    },
+    {
+      "name": "Claimant",
+      "userType": "claimant",
+      "description": "Claimant opts to enforce CCJ using enforcement method selection",
+      "flow": [
+        {
+          "stage": "notifications",
+          "version": 1,
+          "pageId": "1"
+        },
+        {
+          "stage": "defendant-dashboard",
+          "version": 1,
+          "pageId": "case?writApproved=true"
+        },
+        {
+          "stage": "notifications",
+          "version": 1,
+          "pageId": "2"
+        },
+        {
+          "stage": "notifications",
+          "version": 1,
+          "pageId": "3"
+        }
+      ]
+    }
+  ]
+}

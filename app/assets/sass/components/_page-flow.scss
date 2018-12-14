@@ -28,7 +28,7 @@ $stage-color--defendant-dashboard: #f47738;
 
 .page-flow--stages {
   @extend .govuk-body;
-
+  padding: 0;
 }
 
 .page-flow-item--stage {

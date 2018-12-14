@@ -42,7 +42,7 @@
       ]
     },
     {
-      "name": "defendant-dashboard",
+      "name": "Defendant dashboard",
       "location": "dashboard/defendant",
       "id": "defendant-dashboard",
       "description": "Dashboard for defendant's claim details",
@@ -88,7 +88,7 @@
       ]
     },
     {
-      "name": "stay-writ",
+      "name": "Application to stay Writ of Control",
       "location": "stay-writ",
       "id": "stay-writ",
       "description": "Application to set aside or vary County Court Judgment and implicitly submit High Court application to stay a Writ of Control",

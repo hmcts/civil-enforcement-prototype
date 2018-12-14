@@ -4,7 +4,7 @@ const settings = require('./config')
 const common = require('./common')
 const pageFlow = require('./pages.json')
 const csvFile = './app/views/' + version + '/page-flow/lab-notes.csv'
-const csvData = common.csvtojson(csvFile)
+// const csvData = common.csvtojson(csvFile)
 const asyncMiddleware = fn =>
   (req, res, next) => {
     Promise.resolve(fn(req, res, next))
@@ -17,8 +17,7 @@ module.exports = function (router) {
     res.render('./includes/page-flow.html',
       {
         pageFlow: pageFlow,
-        sprint: sprint,
-        csvData: csvData
+        sprint: sprint
       }
     )
   })
@@ -52,7 +51,7 @@ module.exports = function (router) {
     let thePageName = req.params.page + theQueryString
     let thisPageIndex = common.findIndex(thePageName, 'location', theStagePages)
     let thisPage = theStagePages[thisPageIndex]
-    // @todo store API call in a session
+    // @todo store API call / CSV UR Data in a session
     let theURData = await common.getUrData(SPREADSHEET_URL, csvFile)
     req.session.theURData = theURData
     let theStageUR = await common.findCSVKey(theURData, thisStage.id, 'Stage')
@@ -72,7 +71,7 @@ module.exports = function (router) {
         // theStageUR: Object.values(theStageUR),
         theStageUR: theStageUR,
         sprint: sprint,
-        csvData: csvData,
+        // csvData: csvData,
         navigation: navigation,
         hasHistory: hasHistory
       }

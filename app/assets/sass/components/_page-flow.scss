@@ -3,6 +3,7 @@ $stage-color--stay-writ: #006c56;
 $stage-color--check-writ: #00beb7;
 $stage-color--security-layer: pink;
 $stage-color--defendant-dashboard: #f47738;
+$stage-color--notifications: #ccc;
 
 .screenPreviewContainer {
   height: 400px;
@@ -51,6 +52,9 @@ $stage-color--defendant-dashboard: #f47738;
   &--check-writ {
     border-color: $stage-color--check-writ;
   }
+  &--notifications {
+    border-color: $stage-color--notifications;
+  }
   &:last-of-type {
     .page-flow-item--page{
       &:last-of-type {
@@ -87,7 +91,12 @@ $stage-color--defendant-dashboard: #f47738;
       height: 120px;
       display: block;
       background-repeat: no-repeat;
-     &--text-input {
+      &--email {
+        background-image: url($icons + '/email.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--text-input {
        background-image: url($icons + '/text-input.svg');
        -webkit-background-size: contain;
        background-size: contain;

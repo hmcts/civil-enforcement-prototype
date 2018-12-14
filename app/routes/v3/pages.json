@@ -1,6 +1,33 @@
 {
   "stages": [
     {
+      "name": "Notifications",
+      "location": "notifications/defendant",
+      "id": "notifications",
+      "description": "SMS, Emails and letters that are sent out to defendants",
+      "versions": [
+        {
+          "version": 1,
+          "sprint": 5,
+          "sprintDirectory": "v3",
+          "location": "/notifications/defendant/",
+          "users": [
+            "defendant"
+          ],
+          "design-notes": "Mock ups of HMCTS emails that may be sent out to users",
+          "pages": [
+            {
+              "title": "Court action taken against you - Writ of Control issued",
+              "id": "1",
+              "description": "User is notified of a Writ of Control having been issued",
+              "type": "email",
+              "location": "email2"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Security layer",
       "location": "dashboard/security",
       "id": "security-layer",

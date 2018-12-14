@@ -55,7 +55,11 @@
                     </summary>
                     <div class="govuk-details__text">
                         {% for feedbackType, feedback in theStageUR.feedback %}
+                            {% if feedbackType === 'video' %}
+                            <a href="{{ feedback }}" target="_blank">Video</a>
+                            {% else %}
                             <p class="page-flow-feedback--{{ feedbackType }}">{{ feedback }}</p>
+                            {% endif %}
                         {% endfor %}
                     </div>
                 </details>

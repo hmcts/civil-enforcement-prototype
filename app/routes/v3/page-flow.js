@@ -1,3 +1,4 @@
+const https = require('https')
 const version = 'v3'
 const sprint = 6
 const settings = require('./config')
@@ -24,6 +25,19 @@ module.exports = function (router) {
   })
 
   router.get(['/' + version + '/page-flow/:stage/:page', '/' + version + '/page-flow/:stage/:subStage/:page'], asyncMiddleware(async (req, res, next) => {
+
+    const SheetsAPI = require('sheets-api')
+    const sheets = new SheetsAPI()
+
+    const SPREADSHEET_ID = '1jI3eJF6F7Infl1oyJYreNHzJtPjXT9K8WTUYt5lwbIw'
+    const API_KEY = 'AIzaSyBDWsUFLhvbMybu7ZpwIeiwEcex0K4OyNA'
+    const SPREADSHEET_URL_DIRECT = 'https://spreadsheets.google.com/feeds/list/' + SPREADSHEET_ID + '/od6/public/values?alt=json'
+    const SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/' + SPREADSHEET_ID + '/gviz/tq?tqx=out:csv'
+
+    // let theCsvData = await common.getUrData(SPREADSHEET_URL, csvData)
+
+    // console.log(theCsvData)
+
     let theStageKey = req.params.subStage ? req.params.stage + '/' + req.params.subStage : req.params.stage
     let thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
     let thisStage = pageFlow.stages[thisStageIndex]
@@ -39,7 +53,8 @@ module.exports = function (router) {
     let thePageName = req.params.page + theQueryString
     let thisPageIndex = common.findIndex(thePageName, 'location', theStagePages)
     let thisPage = theStagePages[thisPageIndex]
-    let theStageUR = await common.findCSVKey(csvFile, thisStage.name, 'Stage')
+    let theURData = await common.getUrData(SPREADSHEET_URL, csvData);
+    let theStageUR = await common.findCSVKey(theURData, thisStage.name, 'Stage')
     theStageUR = common.findKey(thisPage.location, 'Location', theStageUR)
     let navigation = {
       'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version),

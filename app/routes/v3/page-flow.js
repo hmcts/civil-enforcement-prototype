@@ -1,4 +1,3 @@
-const https = require('https')
 const version = 'v3'
 const sprint = 6
 const settings = require('./config')
@@ -53,8 +52,10 @@ module.exports = function (router) {
     let thePageName = req.params.page + theQueryString
     let thisPageIndex = common.findIndex(thePageName, 'location', theStagePages)
     let thisPage = theStagePages[thisPageIndex]
-    let theURData = await common.getUrData(SPREADSHEET_URL, csvData);
-    let theStageUR = await common.findCSVKey(theURData, thisStage.name, 'Stage')
+    // @todo store API call in a session
+    let theURData = await common.getUrData(SPREADSHEET_URL, csvFile)
+    req.session.theURData = theURData
+    let theStageUR = await common.findCSVKey(theURData, thisStage.id, 'Stage')
     theStageUR = common.findKey(thisPage.location, 'Location', theStageUR)
     let navigation = {
       'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version),

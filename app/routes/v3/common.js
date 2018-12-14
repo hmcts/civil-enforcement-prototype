@@ -1,5 +1,4 @@
 let fs = require('fs')
-let https = require('https')
 let rp = require('request-promise')
 const csvtojson = require('csvtojson')
 
@@ -175,32 +174,21 @@ common.getPageHistory = function (thisPage, thisStage) {
   return versions
 }
 
-common.getUrData = async function (theSheetsURL, theBackupCSVFile) {
+common.getCSVFile = async function (theFile) {
+  const theData = await fs.readFileSync(theFile, 'utf8', function (err, data) {
+    if (err) throw err
+    return data
+  })
+  return theData
+}
 
+common.getUrData = async function (theSheetsURL, theBackupCSVFile) {
   const theData = await rp(theSheetsURL)
     .then((html) => html) // Process html...
-    .catch((err) => console.error(err)) // Crawling failed...
-
-  // const theData = await https.get(theSheetsURL, (resp) => {
-  //   let data = ''
-  //
-  //   // A chunk of data has been received.
-  //   resp.on('data', (chunk) => {
-  //     data += chunk
-  //   })
-  //
-  //   // The whole response has been received. Print out the result.
-  //   resp.on('end', () => {
-  //     // console.log(theBackupCSVFile)
-  //
-  //     // console.log(data)
-  //     return data
-  //   })
-  // }).on('error', (err) => {
-  //   // console.log(theBackupCSVFile)
-  //   return theBackupCSVFile
-  // })
-
+    .catch(function (err) {
+      // console.error(err)
+      return common.getCSVFile(theBackupCSVFile)
+    })
   return theData
 }
 

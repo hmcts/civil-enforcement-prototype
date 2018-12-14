@@ -1,9 +1,9 @@
 {
   "stages": [
     {
-      "name": "security-layer",
+      "name": "Security layer",
       "location": "dashboard/security",
-      "id": "sec",
+      "id": "security-layer",
       "description": "Small barrier to entering private claim details. Known facts are used to verify that user should proceed.",
       "versions": [
         {
@@ -44,7 +44,7 @@
     {
       "name": "defendant-dashboard",
       "location": "dashboard/defendant",
-      "ID": "defdash",
+      "id": "defendant-dashboard",
       "description": "Dashboard for defendant's claim details",
       "versions": [
         {
@@ -90,7 +90,7 @@
     {
       "name": "stay-writ",
       "location": "stay-writ",
-      "ID": "stay-writ",
+      "id": "stay-writ",
       "description": "Application to set aside or vary County Court Judgment and implicitly submit High Court application to stay a Writ of Control",
       "versions": [
         {
@@ -185,7 +185,7 @@
     {
       "name": "Check validity of writ",
       "location": "check-writ",
-      "ID": "check-writ",
+      "id": "check-writ",
       "description": "Stand-alone mechanism to check validity of a court order including a Writ of Control and Warrant of Control",
       "versions": [
         {

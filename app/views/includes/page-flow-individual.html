@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Civil Enforcement prototypes
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row" id="page-flow">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-header">Sprint {{ sprint }}</span>
+            <span class="govuk-header">Stage: {{ thisStage.name }}</span>
+            <span class="govuk-header"><a href="/{{ location }}" target="_blank">View full page</a> </span>
+            <h2 class="govuk-heading-l">
+                <p>{{ thisPage.title }}</p>
+                <p>{{ thisPage.description }}</p>
+            </h2>
+
+            {% if hasHistory %}
+                {% from "details/macro.njk" import govukDetails %}
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Iterations: {{ hasHistory.length }}
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        {% for version in hasHistory %}
+                            <p><a href="{{ version.location }}" target="_blank">Version {{ version.version }} from Sprint {{ version.sprint }}</a></p>
+                        {% endfor %}
+                    </div>
+                </details>
+
+            {% endif %}
+
+            <div class="screenPreviewContainer">
+                <iframe src="/{{ location }}" class="screenPreview" frameborder="0"></iframe>
+            </div>
+
+            {% if navigation.prev !== false %}
+                <p><a href="{{ navigation.prev }}">Previous</a></p>
+            {% endif %}
+            {% if navigation.next !== false %}
+                <p><a href="{{ navigation.next }}">Next</a></p>
+            {% endif %}
+
+
+            {% if theStageUR.feedback %}
+                {% from "details/macro.njk" import govukDetails %}
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Page feedback
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        {% for feedbackType, feedback in theStageUR.feedback %}
+                            <p class="page-flow-feedback--{{ feedbackType }}">{{ feedback }}</p>
+                        {% endfor %}
+                    </div>
+                </details>
+
+            {% endif %}
+
+            {% if theStageUR.participant.length %}
+                {% from "details/macro.njk" import govukDetails %}
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Participant comments
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        {% for feedback in theStageUR.participant %}
+                            {% if feedback is not loop.first %}
+                                <p>Participant {{ loop.index0 }} - {{ feedback }}</p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </details>
+            {% endif %}
+
+        </div>
+    </div>
+
+{% endblock %}

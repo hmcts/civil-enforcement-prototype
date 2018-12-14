@@ -12,6 +12,7 @@ $govuk-global-styles: true;
 
 // Components that aren't in Frontend
 @import "components/bloat";
+@import "components/page-flow";
 @import "components/cookie-banner";
 @import "components/spinners";
 @import "components/utilities";

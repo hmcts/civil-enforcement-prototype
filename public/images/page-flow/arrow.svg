@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="157px" height="32px" viewBox="0 0 157 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Connection/Single Copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Flow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="11-12-2018-Defendant-Flow" transform="translate(-2970.000000, -757.000000)">
+            <g id="Screen-flows" transform="translate(406.000000, 410.000000)">
+                <g id="Group-16" transform="translate(1629.000000, 0.000000)">
+                    <g id="Group-13" transform="translate(341.000000, 197.000000)">
+                        <g id="Group-12">
+                            <g id="Group-2" transform="translate(594.000000, 83.000000)">
+                                <g id="Connection/Single" transform="translate(0.000000, 67.000000)">
+                                    <g id="Single-connection">
+                                        <polygon id="Connection" fill="#005EA5" fill-rule="nonzero" points="16 18 141 18 141 14 16 14"></polygon>
+                                        <circle id="Dot" stroke="#005EA5" stroke-width="4" fill="#FFFFFF" cx="16" cy="16" r="14"></circle>
+                                        <polygon id="Rectangle" fill="#005EA5" points="125 0 157 16 125 32"></polygon>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

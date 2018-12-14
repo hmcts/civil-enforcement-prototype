@@ -1,0 +1,141 @@
+$icons: '../images/page-flow/page-types';
+$stage-color--stay-writ: #006c56;
+$stage-color--check-writ: #00beb7;
+$stage-color--security-layer: pink;
+$stage-color--defendant-dashboard: #f47738;
+$stage-color--notifications: #ccc;
+
+.screenPreviewContainer {
+  height: 400px;
+  overflow: hidden;
+  .screenPreview {
+    width: 200%;
+    height: 800px;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    background: none;
+    border: 0;
+  }
+}
+
+.page-flow-feedback {
+  &--positive {
+    color: #00a33b;
+  }
+  &--negative {
+    color: #a33038;
+  }
+}
+
+.page-flow--stages {
+  @extend .govuk-body;
+  padding: 0;
+}
+
+.page-flow-item--stage {
+  border-top: 10px solid;
+  display: inline-block;
+  .page-flow-stage-descriptor {
+    width: 100%;
+    display: block;
+    //padding: 5px;
+  }
+  &--security-layer {
+    border-color: $stage-color--security-layer;
+  }
+  &--stay-writ {
+    border-color: $stage-color--stay-writ;
+  }
+  &--defendant-dashboard {
+    border-color: $stage-color--defendant-dashboard;
+  }
+  &--check-writ {
+    border-color: $stage-color--check-writ;
+  }
+  &--notifications {
+    border-color: $stage-color--notifications;
+  }
+  &:last-of-type {
+    .page-flow-item--page{
+      &:last-of-type {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.page-flow--pages {
+  @extend .govuk-body;
+  padding: 0;
+  .page-flow-item--page {
+    display: inline-block;
+    font-size: 14px;
+    width: 170px;
+    //min-height: 200px;
+    vertical-align: top;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      background: url('../images/page-flow/arrow.svg') no-repeat;
+      background-size: contain;
+      width: 78px;
+      left: 92px;
+      height: 20px;
+      top: 35px;
+    }
+    .page-flow-item-screen-icon {
+      width: 100px;
+      height: 120px;
+      display: block;
+      background-repeat: no-repeat;
+      &--email {
+        background-image: url($icons + '/email.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--text-input {
+       background-image: url($icons + '/text-input.svg');
+       -webkit-background-size: contain;
+       background-size: contain;
+     }
+      &--dashboard, &--content-page {
+        background-image: url($icons + '/content-page.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--radio-input {
+        background-image: url($icons + '/radio-input.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--check-answers {
+        background-image: url($icons + '/check-answers.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--confirmation {
+        background-image: url($icons + '/confirmation.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--task-list {
+        background-image: url($icons + '/task-list.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--start-page {
+        background-image: url($icons + '/start-page.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--checkbox-page {
+        background-image: url($icons + '/checkbox-page.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+    }
+  }
+}

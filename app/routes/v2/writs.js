@@ -18,7 +18,7 @@ module.exports = function (router) {
     res.redirect('/' + version + '/writs/check-answers')
   })
 
-  router.get(['/' + version + '/check-writ/', '/' + version + '/check-writ'], function (req, res) {
+  router.get(['/' + version + '/check-writ/', '/' + version + '/check-writ', '/' + version + '/check-writ/index'], function (req, res) {
     res.render(version + '/check-writ/start.html')
   })
 

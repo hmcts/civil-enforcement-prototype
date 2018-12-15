@@ -2,6 +2,40 @@
   "stages": [
     {
       "name": "Notifications",
+      "location": "notifications",
+      "id": "notifications-claimant",
+      "description": "SMS, Emails and letters that are sent out to claimants",
+      "versions": [
+        {
+          "version": 1,
+          "sprint": 5,
+          "sprintDirectory": "v3",
+          "location": "/notifications/",
+          "users": [
+            "claimant"
+          ],
+          "design-notes": "Mock ups of HMCTS emails that may be sent out to users",
+          "pages": [
+            {
+              "title": "Apply for a County Court judgment",
+              "id": "1",
+              "description": "User is informed of next steps; Apply for a County Court judgment.",
+              "type": "email",
+              "location": "email1"
+            },
+            {
+              "title": "Judgment registered - take court action to get your money back",
+              "id": "2",
+              "description": "User is informed of next steps; enforcement options",
+              "type": "email",
+              "location": "email2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notifications",
       "location": "notifications/defendant",
       "id": "notifications-defendant",
       "description": "SMS, Emails and letters that are sent out to defendants",
@@ -90,6 +124,87 @@
               "description": "The status of the page when a Writ of Control has been approved",
               "type": "dashboard",
               "location": "case?writApproved=true"
+            },
+            {
+              "title": "Defendant dashboard - application to stay Writ of Control confirmed",
+              "id": "2",
+              "description": "The status of the page when an application to stay Writ of Control has been confirmed",
+              "type": "dashboard",
+              "location": "case?writApplicationToStay=true"
+            }
+          ]
+        },
+        {
+          "version": 1,
+          "sprint": 5,
+          "sprintDirectory": "v2",
+          "location": "/dashboard/defendant/",
+          "users": [
+            "defendant"
+          ],
+          "design-notes": "First pass at the 'dashboard' layout for a defendant with access to all claim history, party information, current stage and next steps.",
+          "pages": [
+            {
+              "title": "Defendant dashboard - Writ of Control approved",
+              "id": "1",
+              "description": "The status of the page when a Writ of Control has been approved",
+              "type": "dashboard",
+              "location": "case?writApproved=true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Claimant dashboard",
+      "location": "dashboard",
+      "id": "claimant-dashboard",
+      "description": "Dashboard for claimant's claim details",
+      "versions": [
+        {
+          "version": 2,
+          "sprint": 6,
+          "sprintDirectory": "v3",
+          "location": "/dashboard/",
+          "users": [
+            "claimant"
+          ],
+          "design-notes": "First pass at the 'dashboard' layout for a defendant with access to all claim history, party information, current stage and next steps.",
+          "pages": [
+            {
+              "title": "Claimant dashboard - pre-enforcement",
+              "id": "1",
+              "description": "The status of the page ...",
+              "type": "dashboard",
+              "location": "case"
+            },
+            {
+              "title": "Claimant dashboard - CCJ requested",
+              "id": "2",
+              "description": "The status of the page when a CCJ has been requested",
+              "type": "dashboard",
+              "location": "case?CCJrequested=true&simulateTimePassing=true"
+            },
+            {
+              "title": "Claimant dashboard - CCJ approved",
+              "id": "3",
+              "description": "The status of the page when a CCJ has been approved",
+              "type": "dashboard",
+              "location": "case?CCJapproved=true"
+            },
+            {
+              "title": "Claimant dashboard - Writ of Control approved",
+              "id": "4",
+              "description": "The status of the page when a Writ of Control has been approved",
+              "type": "dashboard",
+              "location": "case?writApproved=true&writReady=true&enforcementInPlay=true"
+            },
+            {
+              "title": "Claimant dashboard - Writ of Control sent to HCEO",
+              "id": "5",
+              "description": "The status of the page when a Writ of Control has been sent to HCEO",
+              "type": "dashboard",
+              "location": "case?writServed=true&simulateTimePassing=true&enforcementInPlay=true"
             }
           ]
         },

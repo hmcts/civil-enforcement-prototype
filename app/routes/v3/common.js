@@ -201,18 +201,21 @@ common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
     for (let thePage in theUserFlow['journeys'][theJourney]['flow']) {
       // @todo - build structure similar to pageFlow
       let theStage = theUserFlow['journeys'][theJourney]['flow'][thePage]['stage']
+      let thePageWeNeed = theUserFlow['journeys'][theJourney]['flow'][thePage]
+      let theStagePages = common.getStageInfo(theStage, thePageFlow)['versions'][0]['pages']
       if (theStage === previousStage) {
-        let page = {'id': theUserFlow['journeys'][theJourney]['flow'][thePage]['pageId']}
+        let page = {'id': thePageWeNeed['pageId'], 'pageInfo': common.getPageInfo(thePageWeNeed['pageId'], theStagePages)}
         pagesInStage.push(page)
-        stageInJourney = {'stage': theStage, 'pages': pagesInStage}
+
+        stageInJourney = {'stage': common.getStageInfo(theStage, thePageFlow), 'pages': pagesInStage}
       } else {
         if (previousStage !== undefined) {
           stagesInJourney.push(stageInJourney)
         }
         pagesInStage = []
-        let page = {'id': theUserFlow['journeys'][theJourney]['flow'][thePage]['pageId']}
+        let page = {'id': thePageWeNeed['pageId'], 'pageInfo': common.getPageInfo(thePageWeNeed['pageId'], theStagePages)}
         pagesInStage.push(page)
-        stageInJourney = {'stage': theStage, 'pages': pagesInStage}
+        stageInJourney = {'stage': common.getStageInfo(theStage, thePageFlow), 'pages': pagesInStage}
       }
       previousStage = theStage
     }
@@ -224,6 +227,18 @@ common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
   }
   console.log(userJourneys)
   return userJourneys
+}
+
+common.getStageInfo = function (theStage, thePageFlow) {
+  let thisStageIndex = common.findIndex(theStage, 'id', thePageFlow.stages)
+  let thisStage = thePageFlow['stages'][thisStageIndex]
+  return thisStage
+}
+
+common.getPageInfo = function (thePage, theStagePages) {
+  let thisPageIndex = common.findIndex(thePage, 'id', theStagePages)
+  let thisPage = theStagePages[thisPageIndex]
+  return thisPage
 }
 
 module.exports = common

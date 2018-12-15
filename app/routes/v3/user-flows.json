@@ -8,7 +8,7 @@
         {
           "stage": "notifications-defendant",
           "version": 1,
-          "pageId": "email2"
+          "pageId": "1"
         },
         {
           "stage": "security-layer",
@@ -28,7 +28,12 @@
         {
           "stage": "defendant-dashboard",
           "version": 1,
-          "pageId": "case?writApproved=true"
+          "pageId": "1"
+        },
+        {
+          "stage": "stay-writ",
+          "version": 2,
+          "pageId": "1"
         },
         {
           "stage": "stay-writ",
@@ -43,22 +48,12 @@
         {
           "stage": "stay-writ",
           "version": 2,
-          "pageId": "check-answers"
-        },
-        {
-          "stage": "stay-writ",
-          "version": 2,
-          "pageId": "confirmation-page"
-        },
-        {
-          "stage": "stay-writ",
-          "version": 2,
-          "pageId": "confirmation-page"
+          "pageId": "4"
         },
         {
           "stage": "defendant-dashboard",
           "version": 2,
-          "pageId": "case?writApplicationToStay=true"
+          "pageId": "2"
         }
       ]
     },
@@ -70,112 +65,37 @@
         {
           "stage": "notifications-claimant",
           "version": 1,
-          "pageId": "email1"
+          "pageId": "1"
         },
         {
           "stage": "claimant-dashboard",
           "version": 2,
-          "pageId": "case"
-        },
-        {
-          "stage": "CMC-CCJ-application",
-          "version": 1,
-          "pageId": "success"
+          "pageId": "1"
         },
         {
           "stage": "claimant-dashboard",
           "version": 2,
-          "pageId": "case?CCJrequested=true&simulateTimePassing=true"
+          "pageId": "2"
         },
         {
           "stage": "notifications-claimant",
           "version": 1,
-          "pageId": "email2"
+          "pageId": "2"
         },
         {
           "stage": "claimant-dashboard",
           "version": 2,
-          "pageId": "case?CCJapproved=true"
+          "pageId": "3"
         },
         {
-          "stage": "enforcement-selection-wizard",
+          "stage": "claimant-dashboard",
           "version": 2,
-          "pageId": "index"
+          "pageId": "4"
         },
         {
-          "stage": "enforcement-selection-wizard",
-          "version": 2,
-          "pageId": "1"
-        },
-        {
-          "stage": "enforcement-selection-wizard",
-          "version": 2,
-          "pageId": "2"
-        },
-        {
-          "stage": "enforcement-selection-wizard",
-          "version": 2,
-          "pageId": "options"
-        },
-        {
-          "stage": "enforcement-selection-wizard",
-          "version": 2,
-          "pageId": "choose-method"
-        },
-        {
-          "stage": "enforcement-selection",
-          "version": 2,
-          "pageId": "bailiffs"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "1"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "2"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "select-hceo"
-        },
-        {
-          "stage": "writs",
+          "stage": "claimant-dashboard",
           "version": 2,
           "pageId": "5"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "7"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "8"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "check-answers"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "confirmation-page"
-        },
-        {
-          "stage": "claimant-dashboard",
-          "version": 2,
-          "pageId": "case?writApproved=true&writReady=true&enforcementInPlay=true"
-        },
-        {
-          "stage": "claimant-dashboard",
-          "version": 2,
-          "pageId": "case?writServed=true&simulateTimePassing=true&enforcementInPlay=true"
         }
       ]
     }

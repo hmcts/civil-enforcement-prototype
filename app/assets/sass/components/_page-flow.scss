@@ -49,10 +49,13 @@ $stage-color--notifications: #ccc;
   &--defendant-dashboard {
     border-color: $stage-color--defendant-dashboard;
   }
+  &--claimant-dashboard {
+    border-color: $stage-color--defendant-dashboard;
+  }
   &--check-writ {
     border-color: $stage-color--check-writ;
   }
-  &--notifications {
+  &--notifications-defendant, &--notifications-claimant {
     border-color: $stage-color--notifications;
   }
   &:last-of-type {

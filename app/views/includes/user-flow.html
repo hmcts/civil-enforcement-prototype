@@ -24,7 +24,7 @@
                             <ol class="page-flow--pages">
                                 {% for page in stage.pages %}
                                     <li class="page-flow-item--page">
-                                        <a href="{{ page.pageInfo.location }}"
+                                        <a href="{{ stage['stage'].location }}/{{ page.pageInfo.location }}"
                                            target="_blank"
                                            class="page-flow-item-screen-icon page-flow-item-screen-icon--{{page.pageInfo.type}}"></a>
                                         <p>ID: {{ page.id }}

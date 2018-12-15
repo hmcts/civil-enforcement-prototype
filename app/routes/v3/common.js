@@ -199,7 +199,6 @@ common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
     let pagesInStage = []
     let previousStage
     for (let thePage in theUserFlow['journeys'][theJourney]['flow']) {
-      // @todo - build structure similar to pageFlow
       let theStage = theUserFlow['journeys'][theJourney]['flow'][thePage]['stage']
       let thePageWeNeed = theUserFlow['journeys'][theJourney]['flow'][thePage]
       let theStagePages = common.getStageInfo(theStage, thePageFlow)['versions'][0]['pages']

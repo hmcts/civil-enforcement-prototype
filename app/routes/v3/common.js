@@ -193,9 +193,7 @@ common.getUrData = async function (theSheetsURL, theBackupCSVFile) {
 
 common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
   let userJourneys = [] // main array
-  // let userJourneys = mockJson
   for (let theJourney in theUserFlow['journeys']) {
-    console.log(theJourney)
     let stagesInJourney = []
     let stageInJourney = {}
     let pagesInStage = []

@@ -3,7 +3,7 @@
     {
       "name": "Notifications",
       "location": "notifications/defendant",
-      "id": "notifications",
+      "id": "notifications-defendant",
       "description": "SMS, Emails and letters that are sent out to defendants",
       "versions": [
         {

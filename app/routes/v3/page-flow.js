@@ -43,10 +43,6 @@ module.exports = function (router) {
     const SPREADSHEET_URL_DIRECT = 'https://spreadsheets.google.com/feeds/list/' + SPREADSHEET_ID + '/od6/public/values?alt=json'
     const SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/' + SPREADSHEET_ID + '/gviz/tq?tqx=out:csv'
 
-    // let theCsvData = await common.getUrData(SPREADSHEET_URL, csvData)
-
-    // console.log(theCsvData)
-
     let theStageKey = req.params.subStage ? req.params.stage + '/' + req.params.subStage : req.params.stage
     let thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
     let thisStage = pageFlow.stages[thisStageIndex]

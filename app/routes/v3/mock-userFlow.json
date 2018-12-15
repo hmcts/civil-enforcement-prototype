@@ -1,0 +1,46 @@
+[
+  {
+    "userType": "Defendant",
+    "flow": [
+      {
+        "stage": "notifications-defendant",
+        "pages": [
+          {"id": "email2"}
+        ]
+      },
+      {
+        "stage": "security-layer",
+        "pages": [
+          "1",
+          "2",
+          "3"
+        ]
+      }
+    ]
+  },
+  {
+    "userType": "Claimant",
+    "flow": [
+      {
+        "stage": "Dashboard",
+        "pages": [
+          "asd1"
+        ]
+      },
+      {
+        "stage": "Enforcement",
+        "pages": [
+          "dsd1",
+          "dsd2"
+        ]
+      },
+      {
+        "stage": "Dashboard",
+        "pages": [
+          "asd2",
+          "asd3"
+        ]
+      }
+    ]
+  }
+]

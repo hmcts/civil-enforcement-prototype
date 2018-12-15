@@ -74,6 +74,12 @@ module.exports = function (router) {
     }
   })
 
+  router.get(['/' + version + '/enforcement-selection/wizard/ccj-paid'], function (req, res) {
+    res.render(version + '/enforcement-selection/wizard/ccj-paid.html', {
+      defendant: settings.defendant.name
+    })
+  })
+
   router.post(['/' + version + '/enforcement-selection/wizard/ccj-paid'], function (req, res) {
     let answer = req.body['ccjPaid']
     let sess = req.session

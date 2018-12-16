@@ -26,17 +26,17 @@ module.exports = function (router) {
     res.render(version + '/check-writ/index.html')
   })
 
-  router.get(['/' + version + '/writs/cmc/8'], function (req, res) {
+  router.get(['/' + version + '/writs/8'], function (req, res) {
     req.session.contactDetails = [{'type': 'phone', 'value': settings.defendant.phone}]
-    res.render(version + '/writs/cmc/8.html', {
+    res.render(version + '/writs/8.html', {
       phone: settings.defendant.phone
     })
   })
 
-  router.get(['/' + version + '/writs/cmc/5'], function (req, res) {
+  router.get(['/' + version + '/writs/5'], function (req, res) {
     let sess = req.session
     let amount = sess.amount ? sess.amount : settings.claimAmount
-    res.render(version + '/writs/cmc/5.html', {
+    res.render(version + '/writs/5.html', {
       amount: parseFloat(amount) + 66
     })
   })
@@ -85,7 +85,7 @@ module.exports = function (router) {
     })
   })
 
-  router.post(['/' + version + '/writs/cmc/add-contact-info'], function (req, res) {
+  router.post(['/' + version + '/writs/add-contact-info'], function (req, res) {
     let contactDetails = [{'type': 'phone', 'value': settings.defendant.phone}]
     let newContact
     let contactType = req.body['how-contacted']
@@ -103,16 +103,16 @@ module.exports = function (router) {
     contactDetails.push({'type': contactType, 'value': newContact})
     req.session.contactDetails = contactDetails
     if (req.body.another) {
-      res.render(version + '/writs/cmc/add-contact-info', {
+      res.render(version + '/writs/add-contact-info', {
         contacts: contactDetails
       })
     } else {
-      res.redirect('/' + version + '/writs/cmc/check-answers')
+      res.redirect('/' + version + '/writs/check-answers')
     }
   })
 
-  router.get(['/' + version + '/writs/cmc/check-answers'], function (req, res) {
-    res.render(version + '/writs/cmc/check-answers.html', {
+  router.get(['/' + version + '/writs/check-answers'], function (req, res) {
+    res.render(version + '/writs/check-answers.html', {
       contactDetails: req.session.contactDetails
     })
   })

@@ -40,7 +40,7 @@ module.exports = function (router) {
           redirect = '/' + version + '/claimant-guidance/order-to-obtain-information-on-finances'
           break
         case 'writ-of-control' :
-          redirect = '/' + version + '/writs/cmc/1'
+          redirect = '/' + version + '/writs/1'
           break
         default :
           redirect = '/' + version + '/enforcement-selection/bailiffs'

@@ -40,10 +40,12 @@ module.exports = function (router) {
     } else {
       flowType = 'user-flow'
     }
-    const SPREADSHEET_ID = '1jI3eJF6F7Infl1oyJYreNHzJtPjXT9K8WTUYt5lwbIw'
+    const SPREADSHEET_ID = userFlow['journeys'][common.findIndex(userType, 'userType', userFlow['journeys'])]['sheetsId']
+    const urCsv = userFlow['journeys'][common.findIndex(userType, 'userType', userFlow['journeys'])]['urCsv']
     const API_KEY = 'AIzaSyBDWsUFLhvbMybu7ZpwIeiwEcex0K4OyNA'
     // const SPREADSHEET_URL_DIRECT = 'https://spreadsheets.google.com/feeds/list/' + SPREADSHEET_ID + '/od6/public/values?alt=json'
     const SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/' + SPREADSHEET_ID + '/gviz/tq?tqx=out:csv'
+    console.log(SPREADSHEET_URL)
     let theStageKey = req.params.subStage ? req.params.stage + '/' + req.params.subStage : req.params.stage
     let thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
     let thisStage = pageFlow.stages[thisStageIndex]

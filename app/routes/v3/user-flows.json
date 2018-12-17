@@ -3,6 +3,8 @@
     {
       "name": "Defendant",
       "userType": "defendant",
+      "sheetsId": "1jI3eJF6F7Infl1oyJYreNHzJtPjXT9K8WTUYt5lwbIw",
+      "urCsv": "lab-notes-defendant.csv",
       "description": "User receives notification of Writ of Control and engages with the service for the first time. They proceed to apply to stay the Writ of Control.",
       "flow": [
         {
@@ -60,6 +62,8 @@
     {
       "name": "Claimant",
       "userType": "claimant",
+      "sheetsId": "1zteKm-skOKCkwGlCQUSptrnf3dXaZIgC2dbUbYDEix0",
+      "urCsv": "lab-notes-claimant.csv",
       "description": "Claimant opts to enforce CCJ using enforcement method selection",
       "flow": [
         {

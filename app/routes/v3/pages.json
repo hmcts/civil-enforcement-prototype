@@ -399,6 +399,94 @@
       ]
     },
     {
+      "name": "Select type of enforcement",
+      "location": "enforcement-selection",
+      "id": "enforcement-selection",
+      "description": "A tool to help select appropriate enforcement method",
+      "versions": [
+        {
+          "version": 2,
+          "sprint": 6,
+          "sprintDirectory": "v3",
+          "location": "/enforcement-selection/wizard/",
+          "users": [
+            "claimant"
+          ],
+          "design-notes": "Second iteration of the process",
+          "pages": [
+            {
+              "title": "Do you already know how you want to enforce judgment?",
+              "id": "1",
+              "description": "",
+              "type": "radio-input",
+              "location": "index"
+            },
+            {
+              "title": "Has Andrew Smith paid any of the amount on the County Court Judgment?",
+              "id": "2",
+              "description": "",
+              "type": "radio-input",
+              "location": "ccj-paid"
+            },
+            {
+              "title": "Do you think Andrew Smith can pay back the full debt of £XXXX.XX?",
+              "id": "3",
+              "description": "",
+              "type": "radio-input",
+              "location": "1"
+            },
+            {
+              "title": "What do you know about Andrew Smith?",
+              "id": "4",
+              "description": "",
+              "type": "checkbox-input",
+              "location": "2"
+            },
+            {
+              "title": "Is this the address you want the bailiff to visit?",
+              "id": "5",
+              "description": "",
+              "type": "content-page",
+              "location": "options"
+            },
+            {
+              "title": "What do you want to do?",
+              "id": "6",
+              "description": "",
+              "type": "radio-input",
+              "location": "choose-method"
+            },
+            {
+              "title": "What type of bailiffs do you want to use?",
+              "id": "7",
+              "description": "",
+              "type": "radio-input",
+              "location": "bailiffs"
+            }
+          ]
+        },
+        {
+          "version": 1,
+          "sprint": 5,
+          "sprintDirectory": "v2",
+          "location": "/enforcement-selection/cmc/",
+          "users": [
+            "claimant"
+          ],
+          "design-notes": "",
+          "pages": [
+            {
+              "title": "Verify a court order",
+              "id": "1",
+              "description": "Service start page that introduces the function of the service",
+              "type": "start-page",
+              "location": "index"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Apply for Writ of Control",
       "location": "writs",
       "id": "writs",
@@ -429,9 +517,44 @@
               "location": "2"
             },
             {
-              "title": "Valid",
+              "title": "Do you know which high court bailiff you want to use?",
               "id": "3",
-              "description": "The status of the document is played back to the user",
+              "description": "",
+              "type": "radio-input",
+              "location": "select-hceo"
+            },
+            {
+              "title": "Do you want the bailiff to collect the full debt of £XXXX.XX?",
+              "id": "4",
+              "description": "",
+              "type": "radio-input",
+              "location": "5"
+            },
+            {
+              "title": "Is this the address you want the bailiff to visit?",
+              "id": "5",
+              "description": "",
+              "type": "radio-input",
+              "location": "7"
+            },
+            {
+              "title": "Is this the right phone number to contact the defendant?",
+              "id": "6",
+              "description": "",
+              "type": "radio-input",
+              "location": "8"
+            },
+            {
+              "title": "Check your answers",
+              "id": "7",
+              "description": "",
+              "type": "check-answers",
+              "location": "check-answers"
+            },
+            {
+              "title": "Writ of Control application complete",
+              "id": "8",
+              "description": "",
               "type": "confirmation",
               "location": "confirmation-page"
             }

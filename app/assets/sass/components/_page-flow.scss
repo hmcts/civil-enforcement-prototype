@@ -4,6 +4,8 @@ $stage-color--check-writ: #00beb7;
 $stage-color--security-layer: pink;
 $stage-color--defendant-dashboard: #f47738;
 $stage-color--notifications: #ccc;
+$stage-color--enforcement-selection: #005ea5;
+$stage-color--writs: #004432;
 
 .screenPreviewContainer {
   height: 400px;
@@ -54,6 +56,12 @@ $stage-color--notifications: #ccc;
   }
   &--check-writ {
     border-color: $stage-color--check-writ;
+  }
+  &--enforcement-selection {
+    border-color: $stage-color--enforcement-selection;
+  }
+  &--writs {
+    border-color: $stage-color--writs;
   }
   &--notifications-defendant, &--notifications-claimant {
     border-color: $stage-color--notifications;
@@ -111,6 +119,11 @@ $stage-color--notifications: #ccc;
       }
       &--radio-input {
         background-image: url($icons + '/radio-input.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--checkbox-input {
+        background-image: url($icons + '/checkbox-input.svg');
         -webkit-background-size: contain;
         background-size: contain;
       }

@@ -14,7 +14,6 @@ const asyncMiddleware = fn =>
 
 module.exports = function (router) {
   router.get(['/' + version + '/page-flow/'], function (req, res) {
-    // @todo - read from user-flow and convert to 'Page Flow' format?
     res.render('./includes/page-flow.html',
       {
         pageFlow: pageFlow,
@@ -34,6 +33,12 @@ module.exports = function (router) {
   })
 
   router.get(['/' + version + '/page-flow/:stage/:page', '/' + version + '/page-flow/:stage/:subStage/:page', '/' + version + '/user-flow/:stage/:page', '/' + version + '/user-flow/:stage/:subStage/:page'], asyncMiddleware(async (req, res, next) => {
+    let flowType = req.path
+    if (flowType.includes('page-flow')) {
+      flowType = 'page-flow'
+    } else {
+      flowType = 'user-flow'
+    }
     const SPREADSHEET_ID = '1jI3eJF6F7Infl1oyJYreNHzJtPjXT9K8WTUYt5lwbIw'
     const API_KEY = 'AIzaSyBDWsUFLhvbMybu7ZpwIeiwEcex0K4OyNA'
     // const SPREADSHEET_URL_DIRECT = 'https://spreadsheets.google.com/feeds/list/' + SPREADSHEET_ID + '/od6/public/values?alt=json'
@@ -59,9 +64,17 @@ module.exports = function (router) {
     let theStageUR = await common.findCSVKey(theURData, thisStage.id, 'Stage')
     theStageUR = common.findKey(thisPage.location, 'Location', theStageUR)
     // @todo navigate based upon the user-flow NOT pages.json
-    let navigation = {
-      'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version),
-      'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
+    let navigation
+    if (flowType === 'page-flow') {
+      navigation = {
+        'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version),
+        'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
+      }
+    } else {
+      navigation = {
+        'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version),
+        'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
+      }
     }
     let hasHistory = common.getPageHistory(thisPage, thisStage)
     // @todo - add individual page/stage user needs

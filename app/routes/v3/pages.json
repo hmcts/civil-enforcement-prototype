@@ -2,7 +2,7 @@
   "stages": [
     {
       "name": "Notifications",
-      "location": "notifications",
+      "location": "notifications/claimant",
       "id": "notifications-claimant",
       "description": "SMS, Emails and letters that are sent out to claimants",
       "versions": [
@@ -10,7 +10,7 @@
           "version": 1,
           "sprint": 5,
           "sprintDirectory": "v3",
-          "location": "/notifications/",
+          "location": "/notifications/claimant/",
           "users": [
             "claimant"
           ],

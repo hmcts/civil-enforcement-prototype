@@ -88,6 +88,46 @@
           "pageId": "3"
         },
         {
+          "stage": "writs",
+          "version": 2,
+          "pageId": "1"
+        },
+        {
+          "stage": "writs",
+          "version": 2,
+          "pageId": "2"
+        },
+        {
+          "stage": "writs",
+          "version": 2,
+          "pageId": "select-hceo"
+        },
+        {
+          "stage": "writs",
+          "version": 2,
+          "pageId": "5"
+        },
+        {
+          "stage": "writs",
+          "version": 2,
+          "pageId": "7"
+        },
+        {
+          "stage": "writs",
+          "version": 2,
+          "pageId": "8"
+        },
+        {
+          "stage": "writs",
+          "version": 2,
+          "pageId": "check-answers"
+        },
+        {
+          "stage": "writs",
+          "version": 2,
+          "pageId": "confirmation-page"
+        },
+        {
           "stage": "claimant-dashboard",
           "version": 2,
           "pageId": "4"

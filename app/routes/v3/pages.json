@@ -397,6 +397,80 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Apply for Writ of Control",
+      "location": "writs",
+      "id": "writs",
+      "description": "The application process for a Writ of Control",
+      "versions": [
+        {
+          "version": 2,
+          "sprint": 6,
+          "sprintDirectory": "v3",
+          "location": "/writs/",
+          "users": [
+            "claimant"
+          ],
+          "design-notes": "Second iteration of the Writ of Control process",
+          "pages": [
+            {
+              "title": "Before you apply 1",
+              "id": "1",
+              "description": "",
+              "type": "content-page",
+              "location": "1"
+            },
+            {
+              "title": "Before you apply 2",
+              "id": "2",
+              "description": "",
+              "type": "content-page",
+              "location": "2"
+            },
+            {
+              "title": "Valid",
+              "id": "3",
+              "description": "The status of the document is played back to the user",
+              "type": "confirmation",
+              "location": "confirmation-page"
+            }
+          ]
+        },
+        {
+          "version": 1,
+          "sprint": 5,
+          "sprintDirectory": "v2",
+          "location": "/check-writ/",
+          "users": [
+            "defendant"
+          ],
+          "design-notes": "First pass at a simple, non-authenticated, fact-checking service to quickly determine the validity of a court document using GOV.UK",
+          "pages": [
+            {
+              "title": "Verify a court order",
+              "id": "1",
+              "description": "Service start page that introduces the function of the service",
+              "type": "start-page",
+              "location": "index"
+            },
+            {
+              "title": "Verify a court order",
+              "id": "2",
+              "description": "Known facts that are available on the Court Order document are requested to conduct a lookup",
+              "type": "radio-input",
+              "location": "questions"
+            },
+            {
+              "title": "Valid",
+              "id": "3",
+              "description": "The status of the document is played back to the user",
+              "type": "confirmation",
+              "location": "confirmation-page"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

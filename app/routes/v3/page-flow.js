@@ -23,11 +23,11 @@ module.exports = function (router) {
     )
   })
   router.get(['/' + version + '/user-flow/'], function (req, res) {
-    // @todo - read from user-flow and convert to 'Page Flow' format?
     let theUserFlow = common.pageFlowFromUserFlow(userFlow, pageFlow)
     res.render('./includes/user-flow.html',
       {
         userFlow: theUserFlow,
+        userNeeds: theUserFlow.needs,
         sprint: sprint
       }
     )
@@ -64,6 +64,7 @@ module.exports = function (router) {
       'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
     }
     let hasHistory = common.getPageHistory(thisPage, thisStage)
+    // @todo - add individual page/stage user needs
     res.render('./includes/page-flow-individual.html',
       {
         isPage: true,

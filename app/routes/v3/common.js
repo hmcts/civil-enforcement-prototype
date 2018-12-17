@@ -1,5 +1,7 @@
 let fs = require('fs')
 let rp = require('request-promise')
+const userNeeds = require('./user-needs.json')
+
 const csvtojson = require('csvtojson')
 var common = {}
 
@@ -194,6 +196,7 @@ common.getUrData = async function (theSheetsURL, theBackupCSVFile) {
 common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
   let userJourneys = [] // main array
   for (let theJourney in theUserFlow['journeys']) {
+    let theUserNeeds = common.getUserNeeds(theUserFlow['journeys'][theJourney]['userType'])
     let stagesInJourney = []
     let stageInJourney = {}
     let pagesInStage = []
@@ -221,10 +224,10 @@ common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
     stagesInJourney.push(stageInJourney)
     userJourneys.push({
       'userType': theUserFlow['journeys'][theJourney]['name'],
+      'needs': theUserNeeds,
       'flow': stagesInJourney
     })
   }
-  console.log(userJourneys)
   return userJourneys
 }
 
@@ -238,6 +241,15 @@ common.getPageInfo = function (thePage, theStagePages) {
   let thisPageIndex = common.findIndex(thePage, 'id', theStagePages)
   let thisPage = theStagePages[thisPageIndex]
   return thisPage
+}
+
+common.getUserNeeds = function (theUserType) {
+  let theUserNeeds = common.findKey(theUserType, 'id', userNeeds)
+  let arrayOfNeeds = []
+  for (let need in theUserNeeds['needs']) {
+    arrayOfNeeds.push(theUserNeeds['needs'][need])
+  }
+  return arrayOfNeeds
 }
 
 module.exports = common

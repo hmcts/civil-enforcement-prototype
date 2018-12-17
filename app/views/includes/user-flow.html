@@ -16,6 +16,20 @@
             {% for userJourney in userFlow %}
 
                 <h3 class="govuk-heading-m">userJourney: {{ userJourney.userType }}</h3>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            User needs
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <ol class="govuk-list govuk-list--number">
+                            {% for need in userJourney. needs %}
+                                <li><strong>{{ need.need }}</strong> {{ need.reason }} - ({{need.id}})</li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </details>
 
                 <ol class="page-flow--stages">
                     {% for stage in userJourney.flow %}
@@ -26,9 +40,9 @@
                                     <li class="page-flow-item--page">
                                         <a href="{{ stage['stage'].location }}/{{ page.pageInfo.location }}"
                                            target="_blank"
-                                           class="page-flow-item-screen-icon page-flow-item-screen-icon--{{page.pageInfo.type}}"></a>
+                                           class="page-flow-item-screen-icon page-flow-item-screen-icon--{{ page.pageInfo.type }}"></a>
                                         <p>ID: {{ page.id }}
-                                        <br/> Name: {{ page.pageInfo.title }}
+                                            <br/> Name: {{ page.pageInfo.title }}
                                         </p>
                                     </li>
                                 {% endfor %}

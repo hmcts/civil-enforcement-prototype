@@ -1,5 +1,6 @@
 let fs = require('fs')
 let rp = require('request-promise')
+let pageFlow = require('./pages.json')
 const userNeeds = require('./user-needs.json')
 
 const csvtojson = require('csvtojson')
@@ -126,6 +127,17 @@ common.findIndex = function (key, theParameter, theArray) {
   return false
 }
 
+common.findIndexUsing2Keys = function (key, theParameter, key2, theParameter2, theArray) {
+  // for (let i = 0; i < theArray.length; i++) {
+  for (let i in theArray) {
+    let el = theArray[i]
+    if (el[theParameter] === key && el[theParameter2] === key2) {
+      return i
+    }
+  }
+  return -1
+}
+
 common.getPageBefore = function (pageFlow, index, theArray, thisStageIndex, version) {
   index = parseInt(index)
   thisStageIndex = parseInt(thisStageIndex)
@@ -154,6 +166,30 @@ common.getPageAfter = function (pageFlow, index, theArray, thisStageIndex, versi
   } else if (pageFlow['stages'][(thisStageIndex + 1)]) {
     let theNextStage = pageFlow['stages'][(thisStageIndex + 1)]
     return '/' + version + '/page-flow/' + theNextStage.location + '/' + theNextStage['versions'][0]['pages'][0].location
+  } else {
+    return false
+  }
+}
+
+common.getPageBeforeUserFlow = function (theUserFlow, userIndex, currentIndex, version) {
+  currentIndex = parseInt(currentIndex)
+  let theArray = theUserFlow['journeys'][userIndex]['flow']
+  if (theArray[(currentIndex - 1)]) {
+    // cross reference the pageFlow
+    let thePageInfo = common.getPageInfoWithStageId(theArray[(currentIndex - 1)]['pageId'], theArray[(currentIndex - 1)]['stage'])
+    return thePageInfo.stageInfo['location'] + '/' + thePageInfo.location
+  } else {
+    return false
+  }
+}
+
+common.getPageAfterUserFlow = function (theUserFlow, userIndex, currentIndex, version) {
+  currentIndex = parseInt(currentIndex)
+  let theArray = theUserFlow['journeys'][userIndex]['flow']
+  if (theArray[(currentIndex + 1)]) {
+    // cross reference the pageFlow
+    let thePageInfo = common.getPageInfoWithStageId(theArray[(currentIndex + 1)]['pageId'], theArray[(currentIndex + 1)]['stage'])
+    return thePageInfo.stageInfo['location'] + '/' + thePageInfo.location
   } else {
     return false
   }
@@ -206,7 +242,10 @@ common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
       let thePageWeNeed = theUserFlow['journeys'][theJourney]['flow'][thePage]
       let theStagePages = common.getStageInfo(theStage, thePageFlow)['versions'][0]['pages']
       if (theStage === previousStage) {
-        let page = {'id': thePageWeNeed['pageId'], 'pageInfo': common.getPageInfo(thePageWeNeed['pageId'], theStagePages)}
+        let page = {
+          'id': thePageWeNeed['pageId'],
+          'pageInfo': common.getPageInfo(thePageWeNeed['pageId'], theStagePages)
+        }
         pagesInStage.push(page)
 
         stageInJourney = {'stage': common.getStageInfo(theStage, thePageFlow), 'pages': pagesInStage}
@@ -215,7 +254,10 @@ common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
           stagesInJourney.push(stageInJourney)
         }
         pagesInStage = []
-        let page = {'id': thePageWeNeed['pageId'], 'pageInfo': common.getPageInfo(thePageWeNeed['pageId'], theStagePages)}
+        let page = {
+          'id': thePageWeNeed['pageId'],
+          'pageInfo': common.getPageInfo(thePageWeNeed['pageId'], theStagePages)
+        }
         pagesInStage.push(page)
         stageInJourney = {'stage': common.getStageInfo(theStage, thePageFlow), 'pages': pagesInStage}
       }
@@ -223,7 +265,10 @@ common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
     }
     stagesInJourney.push(stageInJourney)
     userJourneys.push({
-      'userType': theUserFlow['journeys'][theJourney]['name'],
+      'userType': {
+        'name': theUserFlow['journeys'][theJourney]['name'],
+        'id': theUserFlow['journeys'][theJourney]['userType']
+      },
       'needs': theUserNeeds,
       'flow': stagesInJourney
     })
@@ -241,6 +286,30 @@ common.getPageInfo = function (thePage, theStagePages) {
   let thisPageIndex = common.findIndex(thePage, 'id', theStagePages)
   let thisPage = theStagePages[thisPageIndex]
   return thisPage
+}
+
+common.getPageInfoWithStageId = function (thePageId, theStageId, stageVersion) {
+  if (stageVersion === undefined) {
+    stageVersion = 0
+  }
+  let thisStageIndex = common.findIndex(theStageId, 'id', pageFlow['stages'])
+  let thisStage = pageFlow['stages'][thisStageIndex]['versions'][stageVersion]
+  let thisStageInfo = {
+    'location': pageFlow['stages'][thisStageIndex]['location'],
+    'name': pageFlow['stages'][thisStageIndex]['name']
+  }
+  let thisStagePages = thisStage['pages']
+  let thePageIndex = common.findIndex(thePageId, 'id', thisStagePages)
+  let thisPage = thisStage['pages'][thePageIndex]
+  thisPage['stageInfo'] = thisStageInfo
+  return thisPage
+}
+
+common.getIndexInUserFlow = function (userType, thePageId, theStageId, userFlow) {
+  let journey = common.findIndex(userType, 'userType', userFlow['journeys'])
+  let journeyFlow = userFlow['journeys'][journey]['flow']
+  let theIndex = common.findIndexUsing2Keys(thePageId, 'pageId', theStageId, 'stage', journeyFlow)
+  return theIndex
 }
 
 common.getUserNeeds = function (theUserType) {

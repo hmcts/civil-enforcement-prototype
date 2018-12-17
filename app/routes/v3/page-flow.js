@@ -32,8 +32,9 @@ module.exports = function (router) {
     )
   })
 
-  router.get(['/' + version + '/page-flow/:stage/:page', '/' + version + '/page-flow/:stage/:subStage/:page', '/' + version + '/user-flow/:stage/:page', '/' + version + '/user-flow/:stage/:subStage/:page'], asyncMiddleware(async (req, res, next) => {
+  router.get(['/' + version + '/page-flow/:stage/:page', '/' + version + '/page-flow/:stage/:subStage/:page', '/' + version + '/user-flow/:userType/:stage/:page', '/' + version + '/user-flow/:userType/:stage/:subStage/:page'], asyncMiddleware(async (req, res, next) => {
     let flowType = req.path
+    let userType = req.params.userType || false
     if (flowType.includes('page-flow')) {
       flowType = 'page-flow'
     } else {
@@ -63,7 +64,6 @@ module.exports = function (router) {
     req.session.theURData = theURData
     let theStageUR = await common.findCSVKey(theURData, thisStage.id, 'Stage')
     theStageUR = common.findKey(thisPage.location, 'Location', theStageUR)
-    // @todo navigate based upon the user-flow NOT pages.json
     let navigation
     if (flowType === 'page-flow') {
       navigation = {
@@ -71,9 +71,17 @@ module.exports = function (router) {
         'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
       }
     } else {
+      let next = common.getPageAfterUserFlow(userFlow, common.findIndex(userType, 'userType', userFlow.journeys), common.getIndexInUserFlow(userType, thisPage['id'], thisStage['id'], userFlow), version)
+      if (next !== false) {
+        next = '/' + version + '/user-flow/' + userType + '/' + next
+      }
+      let prev = common.getPageBeforeUserFlow(userFlow, common.findIndex(userType, 'userType', userFlow.journeys), common.getIndexInUserFlow(userType, thisPage['id'], thisStage['id'], userFlow), version)
+      if (prev !== false) {
+        prev = '/' + version + '/user-flow/' + userType + '/' + prev
+      }
       navigation = {
-        'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version),
-        'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
+        'prev': prev,
+        'next': next
       }
     }
     let hasHistory = common.getPageHistory(thisPage, thisStage)
@@ -81,14 +89,14 @@ module.exports = function (router) {
     res.render('./includes/page-flow-individual.html',
       {
         isPage: true,
+        userType: userType,
+        flowType: flowType,
         pageFlow: pageFlow,
         location: version + '/' + thisStage.location + '/' + thisPage.location,
         thisPage: thisPage,
         thisStage: thisStage,
-        // theStageUR: Object.values(theStageUR),
         theStageUR: theStageUR,
         sprint: sprint,
-        // csvData: csvData,
         navigation: navigation,
         hasHistory: hasHistory
       }

@@ -51,9 +51,14 @@ module.exports = function (router) {
     let theQueryString = ''
     if (Object.keys(req.query).length) {
       theQueryString = '?'
-      for (let i in req.query) {
-        theQueryString += i
-        theQueryString += '=' + req.query[i]
+      let i = 0
+      for (let theKey in req.query) {
+        if (i > 0) {
+          theQueryString += '&'
+        }
+        theQueryString += theKey
+        theQueryString += '=' + req.query[theKey]
+        i++
       }
     }
     let thePageName = req.params.page + theQueryString

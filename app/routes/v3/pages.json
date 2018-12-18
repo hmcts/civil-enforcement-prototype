@@ -10,7 +10,7 @@
           "version": 1,
           "sprint": 5,
           "sprintDirectory": "v3",
-          "location": "/notifications/claimant/",
+          "location": "notifications/claimant",
           "users": [
             "claimant"
           ],
@@ -44,7 +44,7 @@
           "version": 1,
           "sprint": 5,
           "sprintDirectory": "v3",
-          "location": "/notifications/defendant/",
+          "location": "notifications/defendant",
           "users": [
             "defendant"
           ],
@@ -71,7 +71,7 @@
           "version": 1,
           "sprint": 5,
           "sprintDirectory": "v3",
-          "location": "/dashboard/security/",
+          "location": "dashboard/security",
           "users": [
             "defendant"
           ],
@@ -112,7 +112,7 @@
           "version": 2,
           "sprint": 6,
           "sprintDirectory": "v3",
-          "location": "/dashboard/defendant/",
+          "location": "dashboard/defendant",
           "users": [
             "defendant"
           ],
@@ -138,7 +138,7 @@
           "version": 1,
           "sprint": 5,
           "sprintDirectory": "v2",
-          "location": "/dashboard/defendant/",
+          "location": "dashboard/defendant",
           "users": [
             "defendant"
           ],
@@ -165,7 +165,7 @@
           "version": 2,
           "sprint": 6,
           "sprintDirectory": "v3",
-          "location": "/dashboard/",
+          "location": "dashboard",
           "users": [
             "claimant"
           ],
@@ -212,18 +212,18 @@
           "version": 1,
           "sprint": 5,
           "sprintDirectory": "v2",
-          "location": "/dashboard/defendant/",
+          "location": "/dashboard/",
           "users": [
-            "defendant"
+            "claimant"
           ],
-          "design-notes": "First pass at the 'dashboard' layout for a defendant with access to all claim history, party information, current stage and next steps.",
+          "design-notes": "First pass at the 'dashboard' layout for a claimant with access to all claim history, party information, current stage and next steps.",
           "pages": [
             {
-              "title": "Defendant dashboard - Writ of Control approved",
+              "title": "Claimant dashboard",
               "id": "1",
-              "description": "The status of the page when a Writ of Control has been approved",
+              "description": "",
               "type": "dashboard",
-              "location": "case?writApproved=true"
+              "location": "case"
             }
           ]
         }
@@ -239,7 +239,7 @@
           "version": 2,
           "sprint": 6,
           "sprintDirectory": "v3",
-          "location": "/stay-writ/",
+          "location": "stay-writ",
           "users": [
             "defendant"
           ],
@@ -408,7 +408,7 @@
           "version": 2,
           "sprint": 6,
           "sprintDirectory": "v3",
-          "location": "/enforcement-selection/wizard/",
+          "location": "enforcement-selection",
           "users": [
             "claimant"
           ],
@@ -419,6 +419,7 @@
               "id": "1",
               "description": "",
               "type": "radio-input",
+              "subDir": "wizard",
               "location": "index"
             },
             {
@@ -426,6 +427,7 @@
               "id": "2",
               "description": "",
               "type": "radio-input",
+              "subDir": "wizard",
               "location": "ccj-paid"
             },
             {
@@ -433,6 +435,7 @@
               "id": "3",
               "description": "",
               "type": "radio-input",
+              "subDir": "wizard",
               "location": "1"
             },
             {
@@ -440,6 +443,7 @@
               "id": "4",
               "description": "",
               "type": "checkbox-input",
+              "subDir": "wizard",
               "location": "2"
             },
             {
@@ -447,6 +451,7 @@
               "id": "5",
               "description": "",
               "type": "content-page",
+              "subDir": "wizard",
               "location": "options"
             },
             {
@@ -454,6 +459,7 @@
               "id": "6",
               "description": "",
               "type": "radio-input",
+              "subDir": "wizard",
               "location": "choose-method"
             },
             {
@@ -469,18 +475,25 @@
           "version": 1,
           "sprint": 5,
           "sprintDirectory": "v2",
-          "location": "/enforcement-selection/cmc/",
+          "location": "enforcement-selection",
           "users": [
             "claimant"
           ],
           "design-notes": "",
           "pages": [
             {
-              "title": "Verify a court order",
+              "title": "How do you want the court to collect your money?",
               "id": "1",
-              "description": "Service start page that introduces the function of the service",
-              "type": "start-page",
+              "description": "",
+              "type": "radio-input",
               "location": "index"
+            },
+            {
+              "title": "What type of bailiffs do you want to use?",
+              "id": "2",
+              "description": "",
+              "type": "radio-input",
+              "location": "bailiffs"
             }
           ]
         }
@@ -496,7 +509,7 @@
           "version": 2,
           "sprint": 6,
           "sprintDirectory": "v3",
-          "location": "/writs/",
+          "location": "writs",
           "users": [
             "claimant"
           ],

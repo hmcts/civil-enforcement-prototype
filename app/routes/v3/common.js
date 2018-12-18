@@ -175,20 +175,22 @@ common.getPageBeforeUserFlow = function (theUserFlow, userIndex, currentIndex, v
   currentIndex = parseInt(currentIndex)
   let theArray = theUserFlow['journeys'][userIndex]['flow']
   if (theArray[(currentIndex - 1)]) {
+    let stageVersion = theArray[(currentIndex - 1)]['version']
     // cross reference the pageFlow
-    let thePageInfo = common.getPageInfoWithStageId(theArray[(currentIndex - 1)]['pageId'], theArray[(currentIndex - 1)]['stage'])
+    let thePageInfo = common.getPageInfoWithStageId(theArray[(currentIndex - 1)]['pageId'], theArray[(currentIndex - 1)]['stage'], stageVersion)
     return thePageInfo.stageInfo['location'] + '/' + thePageInfo.location
   } else {
     return false
   }
 }
 
-common.getPageAfterUserFlow = function (theUserFlow, userIndex, currentIndex, version) {
+common.getPageAfterUserFlow = function (theUserFlow, userIndex, currentIndex) {
   currentIndex = parseInt(currentIndex)
   let theArray = theUserFlow['journeys'][userIndex]['flow']
   if (theArray[(currentIndex + 1)]) {
+    let stageVersion = theArray[(currentIndex + 1)]['version']
     // cross reference the pageFlow
-    let thePageInfo = common.getPageInfoWithStageId(theArray[(currentIndex + 1)]['pageId'], theArray[(currentIndex + 1)]['stage'])
+    let thePageInfo = common.getPageInfoWithStageId(theArray[(currentIndex + 1)]['pageId'], theArray[(currentIndex + 1)]['stage'], stageVersion)
     return thePageInfo.stageInfo['location'] + '/' + thePageInfo.location
   } else {
     return false
@@ -293,9 +295,10 @@ common.getPageInfoWithStageId = function (thePageId, theStageId, stageVersion) {
     stageVersion = 0
   }
   let thisStageIndex = common.findIndex(theStageId, 'id', pageFlow['stages'])
-  let thisStage = pageFlow['stages'][thisStageIndex]['versions'][stageVersion]
+  let stageVersionIndex = common.findIndex(stageVersion, 'version', pageFlow['stages'][thisStageIndex]['versions'])
+  let thisStage = pageFlow['stages'][thisStageIndex]['versions'][stageVersionIndex]
   let thisStageInfo = {
-    'location': pageFlow['stages'][thisStageIndex]['location'],
+    'location': thisStage['location'],
     'name': pageFlow['stages'][thisStageIndex]['name']
   }
   let thisStagePages = thisStage['pages']

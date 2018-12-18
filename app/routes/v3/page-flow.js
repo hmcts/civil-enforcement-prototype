@@ -47,10 +47,6 @@ module.exports = function (router) {
     // const SPREADSHEET_URL_DIRECT = 'https://spreadsheets.google.com/feeds/list/' + SPREADSHEET_ID + '/od6/public/values?alt=json'
     const SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/' + SPREADSHEET_ID + '/gviz/tq?tqx=out:csv'
     // console.log(SPREADSHEET_URL)
-    let theStageKey = req.params.subStage ? req.params.stage + '/' + req.params.subStage : req.params.stage
-    let thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
-    let thisStage = pageFlow.stages[thisStageIndex]
-    let theStagePages = thisStage.versions[0]['pages']
     let theQueryString = ''
     if (Object.keys(req.query).length) {
       theQueryString = '?'
@@ -65,6 +61,15 @@ module.exports = function (router) {
       }
     }
     let thePageName = req.params.page + theQueryString
+
+    let theStageKey = req.params.subStage ? req.params.stage + '/' + req.params.subStage : req.params.stage
+    let thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
+    let thisStage = pageFlow.stages[thisStageIndex]
+    let theStageId = thisStage.id
+    let journeyIndex = common.findIndex(req.params.userType, 'userType', userFlow['journeys'])
+    let versionToUse = userFlow['journeys'][journeyIndex]['flow'][common.findIndexUsing2Keys(thePageName, 'location', theStageId, 'stage', userFlow['journeys'][journeyIndex]['flow'])]['version']
+    let theStageVersion = common.findIndex(versionToUse, 'version', thisStage.versions)
+    let theStagePages = thisStage.versions[theStageVersion]['pages']
     let thisPageIndex = common.findIndex(thePageName, 'location', theStagePages)
     let thisPage = theStagePages[thisPageIndex]
     // @todo store API call / CSV UR Data in a session
@@ -79,11 +84,12 @@ module.exports = function (router) {
         'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
       }
     } else {
-      let next = common.getPageAfterUserFlow(userFlow, common.findIndex(userType, 'userType', userFlow.journeys), common.getIndexInUserFlow(userType, thisPage['id'], thisStage['id'], userFlow), version)
+      // Change URL here?
+      let next = common.getPageAfterUserFlow(userFlow, common.findIndex(userType, 'userType', userFlow.journeys), common.getIndexInUserFlow(userType, thisPage['id'], thisStage['id'], userFlow))
       if (next !== false) {
         next = '/' + version + '/user-flow/' + userType + '/' + next
       }
-      let prev = common.getPageBeforeUserFlow(userFlow, common.findIndex(userType, 'userType', userFlow.journeys), common.getIndexInUserFlow(userType, thisPage['id'], thisStage['id'], userFlow), version)
+      let prev = common.getPageBeforeUserFlow(userFlow, common.findIndex(userType, 'userType', userFlow.journeys), common.getIndexInUserFlow(userType, thisPage['id'], thisStage['id'], userFlow))
       if (prev !== false) {
         prev = '/' + version + '/user-flow/' + userType + '/' + prev
       }

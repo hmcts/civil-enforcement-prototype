@@ -55,7 +55,11 @@
               "id": "1",
               "description": "User is notified of a Writ of Control having been issued",
               "type": "email",
-              "location": "email2"
+              "location": "email2",
+              "userNeeds": [
+                "CE22",
+                "CE23"
+              ]
             }
           ]
         }

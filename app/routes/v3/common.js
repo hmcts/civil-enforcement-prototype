@@ -330,4 +330,18 @@ common.getUserNeeds = function (theUserType) {
   return arrayOfNeeds
 }
 
+common.getUserNeedsForPage = function (theNeeds, allNeeds) {
+  let needs = []
+  for (let userType in allNeeds) {
+    for (let need in allNeeds[userType]['needs']) {
+      for (let n1 in theNeeds) {
+        if (theNeeds[n1] === allNeeds[userType]['needs'][need]['id']) {
+          needs.push(allNeeds[userType]['needs'][need])
+        }
+      }
+    }
+  }
+  return needs
+}
+
 module.exports = common

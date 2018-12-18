@@ -45,6 +45,21 @@
                 <p><a href="{{ navigation.next }}">Next</a></p>
             {% endif %}
 
+            {% if userNeeds !== undefined %}
+                {% from "details/macro.njk" import govukDetails %}
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            User needs
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        {% for userNeed in userNeeds %}
+                            <p><strong>{{ userNeed.need }}</strong>{{ userNeed.reason }} - {{ userNeed.id }}</p>
+                        {% endfor %}
+                    </div>
+                </details>
+            {% endif %}
 
             {% if theStageUR.feedback %}
                 {% from "details/macro.njk" import govukDetails %}

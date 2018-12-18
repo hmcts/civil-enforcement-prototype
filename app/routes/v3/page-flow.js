@@ -4,6 +4,7 @@ const settings = require('./config')
 const common = require('./common')
 let pageFlow = require('./pages.json')
 const userFlow = require('./user-flows.json')
+const userNeeds = require('./user-needs.json')
 const asyncMiddleware = fn =>
   (req, res, next) => {
     Promise.resolve(fn(req, res, next))
@@ -82,7 +83,6 @@ module.exports = function (router) {
         'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
       }
     } else {
-      // Change URL here?
       let next = common.getPageAfterUserFlow(userFlow, common.findIndex(userType, 'userType', userFlow.journeys), common.getIndexInUserFlow(userType, thisPage['id'], thisStage['id'], userFlow))
       if (next !== false) {
         next = '/' + version + '/user-flow/' + userType + '/' + next
@@ -104,6 +104,11 @@ module.exports = function (router) {
         theLocation = version + '/' + thisStage.location + '/' + thisPage['subDir'] + '/' + thisPage.location
       }
     }
+    let theUserNeeds
+    let arrayOfNeeds = thisPage['userNeeds']
+    if (arrayOfNeeds !== undefined) {
+      theUserNeeds = common.getUserNeedsForPage(arrayOfNeeds, userNeeds)
+    }
     let hasHistory = common.getPageHistory(thisPage, thisStage)
     // @todo - add individual page/stage user needs
     res.render('./includes/page-flow-individual.html',
@@ -116,6 +121,7 @@ module.exports = function (router) {
         thisPage: thisPage,
         thisStage: thisStage,
         theStageUR: theStageUR,
+        userNeeds: theUserNeeds,
         sprint: sprint,
         navigation: navigation,
         hasHistory: hasHistory

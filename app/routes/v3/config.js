@@ -1,4 +1,5 @@
 module.exports = {
+  googleApiKey: 'AIzaSyBDWsUFLhvbMybu7ZpwIeiwEcex0K4OyNA',
   claimant: {
     name: 'Kate Beckinsale',
     email: 'kateb2625@gmail.com',

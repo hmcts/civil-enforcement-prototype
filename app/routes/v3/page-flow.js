@@ -4,8 +4,6 @@ const settings = require('./config')
 const common = require('./common')
 let pageFlow = require('./pages.json')
 const userFlow = require('./user-flows.json')
-const csvFile = './app/views/' + version + '/page-flow/lab-notes.csv'
-// const csvData = common.csvtojson(csvFile)
 const asyncMiddleware = fn =>
   (req, res, next) => {
     Promise.resolve(fn(req, res, next))
@@ -43,10 +41,7 @@ module.exports = function (router) {
     const SPREADSHEET_ID = userFlow['journeys'][common.findIndex(userType, 'userType', userFlow['journeys'])]['sheetsId']
     const theCsvFile = userFlow['journeys'][common.findIndex(userType, 'userType', userFlow['journeys'])]['urCsv']
     let urCsv = './app/views/' + version + '/page-flow/' + theCsvFile
-    const API_KEY = 'AIzaSyBDWsUFLhvbMybu7ZpwIeiwEcex0K4OyNA'
-    // const SPREADSHEET_URL_DIRECT = 'https://spreadsheets.google.com/feeds/list/' + SPREADSHEET_ID + '/od6/public/values?alt=json'
     const SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/' + SPREADSHEET_ID + '/gviz/tq?tqx=out:csv'
-    // console.log(SPREADSHEET_URL)
     let theQueryString = ''
     if (Object.keys(req.query).length) {
       theQueryString = '?'
@@ -61,7 +56,6 @@ module.exports = function (router) {
       }
     }
     let thePageName = req.params.page + theQueryString
-
     let theStageKey = req.params.stage
     let thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
     let thisStage = pageFlow.stages[thisStageIndex]

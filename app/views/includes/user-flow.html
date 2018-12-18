@@ -25,7 +25,7 @@
                     <div class="govuk-details__text">
                         <ol class="govuk-list govuk-list--number">
                             {% for need in userJourney.needs %}
-                                <li><strong>{{ need.need }}</strong> {{ need.reason }} - ({{need.id}})</li>
+                                <li><strong>{{ need.need }}</strong> {{ need.reason }} - ({{ need.id }})</li>
                             {% endfor %}
                         </ol>
                     </div>
@@ -38,9 +38,15 @@
                             <ol class="page-flow--pages">
                                 {% for page in stage.pages %}
                                     <li class="page-flow-item--page">
-                                        <a href="{{ userJourney.userType.id }}/{{ stage['stage'].location }}/{{ page.pageInfo.location }}"
-                                           target="_blank"
-                                           class="page-flow-item-screen-icon page-flow-item-screen-icon--{{ page.pageInfo.type }}"></a>
+                                        {% if page.pageInfo.subDir.length %}
+                                            <a href="{{ userJourney.userType.id + '/' + stage['stage'].location + '/' + page.pageInfo.subDir + '/' + page.pageInfo.location }}"
+                                               target="_blank"
+                                               class="page-flow-item-screen-icon page-flow-item-screen-icon--{{ page.pageInfo.type }}"></a>
+                                        {% else %}
+                                            <a href="{{ userJourney.userType.id + '/' + stage['stage'].location + '/' + page.pageInfo.location }}"
+                                               target="_blank"
+                                               class="page-flow-item-screen-icon page-flow-item-screen-icon--{{ page.pageInfo.type }}"></a>
+                                        {% endif %}
                                         <p class="govuk-!-font-size-14">{{ page.pageInfo.title }}
                                         </p>
                                     </li>

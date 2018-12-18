@@ -171,14 +171,17 @@ common.getPageAfter = function (pageFlow, index, theArray, thisStageIndex, versi
   }
 }
 
-common.getPageBeforeUserFlow = function (theUserFlow, userIndex, currentIndex, version) {
+common.getPageBeforeUserFlow = function (theUserFlow, userIndex, currentIndex) {
   currentIndex = parseInt(currentIndex)
   let theArray = theUserFlow['journeys'][userIndex]['flow']
   if (theArray[(currentIndex - 1)]) {
     let stageVersion = theArray[(currentIndex - 1)]['version']
-    // cross reference the pageFlow
     let thePageInfo = common.getPageInfoWithStageId(theArray[(currentIndex - 1)]['pageId'], theArray[(currentIndex - 1)]['stage'], stageVersion)
-    return thePageInfo.stageInfo['location'] + '/' + thePageInfo.location
+    let theLink = thePageInfo.stageInfo['location'] + '/' + thePageInfo.location
+    if (thePageInfo['subDir']) {
+      theLink = thePageInfo.stageInfo['location'] + '/' + thePageInfo['subDir'] + '/' + thePageInfo.location
+    }
+    return theLink
   } else {
     return false
   }
@@ -189,9 +192,12 @@ common.getPageAfterUserFlow = function (theUserFlow, userIndex, currentIndex) {
   let theArray = theUserFlow['journeys'][userIndex]['flow']
   if (theArray[(currentIndex + 1)]) {
     let stageVersion = theArray[(currentIndex + 1)]['version']
-    // cross reference the pageFlow
     let thePageInfo = common.getPageInfoWithStageId(theArray[(currentIndex + 1)]['pageId'], theArray[(currentIndex + 1)]['stage'], stageVersion)
-    return thePageInfo.stageInfo['location'] + '/' + thePageInfo.location
+    let theLink = thePageInfo.stageInfo['location'] + '/' + thePageInfo.location
+    if (thePageInfo['subDir']) {
+      theLink = thePageInfo.stageInfo['location'] + '/' + thePageInfo['subDir'] + '/' + thePageInfo.location
+    }
+    return theLink
   } else {
     return false
   }

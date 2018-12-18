@@ -41,8 +41,7 @@
                                         <a href="{{ userJourney.userType.id }}/{{ stage['stage'].location }}/{{ page.pageInfo.location }}"
                                            target="_blank"
                                            class="page-flow-item-screen-icon page-flow-item-screen-icon--{{ page.pageInfo.type }}"></a>
-                                        <p>ID: {{ page.id }}
-                                            <br/> Name: {{ page.pageInfo.title }}
+                                        <p class="govuk-!-font-size-14">{{ page.pageInfo.title }}
                                         </p>
                                     </li>
                                 {% endfor %}

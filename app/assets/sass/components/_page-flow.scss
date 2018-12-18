@@ -38,7 +38,7 @@ $stage-color--writs: #004432;
   border-top: 10px solid;
   display: inline-block;
   .page-flow-stage-descriptor {
-    width: 100%;
+    padding: 2px 10px;
     display: block;
     //padding: 5px;
   }
@@ -99,7 +99,7 @@ $stage-color--writs: #004432;
     }
     .page-flow-item-screen-icon {
       width: 100px;
-      height: 120px;
+      height: 100px;
       display: block;
       background-repeat: no-repeat;
       &--email {

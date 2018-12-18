@@ -71,7 +71,7 @@
           "version": 1,
           "sprint": 5,
           "sprintDirectory": "v3",
-          "location": "dashboard",
+          "location": "dashboard/security",
           "users": [
             "defendant"
           ],
@@ -82,7 +82,6 @@
               "id": "1",
               "description": "User enters the claim number to proceed to next step",
               "type": "text-input",
-              "subDir": "security",
               "location": "defendant"
             },
             {
@@ -90,7 +89,6 @@
               "id": "2",
               "description": "User enters their phone number, this is checked against the claim details. If there is a match, a 6 digit PIN is sent to the device",
               "type": "text-input",
-              "subDir": "security",
               "location": "request-code"
             },
             {
@@ -98,7 +96,6 @@
               "id": "3",
               "description": "User enters the access code that was sent to their phone",
               "type": "text-input",
-              "subDir": "security",
               "location": "enter-code"
             }
           ]

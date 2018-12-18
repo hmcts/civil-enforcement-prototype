@@ -58,6 +58,10 @@ module.exports = function (router) {
     let thePageName = req.params.page + theQueryString
     let theStageKey = req.params.stage
     let thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
+    if (thisStageIndex === false) {
+      let theStageKey = req.params.stage + '/' + req.params.subStage
+      thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
+    }
     let thisStage = pageFlow.stages[thisStageIndex]
     let theStageId = thisStage.id
     let journeyIndex = common.findIndex(req.params.userType, 'userType', userFlow['journeys'])
@@ -94,7 +98,11 @@ module.exports = function (router) {
     }
     let theLocation = version + '/' + thisStage.location + '/' + thisPage.location
     if (req.params.subStage) {
-      theLocation = version + '/' + thisStage.location + '/' + thisPage['subDir'] + '/' + thisPage.location
+      let theStageKey = req.params.stage + '/' + req.params.subStage
+      thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
+      if (thisStageIndex === false) {
+        theLocation = version + '/' + thisStage.location + '/' + thisPage['subDir'] + '/' + thisPage.location
+      }
     }
     let hasHistory = common.getPageHistory(thisPage, thisStage)
     // @todo - add individual page/stage user needs

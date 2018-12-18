@@ -2,7 +2,7 @@
   "stages": [
     {
       "name": "Notifications",
-      "location": "notifications/claimant",
+      "location": "notifications-claimant",
       "id": "notifications-claimant",
       "description": "SMS, Emails and letters that are sent out to claimants",
       "versions": [
@@ -10,7 +10,7 @@
           "version": 1,
           "sprint": 5,
           "sprintDirectory": "v3",
-          "location": "notifications/claimant",
+          "location": "notifications-claimant",
           "users": [
             "claimant"
           ],
@@ -36,7 +36,7 @@
     },
     {
       "name": "Notifications",
-      "location": "notifications/defendant",
+      "location": "notifications-defendant",
       "id": "notifications-defendant",
       "description": "SMS, Emails and letters that are sent out to defendants",
       "versions": [
@@ -44,7 +44,7 @@
           "version": 1,
           "sprint": 5,
           "sprintDirectory": "v3",
-          "location": "notifications/defendant",
+          "location": "notifications-defendant",
           "users": [
             "defendant"
           ],
@@ -71,7 +71,7 @@
           "version": 1,
           "sprint": 5,
           "sprintDirectory": "v3",
-          "location": "dashboard/security",
+          "location": "dashboard",
           "users": [
             "defendant"
           ],
@@ -82,6 +82,7 @@
               "id": "1",
               "description": "User enters the claim number to proceed to next step",
               "type": "text-input",
+              "subDir": "security",
               "location": "defendant"
             },
             {
@@ -89,6 +90,7 @@
               "id": "2",
               "description": "User enters their phone number, this is checked against the claim details. If there is a match, a 6 digit PIN is sent to the device",
               "type": "text-input",
+              "subDir": "security",
               "location": "request-code"
             },
             {
@@ -96,6 +98,7 @@
               "id": "3",
               "description": "User enters the access code that was sent to their phone",
               "type": "text-input",
+              "subDir": "security",
               "location": "enter-code"
             }
           ]
@@ -157,7 +160,7 @@
     },
     {
       "name": "Claimant dashboard",
-      "location": "dashboard",
+      "location": "dashboard/claimant",
       "id": "claimant-dashboard",
       "description": "Dashboard for claimant's claim details",
       "versions": [
@@ -165,7 +168,7 @@
           "version": 2,
           "sprint": 6,
           "sprintDirectory": "v3",
-          "location": "dashboard",
+          "location": "dashboard/claimant",
           "users": [
             "claimant"
           ],
@@ -212,7 +215,7 @@
           "version": 1,
           "sprint": 5,
           "sprintDirectory": "v2",
-          "location": "/dashboard/",
+          "location": "dashboard/claimant",
           "users": [
             "claimant"
           ],

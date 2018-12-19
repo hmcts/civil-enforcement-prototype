@@ -275,7 +275,9 @@ common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
     userJourneys.push({
       'userType': {
         'name': theUserFlow['journeys'][theJourney]['name'],
-        'id': theUserFlow['journeys'][theJourney]['userType']
+        'id': theUserFlow['journeys'][theJourney]['userType'],
+        'changeLog': theUserFlow['journeys'][theJourney]['changeLog'],
+        'description': theUserFlow['journeys'][theJourney]['description']
       },
       'needs': theUserNeeds,
       'flow': stagesInJourney

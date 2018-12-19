@@ -26,7 +26,8 @@ module.exports = function (router) {
       {
         userFlow: theUserFlow,
         userNeeds: theUserFlow.needs,
-        sprint: sprint
+        sprint: sprint,
+        sprintDetails: userFlow.sprintDetails
       }
     )
   })

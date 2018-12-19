@@ -283,7 +283,7 @@
           "version": 1,
           "sprint": 5,
           "sprintDirectory": "v2",
-          "location": "/stay-writ/",
+          "location": "stay-writ",
           "users": [
             "defendant"
           ],

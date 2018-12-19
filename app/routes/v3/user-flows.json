@@ -14,15 +14,14 @@
     "urDetails": [
       {
         "where": "User testing lab, London",
-        "who": "2 claimants, 2 defendants"
+        "who": "2 claimants, 2 defendants",
+        "ADscale": [
+          8,
+          6,
+          8,
+          6
+        ]
       }
-    ],
-    "keyQuotes": [
-      "Not as frightening as my own process as it's laid out clearly.",
-      "I want a little dictionary at the side...it’s a process when you go through this.",
-      "Everyone should get a chance to get their money back.",
-      "Uncomplicated and clear",
-      "It would be really helpful, speaking to a human being, it puts your mind at rest. A real necessity when you do things online"
     ]
   },
   "journeys": [
@@ -31,6 +30,12 @@
       "userType": "defendant",
       "sheetsId": "1jI3eJF6F7Infl1oyJYreNHzJtPjXT9K8WTUYt5lwbIw",
       "urCsv": "lab-notes-defendant.csv",
+      "userQuotes": [
+        "It just seems so easy you could probably do it on your own.",
+        "You can do this without a solicitor!",
+        "It cuts out lots of the paperwork...",
+        "This [guidance] information needs be earlier - it’s important to hear even if I didn't get to this stage."
+      ],
       "description": "User receives notification of Writ of Control and engages with the service for the first time. They proceed to apply to stay the Writ of Control.",
       "changeLog": [
         "updated dashboard with stay a writ as next step",
@@ -109,6 +114,13 @@
         "additional guidance on fees prior to starting enforcement selection",
         "modified enforcement selection wizard",
         "updated Send Writ of Control to bailiff CTA on dashboard"
+      ],
+      "userQuotes": [
+        "Not as frightening as my own process as it's laid out clearly.",
+        "I want a little dictionary at the side...it’s a process when you go through this.",
+        "Everyone should get a chance to get their money back.",
+        "Uncomplicated and clear",
+        "It would be really helpful, speaking to a human being, it puts your mind at rest. A real necessity when you do things online"
       ],
       "flow": [
         {

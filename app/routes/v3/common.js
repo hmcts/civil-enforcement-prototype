@@ -275,7 +275,7 @@ common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
     userJourneys.push({
       'userType': {
         'name': theUserFlow['journeys'][theJourney]['name'],
-        'id': theUserFlow['journeys'][theJourney]['userType'],
+        'id': theUserFlow['journeys'][theJourney]['id'],
         'changeLog': theUserFlow['journeys'][theJourney]['changeLog'],
         'description': theUserFlow['journeys'][theJourney]['description']
       },
@@ -316,8 +316,8 @@ common.getPageInfoWithStageId = function (thePageId, theStageId, stageVersion) {
   return thisPage
 }
 
-common.getIndexInUserFlow = function (userType, thePageId, theStageId, userFlow) {
-  let journey = common.findIndex(userType, 'userType', userFlow['journeys'])
+common.getIndexInUserFlow = function (id, thePageId, theStageId, userFlow) {
+  let journey = common.findIndex(id, 'id', userFlow['journeys'])
   let journeyFlow = userFlow['journeys'][journey]['flow']
   let theIndex = common.findIndexUsing2Keys(thePageId, 'pageId', theStageId, 'stage', journeyFlow)
   return theIndex
@@ -344,6 +344,30 @@ common.getUserNeedsForPage = function (theNeeds, allNeeds) {
     }
   }
   return needs
+}
+
+common.getNavigationForUserFlow = function (userFlow, flowType, id, thisPage, thisStage, thisPageIndex, theStagePages, thisStageIndex, version) {
+  let navigation
+  if (flowType === 'page-flow') {
+    navigation = {
+      'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version),
+      'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
+    }
+  } else {
+    let next = common.getPageAfterUserFlow(userFlow, common.findIndex(id, 'id', userFlow.journeys), common.getIndexInUserFlow(id, thisPage['id'], thisStage['id'], userFlow))
+    if (next !== false) {
+      next = '/' + version + '/user-flow/' + id + '/' + next
+    }
+    let prev = common.getPageBeforeUserFlow(userFlow, common.findIndex(id, 'id', userFlow.journeys), common.getIndexInUserFlow(id, thisPage['id'], thisStage['id'], userFlow))
+    if (prev !== false) {
+      prev = '/' + version + '/user-flow/' + id + '/' + prev
+    }
+    navigation = {
+      'prev': prev,
+      'next': next
+    }
+  }
+  return navigation
 }
 
 module.exports = common

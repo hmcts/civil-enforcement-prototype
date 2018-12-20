@@ -16,7 +16,7 @@
                     <li class="govuk-breadcrumbs__list-item">
                         <a class="govuk-breadcrumbs__link">Stage: {{ thisStage.name }}</a>
                     </li>
-                    <li class="govuk-breadcrumbs__list-item" aria-current="page">{{ thisPage.title }}</li>
+                    {#<li class="govuk-breadcrumbs__list-item" aria-current="page">{{ thisPage.title }}</li>#}
                 </ol>
             </div>
             <span class="govuk-header"></span>
@@ -27,9 +27,11 @@
 
             <p>{{ thisPage.description }}</p>
 
-            <div class="screenPreviewContainer">
+            <div class="screenPreviewContainer govuk-!-margin-bottom-5">
                 <iframe src="/{{ location }}" class="screenPreview" frameborder="0"></iframe>
             </div>
+
+            <h2 class="govuk-heading-s">User research notes</h2>
 
             {% if userNeeds !== undefined %}
                 {% from "details/macro.njk" import govukDetails %}
@@ -88,12 +90,14 @@
 
         </div>
         <div class="govuk-grid-column-one-third">
-            <a href="/{{ location }}" class="hmcts-button--secondary govuk-button govuk-!-display-block"
-               target="_blank">View full page</a>
-
             {% from "includes/pageNav.html" import pageNav %}
 
             {{ pageNav(navigation) }}
+
+            <a href="/{{ location }}" class="hmcts-button--secondary govuk-button govuk-!-display-block"
+               target="_blank">View full page</a>
+
+            <h2 class="govuk-heading-s">Design notes</h2>
 
             {% if hasHistory %}
                 {% from "details/macro.njk" import govukDetails %}

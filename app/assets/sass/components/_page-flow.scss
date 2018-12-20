@@ -11,6 +11,7 @@ $stage-color--documents: orange;
 .screenPreviewContainer {
   height: 400px;
   overflow: hidden;
+  border: 1px solid #000;
   .screenPreview {
     width: 200%;
     height: 800px;

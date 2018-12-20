@@ -6,6 +6,7 @@ $stage-color--defendant-dashboard: #f47738;
 $stage-color--notifications: #ccc;
 $stage-color--enforcement-selection: #005ea5;
 $stage-color--writs: #004432;
+$stage-color--documents: orange;
 
 .screenPreviewContainer {
   height: 400px;
@@ -62,6 +63,9 @@ $stage-color--writs: #004432;
   }
   &--writs {
     border-color: $stage-color--writs;
+  }
+  &--documents {
+    border-color: $stage-color--documents;
   }
   &--notifications-defendant, &--notifications-claimant {
     border-color: $stage-color--notifications;

@@ -26,4 +26,22 @@ module.exports = function (router) {
       claimNumber: claimNumber
     })
   })
+  // Various documents
+  router.get(['/' + version + '/documents/:document'], function (req, res) {
+    let document = req.params.document || false
+    console.log(document)
+    let sprint = 5
+    let directory = '/public/pdf/sprint' + sprint + '/'
+    let redirect
+    switch (document) {
+      case 'writ':
+        redirect = 'Writ of control.pdf'
+        break
+      case 'noe':
+        redirect = 'NoE letter.pdf'
+        break
+    }
+    // console.log(directory + redirect)
+    res.redirect(directory + redirect)
+  })
 }

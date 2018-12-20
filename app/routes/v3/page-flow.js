@@ -40,8 +40,8 @@ module.exports = function (router) {
     } else {
       flowType = 'user-flow'
     }
-    const SPREADSHEET_ID = userFlow['journeys'][common.findIndex(userType, 'userType', userFlow['journeys'])]['sheetsId']
-    const theCsvFile = userFlow['journeys'][common.findIndex(userType, 'userType', userFlow['journeys'])]['urCsv']
+    const SPREADSHEET_ID = userFlow['journeys'][common.findIndex(userType, 'id', userFlow['journeys'])]['sheetsId']
+    const theCsvFile = userFlow['journeys'][common.findIndex(userType, 'id', userFlow['journeys'])]['urCsv']
     let urCsv = './app/views/' + version + '/page-flow/' + theCsvFile
     const SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/' + SPREADSHEET_ID + '/gviz/tq?tqx=out:csv'
     let theQueryString = ''
@@ -66,7 +66,7 @@ module.exports = function (router) {
     }
     let thisStage = pageFlow.stages[thisStageIndex]
     let theStageId = thisStage.id
-    let journeyIndex = common.findIndex(req.params.userType, 'userType', userFlow['journeys'])
+    let journeyIndex = common.findIndex(req.params.userType, 'id', userFlow['journeys'])
     let versionToUse = userFlow['journeys'][journeyIndex]['flow'][common.findIndexUsing2Keys(thePageName, 'location', theStageId, 'stage', userFlow['journeys'][journeyIndex]['flow'])]['version']
     let theStageVersion = common.findIndex(versionToUse, 'version', thisStage.versions)
     let theStagePages = thisStage.versions[theStageVersion]['pages']
@@ -78,27 +78,27 @@ module.exports = function (router) {
     let theStageUR = await common.findCSVKey(theURData, thisStage.id, 'Stage')
     theStageUR = common.findKey(thisPage.location, 'Location', theStageUR)
     let navigation
-    if (flowType === 'page-flow') {
-      navigation = {
-        'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version),
-        'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
-      }
-    } else {
-      let next = common.getPageAfterUserFlow(userFlow, common.findIndex(userType, 'userType', userFlow.journeys), common.getIndexInUserFlow(userType, thisPage['id'], thisStage['id'], userFlow))
-      if (next !== false) {
-        next = '/' + version + '/user-flow/' + userType + '/' + next
-      }
-      let prev = common.getPageBeforeUserFlow(userFlow, common.findIndex(userType, 'userType', userFlow.journeys), common.getIndexInUserFlow(userType, thisPage['id'], thisStage['id'], userFlow))
-      if (prev !== false) {
-        prev = '/' + version + '/user-flow/' + userType + '/' + prev
-      }
-      navigation = {
-        'prev': prev,
-        'next': next
-      }
-    }
+    // if (flowType === 'page-flow') {
+    //   navigation = {
+    //     'prev': common.getPageBefore(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version),
+    //     'next': common.getPageAfter(pageFlow, thisPageIndex, theStagePages, thisStageIndex, version)
+    //   }
+    // } else {
+    //   let next = common.getPageAfterUserFlow(userFlow, common.findIndex(userType, 'userType', userFlow.journeys), common.getIndexInUserFlow(userType, thisPage['id'], thisStage['id'], userFlow))
+    //   if (next !== false) {
+    //     next = '/' + version + '/user-flow/' + userType + '/' + next
+    //   }
+    //   let prev = common.getPageBeforeUserFlow(userFlow, common.findIndex(userType, 'userType', userFlow.journeys), common.getIndexInUserFlow(userType, thisPage['id'], thisStage['id'], userFlow))
+    //   if (prev !== false) {
+    //     prev = '/' + version + '/user-flow/' + userType + '/' + prev
+    //   }
+    //   navigation = {
+    //     'prev': prev,
+    //     'next': next
+    //   }
+    // }
     let theLocation = version + '/' + thisStage.location + '/' + thisPage.location
-    if (req.params.subStage) {
+    if (req.params.subStage !== false) {
       let theStageKey = req.params.stage + '/' + req.params.subStage
       thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
       if (thisStageIndex === false) {

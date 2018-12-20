@@ -338,7 +338,7 @@
           "version": 2,
           "sprint": 6,
           "sprintDirectory": "v3",
-          "location": "/check-writ/",
+          "location": "check-writ",
           "users": [
             "defendant"
           ],
@@ -607,6 +607,40 @@
               "description": "The status of the document is played back to the user",
               "type": "confirmation",
               "location": "confirmation-page"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Documents",
+      "location": "documents",
+      "id": "documents",
+      "description": "Collection of documents sent to users",
+      "versions": [
+        {
+          "version": 2,
+          "sprint": 5,
+          "sprintDirectory": "v3",
+          "location": "documents",
+          "users": [
+            "defendant"
+          ],
+          "design-notes": "Second iteration of the Writ of Control process",
+          "pages": [
+            {
+              "title": "Notice of Enforcement",
+              "id": "1",
+              "description": "Covering letter sent out prior to a Writ of Control being presented",
+              "type": "content-page",
+              "location": "noe"
+            },
+            {
+              "title": "Writ of Control",
+              "id": "2",
+              "description": "Digital version of the Writ of Control",
+              "type": "content-page",
+              "location": "writ"
             }
           ]
         }

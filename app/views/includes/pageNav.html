@@ -1,13 +1,10 @@
 {% macro pageNav(navigation) %}
 
-
-
-
     <nav class="gem-c-pagination" role="navigation" aria-label="Pagination">
         <ul class="gem-c-pagination__list" data-module="track-click">
             {% if navigation.prev !== false %}
-            <li class="gem-c-pagination__item gem-c-pagination__item--previous">
-                <a href="{{ navigation.prev }}" class="gem-c-pagination__link" rel="prev">
+                <li class="gem-c-pagination__item gem-c-pagination__item--previous">
+                    <a href="{{ navigation.prev.link }}" class="gem-c-pagination__link" rel="prev">
                             <span class="gem-c-pagination__link-title">
                                 <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13"
                                      width="17" viewBox="0 0 17 13">
@@ -18,15 +15,15 @@
                                   Previous
                                 </span>
                             </span>
-                    <span class="gem-c-pagination__link-divider visually-hidden">:</span>
-                    <span class="gem-c-pagination__link-label">[pageName]</span>
-                </a>
-            </li>
+                        <span class="gem-c-pagination__link-divider visually-hidden">:</span>
+                        <span class="gem-c-pagination__link-label">{{ navigation.prev.pageInfo.title }}</span>
+                    </a>
+                </li>
             {% endif %}
             {% if navigation.next !== false %}
-            <li class="gem-c-pagination__item gem-c-pagination__item--next">
-                <a href="{{ navigation.next }}"
-                   class="gem-c-pagination__link" rel="next">
+                <li class="gem-c-pagination__item gem-c-pagination__item--next">
+                    <a href="{{ navigation.next.link }}"
+                       class="gem-c-pagination__link" rel="next">
                             <span class="gem-c-pagination__link-title">
                                 <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13"
                                      width="17"
@@ -38,10 +35,10 @@
                                   Next
                                 </span>
                             </span>
-                    <span class="gem-c-pagination__link-divider visually-hidden">:</span>
-                    <span class="gem-c-pagination__link-label">[pageName]</span>
-                </a>
-            </li>
+                        <span class="gem-c-pagination__link-divider visually-hidden">:</span>
+                        <span class="gem-c-pagination__link-label">{{ navigation.next.pageInfo.title }}</span>
+                    </a>
+                </li>
             {% endif %}
         </ul>
     </nav>

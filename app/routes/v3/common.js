@@ -181,7 +181,10 @@ common.getPageBeforeUserFlow = function (theUserFlow, userIndex, currentIndex) {
     if (thePageInfo['subDir']) {
       theLink = thePageInfo.stageInfo['location'] + '/' + thePageInfo['subDir'] + '/' + thePageInfo.location
     }
-    return theLink
+    return {
+      link: theLink,
+      pageInfo: thePageInfo
+    }
   } else {
     return false
   }
@@ -197,7 +200,10 @@ common.getPageAfterUserFlow = function (theUserFlow, userIndex, currentIndex) {
     if (thePageInfo['subDir']) {
       theLink = thePageInfo.stageInfo['location'] + '/' + thePageInfo['subDir'] + '/' + thePageInfo.location
     }
-    return theLink
+    return {
+      link: theLink,
+      pageInfo: thePageInfo
+    }
   } else {
     return false
   }
@@ -356,11 +362,11 @@ common.getNavigationForUserFlow = function (userFlow, flowType, id, thisPage, th
   } else {
     let next = common.getPageAfterUserFlow(userFlow, common.findIndex(id, 'id', userFlow.journeys), common.getIndexInUserFlow(id, thisPage['id'], thisStage['id'], userFlow))
     if (next !== false) {
-      next = '/' + version + '/user-flow/' + id + '/' + next
+      next['link'] = '/' + version + '/user-flow/' + id + '/' + next.link
     }
     let prev = common.getPageBeforeUserFlow(userFlow, common.findIndex(id, 'id', userFlow.journeys), common.getIndexInUserFlow(id, thisPage['id'], thisStage['id'], userFlow))
-    if (prev !== false) {
-      prev = '/' + version + '/user-flow/' + id + '/' + prev
+    if (prev['link'] !== false) {
+      prev['link'] = '/' + version + '/user-flow/' + id + '/' + prev.link
     }
     navigation = {
       'prev': prev,

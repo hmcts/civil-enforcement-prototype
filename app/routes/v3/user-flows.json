@@ -112,15 +112,11 @@
       "sheetsId": "1jI3eJF6F7Infl1oyJYreNHzJtPjXT9K8WTUYt5lwbIw",
       "urCsv": "lab-notes-defendant.csv",
       "userQuotes": [
-        "It just seems so easy you could probably do it on your own.",
-        "You can do this without a solicitor!",
-        "It cuts out lots of the paperwork...",
-        "This [guidance] information needs be earlier - it’s important to hear even if I didn't get to this stage."
+
       ],
-      "description": "User receives notification of Writ of Control and engages with the service for the first time. They proceed to apply to stay the Writ of Control.",
+      "description": "Stand alone tool to validate court order documents",
       "changeLog": [
-        "updated dashboard with stay a writ as next step",
-        "additional content to clarify that stay a writ application is completed but not yet confirmed"
+        "Changes to next steps on confirmation page including driver to 'dashboard' to increase engagement"
       ],
       "flow": [
         {

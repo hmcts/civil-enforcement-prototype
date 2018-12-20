@@ -2,9 +2,9 @@ const version = 'v3'
 const sprint = 6
 const settings = require('./config')
 const common = require('./common')
-let pageFlow = require('./pages.json')
+let pageFlow = require('../pages.json')
 const userFlow = require('./user-flows.json')
-const userNeeds = require('./user-needs.json')
+const userNeeds = require('../user-needs.json')
 const asyncMiddleware = fn =>
   (req, res, next) => {
     Promise.resolve(fn(req, res, next))
@@ -71,7 +71,7 @@ module.exports = function (router) {
     let versionToUse = userFlow['journeys'][journeyIndex]['flow'][common.findIndexUsing2Keys(thePageName, 'location', theStageId, 'stage', userFlow['journeys'][journeyIndex]['flow'])]['version']
     let theStageVersion = common.findIndex(versionToUse, 'version', thisStage.versions)
     let theStagePages = thisStage.versions[theStageVersion]['pages']
-    let thisPageIndex = common.findIndex(thePageName,  'location', theStagePages)
+    let thisPageIndex = common.findIndex(thePageName, 'location', theStagePages)
     let thisPage = theStagePages[thisPageIndex]
     // @todo store API call / CSV UR Data in a session
     let theURData = await common.getUrData(SPREADSHEET_URL, urCsv)

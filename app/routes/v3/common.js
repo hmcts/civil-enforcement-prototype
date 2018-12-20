@@ -1,7 +1,7 @@
 let fs = require('fs')
 let rp = require('request-promise')
-let pageFlow = require('./pages.json')
-const userNeeds = require('./user-needs.json')
+let pageFlow = require('../pages.json')
+const userNeeds = require('../user-needs.json')
 
 const csvtojson = require('csvtojson')
 var common = {}

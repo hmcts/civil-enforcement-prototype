@@ -643,6 +643,31 @@
               "location": "writ"
             }
           ]
+        },{
+          "version": 1,
+          "sprint": 4,
+          "sprintDirectory": "v1",
+          "location": "documents",
+          "users": [
+            "defendant"
+          ],
+          "design-notes": "First iteration of the digital Writ of Control and covering letter (Notice of Enforcement)",
+          "pages": [
+            {
+              "title": "Notice of Enforcement",
+              "id": "1",
+              "description": "Covering letter sent out prior to a Writ of Control being presented",
+              "type": "content-page",
+              "location": "noe"
+            },
+            {
+              "title": "Writ of Control",
+              "id": "2",
+              "description": "Digital version of the Writ of Control",
+              "type": "content-page",
+              "location": "writ"
+            }
+          ]
         }
       ]
     }

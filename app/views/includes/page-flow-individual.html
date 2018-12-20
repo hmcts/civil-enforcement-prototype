@@ -88,14 +88,12 @@
 
         </div>
         <div class="govuk-grid-column-one-third">
-            <a href="/{{ location }}" class="hmcts-button--secondary govuk-button govuk-!-display-block" target="_blank">View full page</a>
+            <a href="/{{ location }}" class="hmcts-button--secondary govuk-button govuk-!-display-block"
+               target="_blank">View full page</a>
 
-            {% if navigation.prev !== false %}
-                <p><a href="{{ navigation.prev }}">Previous</a></p>
-            {% endif %}
-            {% if navigation.next !== false %}
-                <p><a href="{{ navigation.next }}">Next</a></p>
-            {% endif %}
+            {% from "includes/pageNav.html" import pageNav %}
+
+            {{ pageNav(navigation) }}
 
             {% if hasHistory %}
                 {% from "details/macro.njk" import govukDetails %}

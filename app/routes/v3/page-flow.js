@@ -107,7 +107,8 @@ module.exports = function (router) {
         userNeeds: theUserNeeds,
         sprint: sprint,
         navigation: navigation,
-        hasHistory: hasHistory
+        hasHistory: hasHistory,
+        version: version
       }
     )
   }))

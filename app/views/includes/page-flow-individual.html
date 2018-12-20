@@ -11,7 +11,7 @@
             <div class="govuk-breadcrumbs">
                 <ol class="govuk-breadcrumbs__list">
                     <li class="govuk-breadcrumbs__list-item">
-                        <a class="govuk-breadcrumbs__link" href="#">Sprint {{ sprint }}</a>
+                        <a class="govuk-breadcrumbs__link" href="/{{ version }}/user-flow/#{{ journeyId }}">Sprint {{ sprint }}</a>
                     </li>
                     <li class="govuk-breadcrumbs__list-item">
                         <a class="govuk-breadcrumbs__link">Stage: {{ thisStage.name }}</a>
@@ -19,8 +19,6 @@
                     {#<li class="govuk-breadcrumbs__list-item" aria-current="page">{{ thisPage.title }}</li>#}
                 </ol>
             </div>
-            <span class="govuk-header"></span>
-            <span class="govuk-header"></span>
             <h2 class="govuk-heading-m">
                 {{ thisPage.title }}
             </h2>

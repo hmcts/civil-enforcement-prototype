@@ -26,7 +26,7 @@
   },
   "journeys": [
     {
-      "name": "Defendant",
+      "name": "Defendant is informed of court action and engages with service",
       "userType": "defendant",
       "id": "defendant",
       "sheetsId": "1jI3eJF6F7Infl1oyJYreNHzJtPjXT9K8WTUYt5lwbIw",
@@ -152,7 +152,7 @@
       ]
     },
     {
-      "name": "Claimant",
+      "name": "Claimant is notified of next steps and engages with service",
       "userType": "claimant",
       "id": "claimant",
       "sheetsId": "1zteKm-skOKCkwGlCQUSptrnf3dXaZIgC2dbUbYDEix0",

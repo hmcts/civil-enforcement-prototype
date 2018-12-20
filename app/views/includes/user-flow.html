@@ -44,9 +44,50 @@
                 </div>
             </details>
 
+            <h3 class="govuk-heading-m">Scenarios</h3>
+            <ol class="govuk-list--number govuk-list">
+                {% for userJourney in userFlow %}
+                    <li><a href="#{{ userJourney.userType.id }}">{{ userJourney.userType.name }}</a></li>
+                {% endfor %}
+            </ol>
             {% for userJourney in userFlow %}
 
-                <h3 class="govuk-heading-m">userJourney: {{ userJourney.userType.name }}</h3>
+                <h3 class="govuk-heading-s" id="{{ userJourney.userType.id }}">{{ userJourney.userType.name }}</h3>
+
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            User journey
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+
+                        <ol class="page-flow--stages">
+                            {% for stage in userJourney.flow %}
+                                <li class="page-flow-item--stage page-flow-item--stage--{{ stage['stage']['id'] }}">
+                                    <span class="page-flow-stage-descriptor govuk-header">{{ stage['stage']['name'] }}</span>
+                                    <ol class="page-flow--pages">
+                                        {% for page in stage.pages %}
+                                            <li class="page-flow-item--page">
+                                                {% if page.pageInfo.subDir.length %}
+                                                    <a href="{{ userJourney.userType.id + '/' + stage['stage'].location + '/' + page.pageInfo.subDir + '/' + page.pageInfo.location }}"
+                                                       target="_blank"
+                                                       class="page-flow-item-screen-icon page-flow-item-screen-icon--{{ page.pageInfo.type }}"></a>
+                                                {% else %}
+                                                    <a href="{{ userJourney.userType.id + '/' + stage['stage'].location + '/' + page.pageInfo.location }}"
+                                                       target="_blank"
+                                                       class="page-flow-item-screen-icon page-flow-item-screen-icon--{{ page.pageInfo.type }}"></a>
+                                                {% endif %}
+                                                <p class="govuk-!-font-size-14">{{ page.pageInfo.title }}
+                                                </p>
+                                            </li>
+                                        {% endfor %}
+                                    </ol>
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </details>
 
                 <details class="govuk-details">
                     <summary class="govuk-details__summary">
@@ -62,49 +103,27 @@
                                 <li>{{ change }}</li>
                             {% endfor %}
                         </ol>
-                    </div>
-                </details>
-                <details class="govuk-details">
-                    <summary class="govuk-details__summary">
+                        <details class="govuk-details">
+                            <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text">
                             User needs
                         </span>
-                    </summary>
-                    <div class="govuk-details__text">
-                        <ol class="govuk-list govuk-list--number">
-                            {% for need in userJourney.needs %}
-                                <li><strong>{{ need.need }}</strong> {{ need.reason }} - ({{ need.id }})</li>
-                            {% endfor %}
-                        </ol>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <ol class="govuk-list govuk-list--number">
+                                    {% for need in userJourney.needs %}
+                                        <li><strong>{{ need.need }}</strong> {{ need.reason }} - ({{ need.id }})</li>
+                                    {% endfor %}
+                                </ol>
+                            </div>
+                        </details>
                     </div>
                 </details>
 
-                <ol class="page-flow--stages">
-                    {% for stage in userJourney.flow %}
-                        <li class="page-flow-item--stage page-flow-item--stage--{{ stage['stage']['id'] }}">
-                            <span class="page-flow-stage-descriptor govuk-header">{{ stage['stage']['name'] }}</span>
-                            <ol class="page-flow--pages">
-                                {% for page in stage.pages %}
-                                    <li class="page-flow-item--page">
-                                        {% if page.pageInfo.subDir.length %}
-                                            <a href="{{ userJourney.userType.id + '/' + stage['stage'].location + '/' + page.pageInfo.subDir + '/' + page.pageInfo.location }}"
-                                               target="_blank"
-                                               class="page-flow-item-screen-icon page-flow-item-screen-icon--{{ page.pageInfo.type }}"></a>
-                                        {% else %}
-                                            <a href="{{ userJourney.userType.id + '/' + stage['stage'].location + '/' + page.pageInfo.location }}"
-                                               target="_blank"
-                                               class="page-flow-item-screen-icon page-flow-item-screen-icon--{{ page.pageInfo.type }}"></a>
-                                        {% endif %}
-                                        <p class="govuk-!-font-size-14">{{ page.pageInfo.title }}
-                                        </p>
-                                    </li>
-                                {% endfor %}
-                            </ol>
-                        </li>
-                    {% endfor %}
-                </ol>
+                <a href="#" class="govuk-button">View journey</a>
 
             {% endfor %}
+
 
         </div>
     </div>

@@ -34,6 +34,7 @@ module.exports = function (router) {
 
   router.get(['/' + version + '/page-flow/:stage/:page', '/' + version + '/page-flow/:stage/:subStage/:page', '/' + version + '/user-flow/:journeyId/:stage/:page', '/' + version + '/user-flow/:journeyId/:stage/:subStage/:page'], asyncMiddleware(async (req, res, next) => {
     let flowType = req.path
+    let subStage = req.params.subStage || false
     let journeyId = req.params.journeyId || false
     if (flowType.includes('page-flow')) {
       flowType = 'page-flow'
@@ -70,7 +71,7 @@ module.exports = function (router) {
     let versionToUse = userFlow['journeys'][journeyIndex]['flow'][common.findIndexUsing2Keys(thePageName, 'location', theStageId, 'stage', userFlow['journeys'][journeyIndex]['flow'])]['version']
     let theStageVersion = common.findIndex(versionToUse, 'version', thisStage.versions)
     let theStagePages = thisStage.versions[theStageVersion]['pages']
-    let thisPageIndex = common.findIndex(thePageName, 'location', theStagePages)
+    let thisPageIndex = common.findIndex(thePageName,  'location', theStagePages)
     let thisPage = theStagePages[thisPageIndex]
     // @todo store API call / CSV UR Data in a session
     let theURData = await common.getUrData(SPREADSHEET_URL, urCsv)
@@ -79,7 +80,7 @@ module.exports = function (router) {
     theStageUR = common.findKey(thisPage.location, 'Location', theStageUR)
     let navigation = common.getNavigationForUserFlow(userFlow, flowType, journeyId, thisPage, thisStage, thisPageIndex, theStagePages, thisStageIndex, version)
     let theLocation = version + '/' + thisStage.location + '/' + thisPage.location
-    if (req.params.subStage !== false) {
+    if (subStage !== false) {
       let theStageKey = req.params.stage + '/' + req.params.subStage
       thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
       if (thisStageIndex === false) {

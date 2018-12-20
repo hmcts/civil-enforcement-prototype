@@ -8,42 +8,28 @@
 
     <div class="govuk-grid-row" id="page-flow">
         <div class="govuk-grid-column-two-thirds">
-            <span class="govuk-header">Sprint {{ sprint }}</span>
-            <span class="govuk-header">Stage: {{ thisStage.name }}</span>
-            <span class="govuk-header"><a href="/{{ location }}" target="_blank">View full page</a> </span>
-            <h2 class="govuk-heading-l">
-                <p>{{ thisPage.title }}</p>
-                <p>{{ thisPage.description }}</p>
+            <div class="govuk-breadcrumbs">
+                <ol class="govuk-breadcrumbs__list">
+                    <li class="govuk-breadcrumbs__list-item">
+                        <a class="govuk-breadcrumbs__link" href="#">Sprint {{ sprint }}</a>
+                    </li>
+                    <li class="govuk-breadcrumbs__list-item">
+                        <a class="govuk-breadcrumbs__link">Stage: {{ thisStage.name }}</a>
+                    </li>
+                    <li class="govuk-breadcrumbs__list-item" aria-current="page">{{ thisPage.title }}</li>
+                </ol>
+            </div>
+            <span class="govuk-header"></span>
+            <span class="govuk-header"></span>
+            <h2 class="govuk-heading-m">
+                {{ thisPage.title }}
             </h2>
 
-            {% if hasHistory %}
-                {% from "details/macro.njk" import govukDetails %}
-                <details class="govuk-details">
-                    <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                            Iterations: {{ hasHistory.length }}
-                        </span>
-                    </summary>
-                    <div class="govuk-details__text">
-                        {% for version in hasHistory %}
-                            <p><a href="{{ version.location }}" target="_blank">Version {{ version.version }} from
-                                    Sprint {{ version.sprint }}</a></p>
-                        {% endfor %}
-                    </div>
-                </details>
-
-            {% endif %}
+            <p>{{ thisPage.description }}</p>
 
             <div class="screenPreviewContainer">
                 <iframe src="/{{ location }}" class="screenPreview" frameborder="0"></iframe>
             </div>
-
-            {% if navigation.prev !== false %}
-                <p><a href="{{ navigation.prev }}">Previous</a></p>
-            {% endif %}
-            {% if navigation.next !== false %}
-                <p><a href="{{ navigation.next }}">Next</a></p>
-            {% endif %}
 
             {% if userNeeds !== undefined %}
                 {% from "details/macro.njk" import govukDetails %}
@@ -71,7 +57,7 @@
                     </summary>
                     <div class="govuk-details__text">
                         {% for feedbackType, feedback in theStageUR.feedback %}
-                            {% if feedbackType === 'video' %}
+                            {% if feedbackType === 'video' and feedback !== '' %}
                                 <a href="{{ feedback }}" target="_blank">Video</a>
                             {% else %}
                                 <p class="page-flow-feedback--{{ feedbackType }}">{{ feedback }}</p>
@@ -101,6 +87,35 @@
             {% endif %}
 
         </div>
+        <div class="govuk-grid-column-one-third">
+            <a href="/{{ location }}" class="hmcts-button--secondary govuk-button govuk-!-display-block" target="_blank">View full page</a>
+
+            {% if navigation.prev !== false %}
+                <p><a href="{{ navigation.prev }}">Previous</a></p>
+            {% endif %}
+            {% if navigation.next !== false %}
+                <p><a href="{{ navigation.next }}">Next</a></p>
+            {% endif %}
+
+            {% if hasHistory %}
+                {% from "details/macro.njk" import govukDetails %}
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Iterations: {{ hasHistory.length }}
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        {% for version in hasHistory %}
+                            <p><a href="{{ version.location }}" target="_blank">Version {{ version.version }} from
+                                    Sprint {{ version.sprint }}</a></p>
+                        {% endfor %}
+                    </div>
+                </details>
+
+            {% endif %}
+        </div>
+
     </div>
 
 {% endblock %}

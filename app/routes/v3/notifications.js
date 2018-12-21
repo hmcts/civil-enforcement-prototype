@@ -40,6 +40,9 @@ module.exports = function (router) {
       case 'noe':
         redirect = 'NoE letter.pdf'
         break
+      case 'ccj-letter':
+        redirect = 'CCJ letter.pdf'
+        break
     }
     // console.log(directory + redirect)
     res.redirect(directory + redirect)

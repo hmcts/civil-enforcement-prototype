@@ -31,14 +31,16 @@ $stage-color--documents: orange;
   }
 }
 
-.page-flow--stages {
+.page-flow--stages, .user-flow--stages {
   @extend .govuk-body;
   padding: 0;
 }
-
-.page-flow-item--stage {
-  border-top: 10px solid;
+.user-flow-item--stage {
   display: inline-block;
+}
+
+.page-flow-item--stage, .user-flow-item--stage {
+  border-top: 10px solid;
   .page-flow-stage-descriptor {
     padding: 2px 10px;
     display: block;
@@ -82,26 +84,16 @@ $stage-color--documents: orange;
   }
 }
 
-.page-flow--pages {
+.page-flow--pages, .user-flow--pages {
   @extend .govuk-body;
   padding: 0;
   .page-flow-item--page {
     display: inline-block;
     font-size: 14px;
-    width: 170px;
+    width: 130px;
     //min-height: 200px;
     vertical-align: top;
     position: relative;
-    &:before {
-      content: "";
-      position: absolute;
-      background: url('../images/page-flow/arrow.svg') no-repeat;
-      background-size: contain;
-      width: 78px;
-      left: 92px;
-      height: 20px;
-      top: 35px;
-    }
     .page-flow-item-screen-icon {
       width: 100px;
       height: 100px;
@@ -157,6 +149,28 @@ $stage-color--documents: orange;
         -webkit-background-size: contain;
         background-size: contain;
       }
+    }
+  }
+}
+.user-flow--pages {
+  @extend .page-flow--pages;
+  .page-flow-item--page {
+    display: inline-block;
+    font-size: 14px;
+    width: 170px;
+    //min-height: 200px;
+    vertical-align: top;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background: url('../images/page-flow/arrow.svg') no-repeat;
+      background-size: contain;
+      width: 78px;
+      left: 92px;
+      height: 20px;
+      top: 35px;
     }
   }
 }

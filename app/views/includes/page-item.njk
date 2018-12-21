@@ -1,7 +1,7 @@
 {% macro pageItem(params) %}
 
     <li class="page-flow-item--page">
-        <a href="/{{ params.version }}/page-flow{{ params.location }}{{ params.page.location }}" data-url="/{{ params.version }}{{ params.version }}{{ params.location }}{{ params.page.location }}" target="_blank"
+        <a href="/{{ params.version }}/{{ params.location }}/{{ params.page.location }}" data-url="/{{ params.version }}{{ params.version }}{{ params.location }}{{ params.page.location }}" target="_blank"
            class="page-flow-item-screen-icon page-flow-item-screen-icon--{{ params.page.type }}"></a>
         {{ params.page.title }}
 

@@ -62,11 +62,11 @@
                     </summary>
                     <div class="govuk-details__text">
 
-                        <ol class="page-flow--stages">
+                        <ol class="user-flow--stages">
                             {% for stage in userJourney.flow %}
-                                <li class="page-flow-item--stage page-flow-item--stage--{{ stage['stage']['id'] }}">
+                                <li class="user-flow-item--stage page-flow-item--stage--{{ stage['stage']['id'] }}">
                                     <span class="page-flow-stage-descriptor govuk-header">{{ stage['stage']['name'] }}</span>
-                                    <ol class="page-flow--pages">
+                                    <ol class="user-flow--pages">
                                         {% for page in stage.pages %}
                                             <li class="page-flow-item--page">
                                                 {% if page.pageInfo.subDir.length %}

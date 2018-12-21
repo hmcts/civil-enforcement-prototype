@@ -641,9 +641,17 @@
               "description": "Digital version of the Writ of Control",
               "type": "content-page",
               "location": "writ"
+            },
+            {
+              "title": "CCJ letter",
+              "id": "3",
+              "description": "Letter that would be sent out to a defendant to inform them of CCJ",
+              "type": "content-page",
+              "location": "ccj-letter"
             }
           ]
-        },{
+        },
+        {
           "version": 1,
           "sprint": 4,
           "sprintDirectory": "v1",
@@ -666,6 +674,13 @@
               "description": "Digital version of the Writ of Control",
               "type": "content-page",
               "location": "writ"
+            },
+            {
+              "title": "CCJ letter",
+              "id": "3",
+              "description": "Letter that would be sent out to a defendant to inform them of CCJ",
+              "type": "content-page",
+              "location": "ccj-letter"
             }
           ]
         }

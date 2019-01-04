@@ -86,6 +86,7 @@
                         </div>
                     </details>
 
+                    <a href="../{{ userJourney.flow[0]['stage'].location + '/' + userJourney.flow[0]['pages'][0].pageInfo.location }}" class="govuk-button">View journey</a>
 
                     {#<details class="govuk-details">#}
                     {#<summary class="govuk-details__summary">#}
@@ -121,8 +122,6 @@
                     </ol>
                     {#</div>#}
                     {#</details>#}
-
-                    <a href="#" class="govuk-button">View journey</a>
                 </div>
             {% endfor %}
 

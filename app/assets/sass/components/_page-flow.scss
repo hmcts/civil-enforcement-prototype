@@ -4,10 +4,14 @@ $stage-color--check-writ: #00beb7;
 $stage-color--security-layer: pink;
 $stage-color--defendant-dashboard: #f47738;
 $stage-color--notifications: #ccc;
+$stage-color--enforcement-selection: #005ea5;
+$stage-color--writs: #004432;
+$stage-color--documents: orange;
 
 .screenPreviewContainer {
   height: 400px;
   overflow: hidden;
+  border: 1px solid #000;
   .screenPreview {
     width: 200%;
     height: 800px;
@@ -27,16 +31,24 @@ $stage-color--notifications: #ccc;
   }
 }
 
-.page-flow--stages {
+.page-flow--stages, .user-flow--stages {
   @extend .govuk-body;
   padding: 0;
 }
-
-.page-flow-item--stage {
-  border-top: 10px solid;
+.user-flow-item--stage {
   display: inline-block;
+}
+
+.user-flow-page-item {
+  border-top: 1px solid #333;
+  padding-top:1em;
+  //margin-bottom: 2em;
+}
+
+.page-flow-item--stage, .user-flow-item--stage {
+  border-top: 10px solid;
   .page-flow-stage-descriptor {
-    width: 100%;
+    padding: 2px 10px;
     display: block;
     //padding: 5px;
   }
@@ -49,10 +61,22 @@ $stage-color--notifications: #ccc;
   &--defendant-dashboard {
     border-color: $stage-color--defendant-dashboard;
   }
+  &--claimant-dashboard {
+    border-color: $stage-color--defendant-dashboard;
+  }
   &--check-writ {
     border-color: $stage-color--check-writ;
   }
-  &--notifications {
+  &--enforcement-selection {
+    border-color: $stage-color--enforcement-selection;
+  }
+  &--writs {
+    border-color: $stage-color--writs;
+  }
+  &--documents {
+    border-color: $stage-color--documents;
+  }
+  &--notifications-defendant, &--notifications-claimant {
     border-color: $stage-color--notifications;
   }
   &:last-of-type {
@@ -66,29 +90,19 @@ $stage-color--notifications: #ccc;
   }
 }
 
-.page-flow--pages {
+.page-flow--pages, .user-flow--pages {
   @extend .govuk-body;
   padding: 0;
   .page-flow-item--page {
     display: inline-block;
     font-size: 14px;
-    width: 170px;
+    width: 130px;
     //min-height: 200px;
     vertical-align: top;
     position: relative;
-    &:before {
-      content: "";
-      position: absolute;
-      background: url('../images/page-flow/arrow.svg') no-repeat;
-      background-size: contain;
-      width: 78px;
-      left: 92px;
-      height: 20px;
-      top: 35px;
-    }
     .page-flow-item-screen-icon {
       width: 100px;
-      height: 120px;
+      height: 100px;
       display: block;
       background-repeat: no-repeat;
       &--email {
@@ -108,6 +122,11 @@ $stage-color--notifications: #ccc;
       }
       &--radio-input {
         background-image: url($icons + '/radio-input.svg');
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      &--checkbox-input {
+        background-image: url($icons + '/checkbox-input.svg');
         -webkit-background-size: contain;
         background-size: contain;
       }
@@ -136,6 +155,28 @@ $stage-color--notifications: #ccc;
         -webkit-background-size: contain;
         background-size: contain;
       }
+    }
+  }
+}
+.user-flow--pages {
+  @extend .page-flow--pages;
+  .page-flow-item--page {
+    display: inline-block;
+    font-size: 14px;
+    width: 170px;
+    //min-height: 200px;
+    vertical-align: top;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background: url('../images/page-flow/arrow.svg') no-repeat;
+      background-size: contain;
+      width: 78px;
+      left: 92px;
+      height: 20px;
+      top: 35px;
     }
   }
 }

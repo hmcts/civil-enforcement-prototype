@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Individual Claimant",
+    "id": "claimant",
+    "description": "",
+    "needs": [
+      {
+        "id": "CE12",
+        "need": "I need to be clearly informed of the possible outcomes and next steps when a judgment is declared, and that this does not necessarily mean I’ll be paid",
+        "reason": "so that I am clear on the process, have realistic expectations and know what further steps I might need to take",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE13",
+        "need": "I need the defendant to comply with the judgment ",
+        "reason": "so that the onus is not on me to enforce it",
+        "mvpMOSCOW": "won't",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE14",
+        "need": "I want to know what my alternative options for dealing with the defendant are",
+        "reason": "so that I can attempt these before submitting my application to enforce the judgment",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE15",
+        "need": "I need consistent and correct information on enforcement types, including what outcomes I can expect",
+        "reason": "so that I can make an informed decision",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE16",
+        "need": "I need simple forms and clear, jargon-free information to guide me throughout the process",
+        "reason": "so that I am clear on the process, feel in control and am not overwhelmed",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE17",
+        "need": "I need to be able to view and submit my enforcement forms online",
+        "reason": "so that I do not have to attend court in person, which can be stressful and disruptive",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE18",
+        "need": "I want to know what fees I may be responsible for paying before applying for enforcement",
+        "reason": "so I don't get any unexpected surprises later on",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "medium"
+      },
+      {
+        "id": "CE19",
+        "need": "I need a secure way of seeing the status of my enforcement action ",
+        "reason": "so that I know what is happening with my case",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE20",
+        "need": "I need regular updates and information from the court on timelines and the status of my case",
+        "reason": "so I know what to expect and don't have to keep chasing the court myself",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE21",
+        "need": "I want my enforcement action to be settled as soon as possible",
+        "reason": "so I can move on with my life",
+        "mvpMOSCOW": "should",
+        "alphaConfidence": "high"
+      }
+    ]
+  },
+  {
+    "name": "Individual Defendant",
+    "id": "defendant",
+    "description": "",
+    "needs": [
+      {
+        "id": "CE22",
+        "need": "I need reassurance that I will be treated fairly throughout the process ",
+        "reason": "so that I am given the best chance to settle the case and an already stressful situation is not made worse",
+        "mvpMOSCOW": "should",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE23",
+        "need": "I need the claimant and court to undertake all reasonable efforts to make me aware of the judgment before any enforcement action is commenced ",
+        "reason": "so that I have a fair chance to respond and my situation doesn't escalate without my knowledge",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE24",
+        "need": "I need access to easily understood consistent information and support throughout the process",
+        "reason": "so that I can be clear on what I need to do and when",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE25",
+        "need": "I need time to think about how to respond to the judgment and consider how best to proceed",
+        "reason": "so that I don't feel the process is totally out of my control",
+        "mvpMOSCOW": "won't",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE26",
+        "need": "I need to know how to challenge the judgment and where I can go to get help",
+        "reason": "so that I have a right of reply and can defend myself if I feel the situation is unfair",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE27",
+        "need": "I need to know what my options for discussing the judgment are",
+        "reason": "so I can pick an option which is appropriate to me (e.g. mediation with third party, communicating with the claimant directly) and be more certain of a mutually acceptable outcome ",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE28",
+        "need": "I need to know the details of the enforcement method against me",
+        "reason": "so I understand what may happen to me and what I need to do about it",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE29",
+        "need": "I need a secure way of seeing the status of my judgment debt - including the term, payments made and amount remaining if I have a payment plan in place",
+        "reason": "so that I can see how much I still owe and plan accordingly",
+        "mvpMOSCOW": "should",
+        "alphaConfidence": "medium"
+      },
+      {
+        "id": "CE30",
+        "need": "I need to know what impact the debt will have on my credit rating",
+        "reason": "so that my current debt problems don't cause longer-term issues for me",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "medium"
+      },
+      {
+        "id": "CE31",
+        "need": "I need to know what to expect from both types of bailiffs and what my rights are",
+        "reason": "so that I am not subject to intimidation ",
+        "mvpMOSCOW": "must",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE32",
+        "need": "I need my overall personal circumstances to be considered to ensure I’m protected from undue harm",
+        "reason": "so my situation doesn’t get worse",
+        "mvpMOSCOW": "won't",
+        "alphaConfidence": "high"
+      },
+      {
+        "id": "CE33",
+        "need": "I need to know how long the process is likely to take",
+        "reason": "so I can prepare myself and plan accordingly",
+        "mvpMOSCOW": "won't",
+        "alphaConfidence": "high"
+      }
+    ]
+  }
+]

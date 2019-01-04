@@ -40,7 +40,7 @@ module.exports = function (router) {
           redirect = '/' + version + '/claimant-guidance/order-to-obtain-information-on-finances'
           break
         case 'writ-of-control' :
-          redirect = '/' + version + '/writs/cmc/1'
+          redirect = '/' + version + '/writs/1'
           break
         default :
           redirect = '/' + version + '/enforcement-selection/bailiffs'
@@ -72,6 +72,12 @@ module.exports = function (router) {
     } else {
       res.redirect('/' + version + '/enforcement-selection/')
     }
+  })
+
+  router.get(['/' + version + '/enforcement-selection/wizard/ccj-paid'], function (req, res) {
+    res.render(version + '/enforcement-selection/wizard/ccj-paid.html', {
+      defendant: settings.defendant.name
+    })
   })
 
   router.post(['/' + version + '/enforcement-selection/wizard/ccj-paid'], function (req, res) {

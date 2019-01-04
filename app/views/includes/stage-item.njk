@@ -3,6 +3,8 @@
 
         <span class="page-flow-stage-descriptor govuk-header">{{ params.name }}</span>
 
+        <p>{{ params.description }}</p>
+
         {{ params.csvData[0] }}
 
         {%- if params.stage.versions[0] %}

@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Civil Enforcement prototypes
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row" id="page-flow">
+        <div class="govuk-grid-column-full">
+            <h2 class="govuk-heading-l">
+                Sprint {{ sprint }}
+                <!--<span class="govuk-caption-xl">{{ releaseVersion }}</span>-->
+            </h2>
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Sprint details
+                        </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <h3 class="govuk-heading-m">High level feedback</h3>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                            <ol class="govuk-list--number govuk-list page-flow-feedback--positive">
+                                {% for feedback in sprintDetails.highLevelFeedback.positive %}
+                                    <li>{{ feedback }}</li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                            <ol class="govuk-list--number govuk-list page-flow-feedback--negative">
+                                {% for feedback in sprintDetails.highLevelFeedback.negative %}
+                                    <li>{{ feedback }}</li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    </div>
+                    <h3 class="govuk-heading-s">Tested with</h3>
+                    {% for tested in sprintDetails.urDetails %}
+                        <p>{{ tested.who }} - {{ tested.where }}</p>
+                    {% endfor %}
+                </div>
+            </details>
+
+            <h3 class="govuk-heading-m">Scenarios</h3>
+            <ol class="govuk-list--number govuk-list">
+                {% for userJourney in userFlow %}
+                    <li><a href="#{{ userJourney.userType.id }}">{{ userJourney.userType.name }}</a></li>
+                {% endfor %}
+            </ol>
+            {% for userJourney in userFlow %}
+                <div class="user-flow-page-item">
+                    <h3 class="govuk-heading-s" id="{{ userJourney.userType.id }}">{{ userJourney.userType.name }}</h3>
+
+                    <details class="govuk-details">
+                        <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Design goals and changes
+                        </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <p>{{ userJourney.userType.description }}</p>
+                            <h3 class="govuk-heading-s">Changelog</h3>
+                            <ol class="govuk-list govuk-list--number">
+                                {% for change in userJourney.userType.changeLog %}
+                                    <li>{{ change }}</li>
+                                {% endfor %}
+                            </ol>
+                            <details class="govuk-details">
+                                <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            User needs
+                        </span>
+                                </summary>
+                                <div class="govuk-details__text">
+                                    <ol class="govuk-list govuk-list--number">
+                                        {% for need in userJourney.needs %}
+                                            <li><strong>{{ need.need }}</strong> {{ need.reason }} - ({{ need.id }})
+                                            </li>
+                                        {% endfor %}
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </details>
+
+                    <a href="../{{ userJourney.flow[0]['stage'].location + '/' + userJourney.flow[0]['pages'][0].pageInfo.location }}" class="govuk-button">View journey</a>
+
+                    {#<details class="govuk-details">#}
+                    {#<summary class="govuk-details__summary">#}
+                    {#<span class="govuk-details__summary-text">#}
+                    {#User journey#}
+                    {#</span>#}
+                    {#</summary>#}
+                    {#<div class="govuk-details__text">#}
+
+                    <ol class="user-flow--stages">
+                        {% for stage in userJourney.flow %}
+                            <li class="user-flow-item--stage page-flow-item--stage--{{ stage['stage']['id'] }}">
+                                <span class="page-flow-stage-descriptor govuk-header">{{ stage['stage']['name'] }}</span>
+                                <ol class="user-flow--pages">
+                                    {% for page in stage.pages %}
+                                        <li class="page-flow-item--page">
+                                            {% if page.pageInfo.subDir.length %}
+                                                <a href="{{ userJourney.userType.id + '/' + stage['stage'].location + '/' + page.pageInfo.subDir + '/' + page.pageInfo.location }}"
+                                                   target="_blank"
+                                                   class="page-flow-item-screen-icon page-flow-item-screen-icon--{{ page.pageInfo.type }}"></a>
+                                            {% else %}
+                                                <a href="{{ userJourney.userType.id + '/' + stage['stage'].location + '/' + page.pageInfo.location }}"
+                                                   target="_blank"
+                                                   class="page-flow-item-screen-icon page-flow-item-screen-icon--{{ page.pageInfo.type }}"></a>
+                                            {% endif %}
+                                            <p class="govuk-!-font-size-14">{{ page.pageInfo.title }}
+                                            </p>
+                                        </li>
+                                    {% endfor %}
+                                </ol>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                    {#</div>#}
+                    {#</details>#}
+                </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -39,6 +39,12 @@ $stage-color--documents: orange;
   display: inline-block;
 }
 
+.user-flow-page-item {
+  border-top: 1px solid #333;
+  padding-top:1em;
+  //margin-bottom: 2em;
+}
+
 .page-flow-item--stage, .user-flow-item--stage {
   border-top: 10px solid;
   .page-flow-stage-descriptor {

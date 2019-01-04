@@ -19,9 +19,9 @@
 
             <h2 class="govuk-heading-m">Alpha prototypes</h2>
 
-            {% from "includes/index-item.njk" import indexItem %}
+            {% from "includes/main-index-item.njk" import mainIndexItem %}
 
-            {{ indexItem({
+            {{ mainIndexItem({
                 sprint: 6,
                 phase: 'alpha',
                 dateRange: '06/12/18 - 19/12/18',
@@ -38,7 +38,7 @@
                 ]
             }) }}
 
-            {{ indexItem({
+            {{ mainIndexItem({
                 sprint: 5,
                 phase: 'alpha',
                 dateRange: '22/11/18 - 05/12/18',
@@ -55,7 +55,7 @@
                 ]
             }) }}
 
-            {{ indexItem({
+            {{ mainIndexItem({
                 sprint: 4,
                 phase: 'alpha',
                 dateRange: '8/11/18 - 21/11/18',
@@ -80,7 +80,7 @@
                 ]
             }) }}
 
-            {{ indexItem({
+            {{ mainIndexItem({
                 sprint: 3,
                 phase: 'alpha',
                 dateRange: '25/10/18 - 7/11/18',

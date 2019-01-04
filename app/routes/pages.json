@@ -60,6 +60,15 @@
                 "CE22",
                 "CE23"
               ]
+            },
+            {
+              "title": "Email sent by OCMC",
+              "id": "1",
+              "description": "The email currently sent out by the Online Civil Money Claims process",
+              "type": "email",
+              "location": "email1",
+              "userNeeds": [
+              ]
             }
           ]
         }

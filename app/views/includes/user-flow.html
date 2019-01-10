@@ -8,6 +8,10 @@
 
     <div class="govuk-grid-row" id="page-flow">
         <div class="govuk-grid-column-full">
+            {{ govukBackLink({
+                text: "Back",
+                href: "/"
+            }) }}
             <h2 class="govuk-heading-l">
                 Sprint {{ sprint }}
                 <!--<span class="govuk-caption-xl">{{ releaseVersion }}</span>-->

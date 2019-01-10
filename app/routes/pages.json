@@ -1,10 +1,10 @@
 {
   "stages": [
     {
-      "name": "Notifications",
+      "name": "Direct communications",
       "location": "notifications-claimant",
       "id": "notifications-claimant",
-      "description": "SMS, Emails and letters that are sent out to claimants",
+      "description": "SMS and emails that are sent out to claimants",
       "versions": [
         {
           "version": 1,
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "name": "Notifications",
+      "name": "Direct communications",
       "location": "notifications-defendant",
       "id": "notifications-defendant",
       "description": "SMS, Emails and letters that are sent out to defendants",
@@ -460,7 +460,7 @@
               "location": "2"
             },
             {
-              "title": "Is this the address you want the bailiff to visit?",
+              "title": "What you have told us that you know about the defendant",
               "id": "5",
               "description": "",
               "type": "content-page",
@@ -622,7 +622,7 @@
       ]
     },
     {
-      "name": "Documents",
+      "name": "Physical documents",
       "location": "documents",
       "id": "documents",
       "description": "Collection of documents sent to users",

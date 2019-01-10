@@ -1,5 +1,5 @@
-const version = 'v2'
-const sprint = 5
+const version = 'v1'
+const sprint = 4
 const settings = require('./config')
 const common = require('./common')
 let pageFlow = require('../pages.json')

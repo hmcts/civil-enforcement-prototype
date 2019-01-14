@@ -36,10 +36,10 @@
       "name": "Defendant is informed of writ of control being issued and engages with service",
       "userType": "defendant",
       "id": "defendant",
-      "sheetsId": "1jI3eJF6F7Infl1oyJYreNHzJtPjXT9K8WTUYt5lwbIw",
+      "sheetsId": "1Nh_nviooFxp_6fk0THfh3AQ4LAizNBNuOHko8f6gwRI",
       "urCsv": "lab-notes-defendant.csv",
       "userQuotes": [
-        "I like that I can explain my\nstory.",
+        "I like that I can explain my story.",
         "I thought that I had cancelled the writ!",
         "Why wouldn’t you want a hearing? If you’re not guilty then why not, otherwise it’s in someone else’s hands.",
         "There’s no mention that I may not be guilty.",
@@ -120,7 +120,7 @@
       "name": "Defendant checks the validity of a digital writ of control that is presented to them",
       "userType": "defendant",
       "id": "defendant",
-      "sheetsId": "1jI3eJF6F7Infl1oyJYreNHzJtPjXT9K8WTUYt5lwbIw",
+      "sheetsId": "1Nh_nviooFxp_6fk0THfh3AQ4LAizNBNuOHko8f6gwRI",
       "urCsv": "lab-notes-defendant.csv",
       "userQuotes": [
 

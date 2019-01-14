@@ -1,0 +1,60 @@
+{% extends "email-layout.html" %}
+
+{% block content %}
+
+    <p class="govuk-heading-s">Claim number: {{ claimNumber }}</p>
+
+    <p style="margin:0 0 30px;font-size:19px">Dear {{ defendant }},</p>
+    <p style="margin:0 0 30px;font-size:19px">We're contacting you because {{ claimant }} has made a money claim against you
+        for £1,500, including interest and claim fee, on <span class="dates2"> 22 November 2018</span>.</p>
+
+    <p style="margin:0 0 30px;font-size:19px">We've also sent this claim to your address, as provided by the claimant
+        {{ claimant }}.</p>
+
+    <p class="dynamic-content default-content" style="font-size:19px; font-weight: 700">Respond to this claim:</p>
+
+
+    <ol class="govuk-list--bullet govuk-list">
+        <li>Go to www.gov.uk/respond-to-money-claim</li>
+        <li>Enter this claim number: {{ claimNumber }}</li>
+        <li>Enter this security code: 847395</li>
+    </ol>
+
+    <p style="margin:30px 0 30px;font-size:19px">After you've registered you can use your email and password to return
+        to the service.</p>
+
+    <p style="margin:30px 0 30px;font-size:19px">If you don't respond before <strong> 4pm on<span id="Date"> 11 December 2018</span></strong>
+        the claimant could request a County Court Judgment (CCJ) against you. A CCJ may make it harder to get credit,
+        for example mobile phone contracts, credit cards or mortgages.</p>
+
+    <p class="dynamic-content default-content" style="font-size:19px; font-weight: 700">Get advice</p>
+
+    <p style="margin:30px 0 30px;font-size:19px">Citizens Advice can help you respond to this claim. They can also help
+        if you have debt or other money worries. Call Citizens Advice on 03444 111 444.</p>
+
+
+    <p class="dynamic-content default-content" style="font-size:19px; font-weight: 700">Help and support</p>
+
+    <p style="margin:30px 0 30px;font-size:19px">Contact us if you need help responding to this claim:</p>
+
+    <p style="margin:0 0 30px;font-size:19px">
+        Email: moneyclaims@hmcts.gsi.gov.uk<br>
+        Telephone: 0300 123 7050<br>
+        Textphone: 0300 123 1058<br>
+        Monday to Friday, 9am to 6pm<br>
+        <a href="../start-page">Find out about call charges</a><br>
+
+
+    </p><p style="margin:0 0 30px;font-size:19px"><strong>HM Courts &amp; Tribunals Service</strong><br>
+
+</p>
+
+
+    <br>
+
+
+    {% if phoneAlert === 'true' %}
+        {% include 'includes/phone-alert.html' %}
+    {% endif %}
+
+{% endblock %}

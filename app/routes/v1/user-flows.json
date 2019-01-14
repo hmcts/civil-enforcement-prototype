@@ -134,13 +134,13 @@
         {
           "stage": "writs",
           "version": 1,
-          "pageId": "9",
+          "pageId": "8",
           "location": "check-answers"
         },
         {
           "stage": "writs",
           "version": 1,
-          "pageId": "10",
+          "pageId": "9",
           "location": "confirmation-page"
         },
         {

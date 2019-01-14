@@ -441,7 +441,7 @@
     },
     {
       "name": "Select type of enforcement",
-      "location": "enforcement-selection",
+      "location": "enforcement-selection/wizard",
       "id": "enforcement-selection",
       "description": "A tool to help select appropriate enforcement method",
       "versions": [

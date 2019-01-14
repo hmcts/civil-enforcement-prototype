@@ -2,19 +2,26 @@
   "sprintDetails": {
     "highLevelFeedback": {
       "positive": [
-        "Overall, the process was clear and straightforward and matched or improved upon other digital government experiences.",
-        "Participants were clear about the direction the process was going in. If in doubt, the content on the page assured them what was going on.",
-        "It was uncomplicated and put participants at ease."
+        "Participants found the process straightforward, clear and easy to follow.",
+        "This will help a lot of people, especially if you don’t know what to do.",
+        "Writ validation was useful.",
+        "Participants liked having one central application where you can change your answers and see all your details.",
+        "Clear language and steps.",
+        "Provided participants with information that they previously had no knowledge about (or could not access due to difficulty in getting an appointment with debt charities)."
       ],
       "negative": [
-        "It is important to provide users with contact details for court staff (whether phone number or webchat). This is a common need uncovered during every round of testing.",
-        "Having further guidance at each decision point will help users ensure they have enough knowledge to make an informed choice."
+        "Participants believed that the covering letter should be given at the earliest possible opportunity, before the situation escalates",
+        "Provide contact details throughout.",
+        "Make sure there is always the availability of further explanation for the choices the user is making e.g. hearing types.",
+        "Always drive home the fact that the writ is not yet cancelled - you are just making an application and therefore bailiffs can still visit.",
+        "Be clear that the defendant may not be in the wrong (e.g. “this person has made a claim against you, it doesn’t mean that it will be successful but...you have every right to submit as much evidence as you can.”).",
+        "Suggestions for an assisted digital method - e.g. a phone number and other contact options."
       ]
     },
     "urDetails": [
       {
         "where": "User testing lab, London",
-        "who": "2 claimants, 2 defendants",
+        "who": "5 Defendants (with previous experience of CE process)",
         "ADscale": [
           8,
           6,
@@ -32,10 +39,14 @@
       "sheetsId": "1jI3eJF6F7Infl1oyJYreNHzJtPjXT9K8WTUYt5lwbIw",
       "urCsv": "lab-notes-defendant.csv",
       "userQuotes": [
-        "It just seems so easy you could probably do it on your own.",
-        "You can do this without a solicitor!",
-        "It cuts out lots of the paperwork...",
-        "This [guidance] information needs be earlier - it’s important to hear even if I didn't get to this stage."
+        "I like that I can explain my\nstory.",
+        "I thought that I had cancelled the writ!",
+        "Why wouldn’t you want a hearing? If you’re not guilty then why not, otherwise it’s in someone else’s hands.",
+        "There’s no mention that I may not be guilty.",
+        "This will help a lot of people especially if you don't know what to do. You can go into a panic mode…. you don't have time to think",
+        "I was kept in the dark. Here, you are not kept in the dark.",
+        "This [NOE] is so much better than a letter saying ‘you’ve got to pay the money or else.’",
+        "If I had doubt about the quality of my work then I would just pay the debt."
       ],
       "description": "User receives notification of Writ of Control and engages with the service for the first time. They proceed to apply to stay the Writ of Control.",
       "changeLog": [
@@ -102,12 +113,52 @@
           "version": 1,
           "pageId": "5",
           "location": "confirmation-page"
+        }
+      ]
+    },
+    {
+      "name": "Defendant checks the validity of a digital writ of control that is presented to them",
+      "userType": "defendant",
+      "id": "defendant",
+      "sheetsId": "1jI3eJF6F7Infl1oyJYreNHzJtPjXT9K8WTUYt5lwbIw",
+      "urCsv": "lab-notes-defendant.csv",
+      "userQuotes": [
+
+      ],
+      "description": "",
+      "changeLog": [
+
+      ],
+      "flow": [
+        {
+          "stage": "documents",
+          "version": 2,
+          "pageId": "1",
+          "location": "noe"
         },
         {
-          "stage": "defendant-dashboard",
+          "stage": "documents",
           "version": 1,
           "pageId": "2",
-          "location": "case?writApplicationToStay=true"
+          "location": "writ"
+        },
+        {
+          "stage": "check-writ",
+          "version": 1,
+          "pageId": "1",
+          "location": "index"
+        },
+        {
+          "stage": "check-writ",
+          "version": 1,
+          "pageId": "2",
+          "location": "questions"
+        },
+        {
+          "stage": "check-writ",
+          "version": 1,
+          "pageId": "3",
+          "location": "confirmation-page"
         }
       ]
     }

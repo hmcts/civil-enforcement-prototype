@@ -29,8 +29,7 @@ module.exports = function (router) {
   // Various documents
   router.get(['/' + version + '/documents/:document'], function (req, res) {
     let document = req.params.document || false
-    console.log(document)
-    let sprint = 5
+    let sprint = 6
     let directory = '/public/pdf/sprint' + sprint + '/'
     let redirect
     switch (document) {

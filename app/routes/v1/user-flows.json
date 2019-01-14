@@ -2,6 +2,7 @@
   "sprintDetails": {
     "highLevelFeedback": {
       "positive": [
+        "If participants knew that the defendant had existing CCJs, and whether their outstanding debts were being paid or not, it would definitely affect their decision to pursue enforcement. It would also inform what enforcement option they would choose if deciding to proceed.",
         "Overall, the process was clear and straightforward and matched or improved upon other digital government experiences.",
         "Participants were clear about the direction the process was going in. If in doubt, the content on the page assured them what was going on.",
         "It was uncomplicated and put participants at ease."
@@ -33,7 +34,7 @@
       "name": "Claimant is notified of next steps and engages with service",
       "userType": "claimant",
       "id": "claimant",
-      "sheetsId": "",
+      "sheetsId": "1nweQycjO1ZqAnaVc3Yj7YuR_x0JbzTBNmFt6VdE7fhA",
       "urCsv": "lab-notes-claimant.csv",
       "description": "Claimant opts to request and enforce CCJ using enforcement method selection",
       "changeLog": [
@@ -98,13 +99,13 @@
           "stage": "writs",
           "version": 1,
           "pageId": "2",
-          "location": "2"
+          "location": "3"
         },
         {
           "stage": "writs",
           "version": 1,
           "pageId": "3",
-          "location": "select-hceo"
+          "location": "4"
         },
         {
           "stage": "writs",
@@ -128,19 +129,25 @@
           "stage": "writs",
           "version": 1,
           "pageId": "7",
-          "location": "check-answers"
+          "location": "select-hceo"
         },
         {
           "stage": "writs",
           "version": 1,
           "pageId": "9",
+          "location": "check-answers"
+        },
+        {
+          "stage": "writs",
+          "version": 1,
+          "pageId": "10",
           "location": "confirmation-page"
         },
         {
           "stage": "claimant-dashboard",
           "version": 1,
           "pageId": "4",
-          "location": "case?writApproved=true&writReady=true&enforcementInPlay=true"
+          "location": "case?writApproved=true&writReady=true"
         },
         {
           "stage": "claimant-dashboard",

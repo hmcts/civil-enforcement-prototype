@@ -9,7 +9,7 @@
     {% if simulateTimePassing === 'true' %}
         {% from "includes/days-passing.njk" import daysPassing %}
         {{ daysPassing({
-            url: '/v1/notifications/claimant/email4',
+            url: '/v1/notifications-claimant/email4',
             timeToPrompt: 3000,
             days: 5
         }) }}

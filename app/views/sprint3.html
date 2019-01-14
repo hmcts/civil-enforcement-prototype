@@ -7,7 +7,7 @@
 {% block content %}
 
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-column-full">
             <h2 class="govuk-heading-l">
                 Civil enforcement prototypes
                 <span class="govuk-caption-xl">Guidance</span>
@@ -17,23 +17,17 @@
                 is not a working software.
             </p>
 
-            {% from "includes/index-item.njk" import indexItem %}
-
-            {{ indexItem({
-                sprint: 3,
-                dateRange: '25/10/18 - 07/11/18',
-                summary: 'Defendant and claimant guidance',
-                href: '/v1/claimant-guidance/',
-                scenarioList: [
-                    '<a href="/dashboard/">First pass of claimant writ enforcement</a>',
-                    '<a href="/dashboard/case-alt?enforcement=true">Writ applied state</a>',
-                    '<a href="/dashboard/case-alt?writApproved=true">Writ approved state</a>'
-                ],
-                supportingDocs: []
-            }) }}
             <p><a href="/v1/claimant-guidance/">Claimant guidance</a></p>
             <p><a href="/v1/defendant-guidance/">Defendant guidance</a></p>
             <p><a href="/v1/defendant-guidance/step-by-step/" target="_blank">Defendant guidance (step by step version)</a></p>
+
+            <h2 class="govuk-heading-s">User research artefacts</h2>
+
+            <ol class="govuk-list govuk-list--number">
+                <li><a href="/ur/29-10-2018">29/10/2018</a></li>
+                <li><a href="/ur/25-10-2018">25/10/2018</a></li>
+            </ol>
+
         </div>
     </div>
 

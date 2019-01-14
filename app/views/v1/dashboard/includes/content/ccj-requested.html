@@ -7,7 +7,7 @@
 {% if simulateTimePassing === 'true' %}
     {% from "includes/days-passing.njk" import daysPassing %}
     {{ daysPassing({
-        url: '/v1/notifications/claimant/email2?phoneAlert=true',
+        url: '/v1/notifications-claimant/email2?phoneAlert=true',
         timeToPrompt: 5000,
         days: 5
     }) }}{% endif %}

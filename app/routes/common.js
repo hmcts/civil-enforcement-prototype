@@ -253,11 +253,9 @@ common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
     let previousStage
     for (let thePage in theUserFlow['journeys'][theJourney]['flow']) {
       let theStage = theUserFlow['journeys'][theJourney]['flow'][thePage]['stage']
-      // findIndex using version
       let thePageWeNeed = theUserFlow['journeys'][theJourney]['flow'][thePage]
       let theStageIndex = common.findIndex(thePageWeNeed['stage'], 'id', thePageFlow['stages'])
       let theStageVersion = common.findIndex(theUserFlow['journeys'][theJourney]['flow'][thePage]['version'], 'version', thePageFlow['stages'][theStageIndex]['versions'])
-      // let theStageVersion = (theUserFlow['journeys'][theJourney]['flow'][thePage]['version']) - 1
       let theStagePages = common.getStageInfo(theStage, thePageFlow)['versions'][theStageVersion]['pages']
       if (theStage === previousStage) {
         let page = {

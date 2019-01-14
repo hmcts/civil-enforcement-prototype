@@ -26,7 +26,7 @@
   },
   "journeys": [
     {
-      "name": "Defendant is informed of court action and engages with service",
+      "name": "Defendant is informed of writ of control being issued and engages with service",
       "userType": "defendant",
       "id": "defendant",
       "sheetsId": "1jI3eJF6F7Infl1oyJYreNHzJtPjXT9K8WTUYt5lwbIw",
@@ -75,233 +75,39 @@
         },
         {
           "stage": "stay-writ",
-          "version": 2,
+          "version": 1,
           "pageId": "1",
+          "location": "index"
+        },
+        {
+          "stage": "stay-writ",
+          "version": 1,
+          "pageId": "2",
           "location": "2"
         },
         {
           "stage": "stay-writ",
-          "version": 2,
-          "pageId": "2",
+          "version": 1,
+          "pageId": "3",
           "location": "3"
         },
         {
           "stage": "stay-writ",
-          "version": 2,
-          "pageId": "3",
+          "version": 1,
+          "pageId": "4",
           "location": "check-answers"
         },
         {
           "stage": "stay-writ",
-          "version": 2,
-          "pageId": "4",
+          "version": 1,
+          "pageId": "5",
           "location": "confirmation-page"
         },
         {
           "stage": "defendant-dashboard",
-          "version": 2,
+          "version": 1,
           "pageId": "2",
           "location": "case?writApplicationToStay=true"
-        }
-      ]
-    },
-    {
-      "name": "Defendant checks validity of writ",
-      "userType": "defendant",
-      "id": "defendant2",
-      "sheetsId": "1jI3eJF6F7Infl1oyJYreNHzJtPjXT9K8WTUYt5lwbIw",
-      "urCsv": "lab-notes-defendant.csv",
-      "userQuotes": [
-
-      ],
-      "description": "Stand alone tool to validate court order documents",
-      "changeLog": [
-        "Changes to next steps on confirmation page including driver to 'dashboard' to increase engagement"
-      ],
-      "flow": [
-        {
-          "stage": "documents",
-          "version": 2,
-          "pageId": "1",
-          "location": "noe"
-        },
-        {
-          "stage": "documents",
-          "version": 2,
-          "pageId": "2",
-          "location": "writ"
-        },
-        {
-          "stage": "check-writ",
-          "version": 2,
-          "pageId": "1",
-          "location": "index"
-        },
-        {
-          "stage": "check-writ",
-          "version": 2,
-          "pageId": "2",
-          "location": "questions"
-        },
-        {
-          "stage": "check-writ",
-          "version": 2,
-          "pageId": "3",
-          "location": "confirmation-page"
-        }
-      ]
-    },
-    {
-      "name": "Claimant is notified of next steps and engages with service",
-      "userType": "claimant",
-      "id": "claimant",
-      "sheetsId": "1zteKm-skOKCkwGlCQUSptrnf3dXaZIgC2dbUbYDEix0",
-      "urCsv": "lab-notes-claimant.csv",
-      "description": "Claimant opts to request and enforce CCJ using enforcement method selection",
-      "changeLog": [
-        "additional guidance on fees prior to starting enforcement selection",
-        "modified enforcement selection wizard",
-        "updated Send Writ of Control to bailiff CTA on dashboard"
-      ],
-      "userQuotes": [
-        "Not as frightening as my own process as it's laid out clearly.",
-        "I want a little dictionary at the side...it’s a process when you go through this.",
-        "Everyone should get a chance to get their money back.",
-        "Uncomplicated and clear",
-        "It would be really helpful, speaking to a human being, it puts your mind at rest. A real necessity when you do things online"
-      ],
-      "flow": [
-        {
-          "stage": "notifications-claimant",
-          "version": 1,
-          "pageId": "1",
-          "location": "email1"
-        },
-        {
-          "stage": "claimant-dashboard",
-          "version": 2,
-          "pageId": "1",
-          "location": "case"
-        },
-        {
-          "stage": "claimant-dashboard",
-          "version": 2,
-          "pageId": "2",
-          "location": "case?CCJrequested=true&simulateTimePassing=true"
-        },
-        {
-          "stage": "notifications-claimant",
-          "version": 1,
-          "pageId": "2",
-          "location": "email2"
-        },
-        {
-          "stage": "claimant-dashboard",
-          "version": 2,
-          "pageId": "3",
-          "location": "case?CCJapproved=true"
-        },
-        {
-          "stage": "enforcement-selection",
-          "version": 2,
-          "pageId": "1",
-          "location": "index"
-        },
-        {
-          "stage": "enforcement-selection",
-          "version": 2,
-          "pageId": "2",
-          "location": "ccj-paid"
-        },
-        {
-          "stage": "enforcement-selection",
-          "version": 2,
-          "pageId": "3",
-          "location": "1"
-        },
-        {
-          "stage": "enforcement-selection",
-          "version": 2,
-          "pageId": "4",
-          "location": "2"
-        },
-        {
-          "stage": "enforcement-selection",
-          "version": 2,
-          "pageId": "5",
-          "location": "options"
-        },
-        {
-          "stage": "enforcement-selection",
-          "version": 2,
-          "pageId": "6",
-          "location": "choose-method"
-        },
-        {
-          "stage": "enforcement-selection",
-          "version": 2,
-          "pageId": "7",
-          "location": "bailiffs"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "1",
-          "location": "1"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "2",
-          "location": "2"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "3",
-          "location": "select-hceo"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "4",
-          "location": "5"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "5",
-          "location": "7"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "6",
-          "location": "8"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "7",
-          "location": "check-answers"
-        },
-        {
-          "stage": "writs",
-          "version": 2,
-          "pageId": "8",
-          "location": "confirmation-page"
-        },
-        {
-          "stage": "claimant-dashboard",
-          "version": 2,
-          "pageId": "4",
-          "location": "case?writApproved=true&writReady=true&enforcementInPlay=true"
-        },
-        {
-          "stage": "claimant-dashboard",
-          "version": 2,
-          "pageId": "5",
-          "location": "case?writServed=true&simulateTimePassing=true&enforcementInPlay=true"
         }
       ]
     }

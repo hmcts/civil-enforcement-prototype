@@ -1,7 +1,7 @@
 let fs = require('fs')
 let rp = require('request-promise')
-let pageFlow = require('../pages.json')
-const userNeeds = require('../user-needs.json')
+let pageFlow = require('./pages.json')
+const userNeeds = require('./user-needs.json')
 
 const csvtojson = require('csvtojson')
 var common = {}
@@ -253,8 +253,12 @@ common.pageFlowFromUserFlow = function (theUserFlow, thePageFlow) {
     let previousStage
     for (let thePage in theUserFlow['journeys'][theJourney]['flow']) {
       let theStage = theUserFlow['journeys'][theJourney]['flow'][thePage]['stage']
+      // findIndex using version
       let thePageWeNeed = theUserFlow['journeys'][theJourney]['flow'][thePage]
-      let theStagePages = common.getStageInfo(theStage, thePageFlow)['versions'][0]['pages']
+      let theStageIndex = common.findIndex(thePageWeNeed['stage'], 'id', thePageFlow['stages'])
+      let theStageVersion = common.findIndex(theUserFlow['journeys'][theJourney]['flow'][thePage]['version'], 'version', thePageFlow['stages'][theStageIndex]['versions'])
+      // let theStageVersion = (theUserFlow['journeys'][theJourney]['flow'][thePage]['version']) - 1
+      let theStagePages = common.getStageInfo(theStage, thePageFlow)['versions'][theStageVersion]['pages']
       if (theStage === previousStage) {
         let page = {
           'id': thePageWeNeed['pageId'],

@@ -8,8 +8,8 @@
       "versions": [
         {
           "version": 1,
-          "sprint": 5,
-          "sprintDirectory": "v3",
+          "sprint": 4,
+          "sprintDirectory": "v1",
           "location": "notifications-claimant",
           "users": [
             "claimant"
@@ -223,8 +223,8 @@
         },
         {
           "version": 1,
-          "sprint": 5,
-          "sprintDirectory": "v2",
+          "sprint": 4,
+          "sprintDirectory": "v1",
           "location": "dashboard/claimant",
           "users": [
             "claimant"
@@ -486,8 +486,8 @@
         },
         {
           "version": 1,
-          "sprint": 5,
-          "sprintDirectory": "v2",
+          "sprint": 4,
+          "sprintDirectory": "v1",
           "location": "enforcement-selection",
           "users": [
             "claimant"
@@ -588,20 +588,20 @@
         },
         {
           "version": 1,
-          "sprint": 5,
-          "sprintDirectory": "v2",
-          "location": "/check-writ/",
+          "sprint": 4,
+          "sprintDirectory": "v1",
+          "location": "/writs/cmc/",
           "users": [
-            "defendant"
+            "claimant"
           ],
-          "design-notes": "First pass at a simple, non-authenticated, fact-checking service to quickly determine the validity of a court document using GOV.UK",
+          "design-notes": "First pass at the application process for a Writ of Control",
           "pages": [
             {
-              "title": "Verify a court order",
+              "title": "Before you apply",
               "id": "1",
               "description": "Service start page that introduces the function of the service",
-              "type": "start-page",
-              "location": "index"
+              "type": "content-page",
+              "location": "1"
             },
             {
               "title": "Verify a court order",

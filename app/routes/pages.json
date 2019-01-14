@@ -83,7 +83,7 @@
         {
           "version": 1,
           "sprint": 5,
-          "sprintDirectory": "v3",
+          "sprintDirectory": "v2",
           "location": "dashboard/security",
           "users": [
             "defendant"

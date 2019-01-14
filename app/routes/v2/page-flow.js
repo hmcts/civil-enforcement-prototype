@@ -59,12 +59,13 @@ module.exports = function (router) {
       }
     }
     let thePageName = req.params.page + theQueryString
-    let theStageKey = req.params.stage
-    let thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
-    if (thisStageIndex === false) {
-      let theStageKey = req.params.stage + '/' + req.params.subStage
-      thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
+    let theStageKey = null
+    if (subStage !== false) {
+      theStageKey = req.params.stage + '/' + req.params.subStage
+    } else {
+      theStageKey = req.params.stage
     }
+    let thisStageIndex = common.findIndex(theStageKey, 'location', pageFlow.stages)
     let thisStage = pageFlow.stages[thisStageIndex]
     let theStageId = thisStage.id
     let journeyIndex = common.findIndex(journeyId, 'id', userFlow['journeys'])

@@ -7,12 +7,25 @@ Civil Enforcement - select enforcement type
 {% endblock %}
 
 {% block beforeContent %}
-
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "alpha"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+        {% from "back-link/macro.njk" import govukBackLink %}
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript: window.history.back(-1)"
+        }) }}
 
         <form action="" method="post" class="form">
             <div class="govuk-form-group">

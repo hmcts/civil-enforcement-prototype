@@ -105,6 +105,10 @@
             {
               "title": "Enter claim details",
               "id": "1",
+              "userNeeds": [
+                "CE23",
+                "CE29"
+              ],
               "description": "User enters the claim number to proceed to next step",
               "type": "text-input",
               "location": "defendant"
@@ -112,6 +116,10 @@
             {
               "title": "Request access code",
               "id": "2",
+              "userNeeds": [
+                "CE23",
+                "CE29"
+              ],
               "description": "User enters their phone number, this is checked against the claim details. If there is a match, a 6 digit PIN is sent to the device",
               "type": "text-input",
               "location": "request-code"
@@ -119,6 +127,10 @@
             {
               "title": "Enter access code",
               "id": "3",
+              "userNeeds": [
+                "CE23",
+                "CE29"
+              ],
               "description": "User enters the access code that was sent to their phone",
               "type": "text-input",
               "location": "enter-code"
@@ -146,6 +158,12 @@
             {
               "title": "Defendant dashboard - Writ of Control approved",
               "id": "1",
+              "userNeeds": [
+                "CE22",
+                "CE24",
+                "CE26",
+                "CE29"
+              ],
               "description": "The status of the page when a Writ of Control has been approved",
               "type": "dashboard",
               "location": "case?writApproved=true"
@@ -153,6 +171,12 @@
             {
               "title": "Defendant dashboard - application to stay Writ of Control confirmed",
               "id": "2",
+              "userNeeds": [
+                "CE22",
+                "CE24",
+                "CE26",
+                "CE29"
+              ],
               "description": "The status of the page when an application to stay Writ of Control has been confirmed",
               "type": "dashboard",
               "location": "case?writApplicationToStay=true"
@@ -172,6 +196,12 @@
             {
               "title": "Defendant dashboard - Writ of Control approved",
               "id": "1",
+              "userNeeds": [
+                "CE22",
+                "CE24",
+                "CE26",
+                "CE29"
+              ],
               "description": "The status of the page when a Writ of Control has been approved",
               "type": "dashboard",
               "location": "case?writApproved=true"
@@ -330,6 +360,13 @@
             {
               "title": "Hearing type",
               "id": "1",
+              "userNeeds": [
+                "CE22",
+                "CE24",
+                "CE25",
+                "CE26",
+                "CE27"
+              ],
               "description": "User indicates the type of hearing they would like",
               "type": "radio-input",
               "location": "2"
@@ -337,6 +374,13 @@
             {
               "title": "Supporting evidence",
               "id": "2",
+              "userNeeds": [
+                "CE22",
+                "CE24",
+                "CE25",
+                "CE26",
+                "CE27"
+              ],
               "description": "User gives evidence to support claim to set aside CCJ. First iteration follows the n244 form which has a free-form textarea.",
               "type": "text-input",
               "location": "3"
@@ -351,6 +395,13 @@
             {
               "title": "Application submitted",
               "id": "4",
+              "userNeeds": [
+                "CE22",
+                "CE24",
+                "CE25",
+                "CE26",
+                "CE27"
+              ],
               "description": "User is informed that the application has been successful and next steps are presented.",
               "type": "confirmation",
               "location": "confirmation-page"

@@ -217,7 +217,7 @@
                 "CE15",
                 "CE19"
               ],
-              "description": "The status of the page when a CCJ has been requested",
+              "description": "The status of the dashboard when a CCJ has been requested and is being considered.",
               "type": "dashboard",
               "location": "case?CCJrequested=true&simulateTimePassing=true"
             },
@@ -630,55 +630,93 @@
             {
               "title": "Before you apply 1",
               "id": "1",
-              "description": "",
+              "userNeeds": [
+                "CE12",
+                "CE15",
+                "CE16",
+                "CE17"
+              ],
+              "description": "User is given an overview of items that are pertinent to the application process. This section is focused on the defendant themselves.",
               "type": "content-page",
               "location": "1"
             },
             {
               "title": "Before you apply 2",
               "id": "2",
-              "description": "",
+              "userNeeds": [
+                "CE12",
+                "CE15",
+                "CE16",
+                "CE17"
+              ],
+              "description": "User is given an overview of items that are pertinent to the application process. This section is focused on the financial obligations passed onto the claimant.",
               "type": "content-page",
               "location": "2"
             },
             {
               "title": "Do you know which high court bailiff you want to use?",
               "id": "3",
-              "description": "",
+              "userNeeds": [
+                "CE16",
+                "CE17"
+              ],
+              "description": "Claimant is required to select a High Court Enforcement Officer in order to meet current pre-requisites for applying for a Writ of Control.",
               "type": "radio-input",
               "location": "select-hceo"
             },
             {
               "title": "Do you want the bailiff to collect the full debt of £XXXX.XX?",
               "id": "4",
-              "description": "",
+              "userNeeds": [
+                "CE16",
+                "CE17"
+              ],
+              "description": "Claimant is asked whether they intend to seek enforcement of entire debt or a lesser amount.",
               "type": "radio-input",
               "location": "5"
             },
             {
               "title": "Is this the address you want the bailiff to visit?",
               "id": "5",
-              "description": "",
+              "userNeeds": [
+                "CE16",
+                "CE17"
+              ],
+              "description": "The current Writ of Control application must be 'tied' to a physical address, this is the address that a High Court Enforcement Officer will visit.",
               "type": "radio-input",
               "location": "7"
             },
             {
               "title": "Is this the right phone number to contact the defendant?",
               "id": "6",
-              "description": "",
+              "userNeeds": [
+                "CE13",
+                "CE16",
+                "CE17"
+              ],
+              "description": "Claimant has the opportunity to add additional contact information for the defendant. This increases the channels that we have available to engage with defendant.",
               "type": "radio-input",
               "location": "8"
             },
             {
               "title": "Check your answers",
               "id": "7",
-              "description": "",
+              "userNeeds": [
+                "CE16",
+                "CE17"
+              ],
+              "description": "Claimant checks that the answers they have given are correct",
               "type": "check-answers",
               "location": "check-answers"
             },
             {
               "title": "Writ of Control application complete",
               "id": "8",
+              "userNeeds": [
+                "CE13",
+                "CE16",
+                "CE17"
+              ],
               "description": "",
               "type": "confirmation",
               "location": "confirmation-page"
@@ -698,6 +736,12 @@
             {
               "title": "Before you apply",
               "id": "1",
+              "userNeeds": [
+                "CE12",
+                "CE15",
+                "CE16",
+                "CE17"
+              ],
               "description": "Service start page that introduces the function of the service",
               "type": "content-page",
               "location": "1"
@@ -719,6 +763,10 @@
             {
               "title": "Do you want the bailiff to collect the full debt?",
               "id": "4",
+              "userNeeds": [
+                "CE16",
+                "CE17"
+              ],
               "description": "",
               "type": "radio-input",
               "location": "5"

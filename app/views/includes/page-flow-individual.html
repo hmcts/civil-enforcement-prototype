@@ -29,8 +29,6 @@
                 <iframe src="/{{ location }}" class="screenPreview" frameborder="0"></iframe>
             </div>
 
-            <h2 class="govuk-heading-s">User research notes</h2>
-
             {% if userNeeds !== undefined %}
                 {% from "details/macro.njk" import govukDetails %}
                 <details class="govuk-details">
@@ -46,6 +44,8 @@
                     </div>
                 </details>
             {% endif %}
+
+            <h2 class="govuk-heading-s">User research notes</h2>
 
             {% if theStageUR.feedback %}
                 {% from "details/macro.njk" import govukDetails %}

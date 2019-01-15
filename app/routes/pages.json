@@ -19,6 +19,12 @@
             {
               "title": "Apply for a County Court judgment",
               "id": "1",
+              "userNeeds": [
+                "CE12",
+                "CE13",
+                "CE19",
+                "CE20"
+              ],
               "description": "User is informed of next steps; Apply for a County Court judgment.",
               "type": "email",
               "location": "email1"
@@ -26,6 +32,12 @@
             {
               "title": "Judgment registered - take court action to get your money back",
               "id": "2",
+              "userNeeds": [
+                "CE12",
+                "CE13",
+                "CE19",
+                "CE20"
+              ],
               "description": "User is informed of next steps; enforcement options",
               "type": "email",
               "location": "email2"
@@ -187,13 +199,24 @@
             {
               "title": "Claimant dashboard - pre-enforcement",
               "id": "1",
-              "description": "The status of the page ...",
+              "userNeeds": [
+                "CE13",
+                "CE17",
+                "CE19"
+              ],
+              "description": "Claimant is made aware of the next steps (requesting a County Court Judgment) that will allow them to progress with a claim",
               "type": "dashboard",
               "location": "case"
             },
             {
               "title": "Claimant dashboard - CCJ requested",
               "id": "2",
+              "userNeeds": [
+                "CE12",
+                "CE14",
+                "CE15",
+                "CE19"
+              ],
               "description": "The status of the page when a CCJ has been requested",
               "type": "dashboard",
               "location": "case?CCJrequested=true&simulateTimePassing=true"
@@ -201,6 +224,14 @@
             {
               "title": "Claimant dashboard - CCJ approved",
               "id": "3",
+              "userNeeds": [
+                "CE12",
+                "CE13",
+                "CE14",
+                "CE15",
+                "CE19",
+                "CE20"
+              ],
               "description": "The status of the page when a CCJ has been approved",
               "type": "dashboard",
               "location": "case?CCJapproved=true"
@@ -208,6 +239,11 @@
             {
               "title": "Claimant dashboard - Writ of Control approved",
               "id": "4",
+              "userNeeds": [
+                "CE15",
+                "CE19",
+                "CE20"
+              ],
               "description": "The status of the page when a Writ of Control has been approved",
               "type": "dashboard",
               "location": "case?writApproved=true&writReady=true&enforcementInPlay=true"
@@ -215,6 +251,11 @@
             {
               "title": "Claimant dashboard - Writ of Control sent to HCEO",
               "id": "5",
+              "userNeeds": [
+                "CE15",
+                "CE19",
+                "CE20"
+              ],
               "description": "The status of the page when a Writ of Control has been sent to HCEO",
               "type": "dashboard",
               "location": "case?writServed=true&simulateTimePassing=true&enforcementInPlay=true"

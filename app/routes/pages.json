@@ -499,6 +499,10 @@
             {
               "title": "Do you already know how you want to enforce judgment?",
               "id": "1",
+              "userNeeds": [
+                "CE14",
+                "CE16"
+              ],
               "description": "",
               "type": "radio-input",
               "subDir": "wizard",
@@ -507,6 +511,10 @@
             {
               "title": "Has Andrew Smith paid any of the amount on the County Court Judgment?",
               "id": "2",
+              "userNeeds": [
+                "CE14",
+                "CE16"
+              ],
               "description": "",
               "type": "radio-input",
               "subDir": "wizard",
@@ -515,6 +523,11 @@
             {
               "title": "Do you think Andrew Smith can pay back the full debt of £XXXX.XX?",
               "id": "3",
+              "userNeeds": [
+                "CE13",
+                "CE14",
+                "CE16"
+              ],
               "description": "",
               "type": "radio-input",
               "subDir": "wizard",
@@ -523,6 +536,12 @@
             {
               "title": "What do you know about Andrew Smith?",
               "id": "4",
+              "userNeeds": [
+                "CE13",
+                "CE14",
+                "CE15",
+                "CE16"
+              ],
               "description": "",
               "type": "checkbox-input",
               "subDir": "wizard",
@@ -531,6 +550,10 @@
             {
               "title": "What you have told us that you know about the defendant",
               "id": "5",
+              "userNeeds": [
+                "CE14",
+                "CE15"
+              ],
               "description": "",
               "type": "content-page",
               "subDir": "wizard",
@@ -539,6 +562,13 @@
             {
               "title": "What do you want to do?",
               "id": "6",
+              "userNeeds": [
+                "CE14",
+                "CE15",
+                "CE16",
+                "CE17",
+                "CE18"
+              ],
               "description": "",
               "type": "radio-input",
               "subDir": "wizard",

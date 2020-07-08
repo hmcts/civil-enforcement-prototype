@@ -39,7 +39,7 @@
     "gulp-util": "^3.0.7",
     "keypather": "^3.0.0",
     "marked": "^0.4.0",
-    "minimist": "1.2.0",
+    "minimist": "1.2.3",
     "natives": "^1.1.6",
     "notifications-node-client": "^4.1.0",
     "npm": "^6.4.1",

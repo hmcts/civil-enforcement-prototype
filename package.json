@@ -22,7 +22,7 @@
     "cross-spawn": "^6.0.5",
     "csvtojson": "^2.0.8",
     "dotenv": "^6.0.0",
-    "express": "4.16.3",
+    "express": "4.17.3",
     "express-session": "^1.13.0",
     "express-writer": "0.0.4",
     "googleapis": "^27.0.0",
